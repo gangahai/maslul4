@@ -417,6 +417,14 @@ footer a{color:#fff}
 }
 .trio>div:nth-child(2){padding-inline-start:30px}.trio>div:nth-child(1){padding-inline-end:28px}
 @media (max-width:600px){.trio .arr{display:none}.trio>div:nth-child(2),.trio>div:nth-child(1){padding-inline:16px}}
+.dbox .dmark{position:absolute;top:22px;left:24px;width:64px;height:auto}
+.dbox h2{padding-left:84px}
+.signbox .sbmark{width:46px;height:auto;flex:none}
+.signbox .sbtxt{flex:1}
+.act{position:relative;overflow:hidden}
+.act::after{content:"";position:absolute;left:-40px;bottom:-60px;width:380px;height:490px;background:url(logo-hand-white.png) no-repeat center/contain;opacity:.10;pointer-events:none}
+.act .wrap{position:relative;z-index:1}
+@media (max-width:600px){.dbox .dmark{width:44px;top:18px;left:16px}.dbox h2{padding-left:52px}.signbox .sbmark{display:none}.act::after{width:240px;height:310px}}
 </style>
 </head>
 <body>
@@ -621,6 +629,7 @@ footer a{color:#fff}
 <section class="demands wrap" id="decl" aria-labelledby="dem-h">
   <div class="dbox">
     <span class="label">הצהרת הורים ואנשי חינוך</span>
+    <img class="dmark" src="logo-hand.png" alt="">
     <h2 id="dem-h">הצהרה פומבית: עדכון חוק המצלמות</h2>
     <p class="intro">אל שר/ת החינוך וחברי ועדת החינוך של הכנסת, בהעתק לרשות להגנת הפרטיות, לארגוני המעונות והגנים ולארגוני ההורים. הורים, צוותים ואנשי חינוך ואקדמיה מבקשים ארבעה דברים:</p>
     <div class="dlist">
@@ -637,7 +646,7 @@ footer a{color:#fff}
   <div class="wrap">
     <h2 id="act-h">הורים, הגיע הזמן להתאחד.</h2>
     <p class="lead">כל תיקון חוק עד היום קרה כי הורים לא שתקו. הפעם נדרוש את הפתרון הנכון.</p>
-    <a class="signbox" href="atzuma.html"><span><b>חתמו על הצהרת ההורים למסלול הרביעי</b><small>הורים, צוותים ואנשי חינוך. ההצהרה תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</small></span><span class="sb-go">לחתימה</span></a>
+    <a class="signbox" href="atzuma.html"><img class="sbmark" src="logo-hand.png" alt=""><span class="sbtxt"><b>חתמו על הצהרת ההורים למסלול הרביעי</b><small>הורים, צוותים ואנשי חינוך. ההצהרה תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</small></span><span class="sb-go">לחתימה</span></a>
     <div class="agrid">
       <div class="ac"><h3>שתפו את הכתבה</h3><p>שלחו לקבוצת ההורים של הגן, למשפחה ולחברים.</p><div class="row"><a class="bigbtn white" id="wa2" href="#" target="_blank" rel="noopener">וואטסאפ</a><button class="bigbtn white" type="button" data-share>העתקת קישור</button></div></div>
       <div class="ac"><h3>כתבו למקבלי ההחלטות</h3><p>שלחו את המכתב המוכן למשרד החינוך, בלחיצה אחת מהמייל שלכם. אפשר לערוך אותו.</p><div class="row"><a class="bigbtn white" href="#letter">למכתב</a></div></div>

@@ -182,6 +182,11 @@ footer .ez{color:var(--ink-2)}
 .ask .tally{max-width:640px}
 .grid{padding-top:28px!important}
 @media (max-width:920px){.card{order:-1}.ask .tally{flex-wrap:wrap}.ask .tally .track{flex-basis:100%;order:3}}
+.ask{position:relative}
+.askmark{position:absolute;top:22px;left:24px;width:84px;height:auto}
+.ask h1,.ask-k{padding-left:100px}
+.thmark{display:block;width:52px;height:auto;margin-bottom:10px}
+@media (max-width:600px){.askmark{width:48px;top:18px;left:16px}.ask h1,.ask-k{padding-left:56px}}
 </style>
 </head>
 <body>
@@ -193,6 +198,7 @@ footer .ez{color:var(--ink-2)}
 
 <div class="wrap askwrap">
     <section class="ask" aria-labelledby="ask-h">
+      <img class="askmark" src="logo-hand.png" alt="">
       <div class="ask-k">הצהרת הורים ואנשי חינוך</div>
       <h1 id="ask-h">שהמצלמות שכבר בגנים יעזרו להגן על הילדים, בזמן אמת.</h1>
       <p class="ask-lead">אנחנו מבקשים משר/ת החינוך ומהכנסת לעדכן את חוק המצלמות:</p>
@@ -336,6 +342,7 @@ footer .ez{color:var(--ink-2)}
     </form>
 
     <div class="thanks" id="thanks" hidden tabindex="-1">
+      <img class="thmark" src="logo-hand.png" alt="">
       <h2>תודה, <span id="tName"></span>. חתימתך נקלטה.</h2>
       <p id="tMsg">ככל שיחתמו יותר הורים ואנשי חינוך, כך יגבר משקלה של ההצהרה. נשמח אם תשתפו אותה.</p>
       <div class="sharebtns">
