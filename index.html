@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="מספיק עם הפלסטר: המסלול הרביעי">
+<meta property="og:description" content="ילדים נפגעים בגנים ומגלים את זה במקרה. הפתרון כבר קיים. חסר רק חוק.">
+<meta property="og:image" content="https://maslul4.tsofia.ai/understands.jpg">
+<meta property="og:url" content="https://maslul4.tsofia.ai/">
+<title>מספיק עם הפלסטר</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="המצלמות ראו הכל. אף אחד לא הסתכל. מאמר על התעללות בגנים, על שבע שנים של פלסטרים, ועל המסלול הרביעי שכבר עובד בשטח.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@400;500;700;800;900&display=swap">
+<style>
+/* Layout: a broadsheet feature. Masthead → kicker/headline/deck/byline → full-width lead illustration → article body (reading column + sidebar of fact boxes) → dark "solution" spread → demands box → action + letter → contact and footnotes. Single committed newsprint look: white paper, black ink, one red. */
+:root{
+  color-scheme: light;
+  --paper:#ffffff; --tint:#f4f2ee; --ink:#121212; --ink-2:#2f2f2f; --muted:#6b6b6b; --rule:#d9d6cf; --rule-2:#121212;
+  --red:#c8102e; --red-soft:#fbe9ec;
+  --night:#0e141f; --night-2:#172131; --night-line:#2a3850; --night-ink:#eef2fa; --night-muted:#a3b0c7; --eye:#4bc7e3;
+  --f-head:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --f-body:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --f-ui:"Heebo","Arial Hebrew",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:19px;line-height:1.7;direction:rtl}
+[hidden]{display:none!important}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-head);margin:0;text-wrap:balance}
+
+/* masthead */
+.topline{border-bottom:1px solid var(--rule);font-family:var(--f-ui);font-size:13px;color:var(--muted)}
+.topline .wrap{display:flex;justify-content:space-between;gap:12px;padding-block:8px;flex-wrap:wrap}
+.topline b{color:var(--red);font-weight:800}
+.mast{text-align:center;padding-block:18px 0}
+.mast .name{font-family:var(--f-head);font-weight:900;font-size:clamp(40px,8vw,84px);line-height:1;letter-spacing:-.01em}
+.mast .name span{color:var(--red)}
+.mast .tag{font-family:var(--f-ui);font-size:13px;letter-spacing:.14em;color:var(--muted);margin-top:6px}
+.rules{border-top:3px solid var(--rule-2);border-bottom:1px solid var(--rule-2);height:7px;margin-top:16px}
+.sections{display:flex;justify-content:center;gap:clamp(12px,3vw,34px);font-family:var(--f-ui);font-weight:700;font-size:15px;padding-block:10px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.sections a{text-decoration:none}
+.sections a:hover{color:var(--red)}
+.sticky{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:21}
+
+/* compact bar + photo hero */
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:10px}
+.brand{font-family:var(--f-head);font-weight:900;font-size:24px;text-decoration:none;line-height:1}
+.brand span{color:var(--red)}
+.sticky .sections{border:0;padding:0;justify-content:flex-start}
+.sections .go{background:var(--red);color:#fff!important;border-radius:999px;padding:6px 14px}
+.hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#111}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.88) 100%),linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,0) 60%)}
+.hero-in{position:relative;padding-block:56px 64px;width:100%}
+.hero .kicker{color:#ff6b7f}
+.hero .kicker::before,.hero .kicker::after{background:#ff6b7f}
+.hero h1{font-weight:900;font-size:clamp(46px,8.6vw,108px);line-height:.98;letter-spacing:-.02em;margin-top:14px;max-width:12ch;text-shadow:0 4px 24px rgba(0,0,0,.4)}
+.hero h1 .red{color:#ff5a6e}
+.hero-deck{font-family:var(--f-head);font-weight:500;font-size:clamp(20px,2.4vw,27px);line-height:1.45;max-width:34ch;margin:18px 0 0;color:#f1f1f1}
+.trio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:26px;max-width:640px;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.25)}
+.trio div{background:rgba(10,10,10,.6);backdrop-filter:blur(6px);padding:14px 16px;font-family:var(--f-ui)}
+.trio b{display:block;color:#ff8a99;font-weight:800;font-size:14px;letter-spacing:.06em}
+.trio span{display:block;font-size:16.5px;line-height:1.35;margin-top:4px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.bigbtn.glass{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.7);color:#fff}
+.hero .byline{justify-content:flex-start;color:#d4d4d4;margin-top:26px}
+.hero .byline b{color:#fff}
+.hero .byline .av{background:#fff;color:#111}
+.credit{position:absolute;bottom:8px;left:12px;max-width:60%;font-family:var(--f-ui);font-size:11px;color:rgba(255,255,255,.6)}
+.cctv{position:absolute;top:16px;left:max(18px,env(safe-area-inset-left,0px));display:flex;gap:14px;align-items:center;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:rgba(255,255,255,.85);direction:ltr;z-index:2}
+.cctv .rec{display:flex;align-items:center;gap:6px;font-weight:700}
+.cctv .rec i{width:10px;height:10px;border-radius:50%;background:#ff3b52;box-shadow:0 0 10px #ff3b52;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+.big-shot{margin:36px calc(50% - min(50vw,620px)) 0;}
+.big-shot img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 0 0 1px var(--night-line),0 40px 90px rgba(0,0,0,.55)}
+.big-shot figcaption{color:var(--night-muted);border-color:var(--night-line);padding-inline:4px}
+.big-shot figcaption b{color:#fff}
+.shot{display:grid;justify-items:center;margin-top:48px}
+.shot-frame{width:min(980px,100%);border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--night-line),0 30px 70px rgba(0,0,0,.5);background:#fff}
+.shot-frame img{display:block;width:100%;height:auto;aspect-ratio:auto}
+.shot figcaption{width:min(980px,100%)}
+.photo img,.spread-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--tint)}
+.spread-photo{margin-top:34px}
+.spread-photo img{aspect-ratio:21/9}
+.spread-photo figcaption{color:var(--night-muted);border-color:var(--night-line)}
+.spread-photo figcaption b{color:#fff}
+
+/* v5: brand, color sections */
+:root{--teal:#1e7cb0;--teal-soft:#e6f4fb;--amber:#c76a00;--amber-soft:#fff3e2}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .logo{height:38px;width:auto;flex:none}
+.brand .eye i{width:12px;height:12px;border-radius:50%;background:var(--eye);box-shadow:0 0 0 4px rgba(75,199,227,.25)}
+.brand .bt{display:grid;line-height:1;color:var(--ink)}
+.brand .bn{color:var(--ink);white-space:nowrap}
+.brand .bn span{color:var(--red)}
+.brand small{font-family:var(--f-ui);font-weight:700;font-size:12px;color:var(--teal);margin-top:3px}
+.body h2.h-amber{border-top-color:var(--amber)} .body h2.h-amber small{color:var(--amber)}
+.late{margin:1.6em 0;padding:24px 24px 8px;background:var(--red-soft);border-inline-start:6px solid var(--red)}
+.late h2{border-top:0!important;padding-top:0!important;margin-top:0!important;color:var(--red)}
+.trust{margin:1.6em 0;padding:24px 24px 10px;background:var(--teal-soft);border-inline-start:6px solid var(--teal)}
+.trust h2{border-top:0!important;padding-top:0!important;margin-top:0!important;color:#0b4f78}
+.trust h2 small{color:var(--teal)!important}
+.trust-big{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,2.6vw,27px);line-height:1.35;color:#0b4f78}
+.body h2 small{font-size:15px}
+.hero .trio div:last-child b{color:var(--eye)}
+
+.signbox{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;color:var(--ink);text-decoration:none;border-radius:14px;padding:20px 22px;margin:22px 0 6px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
+.signbox b{display:block;font-family:var(--f-head);font-weight:900;font-size:clamp(22px,2.6vw,28px);line-height:1.2}
+.signbox small{display:block;font-family:var(--f-ui);font-size:15px;color:var(--muted);margin-top:4px}
+.signbox .sb-go{flex:none;background:var(--red);color:#fff;font-family:var(--f-ui);font-weight:900;font-size:18px;border-radius:10px;padding:12px 22px}
+.signbox:hover .sb-go{background:#a00d24}
+@media (max-width:600px){
+  .dlist{grid-template-columns:1fr}.signbox{flex-direction:column;align-items:stretch}.signbox .sb-go{text-align:center}}
+/* Recorder section */
+.rec{margin:1.6em 0;padding:24px 24px 14px;background:#fff6e8;border-inline-start:6px solid var(--amber)}
+.rec h2{border-top:0!important;padding-top:0!important;margin-top:0!important;color:#7a3f00}
+.rec h2 small{color:var(--amber)!important}
+.wave{margin:18px 0 6px;background:#1b1d22;border-radius:10px;padding:14px 14px 10px}
+.wave svg{width:100%;height:84px;display:block}
+.wave-lbl{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-ui);font-size:12.5px;color:#a9b0bd;margin-top:6px}
+.wave-lbl .hit{color:#ff6b7d;font-weight:800}
+.recfails{list-style:none;padding:0;margin:18px 0 6px;display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;font-family:var(--f-ui)}
+.recfails li{border-top:2px solid #f0d3a8;padding-top:9px}
+.recfails b{display:block;font-size:17px;color:#7a3f00}
+.recfails span{font-size:15px;color:var(--ink-2);line-height:1.5}
+.rec-end{font-family:var(--f-head);font-weight:700;font-size:clamp(20px,2.3vw,24px);line-height:1.4;color:#121212;margin-top:14px}
+/* Emma: tiny, separate ad strip */
+.emma-strip{background:#f6f3fb;border-top:1px solid #e7e0f3;font-family:var(--f-ui)}
+.emma-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.emma-strip a{display:flex;align-items:center;gap:10px;color:#3d3557;text-decoration:none;font-size:14px;line-height:1.4}
+.emma-strip a:hover span{text-decoration:underline}
+.emma-strip img{width:30px;height:30px;border-radius:8px;flex:none}
+.emma-strip b{color:#5b21b6}
+.emma-strip small{color:#9a92ad;font-size:11px;flex:none}
+.fbrand{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.flogo{height:30px;width:auto;background:#fff;border-radius:8px;padding:3px 6px}
+
+/* headline block */
+.head{padding-block:34px 22px;max-width:980px;margin:0 auto;text-align:center}
+.kicker{font-family:var(--f-ui);font-weight:800;font-size:15px;color:var(--red);letter-spacing:.06em;display:inline-flex;gap:10px;align-items:center}
+.kicker::before,.kicker::after{content:"";width:28px;height:2px;background:var(--red)}
+.head h1{font-weight:900;font-size:clamp(46px,9.2vw,112px);line-height:.98;letter-spacing:-.02em;margin-top:14px}
+.head h1 .red{color:var(--red)}
+.deck{font-family:var(--f-head);font-weight:500;font-size:clamp(21px,2.6vw,28px);line-height:1.45;color:var(--ink-2);margin:20px auto 0;max-width:36ch}
+.byline{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:26px;font-family:var(--f-ui);font-size:15px;color:var(--muted);flex-wrap:wrap}
+.byline .av{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px}
+.byline b{color:var(--ink);font-weight:800}
+.byline .sep{width:1px;height:28px;background:var(--rule)}
+.sharebar{display:flex;gap:8px}
+.chipbtn{font-family:var(--f-ui);font-weight:700;font-size:14px;border:1px solid var(--ink);background:#fff;border-radius:999px;padding:7px 14px;text-decoration:none}
+.chipbtn.red{background:var(--red);border-color:var(--red);color:#fff}
+
+/* figures */
+figure{margin:0}
+svg{direction:ltr}
+.lead-fig{margin-top:8px}
+.lead-fig svg{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:16/8.2;background:#10151f}
+figcaption{font-family:var(--f-ui);font-size:14px;color:var(--muted);padding-top:10px;border-bottom:1px solid var(--rule);padding-bottom:10px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+figcaption b{color:var(--ink);font-weight:700}
+
+/* article grid */
+.article{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;padding-block:40px 20px}
+.body{min-width:0;max-width:680px}
+.body p{margin:0 0 1.15em}
+.body p.first::first-letter{float:right;font-family:var(--f-head);font-weight:900;font-size:5.2em;line-height:.82;margin:.06em 0 0 .12em;color:var(--red)}
+.body h2{font-weight:900;font-size:clamp(30px,4vw,42px);line-height:1.08;margin:1.5em 0 .5em;padding-top:.5em;border-top:3px solid var(--ink)}
+.body h2 small{display:block;font-family:var(--f-ui);font-size:14px;font-weight:800;color:var(--red);letter-spacing:.06em;margin-bottom:8px}
+.pull{margin:1.6em 0;padding:18px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font-family:var(--f-head);font-weight:700;font-size:clamp(26px,3.4vw,34px);line-height:1.25}
+.pull::before{content:"”";display:block;font-size:2.2em;line-height:.6;color:var(--red);height:.4em}
+.pull cite{display:block;font-family:var(--f-ui);font-style:normal;font-size:14px;font-weight:700;color:var(--muted);margin-top:10px}
+.inline-fig{margin:1.6em 0}
+.body ul.fails{list-style:none;padding:0;margin:0 0 1.2em;display:grid;gap:12px}
+.fails li{border-inline-start:4px solid var(--red);padding:4px 14px 6px;background:var(--tint)}
+.fails b{font-family:var(--f-ui);font-weight:800;display:block;font-size:16px}
+.fails span{font-size:17.5px;color:var(--ink-2)}
+
+/* sidebar */
+.side{display:grid;gap:22px;align-content:start;position:sticky;top:64px}
+.box{border-top:4px solid var(--ink);padding-top:12px;font-family:var(--f-ui)}
+.box h3{font-family:var(--f-ui);font-weight:800;font-size:15px;letter-spacing:.06em;color:var(--red);margin-bottom:10px}
+.stat{display:grid;gap:2px;padding-block:10px;border-bottom:1px solid var(--rule)}
+.stat b{font-family:var(--f-head);font-weight:900;font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:14.5px;color:var(--ink-2);line-height:1.4}
+.case{padding-block:12px;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.case .t{font-weight:800;font-size:16px}
+.case .w{font-size:13px;color:var(--muted)}
+.case .h{font-size:14.5px;line-height:1.45}
+.case .h em{font-style:normal;color:var(--red);font-weight:700}
+.case a{font-size:13px;color:var(--muted)}
+.note{font-family:var(--f-ui);font-size:13px;color:var(--muted);line-height:1.5}
+
+/* 30-day strip */
+.days30{font-family:var(--f-ui);background:var(--tint);padding:18px;border-radius:4px}
+.days30 .grid{display:grid;grid-template-columns:repeat(15,1fr);gap:4px;direction:rtl}
+.days30 i{display:block;aspect-ratio:1;background:#3a4252;border-radius:2px;position:relative}
+.days30 i.dim{opacity:.35}
+.days30 i.gone{background:transparent;border:1px dashed #9a9a9a}
+.days30 .lbls{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px}
+.days30 .lbls b{color:var(--red)}
+
+/* chart */
+.chart{font-family:var(--f-ui);background:var(--tint);padding:18px;border-radius:4px}
+.chart h4{margin:0 0 4px;font-size:16px;font-weight:800}
+.chart .sub{font-size:13px;color:var(--muted);margin-bottom:12px}
+.chart svg{display:block;width:100%;height:auto}
+.chart .bar{transition:opacity .15s}
+.chart .bar:hover{opacity:.85}
+
+/* solution spread */
+.spread{background:var(--night);color:var(--night-ink);padding-block:64px;margin-top:30px}
+.spread .kick{font-family:var(--f-ui);font-weight:800;color:var(--eye);letter-spacing:.08em;font-size:15px}
+.spread h2{font-weight:900;font-size:clamp(42px,7vw,86px);line-height:.98;letter-spacing:-.015em;margin-top:10px;color:#fff;max-width:14ch}
+.spread h2 span{color:var(--eye)}
+.spread .deck2{font-family:var(--f-head);font-size:clamp(20px,2.4vw,25px);line-height:1.5;color:var(--night-muted);max-width:44ch;margin:18px 0 0}
+.spread-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:50px;margin-top:40px;align-items:start}
+.spread .cols{column-count:2;column-gap:32px;font-size:18px;color:#d7deeb}
+.spread .cols p{margin:0 0 1em;break-inside:avoid-column}
+.spread .cols b{color:#fff}
+.vs{margin-top:28px;border-top:3px solid #fff}
+.vs-row{display:grid;grid-template-columns:120px 1fr 1fr;border-bottom:1px solid var(--night-line);font-family:var(--f-ui);font-size:15px}
+.vs-row > div{padding:11px 10px;min-width:0}
+.vs-row .k{color:var(--night-muted);font-weight:700}
+.vs-row .o{color:#ffb3bd}
+.vs-row .n{color:#fff;background:rgba(75,199,227,.08)}
+.vs-row.h > div{font-weight:800;letter-spacing:.04em;font-size:13px}
+.vs-row.h .n{color:var(--eye)}
+.phone{width:min(340px,100%);margin-inline:auto;background:#05080d;border-radius:42px;padding:14px;box-shadow:0 0 0 2px #2a3850,0 40px 80px rgba(0,0,0,.5)}
+.phone .scr{border-radius:30px;background:var(--night-2);padding:18px 14px 20px;display:grid;gap:10px;font-family:var(--f-ui)}
+.phone .notch{width:96px;height:22px;border-radius:12px;background:#05080d;margin:-6px auto 6px}
+.phone .app{display:flex;justify-content:space-between;align-items:center;color:var(--night-muted);font-size:12.5px}
+.phone .app b{color:#fff;font-size:14px}
+.ins{border-radius:16px;padding:11px 13px;background:#1f2b40;font-size:14px;line-height:1.45;color:#e6ecf7}
+.ins small{display:block;font-weight:800;font-size:11.5px;letter-spacing:.05em;margin-bottom:2px}
+.ins.a{box-shadow:inset 0 0 0 1.5px #ff8a99} .ins.a small{color:#ff8a99}
+.ins.g small{color:var(--eye)} .ins.t small{color:#ffd166}
+.phone-cap{font-family:var(--f-ui);font-size:13px;color:var(--night-muted);text-align:center;margin-top:12px}
+.proofline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:3px solid #fff}
+.pl{padding:18px 18px 0 18px;border-inline-start:1px solid var(--night-line)}
+.pl:first-child{border-inline-start:0;padding-inline-start:0}
+.pl .d{font-family:var(--f-ui);font-weight:800;color:var(--eye);font-size:14px;letter-spacing:.06em}
+.pl b{display:block;font-family:var(--f-head);font-weight:900;font-size:clamp(24px,2.8vw,32px);line-height:1.1;color:#fff;margin-top:6px}
+.pl span{display:block;font-family:var(--f-ui);font-size:15px;color:var(--night-muted);margin-top:6px}
+.blocker{margin-top:36px;padding:20px 22px;border:2px solid #ff8a99;font-family:var(--f-head);font-size:clamp(22px,2.6vw,28px);line-height:1.35;color:#fff}
+.blocker b{color:#ff8a99}
+.spread .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.bigbtn{font-family:var(--f-ui);font-weight:800;font-size:17px;border-radius:999px;padding:14px 24px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:0}
+.bigbtn.eye{background:var(--eye);color:#03263a}
+.bigbtn.line{border:2px solid rgba(255,255,255,.6);color:#fff;background:transparent}
+.bigbtn.red{background:var(--red);color:#fff}
+.bigbtn.white{background:#fff;color:var(--red)}
+
+/* demands */
+.demands{padding-block:60px 30px}
+.dbox{border:3px solid var(--ink);padding:28px;position:relative;max-width:900px;margin:0 auto}
+.dbox .label{position:absolute;top:-15px;right:24px;background:var(--red);color:#fff;font-family:var(--f-ui);font-weight:800;font-size:14px;letter-spacing:.06em;padding:4px 12px}
+.dbox h2{font-weight:900;font-size:clamp(36px,6vw,64px);line-height:1}
+.dbox .intro{font-size:20px;color:var(--ink-2);margin:12px 0 0}
+.dlist{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:26px;counter-reset:d}
+.dlist div{border-top:2px solid var(--ink);padding-top:12px}
+.dlist div::before{counter-increment:d;content:counter(d);display:block;font-family:var(--f-head);font-weight:900;font-size:48px;line-height:1;color:var(--red)}
+.dlist h3{font-family:var(--f-ui);font-weight:800;font-size:19px;margin-top:6px}
+.dlist p{margin:6px 0 0;font-size:16px;color:var(--ink-2);line-height:1.55}
+.dfoot{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:26px;padding-top:18px;border-top:1px solid var(--rule);flex-wrap:wrap}
+.dfoot p{margin:0;font-family:var(--f-ui);font-size:15px;color:var(--muted);max-width:52ch}
+
+/* act */
+.act{background:var(--red);color:#fff;padding-block:56px;margin-top:40px}
+.act h2{font-weight:900;font-size:clamp(38px,6vw,68px);line-height:1}
+.act .lead{font-size:21px;color:#ffe3e7;max-width:46ch;margin:14px 0 0}
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;font-family:var(--f-ui)}
+.ac{border-top:2px solid #fff;padding-top:14px;display:grid;gap:10px;align-content:start}
+.ac h3{font-family:var(--f-ui);font-weight:800;font-size:20px}
+.ac p{margin:0;font-size:16px;color:#ffe3e7;line-height:1.5}
+.ac .row{display:flex;gap:8px;flex-wrap:wrap}
+.letter{margin-top:28px;background:#fff;color:var(--ink);padding:22px;display:grid;gap:12px}
+.letter h3{font-family:var(--f-ui);font-weight:800;font-size:18px}
+.letter textarea{width:100%;min-height:240px;border:1px solid var(--rule);padding:14px;font:inherit;font-family:var(--f-body);font-size:17px;line-height:1.6;resize:vertical;background:var(--tint);direction:rtl}
+.letter .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+/* contact + sources */
+.contact{padding-block:50px;border-bottom:1px solid var(--rule)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center}
+.contact h2{font-weight:900;font-size:clamp(32px,4.4vw,48px);line-height:1.05}
+.contact p{color:var(--ink-2);margin:10px 0 0}
+.cards{display:grid;gap:10px;font-family:var(--f-ui)}
+.cc{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;border:1px solid var(--rule);padding:14px 16px}
+.cc .l{color:var(--muted);font-weight:700;font-size:14px}
+.cc .v{font-weight:800;font-size:19px;text-decoration:none;min-width:0;overflow-wrap:anywhere;text-align:start}
+.cc .chipbtn{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sources{padding-block:34px;font-family:var(--f-ui)}
+.sources h3{font-family:var(--f-ui);font-weight:800;font-size:15px;letter-spacing:.06em}
+.sources ol{margin:10px 0 0;padding-inline-start:20px;font-size:14px;color:var(--ink-2);display:grid;gap:4px;columns:2;column-gap:36px}
+.sources li{break-inside:avoid}
+footer{background:var(--ink);color:#c9c9c9;font-family:var(--f-ui);font-size:14px;padding-block:24px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer b{color:#fff}
+footer a{color:#fff}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;font-family:var(--f-ui);font-weight:700;z-index:40}
+
+@media (max-width:980px){
+  .article{grid-template-columns:1fr;gap:20px}
+  .side{position:static;grid-template-columns:1fr 1fr}
+  .spread-grid{grid-template-columns:1fr}
+  .spread .cols{column-count:1}
+  .proofline{grid-template-columns:1fr} .pl{border-inline-start:0;border-top:1px solid var(--night-line);padding:16px 0} .pl:first-child{border-top:0}
+  .agrid{grid-template-columns:1fr} .dlist{grid-template-columns:1fr 1fr}
+  .contact .wrap{grid-template-columns:1fr}
+  .sources ol{columns:1}
+}
+@media (max-width:600px){
+  .recfails{grid-template-columns:1fr} .wave-lbl span:last-child{display:none}
+  .trio{grid-template-columns:1fr}
+  .hero{min-height:auto}
+  .hero-in{padding-top:120px}
+  .sticky .sections a:not(.go){display:none}
+  .spread-photo img{aspect-ratio:4/3}
+  body{font-size:18px}
+  .side{grid-template-columns:1fr}
+  .byline .sep{display:none}
+  .vs-row{grid-template-columns:1fr 1fr} .vs-row .k{grid-column:1/-1;padding-bottom:0} .vs-row.h .k{display:none}
+  .days30 .grid{grid-template-columns:repeat(10,1fr)}
+  .cc{grid-template-columns:1fr auto} .cc .l{grid-column:1/-1}
+  .dbox{padding:22px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+
+<nav class="sticky" aria-label="מדורים"><div class="wrap bar">
+  <a class="brand" href="#top"><img class="logo" src="logo-ein.png" alt="עין צופיה"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><small>יוזמה של עין צופיה</small></span></a>
+  <div class="sections"><a href="#story">התחקיר</a><a href="#law">החוק</a><a href="#fix">הפתרון</a><a href="#decl">ההצהרה</a><a href="atzuma.html" class="go">חתמו על ההצהרה</a></div>
+</div></nav>
+
+<main>
+<header class="hero" id="top">
+  <img class="hero-img" src="hero-cctv.jpg" alt="פריים ממצלמה בגן ילדים, הפנים מטושטשות" fetchpriority="high">
+  <div class="hero-shade"></div>
+  <div class="wrap hero-in">
+    <span class="kicker">קריאה להורים</span>
+    <h1>חייבים לעצור את התופעה.<br><span class="red">וזה בידיים שלנו.</span></h1>
+    <p class="hero-deck">ילדים נפגעים בגנים, ומגלים את זה במקרה. הבעיה ברורה, והפתרון כבר קיים. אנחנו קוראים להורים להתאחד ולדרוש לעדכן את חוק המצלמות למסלול הרביעי.</p>
+    <div class="trio">
+      <div><b>הפתרון</b><span>עין צופיה: מצלמה שמבינה ומתריעה בזמן אמת. פותחה בתמיכת רשות החדשנות</span></div>
+      <div><b>הדרישה</b><span>חוק שיאפשר להפעיל אותה, עכשיו</span></div>
+    </div>
+    <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">חתמו על הצהרת ההורים</a><a class="bigbtn glass" href="#fix">איך זה עובד</a></div>
+    <div class="byline"><span class="av" aria-hidden="true">א.נ</span><span>מאת <b>אהרון נייס</b>, מנהל רשת גנים 20 שנה ומייסד עין צופיה · 8 בנובמבר 2026</span></div>
+  </div>
+  <span class="credit">פריים אמיתי ממצלמה בגן, מתוך מערכת עין צופיה. הפנים טושטשו לשמירת פרטיות.</span>
+</header>
+<div class="wrap">
+  <div class="article" id="story">
+    <article class="body">
+      <p class="first">ביום ראשון השבוע הוגש כתב אישום נגד מנהלת מעון פרטי באריאל ושתי מטפלות. לפי האישום, במשך תקופה ארוכה הן ביצעו יותר מ-400 מעשי התעללות ותקיפה ב-17 תינוקות ופעוטות, חלקם בני חצי שנה בלבד: חסימת דרכי נשימה, טלטול, האכלה בכוח ונעילה בחדר חשוך.</p>
+      <p>איך זה התגלה? לא מערכת, לא פיקוח ולא מצלמה. אם הבחינה בחבלות חוזרות אצל בנה בן השנה וחצי. כמה שבועות קודם לכן, ברעננה, נעצרו שלוש סייעות אחרי שפעוט הגיע לבית החולים עם פגיעה בראש. בלוד, ב-2025, ההורים כבר לא חיכו: הם הציבו בעצמם מכשיר הקלטה בגן.</p>
+      <blockquote class="pull">הורה. רופא. מזל. אלה מנגנוני הגילוי שלנו היום.<cite>כל יום שעובר עד הגילוי הוא עוד יום של פגיעה</cite></blockquote>
+      <p>אני מנהל רשת גנים כבר עשרים שנה. אני מכיר את הצוותים, את העומס, את הסייעת שנשארה לבד עם שמונה פעוטות. רוב הנשים שעובדות בגנים מסורות לילדים יותר משאפשר לתאר. אבל המקרים האלה לא ייעלמו מעצמם, וכל מה שהמדינה עשתה עד היום היה להדביק עליהם פלסטר.</p>
+
+      <section class="late" aria-labelledby="late-h">
+        <h2 id="late-h"><small>מאוחר מדי</small>כשזה מתגלה, הפגיעה כבר קרתה</h2>
+        <p>גם כשהפגיעה מתגלה, היא מתגלה מאוחר מדי. עד שהורה מבחין בחבלה או שילד מגיע לבית החולים, שבועות של פגיעה כבר מאחורינו. פעוט בן שנה וחצי לא יכול לספר, והנזק הרגשי נשאר איתו הרבה אחרי שהפרשה יורדת מהכותרות.</p>
+      </section>
+      <section class="rec" aria-labelledby="rec-h">
+        <h2 id="rec-h"><small>מה הורים עושים היום</small>הורים קונים מכשירי הקלטה. זה לא פתרון.</h2>
+        <p>כשאין מערכת שמגינה על הילדים, הורים לוקחים את זה לידיים: מכשיר הקלטה קטן בתיק, בבובה או בכיס המעיל. בלוד זה מה שחשף את הפרשה. אבל מי שעבר את זה יודע: ההקלטה היא מעשה של ייאוש, לא פתרון.</p>
+        <figure class="wave" aria-label="המחשה: יום שלם של הקלטה, ורגע אחד שחשוב">
+          <svg viewBox="0 0 640 96" preserveAspectRatio="none" aria-hidden="true" id="waveSvg"></svg>
+          <div class="wave-lbl"><span>07:30 הקלטה מתחילה</span><span class="hit">10:42 הרגע שחשוב</span><span>16:00 שמונה וחצי שעות של אודיו</span></div>
+        </figure>
+        <ul class="recfails">
+          <li><b>מגיע אחרי החשד</b><span>מקליטים רק כשכבר יש סימנים. עד אז הילד כבר נפגע.</span></li>
+          <li><b>שעות של האזנה</b><span>שמונה שעות אודיו ביום. מישהו צריך לשבת ולהקשיב לכל דקה, בלי לדעת מה מחפשים.</span></li>
+          <li><b>שומע, לא רואה</b><span>בכי נשמע אותו דבר כשילד נפל וכשמישהו פגע בו. בלי הקשר אי אפשר לדעת.</span></li>
+          <li><b>שובר את האמון</b><span>צוות שמגלה מכשיר בתיק של ילד מרגיש מותקף, גם כשהוא לא עשה דבר.</span></li>
+          <li><b>חושף ילדים אחרים</b><span>ההקלטה קולטת את כל הגן: ילדים, הורים וצוות שלא הסכימו.</span></li>
+          <li><b>עלול להיות עבירה</b><span>לפי עורכי דין, הקלטת שיחות שההורה אינו צד להן עלולה להיחשב האזנת סתר, וההקלטה עלולה שלא להתקבל כראיה.</span></li>
+        </ul>
+        <p class="rec-end">הורים לא צריכים להפוך לחוקרים פרטיים. הם צריכים מערכת שמבינה בזמן אמת, באופן חוקי ושקוף, ומגינה על כל הילדים בגן.</p>
+      </section>
+      <section class="trust" aria-labelledby="trust-h">
+        <h2 id="trust-h"><small>האמון</small>פרשה אחת צובעת את כל הגנים בשחור</h2>
+        <p>ויש עוד מחיר, שכמעט אף אחד לא מדבר עליו. אחרי כל פרשה, אלפי גננות וסייעות מסורות, ומנהלות שעובדות יומם ולילה בשביל הילדים, פוגשות פתאום חשדנות ומבטים. הורים מפחדים, צוותים טובים עוזבים, והאמון במערכת כולה נשחק.</p>
+        <p class="trust-big">הגיע הזמן לשנות את התדמית של הגנים הפרטיים. לא עוד חשד, אלא כלי שמוכיח כל יום שהילדים בידיים טובות, ועוזר לצוות להיות טוב עוד יותר.</p>
+      </section>
+
+      <h2 id="law"><small>החוק היום</small>החוק מתעד את הפגיעה. הוא לא מונע אותה.</h2>
+      <p>ב-2018 נחקק חוק המצלמות במעונות היום. מאז, רוב המסגרות לפעוטות מצולמות כל היום. אבל הצילומים נעולים: אסור לצוות לצפות, אסור להורים לצפות, ואחרי 30 יום הכל נמחק. רק משטרה, או הורה לילד שנפגע, יכולים לראות, וגם זה רק אחרי שמישהו כבר התלונן.</p>
+      <figure class="inline-fig days30" aria-label="המחשה: 30 ימי צילום שנמחקים">
+        <div class="grid" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i class="dim"></i><i class="dim"></i><i class="dim"></i><i class="dim"></i><i class="dim"></i><i class="gone"></i><i class="gone"></i><i class="gone"></i><i class="gone"></i><i class="gone"></i>
+        </div>
+        <div class="lbls"><span>יום 1: מצלמים הכל</span><span>אף אחד לא צופה</span><span><b>יום 30: נמחק</b></span></div>
+      </figure>
+      <p>ב-2024 הגיע תיקון לחוק, עם שלושה מסלולי צפייה להורים. על הנייר זה נשמע כמו מהפכה. בשטח, כל אחד מהם נתקל באותה בעיה:</p>
+      <ul class="fails">
+        <li><b>צפייה בגן, פעם בשבוע</b><span>נציגי הורים יושבים מול המסכים. מי יודע מה לחפש? ומי יצפה בשש הפעמים האחרות?</span></li>
+        <li><b>צפייה מרחוק, 48 שעות בחודש</b><span>שעות של וידאו, הורה עייף בלילה, וחלון זמן שידוע לכולם מראש.</span></li>
+        <li><b>שידור חי לטלפון</b><span>הורה עובד לא צופה שמונה שעות ביום. זה חושף ילדים אחרים, מלחיץ את הצוות, ונשאר וולונטרי.</span></li>
+      </ul>
+      <p>ובכל המסלולים, ההחלטה אם להצטרף בידי המפעיל. שלושה מסלולים, ואף אחד מהם לא עונה על השאלה היחידה שחשובה: מי מבין, בזמן אמת, מה קורה לילד?</p>
+
+      <h2 class="h-amber"><small>הפיקוח</small>אין מי שיפקח: התקציב קוצץ ב-75%</h2>
+      <p>באותן שנים שבהן המדינה הרחיבה את חובות התיעוד, היא צמצמה את מי שאמור ללוות את הגנים. תקציב הפיקוח וההדרכה על מעונות היום ירד מ-190.5 מיליון ש״ח ב-2023 ל-46.2 מיליון בהצעת התקציב ל-2026.</p>
+      <figure class="inline-fig chart">
+        <h4>תקציב הפיקוח וההדרכה על מעונות היום</h4>
+        <div class="sub">במיליוני ש״ח</div>
+        <svg viewBox="0 0 640 150" role="img" aria-label="2023: 190.5 מיליון ש״ח. 2026: 46.2 מיליון ש״ח">
+          <g font-family="Heebo,Arial,sans-serif">
+            <text x="636" y="44" text-anchor="end" font-size="16" font-weight="700" fill="#121212">2023</text>
+            <rect class="bar" x="20" y="22" width="550" height="34" rx="4" fill="#3a4252"><title>2023: 190.5 מיליון ש״ח</title></rect>
+            <text x="32" y="45" font-size="16" font-weight="800" fill="#fff">190.5</text>
+            <text x="636" y="114" text-anchor="end" font-size="16" font-weight="700" fill="#121212">2026</text>
+            <rect class="bar" x="436" y="92" width="134" height="34" rx="4" fill="#c8102e"><title>2026 (הצעת תקציב): 46.2 מיליון ש״ח</title></rect>
+            <text x="424" y="115" text-anchor="end" font-size="16" font-weight="800" fill="#121212">46.2</text>
+          </g>
+        </svg>
+        <div class="note">מקור: קרן ברל כצנלסון (2026), לפי עבודת הגמר „המסלול הרביעי“.</div>
+      </figure>
+      <p>היום, 67% מהמפקחות אחראיות כל אחת על יותר ממאה גנים, ורק 15% מהסייעות עברו הכשרה מסודרת. אי אפשר לסגור את הפער הזה בכוח אדם. הוא חייב להיסגר אחרת.</p>
+      <blockquote class="pull">אני מחויב לתעד את הצוות שלי, ואסור לי להשתמש בתיעוד כדי לעזור לו.<cite>אהרון נייס, מנהל רשת גנים</cite></blockquote>
+    </article>
+
+    <aside class="side" aria-label="נתונים ומקרים">
+      <div class="box">
+        <h3>במספרים</h3>
+        <div class="stat"><b>17</b><span>תינוקות ופעוטות בכתב האישום שהוגש השבוע באריאל</span></div>
+        <div class="stat"><b>400+</b><span>מעשי התעללות ותקיפה שמיוחסים לשלוש נשות צוות</span></div>
+        <div class="stat"><b>30</b><span>ימים עד שהצילומים נמחקים, אם אף אחד לא התלונן</span></div>
+        <div class="stat"><b>0</b><span>מערכות שהתריעו בזמן אמת באף אחד מהמקרים</span></div>
+      </div>
+      <div class="box">
+        <h3>איך זה התגלה</h3>
+        <div class="case"><span class="t">אריאל</span><span class="w">נובמבר 2026 · כתב אישום</span><span class="h"><em>אם</em> הבחינה בחבלות חוזרות אצל בנה.</span><a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">Times of Israel</a></div>
+        <div class="case"><span class="t">רעננה</span><span class="w">אוקטובר–נובמבר 2026 · בחקירה</span><span class="h">פעוט הגיע <em>לבית החולים</em> עם פגיעה בראש.</span><a href="https://www.maariv.co.il/news/law/article-1384244" target="_blank" rel="noopener">מעריב</a></div>
+        <div class="case"><span class="t">לוד</span><span class="w">מרץ 2025 · כתב אישום</span><span class="h">ההורים <em>הציבו בעצמם</em> מכשיר הקלטה.</span><a href="https://www.walla.co.il/news/law/3736944" target="_blank" rel="noopener">וואלה</a></div>
+      </div>
+      <div class="box">
+        <h3>מה אומר החוק היום</h3>
+        <div class="note" style="font-size:14.5px;color:var(--ink-2)">צילום חובה במעונות לפעוטות (אלא אם 70% מההורים מתנגדים). בלי קול, בלי צפייה חיה, שמירה עד 30 יום. צפייה רק למשטרה או להורה לילד שנפגע. מאז 2024: שלושה מסלולי צפייה להורים, בבחירת המפעיל.</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="spread" id="fix" aria-labelledby="fix-h">
+  <div class="wrap">
+    <span class="kick">הפתרון: המסלול הרביעי</span>
+    <h2 id="fix-h">המצלמה <span>שמבינה.</span></h2>
+    <p class="deck2">המסלול הרביעי לא מוסיף עוד מצלמה ועוד מסך. הוא הופך את המצלמות שכבר מותקנות לשכבת הבנה שעובדת בזמן אמת, ומעבירה את מה שחשוב למי שיכול לפעול עכשיו.</p>
+    <figure class="big-shot">
+      <img src="understands.jpg" alt="פריים אמיתי מהגן עם סימוני המערכת: ילד עומד לבד, ילדה במשחק עצמאי, אשת צוות מסייעת לילד, ויומן תובנות בזמן אמת">
+      <figcaption><span><b>מה המערכת מבינה מאותו פריים.</b> במקום וידאו שאף אחד לא רואה: מי נמצא איפה, מה קורה, ומתי צריך לשים לב. סימוני המערכת מוצגים כאן להמחשה על פריים אמיתי מהגן. הפנים טושטשו.</span><span>עין צופיה</span></figcaption>
+    </figure>
+    <div class="spread-grid">
+      <div>
+        <div class="cols">
+          <p><b>תובנה, לא תמונה.</b> המערכת מעבדת את מה שקורה בגן בזמן אמת, ומה שיוצא ממנה הוא טקסט: מה קרה, מתי ואיפה. אף אחד לא צריך לשבת מול וידאו, ושום הורה לא רואה ילדים שאינם שלו.</p>
+          <p><b>התראה כשעוד אפשר לעצור.</b> ילד שבוכה לבד דקות ארוכות, אירוע חריג, מבוגר שמאבד שליטה: ההתראה מגיעה לאחראי בזמן שזה קורה, לא חודש אחרי.</p>
+          <p><b>שותף לצוות, לא שוטר.</b> בכל יום הצוות מקבל משוב: מה עבד, איפה היה עומס, מה אפשר לשפר מחר. כלי שמכיר בעבודה הטובה, ולא רק מחפש אשמים.</p>
+          <p><b>פרטיות מובנית.</b> בלי וידאו לצפייה, דוחות ברמת הגן והקבוצה, יומן גישה שניתן לביקורת חיצונית, וכללים כתובים מה המערכת עושה ומה לא.</p>
+        </div>
+        <div class="vs" role="table" aria-label="היום מול המסלול הרביעי">
+          <div class="vs-row h" role="row"><div class="k" role="columnheader"></div><div class="o" role="columnheader">היום</div><div class="n" role="columnheader">המסלול הרביעי</div></div>
+          <div class="vs-row" role="row"><div class="k" role="rowheader">מתי מגלים</div><div class="o" role="cell">אחרי שילד נפגע</div><div class="n" role="cell">בזמן אמת</div></div>
+          <div class="vs-row" role="row"><div class="k" role="rowheader">מי יודע</div><div class="o" role="cell">משטרה, אחרי תלונה</div><div class="n" role="cell">הצוות וההנהלה, מיד</div></div>
+          <div class="vs-row" role="row"><div class="k" role="rowheader">מי צופה</div><div class="o" role="cell">הורה או חוקר, שעות</div><div class="n" role="cell">אף אחד. המערכת מבינה</div></div>
+          <div class="vs-row" role="row"><div class="k" role="rowheader">מה נשמר</div><div class="o" role="cell">וידאו של כל היום</div><div class="n" role="cell">תובנות כתובות</div></div>
+          <div class="vs-row" role="row"><div class="k" role="rowheader">ליווי מקצועי</div><div class="o" role="cell">מפקחת אחת למאה גנים</div><div class="n" role="cell">משוב רציף, כל יום</div></div>
+        </div>
+      </div>
+      <figure>
+        <div class="phone" aria-label="המחשה של התראות במערכת">
+          <div class="scr">
+            <div class="notch"></div>
+            <div class="app"><b>עין צופיה</b><span>קבוצת פעוטות · היום</span></div>
+            <div class="ins a"><small>דורש תשומת לב · 10:42</small>פעוט בוכה ומתבודד כבר 12 דקות באזור המשחק, בלי מבוגר בקרבתו.</div>
+            <div class="ins g"><small>נקודת חוזק · 09:15</small>במעגל הבוקר הגננת שיקפה רגשות לשלושה ילדים שהתקשו, והקבוצה נרגעה.</div>
+            <div class="ins t"><small>הצעה למחר</small>במעבר לארוחת הצהריים נוצר עומס. כדאי לפצל לשתי קבוצות.</div>
+          </div>
+        </div>
+        <figcaption style="color:var(--night-muted);border-color:var(--night-line)"><span>כך נראות התראות ותובנות במערכת. הדוגמאות להמחשה בלבד.</span></figcaption>
+      </figure>
+    </div>
+
+    <figure class="spread-photo shot">
+      <div class="shot-frame"><img src="system-ui.png" alt="מסך מערכת עין צופיה בגן ילדים: וידאו עם פנים מטושטשות, ציר זמן וסימון אירועים"></div>
+      <figcaption><span><b>זה לא הדמיה. זה מסך המערכת, כפי שהיא רצה היום בגן ילדים.</b> ציר זמן של היום, ניתוח קטעים, וסימון אירועים לפי סוג: פדגוגי, בטיחות, אלימות, משחק חופשי, אוכל. הפנים טושטשו לשמירת פרטיות.</span><span>צילום מסך: עין צופיה</span></figcaption>
+    </figure>
+    <div id="ready">
+      <div class="proofline">
+        <div class="pl"><span class="d">מחר בבוקר</span><b>מתחברים למצלמות הקיימות</b><span>בלי רכש חומרה ברוב המסגרות, בלי עבודות התקנה.</span></div>
+        <div class="pl"><span class="d">השבוע הראשון</span><b>תובנות ראשונות לצוות</b><span>התראות בזמן אמת ודוח יומי למנהלת ולצוות.</span></div>
+        <div class="pl"><span class="d">החודש הראשון</span><b>פועל במלואו בשטח</b><span>כל הגן מכוסה, והצוות עובד עם המערכת כל יום.</span></div>
+      </div>
+      <p class="blocker">זה לא רעיון. <b>עין צופיה</b> כבר קיימת, עובדת ומוכחת בשטח: כשנה בייצור, בכל קבוצות הגיל מלידה ועד 6. המערכת פותחה בתמיכה ובמימון של <b>רשות החדשנות</b>. הטכנולוגיה מוכנה. <b>החסם היחיד הוא החוק.</b></p>
+      <div class="ctas"><a class="bigbtn eye" href="#act">אני רוצה את זה בגן של הילד שלי</a><a class="bigbtn line" href="https://emma-il.netlify.app" target="_blank" rel="noopener">לאתר המלא של עין צופיה ←</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="demands wrap" id="decl" aria-labelledby="dem-h">
+  <div class="dbox">
+    <span class="label">הצהרת הורים ואנשי חינוך</span>
+    <h2 id="dem-h">הצהרה פומבית: עדכון חוק המצלמות</h2>
+    <p class="intro">אל שר/ת החינוך וחברי ועדת החינוך של הכנסת, בהעתק לרשות להגנת הפרטיות, לארגוני המעונות והגנים ולארגוני ההורים. הורים, צוותים ואנשי חינוך ואקדמיה מבקשים ארבעה דברים:</p>
+    <div class="dlist">
+      <div><h3>מסלול רביעי בחוק</h3><p>ניתוח אוטומטי בזמן אמת של המצלמות הקיימות, שתוצריו התראות ותובנות כתובות לגורם האחראי, ללא צפייה שוטפת בווידאו.</p></div>
+      <div><h3>תנאים מחייבים</h3><p>בלי שמירת וידאו מעבר לנדרש, שימוש למטרות הגנה וליווי מקצועי בלבד, תיעוד כל גישה ופיקוח של הרשות להגנת הפרטיות.</p></div>
+      <div><h3>הפעלה עם מחקר</h3><p>הפעלה במסגרות כבר בשלב הראשון, בליווי מחקר הערכה חיצוני ובלתי תלוי שתוצאותיו יפורסמו.</p></div>
+      <div><h3>תקציב ייעודי</h3><p>תקציב למסלול ולליווי המקצועי, בנוסף על משאבי הפיקוח הקיימים.</p></div>
+    </div>
+    <div class="dfoot"><p>החתימה היא תמיכה במדיניות ולא במוצר מסוים, ואינה יוצרת התחייבות. ההצהרה תוגש עם ההגעה ל-10,000 חתימות.</p><a class="bigbtn red" href="atzuma.html">לקריאת ההצהרה המלאה ולחתימה</a></div>
+  </div>
+</section>
+
+<section class="act" id="act" aria-labelledby="act-h">
+  <div class="wrap">
+    <h2 id="act-h">הורים, הגיע הזמן להתאחד.</h2>
+    <p class="lead">כל תיקון חוק עד היום קרה כי הורים לא שתקו. הפעם נדרוש את הפתרון הנכון.</p>
+    <a class="signbox" href="atzuma.html"><span><b>חתמו על הצהרת ההורים למסלול הרביעי</b><small>הורים, צוותים ואנשי חינוך. ההצהרה תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</small></span><span class="sb-go">לחתימה</span></a>
+    <div class="agrid">
+      <div class="ac"><h3>שתפו את הכתבה</h3><p>שלחו לקבוצת ההורים של הגן, למשפחה ולחברים.</p><div class="row"><a class="bigbtn white" id="wa2" href="#" target="_blank" rel="noopener">וואטסאפ</a><button class="bigbtn white" type="button" data-share>העתקת קישור</button></div></div>
+      <div class="ac"><h3>כתבו למקבלי ההחלטות</h3><p>שלחו את המכתב המוכן לחברי ועדת החינוך ולשר החינוך. אפשר לערוך אותו.</p><div class="row"><a class="bigbtn white" href="#letter">למכתב</a></div></div>
+      <div class="ac"><h3>דברו עם הגן שלכם</h3><p>שאלו את המנהלת: מי מבין מה המצלמות אצלנו רואות? ספרו לה שזו גם תמיכה פדגוגית לצוות: משוב יומי שעוזר לגננות ולסייעות לעבוד טוב יותר, וכלי שמכיר בעבודה שלהן. הציעו להצטרף כבר עכשיו.</p><div class="row"><a class="bigbtn white" href="#contact">צרו איתנו קשר</a></div></div>
+    </div>
+    <div class="letter" id="letter">
+      <h3>מכתב מוכן לשליחה</h3>
+      <textarea id="letterTxt" aria-label="נוסח המכתב">לכבוד חברי ועדת החינוך של הכנסת ושר החינוך,
+
+אני הורה לילד במסגרת לגיל הרך. בשבועות האחרונים נחשפו שוב מקרי התעללות קשים בפעוטות, ושוב הם התגלו במקרה: חבלה שהורה הבחין בה, ילד שהגיע לבית החולים.
+
+חוק המצלמות ומסלולי הצפייה שנוספו לו הם צעדים חשובים, אבל הם מתעדים את הפגיעה ולא מונעים אותה. אף הורה לא יכול לצפות שמונה שעות ביום, והפיקוח על המעונות קוצץ בכשלושה רבעים.
+
+אני דורש/ת:
+1. להכיר בחוק במסלול רביעי: עיבוד בזמן אמת של המצלמות הקיימות, בלי שמירת וידאו ובלי צפייה, שמתריע ומלווה את הצוות.
+2. לאשר הפעלה בשטח כבר עכשיו. מערכת כזו כבר קיימת ופועלת בישראל, ואפשר להפעיל אותה במעונות ובגנים מהחודש הראשון, עם מחקר הערכה חיצוני ובלתי תלוי.
+3. לתקצב שכבת הבנה מעל התשתית הקיימת, במקום לקצץ בפיקוח.
+
+כשפגיעה מתגלה היום, היא כבר קרתה, וכל פרשה פוגעת גם באלפי צוותים מסורים ובאמון ההורים בגנים. הילדים שלנו לא יכולים לספר. המערכת צריכה לראות ולהבין בשבילם.
+
+בכבוד רב,
+</textarea>
+      <div class="row"><button class="bigbtn red" id="copyLetter" type="button">העתקת המכתב</button><span class="note">הוסיפו את שמכם ואת היישוב בסוף.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div><h2 id="contact-h">רוצים את עין צופיה בגן שלכם?</h2><p>הורים, מנהלות, רשויות ומחוקקים: נשמח להראות איך המערכת עובדת בשטח.</p></div>
+    <div class="cards">
+      <div class="cc"><span class="l">טלפון</span><a class="v" href="tel:+972508787431" dir="ltr">050-878-7431</a><button class="chipbtn" type="button" data-copy="050-878-7431">העתקה</button></div>
+      <div class="cc"><span class="l">מייל</span><a class="v" href="mailto:emma@tsofia.ai" dir="ltr">emma@tsofia.ai</a><button class="chipbtn" type="button" data-copy="emma@tsofia.ai">העתקה</button></div>
+      <div class="cc"><span class="l">האתר המלא</span><a class="v" href="https://emma-il.netlify.app" target="_blank" rel="noopener" dir="ltr">emma-il.netlify.app</a><a class="chipbtn" href="https://emma-il.netlify.app" target="_blank" rel="noopener">כניסה</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sources wrap" aria-labelledby="src-h">
+  <h3 id="src-h">מקורות</h3>
+  <ol>
+    <li><a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">Times of Israel: כתב אישום במעון באריאל (נובמבר 2026)</a></li>
+    <li><a href="https://www.maariv.co.il/news/law/article-1384244" target="_blank" rel="noopener">מעריב: עדות אם בפרשת רעננה (נובמבר 2026)</a></li>
+    <li><a href="https://www.kikar.co.il/israel-news/raanana-daycare-father-reveals-abuse-horror" target="_blank" rel="noopener">כיכר השבת: אב לפעוט בפרשת רעננה (נובמבר 2026)</a></li>
+    <li><a href="https://www.walla.co.il/news/law/3736944" target="_blank" rel="noopener">וואלה: כתב אישום במעון בלוד (מרץ 2025)</a></li>
+    <li><a href="https://www.gov.il/BlobFolder/news/cameras_daycare_guide/he/fdr.pdf" target="_blank" rel="noopener">הרשות להגנת הפרטיות: מדריך מצלמות במעונות יום</a></li>
+    <li><a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">ynet: תיקון חוק המצלמות אושר סופית (נובמבר 2024)</a></li>
+    <li><a href="https://www.kipa.co.il/1191739-0" target="_blank" rel="noopener">כיפה: שלושת מסלולי הצפייה בתיקון לחוק (2024)</a></li>
+    <li><a href="https://www.mako.co.il/home-family-toddlers/education/Article-65f285786421081027.htm" target="_blank" rel="noopener">mako: האם מותר להורים להקליט בגן? (אפריל 2022)</a></li>
+    <li>מבקר המדינה (2022); קרן ברל כצנלסון (2026). מתוך עבודת הגמר „המסלול הרביעי“, אהרון נייס, מכללת אורנים, 2026.</li>
+  </ol>
+</section>
+</main>
+
+<aside class="emma-strip" aria-label="פרסומת">
+  <div class="wrap"><a href="https://emma-il.netlify.app" target="_blank" rel="noopener"><img src="logo-emma.jpg" alt=""><span>רוצים את עין צופיה בגן? <b>רוצים אותה גם בבית?</b> הכירו את אמה, תובנות על הילד שלכם מסרטון קצר.</span></a><small>מודעה</small></div>
+</aside>
+
+<footer><div class="wrap"><div class="fbrand"><img src="logo-ein.png" alt="" class="flogo"><b>המסלול הרביעי</b> · יוזמה של <a href="https://emma-il.netlify.app" target="_blank" rel="noopener"><b>עין צופיה</b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><div>מספיק עם הפלסטר. הגיע הזמן לפתרון שעובד. · <a href="atzuma.html#a11y">הצהרת נגישות</a> · <a href="atzuma.html#privacy">מדיניות פרטיות</a></div></div></footer>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(()=>{
+  const SHARE_URL = "https://maslul4.tsofia.ai/"; // the public address once live; falls back to the current address
+  const url = SHARE_URL || location.href.split("#")[0];
+  const msg = "המצלמות ראו הכל. אף אחד לא הסתכל. מספיק עם הפלסטר, הגיע הזמן לפתרון שעובד: ";
+  const $ = s => document.querySelector(s);
+  const toast = t => { const el=$("#toast"); el.textContent=t; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(()=>el.hidden=true,2000); };
+  ["#wa1","#wa2"].forEach(id=>{ const el=$(id); if(el) el.href="https://wa.me/?text="+encodeURIComponent(msg+url); });
+  async function copy(text, done, el){
+    try{ await navigator.clipboard.writeText(text); toast(done); }
+    catch(e){ if(el){ el.focus(); el.select(); } toast("סמנו את הטקסט והעתיקו ידנית"); }
+  }
+  document.querySelectorAll("[data-share]").forEach(b=>b.onclick=()=>copy(msg+url,"הקישור הועתק"));
+  document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>copy(b.dataset.copy,"הועתק"));
+  $("#copyLetter").onclick=()=>copy($("#letterTxt").value,"המכתב הועתק",$("#letterTxt"));
+})();
+</script>
+<script>
+(()=>{const s=document.getElementById('waveSvg');if(!s)return;let r=7,h='';const n=160,hit=Math.round(n*0.5);
+for(let i=0;i<n;i++){r=(r*9301+49297)%233280;let a=6+(r/233280)*16;const d=Math.abs(i-hit);if(d<3)a=40-d*4;
+h+=`<rect x="${i*4}" y="${48-a}" width="2.4" height="${a*2}" rx="1" fill="${d<3?'#ff3b55':'#5c6475'}"/>`}
+s.innerHTML=h})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>הצהרת הורים ואנשי חינוך</title>
+<meta name="description" content="הצהרה פומבית בעניין עדכון חוק המצלמות במעונות היום לפעוטות: הוספת מסלול של ניתוח בזמן אמת, ללא צפייה בווידאו, בפיקוח ובשקיפות.">
+<meta property="og:title" content="הצהרת הורים ואנשי חינוך: עדכון חוק המצלמות">
+<meta property="og:description" content="קראו את ההצהרה לשר/ת החינוך ולכנסת והצטרפו בחתימה.">
+<meta property="og:image" content="https://maslul4.tsofia.ai/understands.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;600;700&display=swap">
+<style>
+/* A formal public statement: one quiet document column with the signing form beside it. White page, ink text, a single brand blue for actions. No slogans, no decoration. */
+:root{
+  color-scheme:light;
+  --paper:#fff;--soft:#f6f7f8;--ink:#16191d;--ink-2:#3a4048;--muted:#6b727c;--rule:#e2e5e9;--rule-2:#cdd2d8;
+  --blue:#1e6fa3;--blue-d:#185b86;--blue-soft:#eef5fa;
+  --f-doc:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --f-ui:"Heebo","Arial Hebrew",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:17px;line-height:1.65;direction:rtl}
+[hidden]{display:none!important}
+a{color:var(--blue)}
+button,input,select{font:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+h1,h2,h3{margin:0;font-weight:700;text-wrap:balance}
+
+.bar{border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{height:30px;width:auto}
+.brand span{font-size:14px;color:var(--muted)}
+.brand b{color:var(--ink);font-weight:700}
+.bar .back{font-size:14px;color:var(--muted);text-decoration:none}
+.bar .back:hover{color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:56px;padding-block:44px 40px;align-items:start}
+
+/* document */
+.doc{max-width:680px}
+.doc .type{font-size:14px;color:var(--muted);font-weight:500}
+.doc h1{font-family:var(--f-doc);font-size:clamp(30px,4.2vw,40px);line-height:1.15;margin-top:6px}
+.doc .re{font-size:16px;color:var(--ink-2);margin:10px 0 0}
+.tally{display:flex;align-items:center;gap:14px;margin-top:22px;padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:15px;color:var(--ink-2)}
+.tally b{font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums}
+.tally .track{flex:1;height:4px;background:var(--rule);border-radius:4px;overflow:hidden;min-width:60px}
+.tally .track i{display:block;height:100%;width:0;background:var(--blue);transition:width .8s ease}
+.tally .goal{color:var(--muted);font-size:14px;white-space:nowrap}
+
+.opening{font-family:var(--f-doc);font-size:19px;line-height:1.75;margin:26px 0 0}
+.doc h2{font-size:18px;margin:34px 0 10px;padding-top:4px;color:var(--ink)}
+.doc h2 span{color:var(--blue);margin-inline-end:6px}
+.doc ol{margin:0;padding-inline-start:22px}
+.doc ol li{margin-bottom:9px;color:var(--ink-2);padding-inline-start:4px}
+.doc ol li::marker{color:var(--muted);font-variant-numeric:tabular-nums}
+.princ{margin:0;padding:0;list-style:none}
+.princ li{padding:10px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.princ li:last-child{border-bottom:1px solid var(--rule)}
+.princ b{color:var(--ink);font-weight:600}
+.meta{margin:16px 0 0;display:grid;gap:3px;font-size:14.5px}
+.meta div{display:grid;grid-template-columns:52px 1fr;gap:8px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0;color:var(--ink-2)}
+.refs{font-size:13px;color:var(--muted);margin:8px 0 0;line-height:1.7}
+.refs a{color:var(--muted)}
+.para{margin:0;color:var(--ink-2)}
+.privacy details+details{margin-top:12px}
+.meaning{margin-top:34px;background:var(--soft);border-radius:10px;padding:18px 20px}
+.meaning h2{margin:0 0 6px!important;font-size:17px}
+.meaning p{margin:0;color:var(--ink-2);font-size:15.5px}
+.meaning p+p{margin-top:8px}
+.initiator{margin-top:20px;font-size:14.5px;color:var(--muted)}
+
+.experts{margin-top:34px}
+.experts h2{margin-top:0}
+.experts p{margin:0;color:var(--ink-2);font-size:15.5px}
+.exlist{list-style:none;margin:12px 0 0;padding:0}
+.exlist li{padding:9px 0;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.exlist b{font-weight:600}
+.exlist span{font-size:14.5px;color:var(--muted)}
+.exjoin{display:inline-block;margin-top:10px;font-size:15px;font-weight:500}
+
+/* form */
+.card{position:sticky;top:20px;border:1px solid var(--rule-2);border-radius:12px;padding:22px;background:#fff}
+.card h2{font-size:20px}
+.card .sub{color:var(--muted);font-size:14.5px;margin:4px 0 16px}
+.f{display:grid;gap:4px;margin-bottom:13px}
+.f label,.f .lb{font-weight:600;font-size:14.5px}
+.f .hint{font-size:12.5px;color:var(--muted);line-height:1.4}
+.f .opt{font-weight:400;color:var(--muted);font-size:13px}
+.f input[type=text],.f input[type=tel],.f input[type=email],.f select{width:100%;border:1px solid var(--rule-2);border-radius:8px;padding:10px 11px;background:#fff;color:var(--ink);font-size:16px}
+.f input:focus,.f select:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(30,111,163,.14)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.levels{display:grid;gap:6px}
+.lvl{display:grid;grid-template-columns:20px 1fr;gap:9px;align-items:start;border:1px solid var(--rule-2);border-radius:8px;padding:9px 11px;cursor:pointer}
+.lvl input{margin:3px 0 0;width:16px;height:16px;accent-color:var(--blue)}
+.lvl b{display:block;font-size:15px;font-weight:600}
+.lvl span span{font-size:13px;color:var(--muted)}
+.lvl:has(input:checked){border-color:var(--blue);background:var(--blue-soft)}
+.acts{display:grid;gap:6px;padding:10px 11px;background:var(--soft);border-radius:8px}
+.chk{display:grid;grid-template-columns:18px 1fr;gap:9px;align-items:start;font-size:14px;line-height:1.45;cursor:pointer;color:var(--ink-2)}
+.chk input{margin:2px 0 0;width:16px;height:16px;accent-color:var(--blue)}
+.consents{display:grid;gap:10px;margin:4px 0 16px;padding-top:12px;border-top:1px solid var(--rule)}
+.consents .chk{font-size:13.5px}
+.go{width:100%;border:0;border-radius:8px;background:var(--blue);color:#fff;font-weight:600;font-size:17px;padding:13px;cursor:pointer}
+.go:hover{background:var(--blue-d)}
+.go[disabled]{opacity:.6;cursor:wait}
+.err{color:#b3261e;font-size:14px;font-weight:500;margin-top:8px}
+.hp{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
+.demo{font-size:12.5px;color:var(--muted);border:1px dashed var(--rule-2);border-radius:6px;padding:6px 9px;margin-top:10px}
+
+.thanks h2{font-size:21px}
+.thanks p{color:var(--ink-2);margin:8px 0 0;font-size:15.5px}
+.sharebtns{display:grid;gap:8px;margin-top:16px}
+.sbtn{display:block;border-radius:8px;padding:11px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;text-align:center;border:1px solid var(--rule-2);background:#fff;color:var(--ink)}
+.sbtn.pri{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.pilot{margin-top:20px;border-top:1px solid var(--rule);padding-top:16px}
+.pilot h3{font-size:16.5px}
+.pilot p{font-size:14.5px;color:var(--ink-2);margin:4px 0 12px}
+.pilot .ok{color:var(--blue);font-weight:600;font-size:15px;margin-top:8px}
+.recent{padding-block:6px 30px}
+.recent h3{font-size:16px;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:14.5px;color:var(--muted)}
+
+.privacy{border-top:1px solid var(--rule);padding-block:20px 34px;font-size:14px;color:var(--ink-2)}
+.privacy summary{cursor:pointer;font-weight:600;font-size:15px}
+.privacy ul{margin:10px 0 0;padding-inline-start:20px;max-width:760px}
+.privacy li{margin-bottom:5px}
+footer{border-top:1px solid var(--rule);color:var(--muted);font-size:13.5px}
+footer .wrap{padding-block:16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+footer a{color:var(--ink-2)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:8px;font-size:14.5px;z-index:50}
+
+.tosign{display:none}
+@media (max-width:920px){
+  .tosign{display:block;margin-top:12px;text-align:center;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;border-radius:8px;padding:11px}
+  .grid{grid-template-columns:1fr;gap:34px;padding-top:30px}
+  .card{position:static}
+}
+@media (max-width:420px){.two{grid-template-columns:1fr}.card{padding:18px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="bar"><div class="wrap">
+  <a class="brand" href="index.html"><img src="logo-ein.png" alt=""><span><b>המסלול הרביעי</b> · יוזמה של עין צופיה</span></a>
+  <a class="back" href="index.html">לכתבה המלאה</a>
+</div></header>
+
+<main class="wrap grid">
+  <article class="doc" aria-labelledby="doc-h">
+    <div class="type">הצהרה פומבית</div>
+    <h1 id="doc-h">הצהרת הורים ואנשי חינוך בעניין הגנה על פעוטות במסגרות לגיל הרך</h1>
+    <p class="re">בעניין עדכון חוק התקנת מצלמות לשם הגנה על פעוטות במעונות יום לפעוטות, התשע״ח–2018</p>
+    <dl class="meta">
+      <div><dt>אל</dt><dd>שר/ת החינוך · ועדת החינוך, התרבות והספורט של הכנסת · חברי הכנסת</dd></div>
+      <div><dt>העתק</dt><dd>הרשות להגנת הפרטיות · הגורמים האחראים על הגיל הרך במשרד החינוך · ארגוני המעונות והגנים · הנהגת ההורים הארצית · המועצה לשלום הילד · מרכז השלטון המקומי</dd></div>
+      <div><dt>נוסח</dt><dd>8 בנובמבר 2026</dd></div>
+    </dl>
+
+    <div class="tally" aria-live="polite">
+      <span><b id="count">0</b> חתומים</span>
+      <span class="track" aria-hidden="true"><i id="bar"></i></span>
+      <span class="goal">היעד הבא: <span id="goalTxt">10,000</span></span>
+    </div>
+    <a class="tosign" href="#sign">למעבר לטופס החתימה</a>
+
+    <p class="opening">אנו, החתומים מטה, הורים לילדים במסגרות לגיל הרך, אנשי צוות, מנהלות ואנשי חינוך ואקדמיה, פונים לשר/ת החינוך ולחברי הכנסת בבקשה לעדכן את החוק כמפורט להלן.</p>
+
+    <h2><span>א.</span>רקע</h2>
+    <ol>
+      <li>החוק מחייב התקנת מצלמות במעונות היום לפעוטות. הצילומים נשמרים עד 30 יום, ואין צופים בהם אלא לאחר תלונה או חשד, ובידי גורמים מוסמכים בלבד.</li>
+      <li>התיקון לחוק משנת 2024 הוסיף מסלולי צפייה להורים. מסלולים אלה מבוססים על צפייה אנושית בווידאו, והפעלתם נתונה להחלטת המפעיל.</li>
+      <li>מקרי פגיעה בפעוטות ממשיכים להתגלות באיחור ובאופן מקרי: הורה שהבחין בסימנים, או פנייה לטיפול רפואי. בשלב זה הפגיעה כבר התרחשה, לעיתים לאורך זמן.</li>
+      <li>במקביל צומצמו משאבי הפיקוח וההדרכה על המסגרות. לפי הצעת התקציב, תקציב הפיקוח וההדרכה על מעונות היום צפוי לרדת מ-190.5 מיליון ש״ח בשנת 2023 ל-46.2 מיליון ש״ח בשנת 2026.</li>
+      <li>המצב הקיים פוגע בילדים, וגם באמון הציבור בצוותים המסורים, שהם רוב העובדים במסגרות.</li>
+    </ol>
+    <p class="refs">מקורות: <a href="https://protocol.co.il/daycare-camera/" target="_blank" rel="noopener">החוק והוראותיו</a> · <a href="https://www.gov.il/BlobFolder/news/cameras_daycare_guide/he/fdr.pdf" target="_blank" rel="noopener">הרשות להגנת הפרטיות</a> · <a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">התיקון לחוק, 2024</a> · <a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">כתב האישום באריאל, 2026</a> · תקציב: קרן ברל כצנלסון, 2026</p>
+
+    <h2><span>ב.</span>עקרונות</h2>
+    <ul class="princ">
+      <li><b>הגנה בזמן אמת.</b> מנגנון ההגנה צריך לסייע במניעת פגיעה בזמן שהיא מתרחשת, ולא רק לתעד אותה לאחר מעשה.</li>
+      <li><b>ליווי מקצועי לצוות.</b> הכלי צריך לשמש גם לליווי, למשוב ולחיזוק הצוותים, ולא רק לאיתור כשלים.</li>
+      <li><b>פרטיות.</b> יש להגן על פרטיותם של הילדים, ההורים והצוות. אין לאפשר צפייה שוטפת בווידאו או שמירת צילומים מעבר לנדרש.</li>
+      <li><b>שקיפות ובקרה.</b> כל שימוש בטכנולוגיה צריך להיות מוסדר, מתועד וכפוף לביקורת חיצונית.</li>
+      <li><b>אחריות ממלכתית.</b> הורים אינם צריכים לפעול בעצמם, למשל באמצעות מכשירי הקלטה, כדי להגן על ילדיהם.</li>
+    </ul>
+
+    <h2><span>ג.</span>הבקשה</h2>
+    <ol>
+      <li>לעדכן את החוק ולהוסיף לו <b>מסלול רביעי</b>: ניתוח אוטומטי, בזמן אמת, של צילומי המצלמות הקיימות, שתוצריו הם התראות ותובנות כתובות לגורם האחראי במסגרת, ללא צפייה אנושית שוטפת בווידאו.</li>
+      <li>לקבוע תנאים מחייבים למסלול: הימנעות משמירת וידאו מעבר לנדרש, הגבלת השימוש במידע למטרות הגנה וליווי מקצועי, תיעוד כל גישה למידע, ופיקוח של הרשות להגנת הפרטיות.</li>
+      <li>לאפשר הפעלה במסגרות כבר בשלב הראשון, בליווי מחקר הערכה חיצוני ובלתי תלוי שתוצאותיו יפורסמו לציבור.</li>
+      <li>להקצות תקציב ייעודי למסלול ולליווי המקצועי, בנוסף על משאבי הפיקוח הקיימים.</li>
+    </ol>
+
+    <h2><span>ד.</span>הגשה ומעקב</h2>
+    <p class="para">ההצהרה תוגש לשר/ת החינוך וליו״ר ועדת החינוך של הכנסת בצירוף מכתב נלווה ומספר החותמים המאומת, עם ההגעה ל-10,000 חתימות או לקראת דיון בנושא בוועדה, המוקדם מביניהם. החתימה תימשך גם לאחר ההגשה, ומספר החותמים המעודכן יוגש שוב בכל אבן דרך ובכל דיון. ההגשה תיעשה בפגישה או במכתב רשמי, ועותק יישלח לגורמים המפורטים בראש ההצהרה. חותמים שאישרו קבלת עדכונים יעודכנו על ההגשה ועל התגובה שתתקבל.</p>
+
+    <section class="meaning" aria-labelledby="mean-h">
+      <h2 id="mean-h">משמעות החתימה</h2>
+      <p>בחתימתי אני מצטרף/ת להצהרה זו ותומך/ת בבקשה המפורטת בה. ההצהרה עוסקת במדיניות ציבורית ואינה מביעה תמיכה בספק או במוצר מסוים. החתימה אינה יוצרת התחייבות כספית או משפטית.</p>
+      <p>שמות החותמים ויישוביהם יוגשו לחברי הכנסת ולמשרדי הממשלה הרלוונטיים כחלק מההצהרה. פרטי קשר לא יימסרו.</p>
+    </section>
+
+    <p class="initiator">יוזם ההצהרה: אהרון נייס, מנהל רשת גנים ומייסד עין צופיה, חברה המפתחת טכנולוגיה מהסוג המתואר בהצהרה. ההצהרה מנוסחת כך שאינה תלויה בספק מסוים.</p>
+
+    <section class="experts" aria-labelledby="ex-h">
+      <h2 id="ex-h">אנשי חינוך ואקדמיה התומכים בהצהרה</h2>
+      <p id="exIntro">אנשי מקצוע מתחומי הגיל הרך, החינוך והאקדמיה שהצטרפו להצהרה.</p>
+      <ul class="exlist" id="exList"></ul>
+      <a class="exjoin" href="#sign" id="exJoin">איש או אשת חינוך או אקדמיה? הצטרפו כתומכים מקצועיים</a>
+    </section>
+  </article>
+
+  <aside class="card" id="sign" aria-labelledby="sign-h">
+    <form id="form" novalidate>
+      <h2 id="sign-h">הצטרפות להצהרה</h2>
+      <p class="sub">שם, יישוב ודוא״ל.</p>
+
+      <div class="hp" aria-hidden="true"><label>אתר <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="two">
+        <div class="f"><label for="name">שם מלא</label><input type="text" id="name" name="name" autocomplete="name" required maxlength="80"></div>
+        <div class="f"><label for="city">יישוב</label><input type="text" id="city" name="city" autocomplete="address-level2" required maxlength="60"></div>
+      </div>
+
+      <div class="f"><label for="email">דוא״ל</label><input type="email" id="email" name="email" autocomplete="email" dir="ltr" required maxlength="100"><span class="hint">לאימות החתימה ולמניעת כפילויות. לא נשלח אליך הודעות בלי אישורך.</span></div>
+
+      <div class="f"><label for="role">אני חותם/ת בתור</label>
+        <select id="role" name="role" required>
+          <option value="">בחירה</option>
+          <option>הורה</option>
+          <option>איש או אשת צוות במסגרת</option>
+          <option>מנהל או מנהלת מסגרת</option>
+          <option>איש או אשת חינוך או אקדמיה</option>
+          <option>אחר</option>
+        </select>
+      </div>
+
+      <div id="proBox" hidden>
+        <div class="f"><label for="title">תפקיד ומוסד</label><input type="text" id="title" name="title" maxlength="120" placeholder="לדוגמה: מרצה לגיל הרך, מכללת…"></div>
+        <label class="chk" style="margin-bottom:13px"><input type="checkbox" name="proPublic" id="proPublic"><span>מאשר/ת להציג את שמי ואת תפקידי ברשימת התומכים המקצועיים</span></label>
+      </div>
+
+      <div class="f"><span class="lb" id="lvl-l">מעורבות</span>
+        <div class="levels" role="radiogroup" aria-labelledby="lvl-l">
+          <label class="lvl"><input type="radio" name="level" value="sign" checked><span><b>חתימה בלבד</b><span>שמי יצורף להצהרה.</span></span></label>
+          <label class="lvl"><input type="radio" name="level" value="updates"><span><b>חתימה ועדכונים</b><span>אקבל עדכונים על התקדמות ההצהרה.</span></span></label>
+          <label class="lvl"><input type="radio" name="level" value="active"><span><b>חתימה ופעילות</b><span>אשמח לסייע בקידום ההצהרה.</span></span></label>
+        </div>
+      </div>
+
+      <div class="f" id="actBox" hidden><span class="lb">באיזה אופן <span class="opt">(אפשר לבחור כמה)</span></span>
+        <div class="acts">
+          <label class="chk"><input type="checkbox" name="acts" value="הפצה להורים"><span>הפצת ההצהרה להורים נוספים</span></label>
+          <label class="chk"><input type="checkbox" name="acts" value="הצגה במסגרת"><span>הצגת ההצהרה במסגרת של ילדי</span></label>
+          <label class="chk"><input type="checkbox" name="acts" value="כנסת ותקשורת"><span>השתתפות בדיונים בכנסת או בתקשורת</span></label>
+          <label class="chk"><input type="checkbox" name="acts" value="ריכוז אזורי"><span>ריכוז הורים באזור מגוריי</span></label>
+        </div>
+      </div>
+
+      <div id="contactBox" hidden>
+        <div class="two">
+          <div class="f" style="grid-column:1/-1"><label for="phone">טלפון <span class="opt" id="phoneOpt">(רשות, לעדכונים בוואטסאפ)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" dir="ltr" inputmode="tel" maxlength="20"></div>
+        </div>
+      </div>
+
+      <div class="consents">
+        <label class="chk"><input type="checkbox" name="agree" id="agree" required><span>קראתי את ההצהרה ואני מצטרף/ת אליה. אני מאשר/ת את שמירת הפרטים שמסרתי לצורך ההצהרה והגשתה, בהתאם ל<a href="#privacy">מדיניות הפרטיות</a>.</span></label>
+        <label class="chk" id="optinRow" hidden><input type="checkbox" name="optin" id="optin"><span>מאשר/ת לקבל עדכונים בנושא ההצהרה בדוא״ל, ובוואטסאפ אם מסרתי טלפון. ניתן לבטל בכל עת.</span></label>
+        <label class="chk"><input type="checkbox" name="showName" id="showName"><span>מאשר/ת להציג את שמי הפרטי ויישובי ברשימת החותמים באתר.</span></label>
+      </div>
+
+      <button class="go" type="submit" id="goBtn">אני מצטרף/ת להצהרה</button>
+      <div class="err" id="err" role="alert" hidden></div>
+      <div class="demo" id="demoNote" hidden>מצב בדיקה: הטופס עדיין אינו מחובר, והחתימות אינן נשמרות.</div>
+    </form>
+
+    <div class="thanks" id="thanks" hidden tabindex="-1">
+      <h2>תודה, <span id="tName"></span>. חתימתך נקלטה.</h2>
+      <p id="tMsg">ככל שיחתמו יותר הורים ואנשי חינוך, כך יגבר משקלה של ההצהרה. נשמח אם תשתפו אותה.</p>
+      <div class="sharebtns">
+        <a class="sbtn pri" id="waShare" href="#" target="_blank" rel="noopener">שיתוף בוואטסאפ</a>
+        <button class="sbtn" type="button" id="copyLink">העתקת קישור</button>
+      </div>
+
+      <form class="pilot" id="pilot" hidden novalidate>
+        <h3>מעוניינים להפעיל את המערכת במסגרת שלכם?</h3>
+        <p>זו פנייה נפרדת ואינה חלק מההצהרה. נציג עין צופיה יחזור אליכם כדי להציג את המערכת ולבחון הפעלה במסגרת.</p>
+        <div class="f"><label for="pOrg">שם המסגרת</label><input type="text" id="pOrg" name="org" maxlength="100" required></div>
+        <div class="two">
+          <div class="f"><label for="pKids">מספר ילדים <span class="opt">(בערך)</span></label><input type="text" id="pKids" name="kids" inputmode="numeric" maxlength="10"></div>
+          <div class="f"><label for="pPhone">טלפון</label><input type="tel" id="pPhone" name="phone" dir="ltr" inputmode="tel" maxlength="20" required></div>
+        </div>
+        <label class="chk" style="margin-bottom:12px"><input type="checkbox" name="ok" required><span>מאשר/ת שעין צופיה תיצור איתי קשר בנוגע להפעלת המערכת במסגרת.</span></label>
+        <button class="sbtn pri" type="submit" style="width:100%">אני רוצה שיחזרו אליי</button>
+        <div class="err" id="pErr" role="alert" hidden></div>
+      </form>
+      <div class="pilot ok" id="pilotOk" hidden>תודה. נחזור אליך בהקדם.</div>
+    </div>
+  </aside>
+</main>
+
+<section class="wrap recent" id="recentBox" hidden aria-labelledby="rec-h">
+  <h3 id="rec-h">חתמו לאחרונה</h3>
+  <div class="chips" id="chips"></div>
+</section>
+
+<section class="wrap privacy" id="privacy">
+  <details>
+    <summary>מדיניות פרטיות</summary>
+    <ul>
+      <li>הפרטים נאספים לצורך ההצהרה בלבד: ספירת החותמים, הגשת ההצהרה לחברי הכנסת ולמשרדי הממשלה, ויצירת קשר בנושא ההצהרה עם מי שביקש זאת.</li>
+      <li>כתובת הדוא״ל משמשת לאימות החתימה ולמניעת חתימות כפולות. הודעות יישלחו אליה רק באישור נפרד.</li>
+      <li>הפרטים לא ישמשו לשיווק מוצרים ולא יועברו לצד שלישי. בהגשה יימסרו שמות ויישובים בלבד, ללא טלפון ודוא״ל.</li>
+      <li>באתר מוצגים שם פרטי ויישוב רק למי שאישר זאת. אנשי מקצוע מוצגים בשמם ובתפקידם רק באישורם.</li>
+      <li>עדכונים יישלחו רק למי שאישר זאת בנפרד. ניתן לבטל בכל עת.</li>
+      <li>מסגרות שמילאו בנפרד פנייה להפעלת המערכת יקבלו פנייה מעין צופיה בנושא זה בלבד. פנייה זו אינה חלק מההצהרה ואינה נספרת בה.</li>
+      <li>הפרטים יישמרו למשך הזמן הנדרש לקבלת מענה ממקבלי ההחלטות ולהשלמת הליך עדכון החוק, ולאחר מכן יימחקו.</li>
+      <li>האחראית על המידע: עין צופיה, ח.פ. 306679242. לעיון, תיקון או מחיקה של פרטים: <a href="mailto:emma@tsofia.ai" dir="ltr">emma@tsofia.ai</a> או <a href="tel:+972508787431" dir="ltr">050-878-7431</a>.</li>
+    </ul>
+  </details>
+  <details id="a11y">
+    <summary>הצהרת נגישות</summary>
+    <ul>
+      <li>אנו רואים חשיבות בהנגשת העמוד לכלל הציבור, כולל אנשים עם מוגבלות. העמוד נבנה בהתאם להנחיות התקן הישראלי ת״י 5568 ולרמה AA של הנחיות WCAG.</li>
+      <li>מה נעשה: מבנה כותרות תקין, ניווט מלא במקלדת עם סימון מיקוד, תוויות לכל שדות הטופס, הודעות שגיאה שמוקראות לקורא מסך, ניגודיות צבעים מספקת, תמיכה בהגדלת טקסט ובצפייה בטלפון, וכיבוד הגדרת „הפחתת תנועה“.</li>
+      <li>אם נתקלתם בקושי, נשמח לשמוע ולתקן: <a href="mailto:emma@tsofia.ai" dir="ltr">emma@tsofia.ai</a> או <a href="tel:+972508787431" dir="ltr">050-878-7431</a>.</li>
+      <li>הצהרה זו עודכנה ב-8 בנובמבר 2026.</li>
+    </ul>
+  </details>
+</section>
+
+<footer><div class="wrap"><span><a href="#a11y" onclick="document.getElementById('a11y').open=true">הצהרת נגישות</a> · <a href="#privacy" onclick="document.querySelector('#privacy details').open=true">מדיניות פרטיות</a> · המסלול הרביעי · יוזמה של <a href="https://emma-il.netlify.app" target="_blank" rel="noopener">עין צופיה</a></span><span dir="ltr">emma@tsofia.ai · 050-878-7431</span></div></footer>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ===== Settings ===== */
+// The Google Apps Script web-app URL (ends with /exec). Empty = test mode, nothing is saved.
+const ENDPOINT = "";
+// Milestones: the goal moves to the next one once it is passed.
+const GOALS = [10000, 20000, 50000, 100000];
+// The public address of this page once it is live. Empty = the current address.
+const SHARE_URL = "https://maslul4.tsofia.ai/atzuma.html";
+// Professional supporters, added only after each one agrees, e.g. {name:"ד״ר …", title:"מרצה לגיל הרך, מכללת …"}
+const SUPPORTERS = [];
+
+(()=>{
+const $=s=>document.querySelector(s);
+const form=$("#form");const F=form.elements;
+const pageUrl=()=>SHARE_URL||location.href.split("#")[0].split("?")[0];
+const toast=m=>{const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(t._h);t._h=setTimeout(()=>t.hidden=true,2200)};
+if(!ENDPOINT) $("#demoNote").hidden=false;
+const goalFor=c=>GOALS.find(g=>g>c)||GOALS[GOALS.length-1];
+$("#goalTxt").textContent=GOALS[0].toLocaleString("he-IL");
+
+const exList=$("#exList");
+if(SUPPORTERS.length){SUPPORTERS.forEach(s=>{const li=document.createElement("li");const b=document.createElement("b");b.textContent=s.name;const sp=document.createElement("span");sp.textContent=s.title||"";li.append(b,sp);exList.append(li)})}
+else{exList.hidden=true;$("#exIntro").textContent="אנו מזמינים אנשי מקצוע מתחומי הגיל הרך, החינוך והאקדמיה להצטרף להצהרה. שמות התומכים יופיעו כאן לאחר אישורם."}
+$("#exJoin").addEventListener("click",()=>{setTimeout(()=>{F.role.value="איש או אשת חינוך או אקדמיה";sync();F.name.focus()},300)});
+
+function render(count,recent){
+  $("#count").textContent=count.toLocaleString("he-IL");
+  const goal=goalFor(count);$("#goalTxt").textContent=goal.toLocaleString("he-IL");
+  $("#bar").style.width=Math.min(100,count/goal*100)+"%";
+  if(recent&&recent.length){const c=$("#chips");c.textContent="";recent.forEach(r=>{const s=document.createElement("span");const who=r.n?r.n:(r.r&&r.r!=="אחר"?r.r:"חותם/ת");s.textContent=who+(r.c?", "+r.c:"");c.append(s)});$("#recentBox").hidden=false}
+}
+let count=0;
+(async()=>{
+  if(!ENDPOINT){render(0,[]);return}
+  try{const r=await fetch(ENDPOINT,{cache:"no-store"});const d=await r.json();count=d.count||0;render(count,d.recent||[])}catch(e){render(0,[])}
+})();
+
+function sync(){
+  const lvl=F.level.value;
+  $("#actBox").hidden=lvl!=="active";
+  $("#contactBox").hidden=lvl==="sign";
+  $("#optinRow").hidden=lvl==="sign";
+  F.phone.required=lvl==="active";
+  $("#phoneOpt").textContent=lvl==="active"?"(לתיאום הסיוע)":"(רשות, לעדכונים בוואטסאפ)";
+  $("#proBox").hidden=F.role.value!=="איש או אשת חינוך או אקדמיה";
+}
+form.addEventListener("change",sync);sync();
+
+const err=m=>{const e=$("#err");e.textContent=m;e.hidden=!m};
+form.addEventListener("submit",async ev=>{
+  ev.preventDefault();err("");
+  const name=F.name.value.trim(),city=F.city.value.trim(),role=F.role.value,lvl=F.level.value;
+  const phone=F.phone.value.trim(),email=F.email.value.trim();
+  if(name.length<2){err("יש למלא שם מלא.");F.name.focus();return}
+  if(city.length<2){err("יש למלא יישוב.");F.city.focus();return}
+  if(!role){err("יש לבחור בתור מי את/ה חותם/ת.");F.role.focus();return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){err("יש למלא כתובת דוא״ל תקינה.");F.email.focus();return}
+  if((lvl==="active"||phone)&&!/^[0-9+\-\s()]{9,20}$/.test(phone)){err(lvl==="active"?"יש למלא מספר טלפון לתיאום הסיוע.":"מספר הטלפון אינו תקין.");F.phone.focus();return}
+  if(!F.agree.checked){err("כדי לחתום יש לאשר את ההצטרפות להצהרה.");F.agree.focus();return}
+  const pro=!$("#proBox").hidden;
+  const data={
+    website:F.website.value,name,city,role,
+    title:pro?F.title.value.trim():"",proPublic:pro&&F.proPublic.checked,
+    level:{sign:"חתימה",updates:"עדכונים",active:"פעילות"}[lvl],
+    acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value).join(", "):"",
+    phone:lvl==="sign"?"":phone,email,
+    optin:lvl!=="sign"&&F.optin.checked,showName:F.showName.checked,
+    source:new URLSearchParams(location.search).get("src")||document.referrer||""
+  };
+  const btn=$("#goBtn");btn.disabled=true;btn.textContent="שולח…";
+  try{
+    if(ENDPOINT){
+      const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
+      const d=await r.json().catch(()=>({ok:true}));
+      if(d.ok===false) throw new Error(d.error||"fail");
+      if(d.dup){render(d.count||count,null);done(name,lvl,true);return}
+      count=d.count||count+1;
+    } else { count+=1; }
+    render(count,null);done(name,lvl);
+  }catch(e){err("השליחה לא הצליחה. יש לבדוק את החיבור ולנסות שוב.")}
+  finally{btn.disabled=false;btn.textContent="אני מצטרף/ת להצהרה"}
+});
+
+function done(name,lvl,dup){
+  form.hidden=true;const t=$("#thanks");t.hidden=false;
+  $("#tName").textContent=name.split(/\s+/)[0];
+  const R=F.role.value;
+  if(R!=="הורה"&&R!=="אחר"){const pf=$("#pilot");pf.hidden=false;if(F.phone.value)pf.elements.phone.value=F.phone.value;}
+  lastSigner={name,city:F.city.value.trim(),role:R,title:F.title.value.trim(),email:F.email.value.trim()};
+  if(dup) $("#thanks h2").textContent="כתובת הדוא״ל הזו כבר חתומה על ההצהרה. תודה!";
+  if(lvl==="active") $("#tMsg").textContent="ניצור איתך קשר בהמשך כדי לתאם את הסיוע. ככל שיחתמו יותר הורים ואנשי חינוך, כך יגבר משקלה של ההצהרה.";
+  const msg="הצטרפתי להצהרת הורים ואנשי חינוך הקוראת לעדכן את חוק המצלמות במעונות היום, כך שהמצלמות הקיימות יסייעו למנוע פגיעה בפעוטות בזמן אמת, תוך שמירה על פרטיות. אפשר לקרוא ולהצטרף כאן:\n"+pageUrl()+"?src=wa";
+  $("#waShare").href="https://wa.me/?text="+encodeURIComponent(msg);
+  t.focus();t.scrollIntoView({behavior:"smooth",block:"start"});
+}
+let lastSigner={};
+$("#pilot").addEventListener("submit",async ev=>{
+  ev.preventDefault();const P=ev.target.elements,pe=$("#pErr");pe.hidden=true;
+  const msg=m=>{pe.textContent=m;pe.hidden=false};
+  if(P.org.value.trim().length<2){msg("יש למלא את שם המסגרת.");P.org.focus();return}
+  if(!/^[0-9+\-\s()]{9,20}$/.test(P.phone.value.trim())){msg("יש למלא מספר טלפון תקין.");P.phone.focus();return}
+  if(!P.ok.checked){msg("יש לאשר יצירת קשר.");return}
+  const data={type:"pilot",...lastSigner,org:P.org.value.trim(),kids:P.kids.value.trim(),phone:P.phone.value.trim()};
+  try{
+    if(ENDPOINT){const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});const d=await r.json().catch(()=>({ok:true}));if(d.ok===false)throw 0}
+    ev.target.hidden=true;$("#pilotOk").hidden=false;
+  }catch(e){msg("השליחה לא הצליחה. אפשר גם להתקשר: 050-878-7431.")}
+});
+async function copy(txt){try{await navigator.clipboard.writeText(txt);toast("הקישור הועתק")}catch(e){const a=document.createElement("textarea");a.value=txt;document.body.append(a);a.select();try{document.execCommand("copy");toast("הקישור הועתק")}catch(_){toast(txt)}a.remove()}}
+$("#copyLink").addEventListener("click",()=>copy(pageUrl()));
+if(location.hash==="#a11y")$("#a11y").open=true;
+if(location.hash==="#privacy")$("#privacy details").open=true;
+})();
+</script>
+</body>
+</html>
