@@ -426,6 +426,29 @@ footer a{color:#fff}
 .act .wrap{position:relative;z-index:1}
 @media (max-width:600px){.dbox .dmark{width:44px;top:18px;left:16px}.dbox h2{padding-left:52px}.signbox .sbmark{display:none}.act::after{width:240px;height:310px}}
 .trust h2 .blk{color:#000;background:linear-gradient(transparent 62%,rgba(0,0,0,.14) 62%);font-weight:900}
+.tline{margin:1.6em 0;padding:22px 20px 16px;background:var(--tint,#f4f2ee);border-radius:6px}
+.tline ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:0;position:relative}
+.tline ol::before{content:"";position:absolute;top:19px;right:6%;left:6%;height:4px;background:linear-gradient(270deg,#9aa1ad 0%,#9aa1ad 55%,#c8102e 100%);border-radius:4px}
+.tline li{position:relative;padding:0 10px;font-family:var(--f-ui);text-align:center}
+.tline .yr{position:relative;z-index:1;display:inline-block;background:#3a4252;color:#fff;font-weight:800;font-size:15px;border-radius:999px;padding:8px 14px}
+.tline li b{display:block;margin-top:12px;font-size:18px;font-weight:800;color:#121212}
+.tline li span:not(.yr){display:block;margin-top:4px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.tline li em{display:inline-block;margin-top:10px;font-style:normal;font-weight:800;font-size:13px;color:#6b6b6b;border:1px solid #c9c5bc;border-radius:999px;padding:2px 10px}
+.tline li.now{background:#fff;border:2px solid #c8102e;border-radius:10px;padding:0 12px 14px;margin-top:-6px;box-shadow:0 10px 30px rgba(200,16,46,.12)}
+.tline li.now .yr{background:#c8102e;margin-top:-14px;font-size:16px}
+.tline li.now b{color:#c8102e;font-size:20px}
+.tline li.now em{background:#c8102e;color:#fff;border-color:#c8102e}
+.tline figcaption{margin-top:16px;text-align:center;font-family:var(--f-ui);font-size:15.5px;color:var(--ink-2);border:0;padding:0}
+.tline figcaption b{color:#c8102e}
+@media (max-width:640px){
+ .tline ol{grid-template-columns:1fr;gap:16px}
+ .tline ol::before{top:10px;bottom:10px;right:32px;left:auto;width:4px;height:auto;background:linear-gradient(180deg,#9aa1ad 0%,#9aa1ad 55%,#c8102e 100%)}
+ .tline li{text-align:right;padding:0 0 0 0;padding-right:84px}
+ .tline .yr{position:absolute;right:0;top:0;font-size:14px;padding:6px 12px}
+ .tline li b{margin-top:6px}
+ .tline li.now{padding:12px 84px 14px 12px;margin-top:0}
+ .tline li.now .yr{margin-top:0;top:12px;right:4px}
+}
 </style>
 </head>
 <body>
@@ -506,6 +529,14 @@ footer a{color:#fff}
         <li><b>שידור חי לטלפון</b><span>הורה עובד לא צופה שמונה שעות ביום. זה חושף ילדים אחרים, מלחיץ את הצוות, ונשאר וולונטרי.</span></li>
       </ul>
       <p>ובכל המסלולים, ההחלטה אם להצטרף בידי המפעיל. שלושה מסלולים, ואף אחד מהם לא עונה על השאלה היחידה שחשובה: מי מבין, בזמן אמת, מה קורה לילד?</p>
+      <figure class="tline" aria-label="ציר הזמן של חוק המצלמות">
+        <ol>
+          <li class="past"><span class="yr">2018</span><b>חוק המצלמות</b><span>מצלמים הכל. אף אחד לא צופה. אחרי 30 יום נמחק.</span><em>מתעד</em></li>
+          <li class="past"><span class="yr">2024</span><b>שלושה מסלולי צפייה</b><span>הורים יכולים לצפות, אם המפעיל בוחר. שעות של וידאו, ואף אחד לא מבין בזמן אמת.</span><em>חושף</em></li>
+          <li class="now"><span class="yr">2026</span><b>המסלול הרביעי</b><span>המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span><em>מגן</em></li>
+        </ol>
+        <figcaption>מתיעוד, לחשיפה, להגנה. <b>המסלול הרביעי משלים את התמונה.</b></figcaption>
+      </figure>
 
       <h2 class="h-amber"><small>הפיקוח</small>אין מי שיפקח: הצעת התקציב מקצצת כ-75%</h2>
       <p>באותן שנים שבהן המדינה הרחיבה את חובות התיעוד, היא צמצמה את מי שאמור ללוות את הגנים. תקציב הפיקוח וההדרכה על מעונות היום ירד מ-190.5 מיליון ש״ח ב-2023 ל-46.2 מיליון בהצעת התקציב ל-2026.</p>
