@@ -53,7 +53,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .brand{font-family:var(--f-head);font-weight:900;font-size:24px;text-decoration:none;line-height:1}
 .brand span{color:var(--red)}
 .sticky .sections{border:0;padding:0;justify-content:flex-start}
-.sections .go{background:var(--red);color:#fff!important;border-radius:999px;padding:6px 14px}
+.sections .go{background:var(--red);color:#fff!important;border-radius:999px;padding:6px 14px;white-space:nowrap}
+.go .s{display:none}
 .hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#111}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.88) 100%),linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,0) 60%)}
@@ -319,6 +320,7 @@ footer a{color:#fff}
   .hero{min-height:auto}
   .hero-in{padding-top:120px}
   .sticky .sections a:not(.go){display:none}
+  .go .l{display:none} .go .s{display:inline}
   .spread-photo img{aspect-ratio:4/3}
   body{font-size:18px}
   .side{grid-template-columns:1fr}
@@ -336,7 +338,7 @@ footer a{color:#fff}
 
 <nav class="sticky" aria-label="מדורים"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="logo-ein.png" alt="עין צופיה"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><small>יוזמה של עין צופיה</small></span></a>
-  <div class="sections"><a href="#story">התחקיר</a><a href="#law">החוק</a><a href="#fix">הפתרון</a><a href="#decl">ההצהרה</a><a href="atzuma.html" class="go">חתמו על ההצהרה</a></div>
+  <div class="sections"><a href="#story">התחקיר</a><a href="#law">החוק</a><a href="#fix">הפתרון</a><a href="#decl">ההצהרה</a><a href="atzuma.html" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
 </div></nav>
 
 <main>
