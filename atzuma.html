@@ -176,8 +176,6 @@ footer .ez{color:var(--ink-2)}
 .doc .doctitle{margin-bottom:0;padding-top:0;color:var(--ink);font-family:var(--f-doc);font-size:clamp(26px,3.4vw,34px);line-height:1.18;margin-top:6px}
 .ia{color:#14833f;font-weight:700;white-space:nowrap}
 @media (max-width:520px){.bar .back{display:none}.brand span{font-size:13px}}
-.askwrap{padding-top:34px}
-.askwrap .ask{margin-bottom:0}
 .ask-list,.ask-lead{max-width:72ch}
 .ask .tally{max-width:640px}
 .grid{padding-top:28px!important}
@@ -187,6 +185,21 @@ footer .ez{color:var(--ink-2)}
 .ask h1,.ask-k{padding-left:100px}
 .thmark{display:block;width:52px;height:auto;margin-bottom:10px}
 @media (max-width:600px){.askmark{width:48px;top:18px;left:16px}.ask h1,.ask-k{padding-left:56px}}
+/* layout: ask + full text on the right, signing card on the left from the first screen */
+.grid{grid-template-areas:"ask card" "doc card";row-gap:30px;padding-top:30px!important}
+.askcell{grid-area:ask}.doc{grid-area:doc}.card{grid-area:card;align-self:start}
+.askcell .ask{margin-bottom:0}
+.levels{grid-template-columns:repeat(3,1fr);gap:6px}
+.lvl{grid-template-columns:auto;justify-items:center;padding:8px 6px;text-align:center}
+.lvl input{position:absolute;opacity:0;pointer-events:none}
+.lvl{position:relative}
+.lvl b{font-size:14.5px}
+.lvl:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:2px}
+.hint2{font-size:12.5px;color:var(--muted);margin:-6px 0 12px;line-height:1.4}
+.card h2{margin-bottom:14px}
+.consents{gap:8px;margin:2px 0 14px;padding-top:10px}
+@media (max-width:920px){.grid{grid-template-areas:"ask" "card" "doc"}}
+@media (min-width:921px){.ask .tosign{display:none}}
 </style>
 </head>
 <body>
@@ -196,7 +209,8 @@ footer .ez{color:var(--ink-2)}
   <a class="back" href="index.html">לכתבה המלאה</a>
 </div></header>
 
-<div class="wrap askwrap">
+<main class="wrap grid">
+  <div class="askcell">
     <section class="ask" aria-labelledby="ask-h">
       <img class="askmark" src="logo-hand.png" alt="">
       <div class="ask-k">הצהרת הורים ואנשי חינוך</div>
@@ -215,9 +229,7 @@ footer .ez{color:var(--ink-2)}
       </div>
       <a class="tosign" href="#sign">אני מצטרף/ת</a>
     </section>
-</div>
-
-<main class="wrap grid">
+  </div>
   <article class="doc" aria-labelledby="doc-h">
 
     <div class="type">נוסח ההצהרה המלא</div>
@@ -280,7 +292,7 @@ footer .ez{color:var(--ink-2)}
   <aside class="card" id="sign" aria-labelledby="sign-h">
     <form id="form" novalidate>
       <h2 id="sign-h">הצטרפות להצהרה</h2>
-      <p class="sub">שם, יישוב ודוא״ל.</p>
+      
 
       <div class="hp" aria-hidden="true"><label>אתר <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
@@ -289,9 +301,9 @@ footer .ez{color:var(--ink-2)}
         <div class="f"><label for="city">יישוב</label><input type="text" id="city" name="city" autocomplete="address-level2" required maxlength="60"></div>
       </div>
 
-      <div class="f"><label for="email">דוא״ל</label><input type="email" id="email" name="email" autocomplete="email" dir="ltr" required maxlength="100"><span class="hint">לאימות החתימה ולמניעת כפילויות. לא נשלח אליך הודעות בלי אישורך.</span></div>
-
-      <div class="f"><label for="role">אני חותם/ת בתור</label>
+      <div class="two">
+        <div class="f"><label for="email">דוא״ל</label><input type="email" id="email" name="email" autocomplete="email" dir="ltr" required maxlength="100"></div>
+        <div class="f"><label for="role">אני חותם/ת בתור</label>
         <select id="role" name="role" required>
           <option value="">בחירה</option>
           <option>הורה</option>
@@ -301,17 +313,19 @@ footer .ez{color:var(--ink-2)}
           <option>אחר</option>
         </select>
       </div>
+      </div>
+      <p class="hint2">הדוא״ל משמש לאימות החתימה בלבד. לא נשלח אליך הודעות בלי אישורך.</p>
 
       <div id="proBox" hidden>
         <div class="f"><label for="title">תפקיד ומוסד</label><input type="text" id="title" name="title" maxlength="120" placeholder="לדוגמה: מרצה לגיל הרך, מכללת…"></div>
         <label class="chk" style="margin-bottom:13px"><input type="checkbox" name="proPublic" id="proPublic"><span>מאשר/ת להציג את שמי ואת תפקידי ברשימת התומכים המקצועיים</span></label>
       </div>
 
-      <div class="f"><span class="lb" id="lvl-l">מעורבות</span>
+      <div class="f"><span class="lb" id="lvl-l">מעורבות <span class="opt">(רשות)</span></span>
         <div class="levels" role="radiogroup" aria-labelledby="lvl-l">
-          <label class="lvl"><input type="radio" name="level" value="sign" checked><span><b>חתימה בלבד</b><span>שמי יצורף להצהרה.</span></span></label>
-          <label class="lvl"><input type="radio" name="level" value="updates"><span><b>חתימה ועדכונים</b><span>אקבל עדכונים על התקדמות ההצהרה.</span></span></label>
-          <label class="lvl"><input type="radio" name="level" value="active"><span><b>חתימה ופעילות</b><span>אשמח לסייע בקידום ההצהרה.</span></span></label>
+          <label class="lvl"><input type="radio" name="level" value="sign" checked><span><b>חתימה</b></span></label>
+          <label class="lvl"><input type="radio" name="level" value="updates"><span><b>+ עדכונים</b></span></label>
+          <label class="lvl"><input type="radio" name="level" value="active"><span><b>+ פעילות</b></span></label>
         </div>
       </div>
 
