@@ -334,7 +334,7 @@ footer a{color:#fff}
 .ez{color:var(--teal);white-space:nowrap}
 .spread .ez,footer .ez,.hero .ez,.act .ez{color:var(--eye)}
 .sticky .ez{color:var(--teal)}
-.big-shot.vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0b1220;border-radius:10px;box-shadow:0 0 0 1px var(--night-line),0 40px 90px rgba(0,0,0,.55)}
+.big-shot.vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:88vh;object-fit:contain;background:#0b1220;border-radius:10px;box-shadow:0 0 0 1px var(--night-line),0 40px 90px rgba(0,0,0,.55)}
 .bounds{margin-top:34px;background:#101b2b;border:1px solid var(--night-line);border-radius:14px;padding:22px 24px}
 .bounds h3{font-family:var(--f-ui);font-weight:800;font-size:clamp(19px,2.2vw,23px);color:#fff}
 .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
@@ -355,6 +355,7 @@ footer a{color:#fff}
 .qa p{margin:0 0 14px;font-size:17.5px;color:var(--ink-2);line-height:1.65}
 .faq-cta{margin-top:22px}
 @media (max-width:700px){.bgrid{grid-template-columns:1fr}}
+@media (max-width:700px){.big-shot.vid video{aspect-ratio:9/16;max-height:none;border-radius:0}}
 </style>
 </head>
 <body>
@@ -483,7 +484,7 @@ footer a{color:#fff}
     <h2 id="fix-h">המצלמה <span>שמבינה.</span></h2>
     <p class="deck2">המסלול הרביעי לא מוסיף עוד מצלמה ועוד מסך. הוא הופך את המצלמות שכבר מותקנות לשכבת הבנה שעובדת בזמן אמת, ומעבירה את מה שחשוב למי שיכול לפעול עכשיו.</p>
     <figure class="big-shot vid">
-      <video src="report.mp4" poster="report-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון: דוח אמיתי של המערכת על חוג חיות בגן ילדים. זיהוי אנשים ותפקידים, זיהוי סיטואציה, רגע חזק, נקודה לתשומת לב ופעולה חלופית, לצד הדוח שנכתב בזמן אמת"></video>
+      <video id="reportVid" data-wide="report.mp4" data-wide-poster="report-poster.jpg" data-narrow="report-vertical.mp4" data-narrow-poster="report-vertical-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון: דוח אמיתי של המערכת על חוג חיות בגן ילדים. זיהוי אנשים ותפקידים, זיהוי סיטואציה, רגע חזק, נקודה לתשומת לב ופעולה חלופית, לצד הדוח שנכתב בזמן אמת"></video>
       <figcaption><span><b>זה לא הדמיה. זה דוח אמיתי של המערכת, מפיילוט פעיל בגן ילדים, במסגרת מחקר בשיתוף מכללת אורנים.</b> המערכת מזהה מי בחדר ומה התפקיד של כל אחד, מבינה את הסיטואציה, מצביעה על רגעים חזקים ועל מה שדורש תשומת לב, ומציעה לצוות פעולה חלופית למחר. הילדים והצוות טושטשו, ושמות הצוות הוסרו.</span><span><span class="ez">עין צופיה</span></span></figcaption>
     </figure>
     <div class="spread-grid">
@@ -682,5 +683,10 @@ h+=`<rect x="${i*4}" y="${48-a}" width="2.4" height="${a*2}" rx="1" fill="${d<3?
 s.innerHTML=h})();
 </script>
 
+<script>
+(()=>{const v=document.getElementById('reportVid');if(!v)return;const mq=matchMedia('(max-width:700px)');
+const set=()=>{const n=mq.matches;const src=n?v.dataset.narrow:v.dataset.wide;if(v.getAttribute('src')===src)return;v.poster=n?v.dataset.narrowPoster:v.dataset.widePoster;v.src=src;v.play&&v.play().catch(()=>{});};
+set();mq.addEventListener?mq.addEventListener('change',set):mq.addListener(set);})();
+</script>
 </body>
 </html>
