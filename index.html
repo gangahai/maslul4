@@ -109,7 +109,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .trust h2 small{color:var(--teal)!important}
 .trust-big{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,2.6vw,27px);line-height:1.35;color:#0b4f78}
 .body h2 small{font-size:15px}
-.hero .trio div:last-child b{color:var(--eye)}
+.hero .trio>div:nth-of-type(2) b{color:var(--eye)}
 
 .signbox{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;color:var(--ink);text-decoration:none;border-radius:14px;padding:20px 22px;margin:22px 0 6px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
 .signbox b{display:block;font-family:var(--f-head);font-weight:900;font-size:clamp(22px,2.6vw,28px);line-height:1.2}
@@ -385,6 +385,28 @@ footer a{color:#fff}
 .hero-call{margin:16px 0 0;max-width:30ch;border-inline-start:5px solid #4bc7e3;padding-inline-start:16px}
 .hero-call b{display:block;font-family:var(--f-ui);font-weight:900;font-size:clamp(24px,3.2vw,36px);line-height:1.15;color:#fff}
 .hero-call span{display:block;font-family:var(--f-head);font-weight:500;font-size:clamp(18px,2.1vw,23px);line-height:1.4;color:#dfe8f2;margin-top:4px}
+/* hero: one orchestrated entrance, from the problem to the solution */
+.trio{position:relative}
+.trio .arr{position:absolute;top:50%;left:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:#4bc7e3;box-shadow:0 0 0 4px rgba(75,199,227,.25);z-index:2}
+.trio .arr::before{content:"";position:absolute;inset:0;margin:auto;width:10px;height:10px;border-left:3px solid #06202b;border-bottom:3px solid #06202b;transform:translateX(2px) rotate(45deg)}
+.trio .sweep{position:absolute;top:-1px;right:0;height:3px;width:100%;background:linear-gradient(270deg,#ff5a6e,#4bc7e3);transform-origin:right;z-index:2}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes inR{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pop{0%{opacity:0;transform:scale(.4)}70%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
+@keyframes hurt{0%{text-shadow:0 0 0 rgba(255,90,110,0)}40%{text-shadow:0 0 18px rgba(255,90,110,.75)}100%{text-shadow:0 0 0 rgba(255,90,110,0)}}
+@media (prefers-reduced-motion:no-preference){
+  .hero-deck{animation:up .6s ease-out .2s both}
+  .hero-deck .hurt{animation:hurt 1.4s ease-out .6s both}
+  .hero-call{animation:up .6s ease-out .9s both}
+  .trio .sweep{animation:grow 1s cubic-bezier(.6,0,.2,1) 1.5s both}
+  .trio>div:nth-child(1){animation:inR .55s ease-out 1.6s both}
+  .trio .arr{animation:pop .45s ease-out 2.1s both}
+  .trio>div:nth-child(2){animation:inR .55s ease-out 2.35s both}
+  .hero-cta{animation:up .5s ease-out 2.8s both}
+}
+.trio>div:nth-child(2){padding-inline-start:30px}.trio>div:nth-child(1){padding-inline-end:28px}
+@media (max-width:600px){.trio .arr{display:none}.trio>div:nth-child(2),.trio>div:nth-child(1){padding-inline:16px}}
 </style>
 </head>
 <body>
@@ -407,6 +429,7 @@ footer a{color:#fff}
     <div class="trio">
       <div><b>הפתרון</b><span>מסלול רביעי בחוק: המצלמות הקיימות מבינות ומתריעות בזמן אמת. טכנולוגיה כזו כבר פועלת בשטח</span></div>
       <div><b>הדרישה</b><span>חוק שיאפשר להפעיל אותה, עכשיו</span></div>
+      <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">חתמו על הצהרת ההורים</a><a class="bigbtn glass" href="#fix">איך זה עובד</a></div>
     <div class="byline"><span class="av" aria-hidden="true">א.נ</span><span>מאת <b>אהרון נייס</b>, מנהל רשת גנים 20 שנה ומייסד <span class="ez">עין צופיה</span> · 8 בנובמבר 2026</span></div>
