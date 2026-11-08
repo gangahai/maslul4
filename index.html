@@ -483,6 +483,16 @@ footer a{color:#fff}
   .tline .now .node img{width:44px}
   .tline .yr{margin-top:0}
 }
+.broken{margin:1.6em 0;padding:22px 22px 14px;background:#fff;border:2px solid #121212;border-radius:4px}
+.broken h3{font-family:var(--f-head);font-weight:900;font-size:clamp(22px,2.6vw,28px);line-height:1.2}
+.broken p{margin:10px 0 0;font-size:17.5px}
+.bstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 4px}
+.bstats div{background:var(--tint,#f4f2ee);border-top:4px solid #c8102e;padding:12px 12px 10px}
+.bstats b{display:block;font-family:var(--f-ui);font-weight:900;font-size:34px;line-height:1;color:#c8102e}
+.bstats span{display:block;margin-top:6px;font-family:var(--f-ui);font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.bsrc{font-family:var(--f-ui);font-size:13px!important;color:var(--muted)}
+.bsrc a{color:var(--muted)}
+@media (max-width:700px){.bstats{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -556,6 +566,19 @@ footer a{color:#fff}
         </div>
         <div class="lbls"><span>יום 1: מצלמים הכל</span><span>כמעט אף אחד לא צופה</span><span><b>יום 30: נמחק</b></span></div>
       </figure>
+      <section class="broken" aria-labelledby="broken-h">
+        <h3 id="broken-h">ויותר מזה: ברבים מהגנים, המצלמות בכלל לא מקליטות</h3>
+        <p>דוח מבקר המדינה שפורסם ביוני 2026 מצא שאין בקרה אמיתית על כך שהמצלמות עובדות. המעון מצהיר שהותקנו, ומקבל רישיון. כשיש תקלה, המפעיל מקבל הודעה, והטיפול נסגר.</p>
+        <div class="bstats">
+          <div><b>27%</b><span>מהמעונות שנבדקו: תקלה שמנעה הקלטה תקינה (902 מתוך 3,321)</span></div>
+          <div><b>54%</b><span>מהמעונות שנבדקו: תקלה שנמשכה שלושה חודשים רצופים לפחות (798 מתוך 1,472)</span></div>
+          <div><b>89%</b><span>מהמעונות הפרטיים: בלי מערכת הניטור שמשרד החינוך דרש להתקין</span></div>
+          <div><b>51%</b><span>מהמקרים שבהם הניטור לא הותקן: מצלמות שלא תומכות בו, או בלי קליטה סלולרית</span></div>
+        </div>
+        <p>וזה קורה בשטח: בירושלים הציבו הורים מכשירי הקלטה בגן, והתברר שהמצלמות שהחוק מחייב לא פעלו כבר יותר משנה וחצי. כשהצילום לא קיים, גם החקירה אחרי הפגיעה נשארת בלי תיעוד.</p>
+        <p class="bsrc">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, „היבטים בפיקוח ובשמירה על שלום הפעוטות במעונות היום“ (2026)</a> · <a href="https://www.kan.org.il/content/kan-news/local/660126/" target="_blank" rel="noopener">כאן חדשות</a></p>
+      </section>
+
       <p>בנובמבר 2024 אושר תיקון לחוק, שבג״ץ השאיר על כנו באוקטובר 2025. התיקון קבע רשימה סגורה של דרכי צפייה מותרות, והמפעיל רשאי לבחור אחת מהן: צפייה תקופתית בגן או מרחוק, או צפייה חיה של הורה. על הנייר זה נשמע כמו מהפכה. בשטח, כל אחת מהן נתקלת באותה בעיה:</p>
       <ul class="fails">
         <li><b>צפייה בגן, פעם בשבוע</b><span>נציגי הורים יושבים מול המסכים. מי יודע מה לחפש? ומי יצפה בשש הפעמים האחרות?</span></li>
@@ -599,7 +622,7 @@ footer a{color:#fff}
         <h3>במספרים</h3>
         <div class="stat"><b>17</b><span>תינוקות ופעוטות בכתב האישום שהוגש השבוע באריאל</span></div>
         <div class="stat"><b>400+</b><span>מעשי התעללות ותקיפה שמיוחסים לשלוש נשות צוות</span></div>
-        <div class="stat"><b>30</b><span>ימים עד שהצילומים נמחקים, אם אף אחד לא התלונן</span></div>
+        <div class="stat"><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי (מבקר המדינה, 2026)</span></div>
         <div class="stat"><b>6</b><span>חודשים: גילם של הצעירים שבפעוטות בכתב האישום</span></div>
       </div>
       <div class="box">
@@ -630,12 +653,14 @@ footer a{color:#fff}
         <div class="cols">
           <p><b>תובנה, לא תמונה.</b> המערכת מעבדת את מה שקורה בגן בזמן אמת, ומה שיוצא ממנה הוא טקסט: מה קרה, מתי ואיפה. אף אחד לא צריך לשבת מול וידאו, ושום הורה לא רואה ילדים שאינם שלו.</p>
           <p><b>מנבאת סיכון לפני שהוא הופך לפגיעה.</b> מערכת AI מתקדמת מנתחת לאורך זמן את מה שקורה בחדר, מזהה דפוסים חוזרים שמקדימים פגיעה, ומתריעה על מצבים שמגדילים את הסיכון: צעקות, בכי ממושך של ילד בלי מענה, מגע פיזי חריג, אשת צוות לבד עם יותר מדי ילדים, עומס והמתנה ממושכת. ההתראה מגיעה כשעוד אפשר להוריד את הלחץ. המערכת מצביעה על מצבים, לא על אנשים.</p>
+          <p><b>יודעת מיד כשמצלמה מפסיקה לעבוד.</b> מערכת שמנתחת את הצילום כל הזמן מזהה בתוך דקות מצלמה כבויה, חסומה או תקולה, ומתריעה. היום תקלה כזו יכולה להימשך חודשים בלי שאיש יידע.</p>
           <p><b>התראה כשעוד אפשר לעצור.</b> ילד שבוכה לבד דקות ארוכות, אירוע חריג, מבוגר שמאבד שליטה: ההתראה מגיעה לאחראי בזמן שזה קורה, לא חודש אחרי.</p>
           <p><b>שותף לצוות, לא שוטר.</b> בכל יום הצוות מקבל משוב: מה עבד, איפה היה עומס, מה אפשר לשפר מחר. וזה מגובה בגבולות כתובים: התובנות לא משמשות לדירוג עובדים, ולא כבסיס יחיד להחלטה נגד עובד.</p>
           <p><b>פרטיות, גם בטקסט.</b> גם תובנה כתובה על ילד היא מידע רגיש. לכן לא מספיק שאין צפייה בווידאו: צריך גם מינימום מידע, הרשאות גישה לפי תפקיד, תיעוד של כל עיון, מחיקה אחרי זמן מוגדר ופיקוח חיצוני.</p>
         </div>
         <div class="vs" role="table" aria-label="היום מול המסלול הרביעי">
           <div class="vs-row h" role="row"><div class="k" role="columnheader"></div><div class="o" role="columnheader">היום</div><div class="n" role="columnheader">המסלול הרביעי</div></div>
+          <div class="vs-row" role="row"><div class="k" role="rowheader">תקינות המצלמות</div><div class="o" role="cell">אין בקרה. תקלות נמשכות חודשים</div><div class="n" role="cell">בקרה רציפה והתראה מיידית על תקלה</div></div>
           <div class="vs-row" role="row"><div class="k" role="rowheader">מניעה</div><div class="o" role="cell">אין</div><div class="n" role="cell">חיזוי סיכון: זיהוי דפוסים ומצבים שמקדימים פגיעה, ומניעה לפני שהיא קורית</div></div>
           <div class="vs-row" role="row"><div class="k" role="rowheader">מתי מגלים</div><div class="o" role="cell">אחרי שילד נפגע</div><div class="n" role="cell">בזמן אמת</div></div>
           <div class="vs-row" role="row"><div class="k" role="rowheader">מי יודע</div><div class="o" role="cell">משטרה, אחרי תלונה</div><div class="n" role="cell">הצוות וההנהלה מיד, ובאירוע חמור גם גורם חיצוני</div></div>
@@ -814,6 +839,8 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
     <li><a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">ynet: תיקון חוק המצלמות אושר סופית (נובמבר 2024)</a></li>
     <li><a href="https://www.kipa.co.il/1191739-0" target="_blank" rel="noopener">כיפה: שלושת מסלולי הצפייה בתיקון לחוק (2024)</a></li>
     <li><a href="https://www.mako.co.il/home-family-toddlers/education/Article-65f285786421081027.htm" target="_blank" rel="noopener">mako: האם מותר להורים להקליט בגן? (אפריל 2022)</a></li>
+    <li><a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה: היבטים בפיקוח ובשמירה על שלום הפעוטות במעונות היום (יוני 2026)</a></li>
+    <li><a href="https://www.kan.org.il/content/kan-news/local/660126/" target="_blank" rel="noopener">כאן חדשות: הורים חשפו התעללות בגן, והמצלמות לא פעלו</a></li>
     <li><a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2022/2022.5/2022.5-103-Meonot-Yom.pdf" target="_blank" rel="noopener">מבקר המדינה: דוח על מעונות היום (2022)</a></li>
     <li><a href="https://www.srugim.co.il/1059087-%D7%A2%D7%91%D7%A8-%D7%91%D7%9B%D7%A0%D7%A1%D7%AA-%D7%9B%D7%95%D7%9C%D7%9D-%D7%99%D7%95%D7%9B%D7%9C%D7%95-%D7%9C%D7%A6%D7%A4%D7%95%D7%AA-%D7%91%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%94%D7%A4%D7%A2" target="_blank" rel="noopener">סרוגים: התיקון לחוק עבר בכנסת, 12 בנובמבר 2024</a></li>
     <li>קרן ברל כצנלסון (2026), נתוני תקציב הפיקוח וההדרכה. הנתונים מתוך עבודת הגמר „המסלול הרביעי“, אהרון נייס, מכללת אורנים, 2026.</li>
