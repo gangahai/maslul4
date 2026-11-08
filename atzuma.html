@@ -136,7 +136,7 @@ footer .wrap{padding-block:16px;display:flex;justify-content:space-between;gap:1
 footer a{color:var(--ink-2)}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:8px;font-size:14.5px;z-index:50}
 
-.tosign{display:none}
+.tosign{display:inline-block}
 @media (max-width:920px){
   .tosign{display:block;margin-top:12px;text-align:center;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;border-radius:8px;padding:11px}
   .grid{grid-template-columns:1fr;gap:34px;padding-top:30px}
@@ -156,6 +156,17 @@ footer .ez{color:var(--ink-2)}
 .qa summary::after{content:"+";color:var(--blue);font-size:20px;line-height:1}
 .qa details[open] summary::after{content:"–"}
 .qa p{margin:0 0 12px;font-size:15.5px;color:var(--ink-2)}
+.ask{background:var(--blue-soft);border:1px solid #cfe3f1;border-radius:16px;padding:22px 24px 20px;margin-bottom:30px}
+.ask-k{font-size:14px;font-weight:700;color:var(--blue)}
+.ask h1{font-family:var(--f-doc);font-size:clamp(28px,3.8vw,38px);line-height:1.2;margin-top:6px}
+.ask-lead{margin:12px 0 6px;color:var(--ink-2);font-size:17px}
+.ask-list{margin:0;padding-inline-start:20px;color:var(--ink-2)}
+.ask-list li{margin-bottom:7px}
+.ask-list b{color:var(--ink)}
+.ask .tally{margin-top:16px;border-color:#cfe3f1;background:transparent}
+#tallyFirst{font-weight:600;color:var(--ink)}
+.ask .tosign{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;border-radius:8px;padding:11px 22px}
+.doc .doctitle{margin-bottom:0;padding-top:0;color:var(--ink);font-family:var(--f-doc);font-size:clamp(26px,3.4vw,34px);line-height:1.18;margin-top:6px}
 </style>
 </head>
 <body>
@@ -167,8 +178,26 @@ footer .ez{color:var(--ink-2)}
 
 <main class="wrap grid">
   <article class="doc" aria-labelledby="doc-h">
-    <div class="type">הצהרה פומבית</div>
-    <h1 id="doc-h">הצהרת הורים ואנשי חינוך בעניין הגנה על פעוטות במסגרות לגיל הרך</h1>
+    <section class="ask" aria-labelledby="ask-h">
+      <div class="ask-k">הצהרת הורים ואנשי חינוך</div>
+      <h1 id="ask-h">שהמצלמות שכבר בגנים יעזרו להגן על הילדים, בזמן אמת.</h1>
+      <p class="ask-lead">אנחנו מבקשים משר/ת החינוך ומהכנסת לעדכן את חוק המצלמות:</p>
+      <ul class="ask-list">
+        <li><b>התראה כשעוד אפשר לעצור.</b> המצלמות הקיימות ינותחו בזמן אמת, וכשילד בסכנה, הגורם האחראי במסגרת יידע מיד.</li>
+        <li><b>בלי לצפות בילדים.</b> בלי צפייה שוטפת בווידאו, בלי דירוג עובדים, ובפיקוח של הרשות להגנת הפרטיות.</li>
+        <li><b>פתוח לכל מערכת</b> שתעמוד בתנאים. החתימה אינה תמיכה במוצר, ואינה מחייבת אתכם בדבר.</li>
+      </ul>
+      <div class="tally" aria-live="polite">
+        <span id="tallyNum"><b id="count">0</b> חתומים</span>
+        <span id="tallyFirst" hidden>היו בין החותמים הראשונים</span>
+        <span class="track" aria-hidden="true"><i id="bar"></i></span>
+        <span class="goal"><span id="goalLbl">היעד הראשון</span>: <span id="goalTxt">1,000</span></span>
+      </div>
+      <a class="tosign" href="#sign">אני מצטרף/ת</a>
+    </section>
+
+    <div class="type">נוסח ההצהרה המלא</div>
+    <h2 class="doctitle" id="doc-h">הצהרת הורים ואנשי חינוך בעניין הגנה על פעוטות במסגרות לגיל הרך</h2>
     <p class="re">בעניין עדכון חוק התקנת מצלמות לשם הגנה על פעוטות במעונות יום לפעוטות, התשע״ח–2018</p>
     <dl class="meta">
       <div><dt>אל</dt><dd>שר/ת החינוך · ועדת החינוך, התרבות והספורט של הכנסת · חברי הכנסת</dd></div>
@@ -176,12 +205,7 @@ footer .ez{color:var(--ink-2)}
       <div><dt>נוסח</dt><dd>8 בנובמבר 2026</dd></div>
     </dl>
 
-    <div class="tally" aria-live="polite">
-      <span><b id="count">0</b> חתומים</span>
-      <span class="track" aria-hidden="true"><i id="bar"></i></span>
-      <span class="goal">היעד הבא: <span id="goalTxt">10,000</span></span>
-    </div>
-    <a class="tosign" href="#sign">למעבר לטופס החתימה</a>
+
 
     <p class="opening">אנו, החתומים מטה, הורים לילדים במסגרות לגיל הרך, אנשי צוות, מנהלות ואנשי חינוך ואקדמיה, פונים לשר/ת החינוך ולחברי הכנסת בבקשה לעדכן את החוק כמפורט להלן.</p>
 
@@ -316,7 +340,8 @@ footer .ez{color:var(--ink-2)}
 <section class="wrap faq" id="faq" aria-labelledby="faq-h">
   <h2 id="faq-h">שאלות וחששות</h2>
   <div class="qa">
-    <details><summary><span class="q">האם המערכת עלולה לטעות?</span></summary><p>כן. כל מערכת עלולה לטעות, ולכן תובנה היא סימן לבדיקה ולא פסק דין. התראה חמורה נבדקת בידי אדם מוסמך לפני כל פעולה, והמחקר החיצוני שההצהרה דורשת ימדוד ויפרסם את שיעור הטעויות.</p></details>
+    <details><summary><span class="q">האם המערכת עלולה לטעות?</span></summary><p>כן. כל מערכת עלולה לטעות, ולכן מבחינים בין שני דברים. כשההתראה מצביעה על סכנה לילד, מגיבים מיד ומגנים עליו, בלי לחכות לשום בדיקה. אבל קביעה שמישהו פגע, או כל צעד נגד עובד, נעשים רק אחרי בדיקה אנושית מסודרת. תובנה היא סימן לבדיקה, לא פסק דין, והמחקר החיצוני שההצהרה דורשת ימדוד ויפרסם את שיעור הטעויות.</p></details>
+    <details><summary><span class="q">מה קורה מרגע שמתקבלת התראה?</span></summary><p>ההתראה מגיעה בזמן אמת לגורם האחראי במסגרת, שניגש מיד, מוודא שהילד בטוח ומטפל במצב. האירוע מתועד. אם עולה חשד לפגיעה בילד, פועלים לפי החובות שכבר קיימות בחוק, כולל דיווח לגורמים המוסמכים. כל קביעה לגבי אחריות של עובד נעשית רק אחרי בירור מסודר, ולא על סמך ההתראה לבדה.</p></details>
     <details><summary><span class="q">האם היא מחליפה פיקוח ואנשי צוות?</span></summary><p>לא. היא כלי בידי הצוות והמפקחות, לא תחליף להם. לכן ההצהרה דורשת תקציב ייעודי בנוסף על משאבי הפיקוח הקיימים, ולא במקומם.</p></details>
     <details><summary><span class="q">מי מקבל את המידע ומי רשאי לעיין בו?</span></summary><p>רק מי שצריך לפעול: הגורם האחראי במסגרת מקבל התראות, הצוות מקבל משוב על העבודה שלו ותמיכה פדגוגית, וגורמי הפיקוח מקבלים תמונת מצב ברמת הגן. הורים לא רואים מידע על ילדים אחרים. כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</p></details>
     <details><summary><span class="q">האם המידע ישמש לדירוג עובדים או להחלטות נגדם?</span></summary><p>לא. ההצהרה דורשת איסור על דירוג עובדים, ואיסור על החלטה נגד עובד על סמך תובנה בלבד, בלי בדיקה אנושית. כשיש חשד לפגיעה בילד, החובות הקיימות בחוק ממשיכות לחול כמו היום.</p></details>
@@ -356,7 +381,7 @@ footer .ez{color:var(--ink-2)}
 // The Google Apps Script web-app URL (ends with /exec). Empty = test mode, nothing is saved.
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbwL5KzYs6paU6y3_C6ndggCBLdf3WVtEqDpFwZX4enn8LP9jQX_IZgJVryVxGfJQlVU/exec";
 // Milestones: the goal moves to the next one once it is passed.
-const GOALS = [10000, 20000, 50000, 100000];
+const GOALS = [1000, 5000, 10000, 20000, 50000, 100000];
 // The public address of this page once it is live. Empty = the current address.
 const SHARE_URL = "https://maslul4.tsofia.ai/atzuma.html";
 // Professional supporters, added only after each one agrees, e.g. {name:"ד״ר …", title:"מרצה לגיל הרך, מכללת …"}
@@ -379,6 +404,8 @@ $("#exJoin").addEventListener("click",()=>{setTimeout(()=>{F.role.value="איש 
 function render(count,recent){
   $("#count").textContent=count.toLocaleString("he-IL");
   const goal=goalFor(count);$("#goalTxt").textContent=goal.toLocaleString("he-IL");
+  $("#goalLbl").textContent=goal===GOALS[0]?"היעד הראשון":"היעד הבא";
+  const few=count<25;$("#tallyNum").hidden=few;$("#tallyFirst").hidden=!few;
   $("#bar").style.width=Math.min(100,count/goal*100)+"%";
   if(recent&&recent.length){const c=$("#chips");c.textContent="";recent.forEach(r=>{const s=document.createElement("span");const who=r.n?r.n:(r.r&&r.r!=="אחר"?r.r:"חותם/ת");s.textContent=who+(r.c?", "+r.c:"");c.append(s)});$("#recentBox").hidden=false}
 }
