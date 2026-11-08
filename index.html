@@ -493,6 +493,50 @@ footer a{color:#fff}
 .bsrc{font-family:var(--f-ui);font-size:13px!important;color:var(--muted)}
 .bsrc a{color:var(--muted)}
 @media (max-width:700px){.bstats{grid-template-columns:1fr 1fr}}
+/* timeline v3: keywords lead, 2026 lights up */
+.tline .st em.kw{display:block;margin:0 0 14px;border:0;padding:0;background:none;font-family:var(--f-ui);font-style:normal;font-weight:900;font-size:clamp(30px,3.4vw,42px);line-height:1;letter-spacing:-.01em;color:#5d6a80}
+.tline .s2 em.kw{color:#93a0b6}
+.tline .now em.kw{font-size:clamp(46px,5.4vw,66px);background:linear-gradient(90deg,#4bc7e3,#7cf0c4,#4bc7e3);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;filter:drop-shadow(0 0 18px rgba(75,199,227,.45))}
+.tl-fill{background:linear-gradient(270deg,#5d6a80 0%,#93a0b6 50%,#4bc7e3 100%)!important}
+.tl-spark{box-shadow:0 0 0 4px rgba(75,199,227,.35),0 0 26px 8px rgba(124,240,196,.6)!important}
+.tline .now{background:linear-gradient(170deg,#ffffff 0%,#eafaff 60%,#dff7ee 100%)!important;border:2px solid #4bc7e3!important;box-shadow:0 0 0 6px rgba(75,199,227,.12),0 24px 60px rgba(75,199,227,.35)!important;overflow:hidden;isolation:isolate}
+.tline .now::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 20deg,rgba(75,199,227,.18) 30deg,transparent 45deg 110deg,rgba(124,240,196,.16) 125deg,transparent 140deg 200deg,rgba(75,199,227,.16) 215deg,transparent 230deg 290deg,rgba(124,240,196,.14) 305deg,transparent 320deg);z-index:-1;opacity:.9}
+.tline .now .node{background:linear-gradient(135deg,#1e7cb0,#4bc7e3)!important;border-color:#bff0fb!important}
+.tline .now .yr{color:#1e7cb0!important}
+.tline .now b{color:#0b2a3c!important}
+.tline .now .d{color:#2f3f4f!important}
+.tline .now .node img{filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.tline .now .glints{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.tline .now .glints i{position:absolute;bottom:-10px;width:6px;height:6px;border-radius:50%;background:#4bc7e3;opacity:0}
+.tline figcaption{font-size:clamp(20px,2.4vw,28px)!important}
+.tline figcaption .w1,.tline figcaption .w2,.tline figcaption .w3{font-weight:900;color:#93a0b6}
+.tline figcaption .w3{background:linear-gradient(90deg,#4bc7e3,#7cf0c4);-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.tline figcaption b{font-size:clamp(17px,1.9vw,21px)!important;color:#fff;font-weight:700}
+@keyframes rays{to{transform:rotate(360deg)}}
+@keyframes shine{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes rise{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-240px) scale(1.1);opacity:0}}
+@keyframes ring2{0%{box-shadow:0 0 0 0 rgba(75,199,227,.6)}100%{box-shadow:0 0 0 26px rgba(75,199,227,0)}}
+@keyframes lightup{0%{filter:brightness(.35) saturate(.4)}100%{filter:none}}
+@keyframes kwin{0%{opacity:0;transform:translateY(18px);letter-spacing:.2em}100%{opacity:1;transform:none;letter-spacing:-.01em}}
+@media (prefers-reduced-motion:no-preference){
+  .tline.go .s1 em.kw{animation:kwin .7s ease-out .15s both}
+  .tline.go .s2 em.kw{animation:kwin .7s ease-out 1.05s both}
+  .tline.go .s3 em.kw{animation:kwin .8s ease-out 2.2s both,shine 3.5s linear 3s infinite}
+  .tline.go .now{animation:tlpop .7s ease-out 2.1s both,lightup 1.2s ease-out 2.2s both}
+  .tline.go .now::before{animation:rays 18s linear 2.4s infinite}
+  .tline.go .s3 .node{animation:tlnode .6s ease-out 2.1s both,ring2 1.8s ease-out 2.8s infinite!important}
+  .tline.go .now .glints i{animation:rise 3.2s ease-out infinite}
+  .tline.go .now .glints i:nth-child(1){left:12%;animation-delay:2.6s}
+  .tline.go .now .glints i:nth-child(2){left:30%;animation-delay:3.4s;background:#7cf0c4}
+  .tline.go .now .glints i:nth-child(3){left:52%;animation-delay:2.9s}
+  .tline.go .now .glints i:nth-child(4){left:70%;animation-delay:3.9s;background:#7cf0c4}
+  .tline.go .now .glints i:nth-child(5){left:86%;animation-delay:3.2s}
+  .tline.go figcaption .w3{animation:tlword .5s ease-out 2.4s both,shine 3.5s linear 3s infinite;background-size:200% 100%}
+}
+@media (max-width:640px){.tline .st em.kw{font-size:28px;margin-bottom:6px}.tline .now em.kw{font-size:44px}}
+.tl-track{top:118px!important}
+.tline .now .node svg.shield{width:46px;height:46px}
+@media (max-width:640px){.tl-track{top:70px!important}}
 </style>
 </head>
 <body>
@@ -589,9 +633,9 @@ footer a{color:#fff}
       <figure class="tline" id="tline" aria-label="ציר הזמן של חוק המצלמות">
         <div class="tl-track" aria-hidden="true"><i class="tl-fill"></i><i class="tl-spark"></i></div>
         <ol>
-          <li class="st s1"><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="26" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 21l10-5v16l-10-5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="13" y="24" width="12" height="9" rx="2" fill="currentColor"/><path d="M15.5 24v-2.5a3.5 3.5 0 017 0V24" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div><span class="yr">2018</span><b>חוק המצלמות</b><span class="d">מצלמים הכל. אף אחד לא צופה. אחרי זמן קצר נמחק.</span><em>מתעד</em></li>
-          <li class="st s2"><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 42h16M24 34v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 21s4.5-6 11-6 11 6 11 6-4.5 6-11 6-11-6-11-6z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="21" r="3" fill="currentColor"/></svg></div><span class="yr">2024</span><b>מסלולי צפייה להורים</b><span class="d">רשימה סגורה של דרכי צפייה, לבחירת המפעיל. שעות של וידאו, ואף אחד לא מבין בזמן אמת.</span><em>חושף</em></li>
-          <li class="st s3 now"><div class="node"><img src="logo-hand-white.png" alt=""></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span><em>מגן</em></li>
+          <li class="st s1"><em class="kw">מתעד</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="26" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 21l10-5v16l-10-5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="13" y="24" width="12" height="9" rx="2" fill="currentColor"/><path d="M15.5 24v-2.5a3.5 3.5 0 017 0V24" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div><span class="yr">2018</span><b>חוק המצלמות</b><span class="d">מצלמים הכל. אף אחד לא צופה. אחרי זמן קצר נמחק.</span></li>
+          <li class="st s2"><em class="kw">חושף</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 42h16M24 34v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 21s4.5-6 11-6 11 6 11 6-4.5 6-11 6-11-6-11-6z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="21" r="3" fill="currentColor"/></svg></div><span class="yr">2024</span><b>מסלולי צפייה להורים</b><span class="d">רשימה סגורה של דרכי צפייה, לבחירת המפעיל. שעות של וידאו, ואף אחד לא מבין בזמן אמת.</span></li>
+          <li class="st s3 now"><span class="glints" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><em class="kw">מגן</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true" class="shield"><path d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path d="M16.5 24.5l5.5 5.5 10-11" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span></li>
         </ol>
         <figcaption><span class="w1">מתיעוד,</span> <span class="w2">לחשיפה,</span> <span class="w3">להגנה.</span> <b>המסלול הרביעי משלים את התמונה.</b></figcaption>
       </figure>
