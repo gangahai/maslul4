@@ -147,6 +147,15 @@ footer a{color:var(--ink-2)}
 .ez{color:var(--blue);font-weight:700;white-space:nowrap}
 footer .ez{color:var(--ink-2)}
 .brand .ez{color:var(--blue)}
+.faq{padding-block:10px 24px;max-width:780px}
+.faq h2{font-size:20px;margin-bottom:8px}
+.qa details{border-top:1px solid var(--rule)}
+.qa details:last-child{border-bottom:1px solid var(--rule)}
+.qa summary{cursor:pointer;list-style:none;font-weight:600;font-size:16px;padding:11px 0;display:flex;justify-content:space-between;gap:12px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";color:var(--blue);font-size:20px;line-height:1}
+.qa details[open] summary::after{content:"–"}
+.qa p{margin:0 0 12px;font-size:15.5px;color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -197,8 +206,8 @@ footer .ez{color:var(--ink-2)}
 
     <h2><span>ג.</span>הבקשה</h2>
     <ol>
-      <li>לעדכן את החוק ולהוסיף לו <b>מסלול רביעי</b>: ניתוח אוטומטי, בזמן אמת, של צילומי המצלמות הקיימות, שתוצריו הם התראות ותובנות כתובות לגורם האחראי במסגרת, ללא צפייה אנושית שוטפת בווידאו.</li>
-      <li>לקבוע תנאים מחייבים למסלול: הימנעות משמירת וידאו מעבר לנדרש, הגבלת השימוש במידע למטרות הגנה וליווי מקצועי, תיעוד כל גישה למידע, ופיקוח של הרשות להגנת הפרטיות.</li>
+      <li>לעדכן את החוק ולהוסיף לו <b>מסלול רביעי</b>: ניתוח אוטומטי, בזמן אמת, של צילומי המצלמות הקיימות, שתוצריו הם התראות ותובנות כתובות לגורם האחראי במסגרת, ללא צפייה אנושית שוטפת בווידאו. המסלול יהיה פתוח לכל מערכת שתעמוד בתנאים ובפיקוח.</li>
+      <li>לקבוע תנאים מחייבים למסלול: הימנעות משמירת וידאו מעבר לנדרש, הגבלת השימוש במידע למטרות הגנה וליווי מקצועי, תיעוד כל גישה למידע, ופיקוח של הרשות להגנת הפרטיות. כמו כן: איסור על דירוג עובדים, איסור על החלטה נגד עובד על סמך תובנה בלבד ללא בדיקה אנושית, מחיקת המידע אחרי זמן מוגדר, ושקיפות מלאה לצוות על מה שנאסף.</li>
       <li>לאפשר הפעלה במסגרות כבר בשלב הראשון, בליווי מחקר הערכה חיצוני ובלתי תלוי שתוצאותיו יפורסמו לציבור.</li>
       <li>להקצות תקציב ייעודי למסלול ולליווי המקצועי, בנוסף על משאבי הפיקוח הקיימים.</li>
     </ol>
@@ -294,19 +303,7 @@ footer .ez{color:var(--ink-2)}
         <button class="sbtn" type="button" id="copyLink">העתקת קישור</button>
       </div>
 
-      <form class="pilot" id="pilot" hidden novalidate>
-        <h3>מעוניינים להפעיל את המערכת במסגרת שלכם?</h3>
-        <p>זו פנייה נפרדת ואינה חלק מההצהרה. נציג <span class="ez">עין צופיה</span> יחזור אליכם כדי להציג את המערכת ולבחון הפעלה במסגרת.</p>
-        <div class="f"><label for="pOrg">שם המסגרת</label><input type="text" id="pOrg" name="org" maxlength="100" required></div>
-        <div class="two">
-          <div class="f"><label for="pKids">מספר ילדים <span class="opt">(בערך)</span></label><input type="text" id="pKids" name="kids" inputmode="numeric" maxlength="10"></div>
-          <div class="f"><label for="pPhone">טלפון</label><input type="tel" id="pPhone" name="phone" dir="ltr" inputmode="tel" maxlength="20" required></div>
-        </div>
-        <label class="chk" style="margin-bottom:12px"><input type="checkbox" name="ok" required><span>מאשר/ת ש<span class="ez">עין צופיה</span> תיצור איתי קשר בנוגע להפעלת המערכת במסגרת.</span></label>
-        <button class="sbtn pri" type="submit" style="width:100%">אני רוצה שיחזרו אליי</button>
-        <div class="err" id="pErr" role="alert" hidden></div>
-      </form>
-      <div class="pilot ok" id="pilotOk" hidden>תודה. נחזור אליך בהקדם.</div>
+
     </div>
   </aside>
 </main>
@@ -314,6 +311,17 @@ footer .ez{color:var(--ink-2)}
 <section class="wrap recent" id="recentBox" hidden aria-labelledby="rec-h">
   <h3 id="rec-h">חתמו לאחרונה</h3>
   <div class="chips" id="chips"></div>
+</section>
+
+<section class="wrap faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">שאלות וחששות</h2>
+  <div class="qa">
+    <details><summary><span class="q">האם המערכת עלולה לטעות?</span></summary><p>כן. כל מערכת עלולה לטעות, ולכן תובנה היא סימן לבדיקה ולא פסק דין. התראה חמורה נבדקת בידי אדם מוסמך לפני כל פעולה, והמחקר החיצוני שההצהרה דורשת ימדוד ויפרסם את שיעור הטעויות.</p></details>
+    <details><summary><span class="q">האם היא מחליפה פיקוח ואנשי צוות?</span></summary><p>לא. היא כלי בידי הצוות והמפקחות, לא תחליף להם. לכן ההצהרה דורשת תקציב ייעודי בנוסף על משאבי הפיקוח הקיימים, ולא במקומם.</p></details>
+    <details><summary><span class="q">מי מקבל את המידע ומי רשאי לעיין בו?</span></summary><p>רק מי שצריך לפעול: הגורם האחראי במסגרת מקבל התראות, הצוות מקבל משוב על העבודה שלו, וגורמי הפיקוח מקבלים תמונת מצב ברמת הגן. הורים לא רואים מידע על ילדים אחרים. כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</p></details>
+    <details><summary><span class="q">האם המידע ישמש לדירוג עובדים או להחלטות נגדם?</span></summary><p>לא. ההצהרה דורשת איסור על דירוג עובדים, ואיסור על החלטה נגד עובד על סמך תובנה בלבד, בלי בדיקה אנושית. כשיש חשד לפגיעה בילד, החובות הקיימות בחוק ממשיכות לחול כמו היום.</p></details>
+    <details><summary><span class="q">האם החתימה מחייבת שימוש ב<span class="ez">עין צופיה</span>?</span></summary><p>לא. החתימה היא תמיכה בשינוי מדיניות, לא במוצר. ההצהרה דורשת מסלול פתוח לכל מערכת שתעמוד בתנאים ובפיקוח. החתימה אינה מחייבת אתכם או את הגן בשום דבר, ולא נשתמש בפרטים שלכם לשיווק.</p></details>
+  </div>
 </section>
 
 <section class="wrap privacy" id="privacy">
@@ -325,7 +333,6 @@ footer .ez{color:var(--ink-2)}
       <li>הפרטים לא ישמשו לשיווק מוצרים ולא יועברו לצד שלישי. בהגשה יימסרו שמות ויישובים בלבד, ללא טלפון ודוא״ל.</li>
       <li>באתר מוצגים שם פרטי ויישוב רק למי שאישר זאת. אנשי מקצוע מוצגים בשמם ובתפקידם רק באישורם.</li>
       <li>עדכונים יישלחו רק למי שאישר זאת בנפרד. ניתן לבטל בכל עת.</li>
-      <li>מסגרות שמילאו בנפרד פנייה להפעלת המערכת יקבלו פנייה מ<span class="ez">עין צופיה</span> בנושא זה בלבד. פנייה זו אינה חלק מההצהרה ואינה נספרת בה.</li>
       <li>הפרטים יישמרו למשך הזמן הנדרש לקבלת מענה ממקבלי ההחלטות ולהשלמת הליך עדכון החוק, ולאחר מכן יימחקו.</li>
       <li>האחראית על המידע: <span class="ez">עין צופיה</span>, ח.פ. 306679242. לעיון, תיקון או מחיקה של פרטים: <a href="mailto:emma@tsofia.ai" dir="ltr">emma@tsofia.ai</a> או <a href="tel:+972508787431" dir="ltr">050-878-7431</a>.</li>
     </ul>
@@ -430,28 +437,12 @@ form.addEventListener("submit",async ev=>{
 function done(name,lvl,dup){
   form.hidden=true;const t=$("#thanks");t.hidden=false;
   $("#tName").textContent=name.split(/\s+/)[0];
-  const R=F.role.value;
-  if(R!=="הורה"&&R!=="אחר"){const pf=$("#pilot");pf.hidden=false;if(F.phone.value)pf.elements.phone.value=F.phone.value;}
-  lastSigner={name,city:F.city.value.trim(),role:R,title:F.title.value.trim(),email:F.email.value.trim()};
   if(dup) $("#thanks h2").textContent="כתובת הדוא״ל הזו כבר חתומה על ההצהרה. תודה!";
   if(lvl==="active") $("#tMsg").textContent="ניצור איתך קשר בהמשך כדי לתאם את הסיוע. ככל שיחתמו יותר הורים ואנשי חינוך, כך יגבר משקלה של ההצהרה.";
   const msg="הצטרפתי להצהרת הורים ואנשי חינוך הקוראת לעדכן את חוק המצלמות במעונות היום, כך שהמצלמות הקיימות יסייעו למנוע פגיעה בפעוטות בזמן אמת, תוך שמירה על פרטיות. אפשר לקרוא ולהצטרף כאן:\n"+pageUrl()+"?src=wa";
   $("#waShare").href="https://wa.me/?text="+encodeURIComponent(msg);
   t.focus();t.scrollIntoView({behavior:"smooth",block:"start"});
 }
-let lastSigner={};
-$("#pilot").addEventListener("submit",async ev=>{
-  ev.preventDefault();const P=ev.target.elements,pe=$("#pErr");pe.hidden=true;
-  const msg=m=>{pe.textContent=m;pe.hidden=false};
-  if(P.org.value.trim().length<2){msg("יש למלא את שם המסגרת.");P.org.focus();return}
-  if(!/^[0-9+\-\s()]{9,20}$/.test(P.phone.value.trim())){msg("יש למלא מספר טלפון תקין.");P.phone.focus();return}
-  if(!P.ok.checked){msg("יש לאשר יצירת קשר.");return}
-  const data={type:"pilot",...lastSigner,org:P.org.value.trim(),kids:P.kids.value.trim(),phone:P.phone.value.trim()};
-  try{
-    if(ENDPOINT){const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});const d=await r.json().catch(()=>({ok:true}));if(d.ok===false)throw 0}
-    ev.target.hidden=true;$("#pilotOk").hidden=false;
-  }catch(e){msg("השליחה לא הצליחה. אפשר גם להתקשר: 050-878-7431.")}
-});
 async function copy(txt){try{await navigator.clipboard.writeText(txt);toast("הקישור הועתק")}catch(e){const a=document.createElement("textarea");a.value=txt;document.body.append(a);a.select();try{document.execCommand("copy");toast("הקישור הועתק")}catch(_){toast(txt)}a.remove()}}
 $("#copyLink").addEventListener("click",()=>copy(pageUrl()));
 if(location.hash==="#a11y")$("#a11y").open=true;
