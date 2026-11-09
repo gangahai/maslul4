@@ -192,7 +192,12 @@ footer .ez{color:var(--ink-2)}
 .ask{position:relative}
 .askmark{position:absolute;top:22px;left:24px;width:84px;height:auto}
 .ask h1,.ask-k{padding-left:100px}
-.thmark{display:block;width:52px;height:auto;margin-bottom:10px}
+.thmark{display:block;width:96px;height:auto;margin:2px auto 14px}
+.thanks{text-align:center}
+.thanks:focus{outline:none}
+.thanks:not([hidden]) .thmark{animation:thpop .7s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes thpop{from{opacity:0;transform:scale(.6) rotate(-8deg)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.thanks:not([hidden]) .thmark{animation:none}}
 @media (max-width:600px){.askmark{width:48px;top:18px;left:16px}.ask h1,.ask-k{padding-left:56px}}
 /* layout: ask + full text on the right, signing card on the left from the first screen */
 .grid{grid-template-areas:"ask card" "doc card";row-gap:30px;padding-top:30px!important}
@@ -380,7 +385,7 @@ footer .ez{color:var(--ink-2)}
     </form>
 
     <div class="thanks" id="thanks" hidden tabindex="-1">
-      <img class="thmark" src="logo-hand.png" alt="">
+      <img class="thmark" src="thanks-hands.png" alt="" width="96" height="125">
       <h2>תודה, <span id="tName"></span>. חתימתך נקלטה.</h2>
       <p id="tMsg">ככל שיחתמו יותר הורים ואנשי חינוך, כך יגבר משקלה של ההצהרה. נשמח אם תשתפו אותה.</p>
       <div class="sharebtns">
@@ -462,6 +467,9 @@ if(SUPPORTERS.length){SUPPORTERS.forEach(s=>{const li=document.createElement("li
 else{exList.hidden=true;$("#exIntro").textContent="אנו מזמינים אנשי מקצוע מתחומי הגיל הרך, החינוך והאקדמיה להצטרף להצהרה. שמות התומכים יופיעו כאן לאחר אישורם."}
 $("#exJoin").addEventListener("click",()=>{setTimeout(()=>{F.role.value="איש או אשת חינוך או אקדמיה";sync();F.name.focus()},300)});
 
+/* טלפון נשלח כטקסט עם מקף (050-1234567), כדי שהגיליון לא יוריד את ה-0 שבהתחלה */
+function fmtPhone(p){if(!p)return "";let d=p.replace(/[^\d+]/g,"");if(d.startsWith("+972"))d="0"+d.slice(4);else if(d.startsWith("972"))d="0"+d.slice(3);
+  if(/^05\d{8}$/.test(d))return d.slice(0,3)+"-"+d.slice(3);if(/^0\d{8}$/.test(d))return d.slice(0,2)+"-"+d.slice(2);return "'"+p}
 function render(count,recent){
   $("#count").textContent=count.toLocaleString("he-IL");
   const goal=goalFor(count);$("#goalTxt").textContent=goal.toLocaleString("he-IL");
@@ -504,7 +512,7 @@ form.addEventListener("submit",async ev=>{
     title:pro?F.title.value.trim():"",proPublic:pro&&F.proPublic.checked,
     level:{sign:"חתימה",updates:"עדכונים",active:"פעילות"}[lvl],
     acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value).join(", "):"",
-    phone:lvl==="sign"?"":phone,email,
+    phone:lvl==="sign"?"":fmtPhone(phone),email,
     optin:lvl!=="sign"&&F.optin.checked,showName:F.showName.checked,
     source:new URLSearchParams(location.search).get("src")||document.referrer||""
   };
