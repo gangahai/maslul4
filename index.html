@@ -1161,6 +1161,19 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .late.go .hg-grains{animation:hgGate 6s linear infinite}
 .late:not(.go) .hg-gr{display:none}
 @media (max-width:700px){.hglass{width:52px!important;height:54px!important}}
+
+/* גל ההקלטה v3: ממורכז, גל רץ, ולולאה של עצירה ברגע החשוב */
+.wave{margin-inline:auto!important}
+@media (prefers-reduced-motion:no-preference){
+  .wave.go rect.wb{animation:wvb3 1.4s ease-in-out calc(var(--i) * -45ms) infinite!important}
+  .wave.go rect.hb{animation:wvhit3 7s cubic-bezier(.2,1.5,.4,1) infinite!important}
+  .wave.go .wv-head{animation:wvhead3 7s cubic-bezier(.5,0,.4,1) infinite!important}
+  .wave.go .wave-lbl .hit{animation:wvlbl3 7s ease-out infinite!important}
+}
+@keyframes wvb3{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@keyframes wvhit3{0%,30%{transform:scaleY(.35);filter:none}38%{transform:scaleY(1.15);filter:drop-shadow(0 0 5px rgba(255,59,85,.9))}46%,85%{transform:scaleY(1);filter:drop-shadow(0 0 4px rgba(255,59,85,.7))}95%,100%{transform:scaleY(.35);filter:none}}
+@keyframes wvhead3{0%{opacity:0;right:0}4%{opacity:1;right:0}32%,85%{opacity:1;right:calc(50% - 2px)}95%,100%{opacity:0;right:calc(50% - 2px)}}
+@keyframes wvlbl3{0%,32%{opacity:0;transform:translateY(4px)}38%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
 </style>
 </head>
 <body>
