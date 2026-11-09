@@ -248,6 +248,7 @@ footer .ez{color:var(--ink-2)}
 .go.ready{opacity:1;box-shadow:0 8px 22px rgba(30,124,176,.35);animation:goin .5s ease-out}
 @keyframes goin{0%{transform:scale(.98)}60%{transform:scale(1.02)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.partner-box.flash,.chk.agree.next,.go.ready{animation:none}}
+.idea{width:100%;margin-top:2px;font:inherit;font-size:14.5px;padding:8px 10px;border:1px solid var(--rule-2);border-radius:8px;box-sizing:border-box}
 </style>
 </head>
 <body>
@@ -386,10 +387,11 @@ footer .ez{color:var(--ink-2)}
       <div class="partner-box" id="partnerBox" hidden>
         <div class="f"><span class="lb">באיזה אופן <span class="opt">(אפשר לבחור כמה)</span></span>
           <div class="acts">
-            <label class="chk"><input type="checkbox" name="acts" value="הפצה להורים"><span>הפצת ההצהרה להורים נוספים</span></label>
-            <label class="chk"><input type="checkbox" name="acts" value="הצגה במסגרת"><span>הצגת ההצהרה במסגרת של ילדי</span></label>
-            <label class="chk"><input type="checkbox" name="acts" value="כנסת ותקשורת"><span>השתתפות בדיונים בכנסת או בתקשורת</span></label>
+            <label class="chk"><input type="checkbox" name="acts" value="הפצה להורים"><span>הפצה להורים בגן ובסביבה שלי</span></label>
             <label class="chk"><input type="checkbox" name="acts" value="ריכוז אזורי"><span>ריכוז הורים באזור מגוריי</span></label>
+            <label class="chk"><input type="checkbox" name="acts" value="כנסת ותקשורת"><span>השתתפות בכנסת או בתקשורת</span></label>
+            <label class="chk"><input type="checkbox" name="acts" value="רעיון" id="ideaChk"><span>יש לי רעיון אחר</span></label>
+            <input type="text" id="idea" class="idea" maxlength="200" placeholder="ספרו לנו בקצרה" aria-label="הרעיון שלי" hidden>
           </div>
         </div>
         <div class="f phonef"><label for="phone">טלפון <span class="req">*</span> <span class="opt">כדי שנוכל לתאם איתך</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" dir="ltr" inputmode="tel" maxlength="20" placeholder="050-0000000"></div>
@@ -512,6 +514,7 @@ function sync(e){
   box.hidden=!on;F.phone.required=on;
   if(on&&!was&&e){box.classList.remove("flash");void box.offsetWidth;box.classList.add("flash");box.scrollIntoView({behavior:"smooth",block:"nearest"})}
   $("#proBox").hidden=F.role.value!=="איש או אשת חינוך או אקדמיה";
+  const ih=$("#idea"),wasI=!ih.hidden;ih.hidden=!$("#ideaChk").checked;if(!ih.hidden&&!wasI&&e)ih.focus();
   ready();
 }
 /* הכוונה: מה הצעד הבא */
@@ -539,7 +542,7 @@ form.addEventListener("submit",async ev=>{
     website:F.website.value,name,city,role,
     title:pro?F.title.value.trim():"",proPublic:pro&&F.proPublic.checked,
     level:{sign:"חתימה",updates:"עדכונים",active:"פעילות"}[lvl],
-    acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value).join(", "):"",
+    acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value==="רעיון"?("רעיון: "+($("#idea").value.trim()||"—")):i.value).join(", "):"",
     phone:lvl==="active"?fmtPhone(phone):"",email,
     optin:F.optin.checked,showName:F.showName.checked,
     source:new URLSearchParams(location.search).get("src")||document.referrer||""
