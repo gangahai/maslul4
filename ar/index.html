@@ -1222,6 +1222,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (min-width:601px){.bar .sections{margin-inline-start:auto;justify-content:flex-end}.bar .lsw{margin-inline-start:10px}}
 .act .lead{font-family:var(--f-ui);font-weight:800;color:#fff;font-size:clamp(22px,2.4vw,29px)!important;line-height:1.3;margin-top:16px}
 @media (max-width:700px){.act .lead{font-size:19px!important}}
+.lc{margin:14px 0 0;font-family:var(--f-ui);font-size:15px;font-weight:600;color:#dfe8f2;display:flex;align-items:center;gap:8px}
+.lc[hidden],.lc2[hidden]{display:none}
+.lc b{color:#fff;font-size:18px;font-weight:900}
+.lc-dot{width:9px;height:9px;border-radius:50%;background:#4bc7e3;flex:none}
+@media (prefers-reduced-motion:no-preference){.lc-dot{animation:lcp 2s ease-out infinite}}
+@keyframes lcp{0%{box-shadow:0 0 0 0 rgba(75,199,227,.55)}70%{box-shadow:0 0 0 9px rgba(75,199,227,0)}100%{box-shadow:0 0 0 0 rgba(75,199,227,0)}}
+.signbox .lc2{display:block;margin-top:5px;font-weight:800;opacity:1}
+.signbox .lc2 b{display:inline!important;font-family:inherit!important;font-size:1.1em!important;font-weight:900;color:var(--red);margin:0!important}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -1277,6 +1285,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="../atzuma.html">وقّعوا على إعلان الأهالي</a><a class="bigbtn glass" href="#fix">كيف يعمل ذلك</a></div>
+    <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>وقّعوا على الإعلان حتى الآن</span></p>
   </div>
   <span class="credit">لقطة حقيقية من كاميرا في روضة، من نظام <span class="ez">عين تسوفيا</span>. مُوّهت الوجوه حفاظًا على الخصوصية.</span>
 </header>
@@ -1504,7 +1513,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <div class="act-top"><div><h2 id="act-h">أيها الأهالي، آن الأوان لنتكاتف.</h2>
     <p class="lead">كل تعديل للقانون حتى اليوم تحقّق لأن الأهالي لم يسكتوا.</p></div>
     <button class="sharecirc" id="shareCirc" type="button" aria-label="مشاركة المقال"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>مشاركة</span></button></div>
-    <a class="signbox" href="../atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>وقّعوا على إعلان الأهالي من أجل المسار الرابع</b><small>سيُقدَّم إلى وزير/ة التربية والتعليم وإلى لجنة التربية في الكنيست.</small></span><span class="sb-go">للتوقيع</span></a>
+    <a class="signbox" href="../atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>وقّعوا على إعلان الأهالي من أجل المسار الرابع</b><small>سيُقدَّم إلى وزير/ة التربية والتعليم وإلى لجنة التربية في الكنيست.</small><small class="lc2" hidden><b class="lcn">0</b> وقّعوا حتى الآن. المرحلة الأولى: 1,000</small></span><span class="sb-go">للتوقيع</span></a>
     <div class="parents">
       <div><h3>أشركوا أهالي الروضة</h3><p>رسالة جاهزة. أرسلوها إلى مجموعة أهالي الروضة، وإلى إدارة الروضة أيضًا.</p></div>
       <button class="bigbtn red" id="sendParents" type="button">إرسال الرسالة</button>
@@ -1694,5 +1703,8 @@ b.addEventListener('click',function(e){e.stopPropagation();m.hidden?op(e.detail=
 b.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();op(true);}});
 m.addEventListener('keydown',function(e){var i=it.indexOf(document.activeElement);if(e.key==='Escape'){cl(true);}else if(e.key==='ArrowDown'){e.preventDefault();it[(i+1)%it.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();it[(i-1+it.length)%it.length].focus();}else if(e.key==='Tab'){cl();}});
 document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});})();</script>
+<script>(function(){var EP="https://script.google.com/macros/s/AKfycbwL5KzYs6paU6y3_C6ndggCBLdf3WVtEqDpFwZX4enn8LP9jQX_IZgJVryVxGfJQlVU/exec";
+try{fetch(EP,{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){var n=d.count||0;if(n<100)return;var t=n.toLocaleString("en-US");
+document.querySelectorAll(".lcn").forEach(function(e){e.textContent=t});document.querySelectorAll(".lc,.lc2").forEach(function(e){e.hidden=false})}).catch(function(){})}catch(e){}})();</script>
 </body>
 </html>
