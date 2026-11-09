@@ -1723,6 +1723,75 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .lt-cred li{white-space:nowrap;font-size:12px}
 .lt-cred li.lt-sm{font-size:11px}
 .pc1{padding-bottom:48px}.pc1 figcaption{bottom:13px}
+.pc1.hid{opacity:0!important;pointer-events:none}
+/* ===== TYPE SCALE UP (readability) ===== */
+.shero-deck{font-size:clamp(19px,1.9vw,22px)!important}
+.shero .kicker{font-size:16px}
+.sdeep{font-size:17px}
+.shero .lc{font-size:16.5px}
+.slede{font-size:clamp(19px,1.9vw,23px)!important;line-height:1.6}
+.sfeel h2,.sped h2,.swhat h2,.smgr h2,.sgives h2{font-size:clamp(34px,4.2vw,54px)!important}
+.sfeel h2 small,.sped h2 small,.swhat h2 small,.smgr h2 small,.sgives h2 small{font-size:16.5px!important}
+.feel-h3{font-size:clamp(28px,3.2vw,40px)!important}
+.lt-body p{font-size:clamp(19px,1.8vw,21.5px)!important}
+.lt-body .lt-open{font-size:clamp(24px,2.4vw,29px)!important}
+.lt-body .lt-call{font-size:clamp(21px,2.1vw,25px)!important}
+.lt-sign,.lt-sign b{font-size:18px!important}
+.lt-id b{font-size:23px}.lt-id span{font-size:16.5px}
+.lt-cred li{font-size:13.5px}.lt-cred li.lt-sm{font-size:12.5px}
+.scard b{font-size:22px!important}
+.scard p{font-size:18px!important;line-height:1.55}
+.use h3{font-size:23px}.use p{font-size:18px!important}.use-plus{font-size:16px!important}
+.guards h3{font-size:21px}.guards dt{font-size:18px}.guards dd{font-size:17px}
+.mgr-q{font-size:clamp(20px,2vw,24px)}
+.mgr-q cite{font-size:15px}
+.lc-y{font-size:14px}
+.lc-kw{font-size:40px}
+.lc3 h3{font-size:21px}
+.lc3 ul{font-size:17.5px}
+.lc-tr b{font-size:16.5px}
+.lc-tr .st{font-size:13px}
+.lc-stat{font-size:16px}
+.lc-stat b{font-size:18px}
+.law-src{font-size:14px}
+.ped-head b,.ph-t b{font-size:19px}.ph-t small{font-size:14.5px}
+.ped-cats button{font-size:14.5px;padding:7px 13px}
+.pc small{font-size:14.5px}
+.pc h4{font-size:22px}
+.pc-why{font-size:18px}
+.pc ul{font-size:17.5px}
+.pc-msg p{font-size:17.5px}
+.pm-l{font-size:14px}
+.pc-res{font-size:17px}
+.pc-dl{font-size:17.5px}
+.ped-hint{font-size:14px}
+.ped-trust li{font-size:17px}
+.ped-note{font-size:15.5px}
+.ped-live,.ped-anon{font-size:13.5px}
+.faq .q{font-size:clamp(19px,1.9vw,22px)}
+.faq details p{font-size:18px;line-height:1.65}
+.morelink{font-size:18px}
+.sjoin .lead{font-size:clamp(20px,2vw,24px)!important}
+.jt b{font-size:22px}.jt p{font-size:17.5px}
+.jbtn{font-size:17px;padding:12px 20px}
+.snote{font-size:17px}.mgr-tip{font-size:16px}
+.orgs{font-size:17px}.orgs b{font-size:20px}
+.sbanner{font-size:18px}.sbanner b{font-size:22px}
+.pc1 figcaption{font-size:16px}
+.ps-note{font-size:14px}
+@media (max-width:700px){
+ .sfeel h2,.sped h2,.swhat h2,.smgr h2,.sgives h2{font-size:32px!important}
+ .feel-h3{font-size:27px!important}
+ .slede{font-size:18.5px!important}
+ .scard b{font-size:21px!important}.scard p{font-size:17.5px!important}
+ .lt-body p{font-size:18.5px!important}
+ .lc3 ul{font-size:17px}.lc-kw{font-size:34px}
+ .pc h4{font-size:20px}.pc-why,.pc-msg p,.pc ul,.pc-dl{font-size:17px}
+ .ped-cards{min-height:400px}
+ .use p,.guards dd{font-size:17px}
+ .jt p{font-size:17px}
+ .faq details p{font-size:17.5px}
+}
 </style>
 </head>
 <body>
@@ -1747,6 +1816,10 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <figure class="pc1" data-i="1"><img src="staff-autumn.jpg" alt="מטפלת מחופשת לסתיו משחקת עם פעוטות בעלים צבעוניים" loading="lazy"><figcaption>יום של סתיו עם הפעוטות</figcaption></figure>
       <figure class="pc1" data-i="2"><img src="staff-shabbat.jpg" alt="מטפלת ושני פעוטות בוצעים חלה בקבלת שבת" loading="lazy"><figcaption>קבלת שבת</figcaption></figure>
       <figure class="pc1" data-i="3"><img src="staff-pets.jpg" alt="מטפלת מציגה יונה לשני פעוטות" loading="lazy"><figcaption>חוג חיות</figcaption></figure>
+      <figure class="pc1" data-i="4"><img src="staff-parachute.jpg" alt="מטפלת ופעוטות משחקים יחד עם יריעה שקופה בחצר" loading="lazy"><figcaption>משחק יריעה בחצר</figcaption></figure>
+      <figure class="pc1" data-i="5"><img src="staff-yard.jpg" alt="מטפלת ופעוטות בפעילות תנועה עם סרטים אדומים על הדשא" loading="lazy"><figcaption>תנועה בחצר</figcaption></figure>
+      <figure class="pc1" data-i="6"><img src="staff-art.jpg" alt="מטפלת ופעוטות יושבים סביב שולחן ומציירים" loading="lazy"><figcaption>יצירה סביב השולחן</figcaption></figure>
+      <figure class="pc1" data-i="7"><img src="staff-sticks.jpg" alt="מטפלת ופעוטות ממיינים מקלות צבעוניים סביב שולחן" loading="lazy"><figcaption>מיון צבעים עם מקלות</figcaption></figure>
       <span class="ps-note">רגעים אמיתיים מהגנים. הפנים טושטשו.</span>
     </div>
   </div>
@@ -1758,11 +1831,11 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <div class="lt-who"><img class="lt-ph" src="aharon.jpg" alt="אהרון נייס" width="500" height="600"><span class="lt-id"><b>אהרון נייס</b><span>מנהל גן גחליליות</span></span>
       <ul class="lt-cred"><li>גנן מוסמך</li><li>מנתח התנהגות מוסמך (BCBA)</li><li class="lt-sm">לקראת תואר שני ביזמות טכנולוגית</li></ul></div>
     <div class="lt-body">
-      <p class="lt-open">שלום, אני אהרון, מנהל גן גחליליות.</p>
+      <p class="lt-open">שלום, אני אהרון.</p>
       <p>הגן שלנו פועל כבר 25 שנה. חינכנו דורות של ילדים, ועבדנו כאן הרבה לפני שהיו מצלמות. וכשהן נכנסו לגנים, ראינו מה הן עושות: מתעדות הכל, אבל לא מתריעות בזמן אמת, ולא נותנות לצוות שום משוב.</p>
       <p>אחרי כל פרשה, הכותרות צובעות את כולנו בשחור. <b>לא שומעים אותנו, לא רואים אותנו.</b> ובינתיים שוב מקצצים בגיל הרך: לפי הצעת התקציב ל-2026, תקציב הפיקוח על המעונות צפוי להתקצץ בכ-75%.</p>
       <p class="lt-call">הגיע הזמן שנתאחד. שנגיע לכנסת ונשמיע את קולנו, שנראה שאנחנו כאן, ושכולם יראו את הטוב ואת עבודת הקודש שאנחנו עושים כל יום.</p>
-      <p class="lt-sign">מזמין אתכם להצטרף למאבק. <b>אהרון</b></p>
+      <p class="lt-sign">מזמין אתכם להצטרף למאבק.</p>
     </div>
   </div>
   <h3 class="feel-h3">וזה מה שקורה לנו אחרי כל כותרת</h3>
@@ -1961,7 +2034,7 @@ paint();if("IntersectionObserver" in window){new IntersectionObserver(function(e
 })();
 </script>
 <script>(function(){var st=document.getElementById("pstack");if(!st)return;var cs=[].slice.call(st.querySelectorAll(".pc1")),N=cs.length,i=0;
-function lay(){cs.forEach(function(c,k){var d=(k-i+N)%N;c.style.setProperty("--d",d);c.classList.toggle("top",d===0)})}
+function lay(){cs.forEach(function(c,k){var d=(k-i+N)%N;c.style.setProperty("--d",Math.min(d,3));c.classList.toggle("top",d===0);c.classList.toggle("hid",d>2)})}
 lay();if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
 var t=setInterval(function(){var top=cs[i];top.classList.add("out");setTimeout(function(){top.classList.remove("out");i=(i+1)%N;lay()},650)},4200);
 st.addEventListener("click",function(){var top=cs[i];top.classList.add("out");setTimeout(function(){top.classList.remove("out");i=(i+1)%N;lay()},650)});})();</script>
