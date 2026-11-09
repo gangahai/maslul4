@@ -543,6 +543,9 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+.solve{display:inline-flex;align-items:baseline;gap:.35em;margin:0 0 14px;padding:.28em .7em .32em;border:2px solid var(--eye);border-radius:999px;font-family:var(--f-ui);font-weight:900;font-size:clamp(24px,3.4vw,38px);line-height:1.1;color:#fff;background:rgba(75,199,227,.1)}
+.solve .sv-l{color:var(--eye);font-weight:800}
+.solve+.kick{display:block;font-size:14px;letter-spacing:0;opacity:.85}
 .blocker{text-align:center;text-wrap:balance;padding:26px clamp(18px,4vw,48px)!important}
 .kicker .kdate{font-weight:500;opacity:.75;margin-inline-start:10px;padding-inline-start:10px;border-inline-start:1px solid currentColor}
 @media (min-width:701px) and (max-width:1000px){.proofline{grid-template-columns:1fr 1fr}}
@@ -806,7 +809,8 @@ footer a{color:#fff}
 
 <section class="spread" id="fix" aria-labelledby="fix-h">
   <div class="wrap">
-    <span class="kick">הפתרון: המסלול הרביעי · דוגמה לטכנולוגיה שכבר קיימת</span>
+    <p class="solve"><span class="sv-l">הפתרון:</span> <span class="sv-n">המסלול הרביעי</span></p>
+    <span class="kick">דוגמה לטכנולוגיה שכבר קיימת</span>
     <h2 id="fix-h">המצלמה <span>שמבינה.</span></h2>
     <p class="deck2">המסלול הרביעי לא מוסיף עוד מצלמה ועוד מסך. הוא הופך את המצלמות שכבר מותקנות לשכבת הבנה שעובדת בזמן אמת, ומעבירה את מה שחשוב למי שיכול לפעול עכשיו.</p>
     <figure class="big-shot vid">
