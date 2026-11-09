@@ -1224,129 +1224,249 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @keyframes lcp{0%{box-shadow:0 0 0 0 rgba(75,199,227,.55)}70%{box-shadow:0 0 0 9px rgba(75,199,227,0)}100%{box-shadow:0 0 0 0 rgba(75,199,227,0)}}
 .signbox .lc2{display:block;margin-top:5px;font-weight:800;opacity:1}
 .signbox .lc2 b{display:inline!important;font-family:inherit!important;font-size:1.1em!important;font-weight:900;color:var(--red);margin:0!important}
-/* ===== staff page ===== */
-.shero{background:radial-gradient(120% 90% at 85% 10%,#1d5b55 0%,#0f3936 55%,#0b2a28 100%);color:#fff;padding-block:clamp(40px,7vw,84px) clamp(36px,6vw,64px);overflow:hidden}
-.shero-in{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.shero .kicker{color:#8fe3d4}
-.shero h1{font-family:var(--f-head);font-weight:900;font-size:clamp(40px,6.4vw,82px);line-height:1.02;letter-spacing:-.015em;margin:14px 0 0;max-width:14ch}
-.shero h1 .tq{color:#8fe3d4;display:inline-block;font-size:.62em;line-height:1.15;margin-top:.25em;max-width:20ch}
-.shero-deck{font-size:clamp(18px,1.9vw,21px);line-height:1.6;color:#e3f1ee;max-width:46ch;margin:22px 0 0}
+/* ===================== staff page ===================== */
+:root{--sg:#2a8f84;--sg-d:#1f6f66;--sg-l:#8fe3d4;--sg-bg:#f1f7f5}
+/* ---------- hero ---------- */
+.shero{position:relative;background:radial-gradient(120% 90% at 85% 10%,#1d5b55 0%,#0f3936 55%,#0b2a28 100%);color:#fff;padding-block:clamp(40px,7vw,88px) clamp(40px,6vw,72px);overflow:hidden}
+.shero-in{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.shero .kicker{color:var(--sg-l)}
+.shero h1{font-family:var(--f-head);font-weight:900;font-size:clamp(44px,6.6vw,86px);line-height:1;letter-spacing:-.015em;margin:14px 0 0}
+.shero h1 .tq{display:block;color:var(--sg-l);font-size:.56em;line-height:1.2;margin-top:.35em}
+.shero h1 .mk{position:relative;white-space:nowrap;display:inline-block}
+.shero h1 .mk svg{position:absolute;inset-inline:0;bottom:-.18em;width:100%;height:.32em;overflow:visible}
+.shero h1 .mk path{fill:none;stroke:#f3c64b;stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+.shero-deck{font-size:clamp(18px,1.9vw,21px);line-height:1.6;color:#e3f1ee;max-width:46ch;margin:26px 0 0}
 .shero-deck b{color:#fff}
-.shero-art{width:clamp(150px,20vw,250px);height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
-@media (prefers-reduced-motion:no-preference){.shero-art{animation:sArt 1s cubic-bezier(.2,.8,.2,1) .2s both}@keyframes sArt{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}}
+.shero .hero-cta{animation:none!important;opacity:1!important;transform:none!important;margin-top:26px}
 .shero .lc{color:#d4ece8}
-.shero .lc-dot{background:#8fe3d4}
-.slede{font-size:clamp(18px,1.8vw,21px);line-height:1.65;max-width:56ch;margin:10px 0 0;color:var(--ink)}
-.sfeel,.smgr{padding-block:clamp(44px,6vw,72px) 0}
-.sfeel h2,.swhat h2,.smgr h2{font-family:var(--f-head);font-weight:900;font-size:clamp(30px,3.8vw,46px);line-height:1.12;margin:0}
+.shero .lc-dot{background:var(--sg-l)}
+.sdeep{display:inline-block;margin-top:14px;font-family:var(--f-ui);font-weight:800;font-size:16px;color:var(--sg-l);text-decoration:underline;text-underline-offset:4px}
+.sdeep::after{content:" ←"}
+.shero-vis{position:relative;justify-self:center;width:min(100%,380px);aspect-ratio:1/1;display:grid;place-items:center}
+.shero-vis::before{content:"";position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(143,227,212,.22),rgba(143,227,212,0) 68%)}
+.shero-art{position:relative;width:62%;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:7px;background:#fff;color:#14302d;font-family:var(--f-ui);font-weight:800;font-size:13.5px;line-height:1.2;border-radius:999px;padding:8px 13px 8px 15px;box-shadow:0 10px 26px rgba(0,0,0,.28);white-space:nowrap}
+.chip i{font-style:normal}
+.chip.c1{top:8%;inset-inline-start:-6%}
+.chip.c2{top:46%;inset-inline-end:-10%}
+.chip.c3{bottom:6%;inset-inline-start:2%;background:#fff4f5;color:#7a0f20}
+@media (prefers-reduced-motion:no-preference){
+ .shero-art{animation:sArt 1s cubic-bezier(.2,.8,.2,1) .2s both,sFloat 6s ease-in-out 1.4s infinite}
+ @keyframes sArt{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
+ @keyframes sFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+ .chip{animation:chipIn .6s cubic-bezier(.2,.9,.3,1.3) both,chipBob 5s ease-in-out infinite}
+ .chip.c1{animation-delay:1s,1.6s}.chip.c2{animation-delay:1.7s,2.3s}.chip.c3{animation-delay:2.4s,3s}
+ @keyframes chipIn{from{opacity:0;transform:translateY(10px) scale(.85)}to{opacity:1;transform:none}}
+ @keyframes chipBob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+ .shero h1 .mk path{stroke-dashoffset:1;animation:mkDraw .9s cubic-bezier(.6,0,.2,1) .7s forwards}
+ @keyframes mkDraw{to{stroke-dashoffset:0}}
+}
+/* ---------- shared headings ---------- */
+.sfeel h2,.sped h2,.swhat h2,.smgr h2{font-family:var(--f-head);font-weight:900;font-size:clamp(32px,4vw,50px);line-height:1.1;margin:0}
+.sfeel h2 small,.sped h2 small,.swhat h2 small,.smgr h2 small{display:block;font-family:var(--f-ui);font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--sg-d);margin-bottom:8px}
+.smgr h2 small{color:var(--red)}
+.slede{font-size:clamp(18px,1.8vw,21px);line-height:1.65;max-width:58ch;margin:12px 0 0;color:var(--ink)}
+.law-src{font-family:var(--f-ui);font-size:13px;color:#6a727c;margin:10px 0 0}
+.tqd{background:linear-gradient(transparent 62%,rgba(42,143,132,.28) 62%);padding:0 .1em}
+.nt{color:#6a727c}
+/* ---------- feel ---------- */
+.sfeel{padding-block:clamp(48px,6vw,80px) 0}
+.sbrush{display:inline;padding:.02em .2em .06em;color:#fff;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M6 14 C40 6 90 10 140 7 S250 4 300 8 S370 5 396 12 L392 22 L398 30 L390 40 L396 50 C350 56 300 52 250 55 S150 58 100 54 S30 57 4 50 L10 40 L2 30 L8 22 Z' fill='%23111'/%3E%3C/svg%3E") right center/100% 100% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;line-height:1.45}
+.sfeel.armed .sbrush{background-size:0% 100%;color:var(--ink)}
+.sfeel.go .sbrush{animation:sBrush 1.2s cubic-bezier(.6,0,.2,1) .25s forwards}
+@keyframes sBrush{0%{background-size:0% 100%;color:var(--ink)}45%{color:var(--ink)}100%{background-size:100% 100%;color:#fff}}
 .scards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-.scard{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:20px 20px 18px}
-.scard b{display:block;font-family:var(--f-ui);font-weight:800;font-size:19px;color:var(--ink)}
-.scard p{margin:8px 0 0;font-size:17px;line-height:1.6;color:#3b3f48}
-.sfeel .scard{border-top:4px solid var(--red)}
-.smgr .scard{border-top:4px solid #2a8f84}
-.swhat{background:#f1f7f5;margin-top:clamp(44px,6vw,72px);padding-block:clamp(44px,6vw,72px)}
+.scard{position:relative;background:#fff;border:1px solid var(--rule);border-radius:18px;padding:22px 22px 20px}
+.scard b{display:block;font-family:var(--f-ui);font-weight:900;font-size:19px;color:var(--ink);margin-top:12px}
+.scard p{margin:8px 0 0;font-size:16.5px;line-height:1.6;color:#3b3f48}
+.sico{width:46px;height:46px;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.sfeel .sico{stroke:var(--red)}
+.gives .sico{stroke:var(--sg)}
+.sico path,.sico circle{stroke-dasharray:1;stroke-dashoffset:0}
+[data-io].armed .scard{opacity:0;transform:translateY(14px)}
+[data-io].go .scard{animation:sUp .6s cubic-bezier(.2,.8,.2,1) calc(.15s + var(--k,0)*.15s) both}
+[data-io].armed .sico path,[data-io].armed .sico circle{stroke-dashoffset:1}
+[data-io].go .sico path,[data-io].go .sico circle{animation:sDraw 1s cubic-bezier(.6,0,.2,1) calc(.4s + var(--k,0)*.15s) forwards}
+@keyframes sUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes sDraw{to{stroke-dashoffset:0}}
+/* ---------- pedagogy showcase ---------- */
+.sped{padding-block:clamp(56px,7vw,92px) clamp(40px,5vw,64px);margin-top:clamp(48px,6vw,80px);background:linear-gradient(180deg,var(--sg-bg),#fff)}
+.ped{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:28px;align-items:start}
+.ped-vid{position:relative;margin:0;border-radius:18px;overflow:hidden;background:#111;box-shadow:0 18px 40px rgba(16,40,38,.22);border:6px solid #12302d}
+.ped-vid video{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.ped-live{position:absolute;top:10px;inset-inline-end:10px;display:inline-flex;align-items:center;gap:6px;background:rgba(15,57,54,.92);color:#fff;font-family:var(--f-ui);font-weight:800;font-size:12.5px;border-radius:999px;padding:4px 11px}
+.ped-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sg-l)}
+.ped-anon{position:absolute;bottom:10px;inset-inline-start:10px;background:rgba(15,20,28,.78);color:#fff;font-family:var(--f-ui);font-size:12.5px;border-radius:6px;padding:3px 9px}
+.scan{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(143,227,212,.18) 48%,rgba(143,227,212,.45) 50%,rgba(143,227,212,.18) 52%,transparent);background-size:40% 100%;background-repeat:no-repeat;background-position:-60% 0;mix-blend-mode:screen}
+@media (prefers-reduced-motion:no-preference){.scan{animation:scan 4.5s linear infinite}@keyframes scan{to{background-position:160% 0}}}
+.ped-time{margin-top:14px;font-family:var(--f-ui)}
+.pt-lbl{font-size:13px;font-weight:800;color:#5a626c}
+.pt-bar{position:relative;height:6px;border-radius:3px;background:#dfe7e5;margin:12px 8px 6px}
+.pt-fill{position:absolute;inset-block:0;inset-inline-start:0;width:0;border-radius:3px;background:var(--sg);transition:width .6s cubic-bezier(.4,0,.2,1)}
+.pt-marks{position:absolute;inset:0}
+.pt-m{position:absolute;top:50%;inset-inline-start:var(--x);width:16px;height:16px;margin-inline-start:-8px;margin-top:-8px;border-radius:50%;border:3px solid #fff;background:#c9d3d1;cursor:pointer;padding:0;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .25s,background .25s}
+.pt-m.on{transform:scale(1.35)}
+.pt-m.on.pt-g,.pt-m.done.pt-g{background:#e2a92b}.pt-m.on.pt-k,.pt-m.done.pt-k{background:#3d84c6}.pt-m.on.pt-t,.pt-m.done.pt-t{background:var(--sg)}.pt-m.on.pt-b,.pt-m.done.pt-b{background:#2f9d8d}.pt-m.on.pt-q,.pt-m.done.pt-q{background:#7b5bb5}
+.ped-trust{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
+.ped-trust li{position:relative;padding-inline-start:30px;font-family:var(--f-ui);font-size:15px;line-height:1.5;color:#3b3f48}
+.ped-trust li::before{content:"";position:absolute;inset-inline-start:0;top:1px;width:20px;height:20px;border-radius:6px;background:var(--sg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.ped-trust b{color:var(--ink)}
+.ped-rep{position:relative;background:#fff;border:1px solid #d8e6e3;border-radius:22px;box-shadow:0 22px 50px rgba(16,40,38,.14);display:flex;flex-direction:column;overflow:hidden}
+.ped-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(90deg,#0f3936,#1d5b55);color:#fff;font-family:var(--f-ui)}
+.ph-av{width:40px;height:40px;border-radius:50%;background:var(--red);display:grid;place-items:center;flex:none;box-shadow:0 0 0 3px rgba(255,255,255,.18)}
+.ph-av img{width:24px;height:24px;object-fit:contain}
+.ph-t{flex:1;display:flex;flex-direction:column;line-height:1.25}
+.ph-t b{font-weight:900;font-size:17px}
+.ph-t small{font-size:13px;color:#cfe9e4}
+.ph-n{font-size:13px;color:#cfe9e4;font-weight:700;direction:ltr}
+.ph-n b{font-size:18px;color:#fff;font-weight:900}
+.ped-prog{height:3px;background:#e6efed}
+.ped-prog i{display:block;height:100%;width:0;background:var(--sg-l)}
+@keyframes pedprog{from{width:0}to{width:100%}}
+.ped-cats{display:flex;gap:6px;padding:12px 14px 0;overflow-x:auto;scrollbar-width:none}
+.ped-cats::-webkit-scrollbar{display:none}
+.ped-cats button{flex:none;font-family:var(--f-ui);font-weight:800;font-size:13px;border:1px solid #dde5e3;background:#fff;color:#4a525c;border-radius:999px;padding:5px 11px;cursor:pointer;transition:all .25s}
+.ped-cats button i{font-style:normal;display:inline-grid;place-items:center;min-width:18px;height:18px;border-radius:9px;background:#eef2f1;font-size:11px;margin-inline-start:2px}
+.ped-cats button.on{background:#0f3936;border-color:#0f3936;color:#fff}
+.ped-cats button.on i{background:rgba(255,255,255,.2)}
+.ped-cards{position:relative;display:grid;padding:4px 18px;min-height:290px;touch-action:pan-y}
+.pc{grid-area:1/1;opacity:0;visibility:hidden;transform:translateX(-18px);transition:opacity .4s,transform .45s cubic-bezier(.2,.8,.2,1),visibility .4s;padding-top:14px}
+.pc.is-on{opacity:1;visibility:visible;transform:none}
+.pc small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--f-ui);font-size:13px}
+.pc-tag{font-weight:800;border-radius:999px;padding:3px 11px;background:#f3f1ec}
+.pc-g .pc-tag{background:#fff3d6;color:#8a5a00}
+.pc-k .pc-tag{background:#e8f1fb;color:#1e5f91}
+.pc-t .pc-tag{background:#e3f4f1;color:var(--sg-d)}
+.pc-b .pc-tag{background:#e6f5f2;color:#22766b}
+.pc-q .pc-tag{background:#f1ecf8;color:#5a3d8a}
+.pc-ok{color:var(--sg-d);font-weight:800}
+.pc-ok::before{content:"✓ "}
+.pc-un{color:#8a6a00;font-weight:700}
+.pc-un::before{content:"○ "}
+.pc h4{font-family:var(--f-ui);font-weight:900;font-size:19px;line-height:1.4;margin:12px 0 0;color:var(--ink)}
+.pc h4.pc-big{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,2.4vw,27px);line-height:1.35;color:#3d2a63;margin-top:18px}
+.pc-why{font-size:16px;line-height:1.6;margin:8px 0 0;color:#3b3f48}
+.pc ul{margin:8px 0 0;padding-inline-start:20px;font-size:15.5px;line-height:1.55;color:#3b3f48}
+.pc ul li{margin-top:4px}
+.pc-msg{position:relative;margin:14px 0 4px;background:#fdf6e3;border-radius:16px 16px 16px 4px;padding:10px 14px 12px}
+.pm-l{display:block;font-family:var(--f-ui);font-size:12.5px;font-weight:900;color:#8a5a00;margin-bottom:3px}
+.pc-msg p{margin:0;font-size:15.5px;line-height:1.6;color:#3a3020}
+.pc-res{margin:12px 0 0;font-family:var(--f-ui);font-size:15px;background:#eef8f6;border-radius:10px;padding:8px 12px;color:#1f4f49}
+.pc-dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:12px 0 0;font-size:15.5px;line-height:1.5}
+.pc-dl dt{font-family:var(--f-ui);font-weight:900;color:#22766b}
+.pc-dl dd{margin:0;color:#3b3f48}
+@media (prefers-reduced-motion:no-preference){
+ .pc.is-on h4,.pc.is-on .pc-why,.pc.is-on .pc-msg,.pc.is-on ul,.pc.is-on .pc-res,.pc.is-on .pc-dl{animation:pcIn .5s cubic-bezier(.2,.8,.2,1) both}
+ .pc.is-on .pc-why,.pc.is-on ul,.pc.is-on .pc-dl{animation-delay:.12s}
+ .pc.is-on .pc-msg,.pc.is-on .pc-res{animation-delay:.3s}
+ @keyframes pcIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+.ped-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px 14px;border-top:1px solid #edf2f1;margin-top:8px}
+.ped-nav button{width:38px;height:38px;border-radius:50%;border:1px solid #d8e2e0;background:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.ped-nav button:hover{background:var(--sg-bg)}
+.ped-nav svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ped-hint{font-family:var(--f-ui);font-size:12.5px;color:#7a828c}
+.ped-note{font-family:var(--f-ui);font-size:14px;color:#5a626c;margin:16px 0 0}
+/* ---------- what ---------- */
+.swhat{padding-block:clamp(48px,6vw,80px)}
 .sno-yes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
-.syes,.sno{background:#fff;border-radius:16px;padding:20px 22px;border:1px solid var(--rule)}
-.syes{border-inline-start:5px solid #2a8f84}
-.sno{border-inline-start:5px solid #9aa3ad}
-.sno-yes h3{font-family:var(--f-ui);font-weight:900;font-size:20px;margin:0 0 6px}
-.syes h3{color:#1f7a70}.sno h3{color:#5b6470}
+.syes,.sno{background:#fff;border-radius:18px;padding:22px 24px;border:1px solid var(--rule)}
+.syes{box-shadow:inset 0 4px 0 var(--sg)}
+.sno{box-shadow:inset 0 4px 0 #9aa3ad;background:#fafafa}
+.sno-yes h3{display:flex;align-items:center;gap:10px;font-family:var(--f-ui);font-weight:900;font-size:21px;margin:0 0 4px}
+.yn{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900}
+.yn.y{background:var(--sg)}.yn.n{background:#9aa3ad}
+.syes h3{color:var(--sg-d)}.sno h3{color:#5b6470}
 .sno-yes ul{margin:0;padding:0;list-style:none}
-.sno-yes li{position:relative;padding-inline-start:28px;margin-top:12px;font-size:17px;line-height:1.55}
-.sno-yes li::before{content:"";position:absolute;inset-inline-start:0;top:.35em;width:18px;height:18px;border-radius:50%;background-repeat:no-repeat;background-position:center;background-size:12px}
-.syes li::before{background-color:#2a8f84;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
-.sno li::before{background-color:#9aa3ad;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 4.5l7 7M11.5 4.5l-7 7' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")}
-.sshot{margin:28px 0 0}
-.sshot img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 14px 34px rgba(0,0,0,.14)}
-.sshot figcaption{font-family:var(--f-ui);font-size:15px;line-height:1.55;color:#4a525c;margin-top:10px}
+.sno-yes li{position:relative;padding-inline-start:20px;margin-top:14px;font-size:16.5px;line-height:1.55}
+.sno-yes li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;width:8px;height:8px;border-radius:50%}
+.syes li::before{background:var(--sg)}.sno li::before{background:#b4bbc3}
+.swhat.armed li{opacity:0;transform:translateX(-10px)}
+.swhat.go li{animation:sIn .5s ease-out calc(.2s + var(--k,0)*.12s) both}
+.swhat.go .sno li{animation-delay:calc(.75s + var(--k,0)*.12s)}
+@keyframes sIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.sbanner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;border-radius:18px;background:#0f3936;color:#e3f1ee;text-decoration:none;font-family:var(--f-ui);font-size:16.5px;line-height:1.5;position:relative;overflow:hidden}
+.sbanner::before{content:"";position:absolute;inset-inline-end:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(143,227,212,.25),transparent 70%)}
+.sbanner b{display:block;color:#fff;font-size:20px;font-weight:900;margin-bottom:2px}
+.sbanner i{position:relative;font-style:normal;flex:none;background:var(--sg-l);color:#0b2a28;font-weight:900;border-radius:999px;padding:11px 20px;transition:background .2s}
+.sbanner:hover i{background:#fff}
+/* ---------- managers / law ---------- */
+.smgr{padding-block:clamp(56px,7vw,92px) clamp(40px,5vw,64px)}
+.mgr-pull{margin:22px 0 14px;max-width:30em}
+.lawstep{position:relative;display:grid;grid-template-columns:76px 1fr;gap:18px;padding-bottom:28px}
+.lawstep::before{content:"";position:absolute;inset-inline-start:37px;top:44px;bottom:0;width:2px;background:repeating-linear-gradient(#cfd4da 0 6px,transparent 6px 12px)}
+.ls-y{position:relative;z-index:1;width:76px;height:44px;border-radius:12px;background:#2b313b;color:#fff;font-family:var(--f-ui);font-weight:900;font-size:19px;display:grid;place-items:center}
+.ls-now .ls-y{background:var(--sg);box-shadow:0 0 0 6px rgba(42,143,132,.18)}
+.ls-now::before{display:none}
+.ls-body{min-width:0}
+.ls-body h3{font-family:var(--f-ui);font-weight:900;font-size:clamp(20px,2.2vw,24px);line-height:1.3;margin:8px 0 0}
+.law-p{font-size:17px;line-height:1.65;margin:10px 0 0;max-width:62ch}
+.smgr .days30{margin:18px 0 6px}
+.law-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.law-stats div{background:#fbeef0;border-radius:14px;padding:12px 14px}
+.law-stats b{display:block;font-family:var(--f-ui);font-weight:900;font-size:34px;color:var(--red);line-height:1.05}
+.law-stats span{font-family:var(--f-ui);font-size:14px;line-height:1.4;color:#4a2a30}
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.trk{position:relative;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:16px 16px 18px;overflow:hidden}
+.tico{width:40px;height:40px;fill:none;stroke:#3a4252;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.trk b{display:block;font-family:var(--f-ui);font-weight:900;font-size:16.5px;margin-top:8px}
+.trk p{margin:6px 0 0;font-size:15.5px;line-height:1.5;color:#3b3f48}
+.stamp{position:absolute;top:14px;inset-inline-end:12px;font-family:var(--f-ui);font-weight:900;font-size:13px;color:var(--red);border:2px solid var(--red);border-radius:8px;padding:2px 8px;transform:rotate(-8deg);background:rgba(255,255,255,.9)}
+.tracks.armed .trk{opacity:0;transform:translateY(12px)}
+.tracks.go .trk{animation:sUp .55s ease-out calc(.1s + var(--k,0)*.15s) both}
+.tracks.armed .stamp{opacity:0}
+.tracks.go .stamp{animation:stamp .4s cubic-bezier(.3,1.6,.5,1) calc(.8s + var(--k,0)*.2s) both}
+@keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(1.8)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+.fixgrid{display:grid;gap:8px;margin-top:14px}
+.fx{display:grid;grid-template-columns:1fr 1.6fr;gap:14px;align-items:center;background:#fff;border:1px solid #d6ebe7;border-radius:12px;padding:12px 16px;font-family:var(--f-ui);font-size:15.5px;line-height:1.45}
+.fx-o{position:relative;color:#8a1f2e;justify-self:start}
+.fx-o::after{content:"";position:absolute;inset-inline-start:0;top:52%;height:2px;width:100%;background:rgba(200,16,46,.6);transform-origin:right}
+.fx-n{font-weight:800;color:var(--sg-d)}
+.fx-n::before{content:"✓ ";color:var(--sg)}
+.fixgrid.armed .fx-o::after{transform:scaleX(0)}
+.fixgrid.go .fx-o::after{animation:strike .45s ease-out calc(.2s + var(--k,0)*.25s) both}
+.fixgrid.armed .fx-n{opacity:0}
+.fixgrid.go .fx-n{animation:sIn .45s ease-out calc(.5s + var(--k,0)*.25s) both}
+@keyframes strike{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.smgr .tline{margin:10px 0 0}
+.mgr-h3{font-family:var(--f-ui);font-weight:900;font-size:clamp(22px,2.4vw,28px);margin:40px 0 0}
 .snote{font-family:var(--f-ui);font-size:15.5px;color:#4a525c;margin:18px 0 0}
-.mgr-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.mgr-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
 .bigbtn.outline{background:#fff;color:var(--ink);border:2px solid var(--ink);cursor:pointer}
 .mgr-tip{font-family:var(--f-ui);font-size:14.5px;color:#6a727c;margin:10px 0 0}
 .faq h2{font-family:var(--f-head);font-weight:900}
 .morelink{display:inline-block;margin-top:16px;font-family:var(--f-ui);font-weight:800;color:var(--teal)}
 .act-share{font-family:var(--f-ui);font-size:15px;color:#ffe3e7;margin:14px 0 0}
-@media (max-width:860px){.scards{grid-template-columns:1fr}.sno-yes{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){[data-io] *,.chip,.shero-art{animation:none!important;opacity:1!important;transform:none!important}}
+/* ---------- responsive ---------- */
+@media (max-width:980px){.ped{grid-template-columns:1fr}.ped-l{display:contents}.ped-vid{order:1}.ped-rep{order:2}.ped-time{display:none}.ped-trust{order:4}}
+@media (max-width:860px){.sno-yes{grid-template-columns:1fr}}
 @media (max-width:700px){
- .shero-in{grid-template-columns:1fr;gap:18px}
- .shero-art{order:-1;width:96px}
- .shero h1{font-size:36px}
- .shero-deck{font-size:17px}
+ .shero-in{grid-template-columns:1fr;gap:10px}
+ .shero-vis{order:-1;width:100%;aspect-ratio:auto;height:170px;justify-self:stretch}
+ .shero-vis::before{inset:-10% 25%}
+ .shero-art{width:96px}
+ .chip{font-size:12px;padding:6px 10px}
+ .chip.c1{top:4px;inset-inline-start:0}.chip.c2{top:66px;inset-inline-end:0}.chip.c3{bottom:4px;inset-inline-start:8px}
+ .shero h1{font-size:40px}
+ .shero-deck{font-size:17px;margin-top:20px}
+ .swipe{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-18px;padding:4px 18px 10px;scrollbar-width:none}
+ .swipe::-webkit-scrollbar{display:none}
+ .swipe>*{flex:0 0 82%;scroll-snap-align:center}
  .scard p,.sno-yes li{font-size:16px}
+ .ped-cards{min-height:340px;padding-inline:16px}
+ .lawstep{grid-template-columns:1fr;gap:10px}
+ .lawstep::before{display:none}
+ .ls-y{width:auto;justify-self:start;padding-inline:14px;height:34px;font-size:16px}
+ .law-stats{gap:6px}
+ .law-stats div{padding:10px}
+ .law-stats b{font-size:24px}
+ .law-stats span{font-size:12px}
+ .fx{grid-template-columns:1fr;gap:2px}
  .mgr-cta .bigbtn{width:100%;justify-content:center}
+ .sbanner{flex-direction:column;align-items:flex-start}
+ .sbanner i{width:100%;text-align:center}
 }
-.shero .hero-cta{animation:none!important;opacity:1!important;transform:none!important;margin-top:26px}
-.sshot figcaption{display:block!important;text-align:start}
-.sshot figcaption b{color:var(--ink)}
-.sdeep{display:inline-block;margin-top:14px;font-family:var(--f-ui);font-weight:800;font-size:16px;color:#8fe3d4;text-decoration:underline;text-underline-offset:4px}
-.sdeep::after{content:" ←"}
-.sbanner{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:clamp(36px,5vw,56px);padding:22px 24px;border-radius:16px;background:#0f3936;color:#e3f1ee;text-decoration:none;font-family:var(--f-ui);font-size:16.5px;line-height:1.5}
-.sbanner b{display:block;color:#fff;font-size:20px;font-weight:900;margin-bottom:2px}
-.sbanner i{font-style:normal;flex:none;background:#8fe3d4;color:#0b2a28;font-weight:900;border-radius:999px;padding:11px 20px}
-.sbanner:hover i{background:#fff}
-@media (max-width:700px){.sbanner{flex-direction:column;align-items:flex-start}.sbanner i{width:100%;text-align:center}}
-/* pedagogy showcase */
-.sped{padding-block:clamp(44px,6vw,72px) 0}
-.sped h2,.smgr h2{font-family:var(--f-head);font-weight:900;font-size:clamp(30px,3.8vw,46px);line-height:1.12;margin:0}
-.ped{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin-top:26px;align-items:stretch}
-.ped-vid{position:relative;margin:0;border-radius:16px;overflow:hidden;background:#111;box-shadow:0 14px 34px rgba(0,0,0,.16);align-self:start}
-.ped-vid video{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
-.ped-live{position:absolute;top:10px;inset-inline-end:10px;background:var(--red);color:#fff;font-family:var(--f-ui);font-weight:800;font-size:12.5px;border-radius:6px;padding:3px 9px}
-.ped-anon{position:absolute;bottom:10px;inset-inline-start:10px;background:rgba(15,20,28,.78);color:#fff;font-family:var(--f-ui);font-size:12.5px;border-radius:6px;padding:3px 9px}
-.ped-rep{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:16px 18px 12px;display:flex;flex-direction:column;min-height:330px}
-.ped-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--rule);padding-bottom:10px;font-family:var(--f-ui)}
-.ped-head b{font-weight:900;font-size:17px}
-.ped-head span{font-size:13.5px;color:#6a727c}
-.ped-cards{position:relative;flex:1;display:grid}
-.pc{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s,transform .35s,visibility .35s;padding-top:12px}
-.pc.is-on{opacity:1;visibility:visible;transform:none}
-.pc small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--f-ui);font-size:13px}
-.pc-tag{font-weight:800;border-radius:999px;padding:2px 10px;background:#f3f1ec}
-.pc-g .pc-tag{background:#fff3d6;color:#8a5a00}
-.pc-k .pc-tag{background:#e8f1fb;color:#1e5f91}
-.pc-t .pc-tag{background:#e3f4f1;color:#1f6f66}
-.pc-q .pc-tag{background:#f1ecf8;color:#5a3d8a}
-.pc-ok{color:#1f7a70;font-weight:700}
-.pc-ok::before{content:"✓ "}
-.pc h4{font-family:var(--f-ui);font-weight:800;font-size:18px;line-height:1.4;margin:10px 0 0}
-.pc-why{font-size:16px;line-height:1.6;margin:8px 0 0;color:#3b3f48}
-.pc ul{margin:6px 0 0;padding-inline-start:20px;font-size:15.5px;line-height:1.55;color:#3b3f48}
-.pc-msg{font-size:15.5px;line-height:1.6;margin:10px 0 0;background:#fbf8ef;border-inline-start:3px solid #e2b13c;border-radius:8px;padding:8px 12px}
-.pc-msg b{font-family:var(--f-ui);font-size:13.5px;display:block;color:#6b5000}
-.ped-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}
-.ped-nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);background:#fff;font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
-.ped-dots{display:flex;gap:6px}
-.ped-dots i{width:8px;height:8px;border-radius:50%;background:#d6d2c8;cursor:pointer}
-.ped-dots i.on{background:#2a8f84;width:20px;border-radius:4px}
-.ped-note{font-family:var(--f-ui);font-size:14.5px;color:#5a626c;margin:14px 0 0;max-width:80ch}
-/* law */
-.law3{display:grid;gap:16px;margin-top:24px}
-.law-blk{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:20px 22px}
-.law-blk h3{font-family:var(--f-ui);font-weight:900;font-size:clamp(19px,2vw,22px);line-height:1.35;margin:0}
-.law-list{margin:10px 0 0;padding-inline-start:20px;font-size:17px;line-height:1.6}
-.law-list li{margin-top:6px}
-.law-p{font-size:17px;line-height:1.6;margin:10px 0 0}
-.law-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.law-stats div{background:#fbeef0;border-radius:12px;padding:10px 12px}
-.law-stats b{display:block;font-family:var(--f-ui);font-weight:900;font-size:28px;color:var(--red);line-height:1.1}
-.law-stats span{font-family:var(--f-ui);font-size:14px;line-height:1.4;color:#4a2a30}
-.law-src{font-family:var(--f-ui);font-size:13px;color:#6a727c;margin:8px 0 0}
-.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.trk{border:1px solid var(--rule);border-top:4px solid var(--red);border-radius:12px;padding:12px 14px}
-.trk b{font-family:var(--f-ui);font-weight:800;font-size:16px;display:block}
-.trk p{margin:6px 0 0;font-size:15.5px;line-height:1.5;color:#3b3f48}
-.law-fix{border-color:#bfe2dc;background:#f4fbf9}
-.fixgrid{display:grid;gap:8px;margin-top:12px}
-.fx{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;align-items:center;background:#fff;border-radius:10px;padding:10px 14px;font-family:var(--f-ui);font-size:15.5px;line-height:1.45}
-.fx-o{color:#8a1f2e;text-decoration:line-through;text-decoration-color:rgba(200,16,46,.45)}
-.fx-n{font-weight:800;color:#1f6f66}
-.fx-n::before{content:"✓ ";color:#2a8f84}
-.mgr-h3{font-family:var(--f-ui);font-weight:900;font-size:22px;margin:30px 0 0}
-@media (max-width:860px){.ped{grid-template-columns:1fr}.ped-rep{min-height:0}.tracks,.law-stats{grid-template-columns:1fr}.fx{grid-template-columns:1fr;gap:2px}}
-.pc-un{color:#8a6a00;font-weight:700}
-.pc-un::before{content:"○ "}
-.sfeel .law-src{margin-top:10px}
 </style>
 </head>
 <body>
@@ -1360,77 +1480,92 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">לצוותי חינוך ולמנהלי מסגרות</span>
-      <h1>אתן הלב של הגן.<br><span class="tq">הגיע הזמן שגם המערכת תשמור עליכן.</span></h1>
+      <h1>אתן הלב של הגן.<span class="tq">הגיע הזמן שגם המערכת <span class="mk">תשמור עליכן.<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 12 C60 5 120 15 180 8 S260 6 296 10"/></svg></span></span></h1>
       <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואתן אולי מרגישות אותה אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחריכן, אלא עוד זוג עיניים ומשוב פדגוגי לצידכן.</b></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאיש/ת צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
     </div>
-    <img class="shero-art" src="thanks-hands.png" alt="" width="276" height="360">
+    <div class="shero-vis" aria-hidden="true">
+      <img class="shero-art" src="thanks-hands.png" alt="" width="276" height="360">
+      <span class="chip c1"><i>💛</i>רגע יפה: פנייה מכבדת לילדים</span>
+      <span class="chip c2"><i>🎯</i>המלצה: „עוגן“ בזמני מעבר</span>
+      <span class="chip c3"><i>🛡️</i>התראה: ילד בוכה לבד</span>
+    </div>
   </div>
 </header>
 
-<section class="sfeel wrap" id="feel" aria-labelledby="feel-h">
-  <h2 id="feel-h">מה שקורה לצוותים אחרי כל פרשה</h2>
-  <p class="slede">אלפי גננות, סייעות ומטפלות מסורות עושות כל יום עבודת קודש. ואז פרשה אחת צובעת את כולן בשחור.</p>
-  <div class="scards">
-    <div class="scard"><b>חשד, רק בדיעבד</b><p>הצילומים נפתחים רק אחרי שכבר יש חשד. עד אז אף אחד לא רואה, ואז כל הצוות נחשד, גם מי שלא עשתה דבר.</p></div>
-    <div class="scard"><b>לבד ברגעי העומס</b><p>מפקחת אחת על כ-83 מעונות, ולפי הצעת התקציב ל-2026 תקציב הפיקוח צפוי להתקצץ בכ-75%. ברגעים הכי עמוסים של היום, הצוות לבד.</p></div>
-    <div class="scard"><b>העבודה הטובה לא נראית</b><p>חיבוק לילד שבוכה, מעגל בוקר שהרגיע קבוצה שלמה. מאות רגעים טובים ביום, שאף אחד לא רואה ולא אומר עליהם תודה.</p></div>
+<section class="sfeel wrap" id="feel" aria-labelledby="feel-h" data-io>
+  <h2 id="feel-h"><small>הצוותים</small>פרשה אחת <span class="sbrush">צובעת את כולן בשחור</span></h2>
+  <p class="slede">אלפי גננות, סייעות ומטפלות מסורות עושות כל יום עבודת קודש. ואז מגיעה הכותרת הבאה.</p>
+  <div class="scards swipe">
+    <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="21" cy="21" r="12"/><path pathLength="1" d="M30 30l11 11"/><path pathLength="1" d="M21 15v7M21 27v.5"/></svg><b>חשד, רק בדיעבד</b><p>הצילומים נפתחים רק אחרי שכבר יש חשד. עד אז אף אחד לא רואה, ואז כל הצוות נחשד, גם מי שלא עשתה דבר.</p></div>
+    <div class="scard ic" style="--k:1"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="24" cy="14" r="6"/><path pathLength="1" d="M12 40c1-8 6-13 12-13s11 5 12 13"/><path pathLength="1" d="M6 22l4 2M42 22l-4 2M9 33l4-1M39 33l-4-1"/></svg><b>לבד ברגעי העומס</b><p>מפקחת אחת על כ-83 מעונות, ולפי הצעת התקציב ל-2026 תקציב הפיקוח צפוי להתקצץ בכ-75%. ברגעים הכי עמוסים, הצוות לבד.</p></div>
+    <div class="scard ic" style="--k:2"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 40S8 30 8 19a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 11-16 21-16 21z"/><path pathLength="1" d="M4 4l40 40"/></svg><b>העבודה הטובה לא נראית</b><p>חיבוק לילד שבוכה, מעגל בוקר שהרגיע קבוצה שלמה. מאות רגעים טובים ביום, שאף אחד לא רואה ולא אומר עליהם תודה.</p></div>
   </div>
   <p class="law-src">מקורות: מבקר המדינה, 2026; ניתוח קרן ברל כצנלסון (ynet, ינואר 2026)</p>
 </section>
 
-
 <section class="sped" id="ped" aria-labelledby="ped-h">
   <div class="wrap">
-    <h2 id="ped-h">מה הצוות מקבל: משוב פדגוגי, כל יום</h2>
+    <h2 id="ped-h"><small>המשוב לצוות</small>מה הצוות מקבל: <span class="tqd">משוב פדגוגי, כל יום</span></h2>
     <p class="slede">כך נראה דוח אמיתי מפיילוט, אחרי בוקר של הכנת פיצות וארוחה בגן. המערכת זיהתה את הרגעים הטובים, ונתנה המלצות מעשיות להמשך. <b>בלי ציונים אישיים לעובדות, ובלי לחפש אשמים.</b></p>
-    <div class="ped">
-      <figure class="ped-vid">
-        <video src="pizza.mp4" poster="pizza-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="קטע ממצלמת הגן בזמן פעילות הכנת פיצות. האנשים מטושטשים"></video>
-        <span class="ped-live">ניתוח אוטומטי · פיילוט</span>
-        <span class="ped-anon">הפנים טושטשו והשמות הוסרו</span>
-      </figure>
-      <div class="ped-rep" id="pedRep">
-        <div class="ped-head"><b>הדוח לצוות</b><span>פעילות פיצות וארוחה</span></div>
-        <div class="ped-cards">
-          <article class="pc pc-g is-on"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><p class="pc-msg"><b>המסר שאשת הצוות מקבלת:</b> „ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></article>
-          <article class="pc pc-g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>חלוקת אבטיח, עם פנייה אישית לכל ילד בשמו.</h4><p class="pc-why">מעניק לילד תחושת נראות ומונע מאבקים סביב האוכל.</p><p class="pc-msg"><b>המסר שאשת הצוות מקבלת:</b> „ראיתי איך את מחלקת את האבטיח, ורגע אחד שממש תפס אותי היה שהקפדת לקרוא לכל ילד בשמו. זה יצר אווירה כל כך רגועה ומכבדת סביב השולחן.“</p></article>
-          <article class="pc pc-k"><small><span class="pc-tag">👶 צורך של ילדה</span></small><h4>ילדה עמדה בצד ולא הצטרפה להכנת הפיצות.</h4><p class="pc-why">כנראה זקוקה לוויסות לפני כניסה לפעילות קבוצתית עמוסה. רעיונות לצוות:</p><ul><li>„אני שמה לך חתיכת בצק קטנה כאן בקצה השולחן, את יכולה רק להסתכל עליה או לגעת באצבע אחת.“</li><li>תפקיד בלי מגע: לעזור לחלק מפיות.</li></ul></article>
-          <article class="pc pc-t"><small><span class="pc-tag">🎯 המלצה מעשית</span><span class="pc-un">טרם אומת מול הווידאו</span></small><h4>בזמני מעבר: אשת צוות אחת „עוגן“, ואחת „לוגיסטיקה“.</h4><p class="pc-why">כשכל הצוות עסוק בניקיון ובארגון, הילדים מאבדים מיקוד ומתחילים לשוטט. „עוגן“ יושבת עם הילדים ושרה או מפעילה, ו„לוגיסטיקה“ מנקה ומארגנת.</p><p class="pc-msg"><b>תוצאה צפויה תוך שבוע:</b> פחות שוטטות ופחות חוסר שקט במעברים.</p></article>
-          <article class="pc pc-t"><small><span class="pc-tag">🧰 מארגז הכלים</span></small><h4>שיר המתנה</h4><p class="pc-why"><b>מתי:</b> כשהילדים יושבים ליד השולחן ומחכים לאוכל. <b>איך:</b> משחק אצבעות או שיר מוכר עם תנועות ידיים. <b>למה זה עובד:</b> נותן לילדים עוגן, כדי שלא „ילכו לאיבוד“ בהמתנה.</p></article>
-          <article class="pc pc-t"><small><span class="pc-tag">🎨 רעיון לפעם הבאה</span></small><h4>פיצה משלנו, בבצק משחק</h4><p class="pc-why">משחק חושי בקבוצות קטנות, בלי הלחץ של תוצר אכיל. מתאים יותר לילדים שנרתעו מהמרקם הדביק של בצק אמיתי.</p></article>
-          <article class="pc pc-q"><small><span class="pc-tag">❓ שאלה להרהור בצוות</span></small><h4>בזמן שאנחנו מנקות ומארגנות לפעילות הבאה, מה הילדים עושים, ומי מתווך להם את הזמן הזה?</h4></article>
+    <div class="ped" id="pedRep">
+      <div class="ped-l">
+        <figure class="ped-vid">
+          <video src="pizza.mp4" poster="pizza-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="קטע ממצלמת הגן בזמן פעילות הכנת פיצות. האנשים מטושטשים"></video>
+          <span class="ped-live">ניתוח אוטומטי · פיילוט</span>
+          <span class="ped-anon">הפנים טושטשו והשמות הוסרו</span>
+          <span class="scan" aria-hidden="true"></span>
+        </figure>
+        <div class="ped-time" aria-hidden="true"><span class="pt-lbl">7 תובנות מהבוקר</span><div class="pt-bar"><i class="pt-fill"></i><div class="pt-marks"></div></div></div>
+        <ul class="ped-trust">
+          <li><b>נבדק מול הווידאו.</b> מה שלא אומת מסומן, והמנהלת מחליטה מה נכנס לדוח לצוות.</li>
+          <li><b>לצוות ולמנהלת.</b> לא להורים.</li>
+          <li><b>בלי ציונים אישיים.</b> המטרה היא ללמוד ולהשתפר.</li>
+        </ul>
+      </div>
+      <div class="ped-rep">
+        <div class="ped-head"><span class="ph-av"><img src="logo-hand-white.png" alt=""></span><span class="ph-t"><b>הדוח לצוות</b><small>פעילות פיצות וארוחה</small></span><span class="ph-n"><b class="ph-i">1</b>/<span class="ph-c">7</span></span></div>
+        <div class="ped-prog" aria-hidden="true"><i></i></div>
+        <div class="ped-cats" role="tablist" aria-label="סוגי תובנות"></div>
+        <div class="ped-cards" aria-live="polite">
+          <article class="pc pc-g is-on" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></div></article>
+          <article class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>חלוקת אבטיח, עם פנייה אישית לכל ילד בשמו.</h4><p class="pc-why">מעניק לילד תחושת נראות ומונע מאבקים סביב האוכל.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את מחלקת את האבטיח, ורגע אחד שממש תפס אותי היה שהקפדת לקרוא לכל ילד בשמו. זה יצר אווירה כל כך רגועה ומכבדת סביב השולחן.“</p></div></article>
+          <article class="pc pc-k" data-cat="k"><small><span class="pc-tag">👶 צורך של ילדה</span></small><h4>ילדה עמדה בצד ולא הצטרפה להכנת הפיצות.</h4><p class="pc-why">כנראה זקוקה לוויסות לפני כניסה לפעילות קבוצתית עמוסה. רעיונות לצוות:</p><ul><li>„אני שמה לך חתיכת בצק קטנה כאן בקצה השולחן, את יכולה רק להסתכל עליה או לגעת באצבע אחת.“</li><li>תפקיד בלי מגע: לעזור לחלק מפיות.</li></ul></article>
+          <article class="pc pc-t" data-cat="t"><small><span class="pc-tag">🎯 המלצה מעשית</span><span class="pc-un">טרם אומת מול הווידאו</span></small><h4>בזמני מעבר: אשת צוות אחת „עוגן“, ואחת „לוגיסטיקה“.</h4><p class="pc-why">כשכל הצוות עסוק בניקיון ובארגון, הילדים מאבדים מיקוד ומתחילים לשוטט. „עוגן“ יושבת עם הילדים ושרה או מפעילה, ו„לוגיסטיקה“ מנקה ומארגנת.</p><p class="pc-res"><b>תוצאה צפויה תוך שבוע:</b> פחות שוטטות ופחות חוסר שקט במעברים.</p></article>
+          <article class="pc pc-b" data-cat="b"><small><span class="pc-tag">🧰 מארגז הכלים</span></small><h4>שיר המתנה</h4><dl class="pc-dl"><dt>מתי</dt><dd>כשהילדים יושבים ליד השולחן ומחכים לאוכל.</dd><dt>איך</dt><dd>משחק אצבעות או שיר מוכר עם תנועות ידיים.</dd><dt>למה</dt><dd>נותן לילדים עוגן, כדי שלא „ילכו לאיבוד“ בהמתנה.</dd></dl></article>
+          <article class="pc pc-b" data-cat="b"><small><span class="pc-tag">🎨 רעיון לפעם הבאה</span></small><h4>פיצה משלנו, בבצק משחק</h4><p class="pc-why">משחק חושי בקבוצות קטנות, בלי הלחץ של תוצר אכיל. מתאים יותר לילדים שנרתעו מהמרקם הדביק של בצק אמיתי.</p></article>
+          <article class="pc pc-q" data-cat="q"><small><span class="pc-tag">❓ שאלה להרהור בצוות</span></small><h4 class="pc-big">בזמן שאנחנו מנקות ומארגנות לפעילות הבאה, מה הילדים עושים, ומי מתווך להם את הזמן הזה?</h4></article>
         </div>
-        <div class="ped-nav"><button type="button" class="pn-prev" aria-label="הקודם">›</button><span class="ped-dots" aria-hidden="true"></span><button type="button" class="pn-next" aria-label="הבא">‹</button></div>
+        <div class="ped-nav"><button type="button" class="pn-prev" aria-label="התובנה הקודמת"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></button><span class="ped-hint">החליקו או לחצו לתובנה הבאה</span><button type="button" class="pn-next" aria-label="התובנה הבאה"><svg viewBox="0 0 16 16"><path d="M10 3L5 8l5 5"/></svg></button></div>
       </div>
     </div>
-    <p class="ped-note">דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים. הדוח מגיע לצוות ולמנהלת, לא להורים. הטענות נבדקות מול הווידאו, ומה שלא אומת מסומן, כדי שהמנהלת תבדוק ותחליט מה נכנס לדוח לצוות.</p>
+    <p class="ped-note">דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים.</p>
   </div>
 </section>
 
-<section class="swhat" id="what" aria-labelledby="what-h">
+<section class="swhat" id="what" aria-labelledby="what-h" data-io>
   <div class="wrap">
-    <h2 id="what-h">מה זה המסלול הרביעי, ומה זה לא</h2>
+    <h2 id="what-h"><small>בפשטות</small>מה זה המסלול הרביעי, <span class="nt">ומה זה לא</span></h2>
     <p class="slede">המצלמות שכבר נמצאות בגנים יעבדו עם בינה מלאכותית שמבינה מה קורה בזמן אמת, ומתריעה רק כשיש סכנה. אף אחד לא יושב וצופה.</p>
     <div class="sno-yes">
       <div class="syes">
-        <h3>מה זה כן</h3>
+        <h3><span class="yn y">✓</span>מה זה כן</h3>
         <ul>
-          <li><b>התראה על סכנה אמיתית,</b> כמו ילד שבוכה לבד זמן רב, אירוע חריג או עומס, כדי שמישהו יגיע לעזור.</li>
-          <li><b>משוב יומי ותמיכה פדגוגית לצוות,</b> עם מדדים ברורים.</li>
-          <li><b>רואה גם את הטוב:</b> נקודות חוזק ורגעים של מגע ותמיכה, שהיום נעלמים.</li>
-          <li><b>בקרה על המצלמות עצמן,</b> עם התראה מיידית על תקלה.</li>
+          <li style="--k:0"><b>התראה על סכנה אמיתית,</b> כמו ילד שבוכה לבד זמן רב, אירוע חריג או עומס, כדי שמישהו יגיע לעזור.</li>
+          <li style="--k:1"><b>משוב יומי ותמיכה פדגוגית לצוות,</b> עם מדדים ברורים.</li>
+          <li style="--k:2"><b>רואה גם את הטוב:</b> נקודות חוזק ורגעים של מגע ותמיכה, שהיום נעלמים.</li>
+          <li style="--k:3"><b>בקרה על המצלמות עצמן,</b> עם התראה מיידית על תקלה.</li>
         </ul>
       </div>
       <div class="sno">
-        <h3>מה זה לא</h3>
+        <h3><span class="yn n">✕</span>מה זה לא</h3>
         <ul>
-          <li><b>לא צפייה שוטפת.</b> אף אחד לא יושב מול מסך ומסתכל עליכן.</li>
-          <li><b>לא דירוג עובדים.</b> זה אחד התנאים בהצהרה.</li>
-          <li><b>לא החלטה נגד עובד על סמך התראה.</b> כל קביעה לגבי עובד נעשית רק אחרי בדיקה אנושית מסודרת.</li>
-          <li><b>לא תחליף לצוות או לפיקוח.</b> כלי בידיים שלכן, וההצהרה דורשת תקציב ייעודי בנוסף לפיקוח הקיים.</li>
+          <li style="--k:0"><b>לא צפייה שוטפת.</b> אף אחד לא יושב מול מסך ומסתכל עליכן.</li>
+          <li style="--k:1"><b>לא דירוג עובדים.</b> זה אחד התנאים בהצהרה.</li>
+          <li style="--k:2"><b>לא החלטה נגד עובד על סמך התראה.</b> כל קביעה לגבי עובד נעשית רק אחרי בדיקה אנושית מסודרת.</li>
+          <li style="--k:3"><b>לא תחליף לצוות או לפיקוח.</b> כלי בידיים שלכן, וההצהרה דורשת תקציב ייעודי בנוסף לפיקוח הקיים.</li>
         </ul>
       </div>
     </div>
@@ -1439,51 +1574,71 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <div class="wrap"><a class="sbanner" href="./"><span><b>רוצות להבין לעומק?</b>התחקיר המלא: מה קרה באריאל, מה החוק מאפשר היום, ואיך עובדת המצלמה שמבינה.</span><i>לעמוד המאבק</i></a></div>
 
-<section class="smgr wrap" id="managers" aria-labelledby="mgr-h">
-  <h2 id="mgr-h">למנהלים ולמנהלות: החוק היום עובד נגדכם</h2>
-  <p class="slede">אתם מכירים את חוק המצלמות מבפנים. במעונות לפעוטות אתם חייבים לצלם את הצוות שלכם, <b>ואסור לכם להשתמש בתיעוד כדי לעזור לו.</b></p>
+<section class="smgr" id="managers" aria-labelledby="mgr-h">
+  <div class="wrap">
+  <h2 id="mgr-h"><small>למנהלים ולמנהלות</small>החוק היום <span class="cut75">עובד נגדכם</span></h2>
+  <blockquote class="pull mgr-pull">במסגרת חוק המצלמות של היום, אני מחויב לתעד את הצוות שלי, ואסור לי להשתמש בתיעוד כדי לעזור לו.<cite>אהרון נייס, מנהל רשת גנים</cite></blockquote>
 
-  <div class="law3">
-    <div class="law-blk">
-      <h3>חוק המצלמות, 2018: מצלמים הכל, אף אחד לא רואה</h3>
-      <ul class="law-list">
-        <li>הצילומים נעולים, ו<b>נפתחים רק אחרי שכבר יש חשד</b>: למשטרה, למפקחות, ולהורה לילד שנפגע (באישור המשטרה).</li>
-        <li>אחרי 30 עד 90 יום הצילומים נמחקים.</li>
-        <li>גם לכם, המפעילים, אסור לצפות. לכן תקלה במצלמה מתגלה רק כשמבקשים את הצילום, ואז מתברר שאין תיעוד.</li>
-      </ul>
-      <div class="law-stats"><div><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></div><div><b>54%</b><span>מהמעונות שנבדקו: תקלה של 3 חודשים ומעלה</span></div><div><b>89%</b><span>מהמעונות הפרטיים: בלי ניטור תקינות</span></div></div>
+  <div class="lawstep">
+    <span class="ls-y">2018</span>
+    <div class="ls-body">
+      <h3>חוק המצלמות: מצלמים הכל, אף אחד לא רואה</h3>
+      <p class="law-p">במעונות לפעוטות חובה לצלם. הצילומים נעולים, ו<b>נפתחים רק אחרי שכבר יש חשד</b>: למשטרה, למפקחות, ולהורה לילד שנפגע (באישור המשטרה). אחרי 30 עד 90 יום הם נמחקים. וגם לכם, המפעילים, אסור לצפות. לכן תקלה במצלמה מתגלה רק כשמבקשים את הצילום.</p>
+      <figure class="inline-fig days30" id="days30" aria-label="המחשה: 30 ימי צילום. בחלק מהימים המצלמה לא הקליטה, וכמעט אף אחד לא צופה. אחרי 30 עד 90 יום הצילומים נמחקים">
+        <div class="grid" aria-hidden="true">
+          <i style="--d:0"></i><i style="--d:1"></i><i style="--d:2"></i><i style="--d:3"></i><i style="--d:4"></i><i style="--d:5"></i><i class="miss" style="--d:6"></i><i class="miss" style="--d:7"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i class="miss" style="--d:13"></i><i style="--d:14"></i><i class="seen" style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:18"></i><i class="miss" style="--d:19"></i><i class="dim" style="--d:20"></i><i class="dim" style="--d:21"></i><i class="dim" style="--d:22"></i><i class="dim" style="--d:23"></i><i class="dim" style="--d:24"></i><i class="gone" style="--d:25"></i><i class="gone" style="--d:26"></i><i class="gone" style="--d:27"></i><i class="gone" style="--d:28"></i><i class="gone" style="--d:29"></i>
+        </div>
+        <div class="lbls"><span>יום 1: מצלמים הכל</span><span>אף אחד לא צפה, חוץ מכמה דקות ביום אחד</span><span><b>יום 30 עד 90: נמחק</b></span></div>
+        <div class="dlegend"><span><i class="k"></i>יום מצולם</span><span><i class="k seen"></i>צפייה של כמה דקות</span><span><i class="k miss"></i>תקלה: אין תיעוד</span><span><i class="k gone"></i>נמחק</span></div>
+      </figure>
+      <div class="law-stats" data-io><div><b data-count="27">27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></div><div><b data-count="54">54%</b><span>מהמעונות שנבדקו: תקלה של 3 חודשים ומעלה</span></div><div><b data-count="89">89%</b><span>מהמעונות הפרטיים: בלי ניטור תקינות</span></div></div>
       <p class="law-src">מקור: מבקר המדינה, 2026</p>
-    </div>
-
-    <div class="law-blk">
-      <h3>התיקון של 2024: שלוש דרכי צפייה, ואף אחת לא מגינה</h3>
-      <p class="law-p">התיקון קבע רשימה סגורה של דרכי צפייה להורים, והמפעיל בוחר אחת. בג״ץ אישר ב-2025 שהרשימה סגורה: כל שימוש שלא מופיע בחוק, אסור.</p>
-      <div class="tracks">
-        <div class="trk"><b>צפייה בגן, פעם בשבוע</b><p>מי יודע מה לחפש? ומה עם שאר השבוע?</p></div>
-        <div class="trk"><b>צפייה מרחוק, 48 שעות בחודש</b><p>שעות של וידאו, והורה עייף בלילה.</p></div>
-        <div class="trk"><b>שידור חי לטלפון</b><p>הורה עובד לא צופה שמונה שעות ביום.</p></div>
-      </div>
-      <p class="law-p">ובכל שלוש הדרכים, הורה צופה בלי הקשר ובלי כלים מקצועיים, והצוות שלכם לא מקבל מזה שום משוב או עזרה.</p>
-    </div>
-
-    <div class="law-blk law-fix">
-      <h3>המסלול הרביעי: מה הוא פותר</h3>
-      <div class="fixgrid">
-        <div class="fx"><span class="fx-o">אף אחד לא רואה בזמן אמת</span><span class="fx-n">המצלמות מבינות בזמן אמת, ומתריעות כשעוד אפשר לעצור</span></div>
-        <div class="fx"><span class="fx-o">מי יודע מה לחפש?</span><span class="fx-n">ניתוח מקצועי של כל היום, לא קטע אקראי</span></div>
-        <div class="fx"><span class="fx-o">שעות של וידאו</span><span class="fx-n">תובנות כתובות, בלי צפייה שוטפת</span></div>
-        <div class="fx"><span class="fx-o">תקלות שנמשכות חודשים</span><span class="fx-n">בקרה רציפה והתראה מיידית על תקלה</span></div>
-        <div class="fx"><span class="fx-o">מפקחת אחת לכ-83 מעונות</span><span class="fx-n">משוב יומי ותמיכה פדגוגית לצוות</span></div>
-      </div>
-      <p class="law-p">הפתרון פשוט: להוסיף לרשימה ניתוח בזמן אמת. <b>בלי תיקון חוק, אי אפשר להפעיל אותו.</b></p>
     </div>
   </div>
 
+  <div class="lawstep">
+    <span class="ls-y">2024</span>
+    <div class="ls-body">
+      <h3>התיקון: שלוש דרכי צפייה, ואף אחת לא מגינה</h3>
+      <p class="law-p">התיקון קבע רשימה סגורה של דרכי צפייה להורים, והמפעיל בוחר אחת. בג״ץ אישר ב-2025 שהרשימה סגורה: כל שימוש שלא מופיע בחוק, אסור.</p>
+      <div class="tracks swipe" data-io>
+        <div class="trk" style="--k:0"><svg class="tico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 22L24 8l18 14"/><path d="M11 19v21h26V19"/><path d="M20 40V29h8v11"/></svg><b>צפייה בגן, פעם בשבוע</b><p>מי יודע מה לחפש? ומה עם שאר השבוע?</p><span class="stamp">לא מגן</span></div>
+        <div class="trk" style="--k:1"><svg class="tico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="24" rx="3"/><path d="M16 41h16M24 33v8"/><circle cx="24" cy="21" r="6"/><path d="M24 18v3l2 2"/></svg><b>צפייה מרחוק, 48 שעות בחודש</b><p>שעות של וידאו, והורה עייף בלילה.</p><span class="stamp">לא מגן</span></div>
+        <div class="trk" style="--k:2"><svg class="tico" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="4" width="20" height="40" rx="4"/><path d="M22 38h4"/><circle cx="24" cy="20" r="3"/><path d="M18 14a8 8 0 0 1 12 0M30 26a8 8 0 0 1-12 0"/></svg><b>שידור חי לטלפון</b><p>הורה עובד לא צופה שמונה שעות ביום.</p><span class="stamp">לא מגן</span></div>
+      </div>
+      <p class="law-p">ובכל שלוש הדרכים, הורה צופה בלי הקשר ובלי כלים מקצועיים, והצוות שלכם לא מקבל מזה שום משוב או עזרה.</p>
+    </div>
+  </div>
+
+  <div class="lawstep ls-now">
+    <span class="ls-y">2026</span>
+    <div class="ls-body">
+      <h3>המסלול הרביעי: מה הוא פותר</h3>
+      <div class="fixgrid" data-io>
+        <div class="fx" style="--k:0"><span class="fx-o">אף אחד לא רואה בזמן אמת</span><span class="fx-n">המצלמות מבינות בזמן אמת, ומתריעות כשעוד אפשר לעצור</span></div>
+        <div class="fx" style="--k:1"><span class="fx-o">מי יודע מה לחפש?</span><span class="fx-n">ניתוח מקצועי של כל היום, לא קטע אקראי</span></div>
+        <div class="fx" style="--k:2"><span class="fx-o">שעות של וידאו</span><span class="fx-n">תובנות כתובות, בלי צפייה שוטפת</span></div>
+        <div class="fx" style="--k:3"><span class="fx-o">תקלות שנמשכות חודשים</span><span class="fx-n">בקרה רציפה והתראה מיידית על תקלה</span></div>
+        <div class="fx" style="--k:4"><span class="fx-o">מפקחת אחת לכ-83 מעונות</span><span class="fx-n">משוב יומי ותמיכה פדגוגית לצוות</span></div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="tline" id="tline" aria-label="ציר הזמן של חוק המצלמות">
+        <div class="tl-track" aria-hidden="true"><i class="tl-fill"></i><i class="tl-spark"></i></div>
+        <ol>
+          <li class="st s1"><em class="kw">מתעד</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="26" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 21l10-5v16l-10-5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="13" y="24" width="12" height="9" rx="2" fill="currentColor"/><path d="M15.5 24v-2.5a3.5 3.5 0 017 0V24" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div><span class="yr">2018</span><b>חוק המצלמות</b><span class="d">מצלמים הכל. אף אחד לא צופה. אחרי זמן קצר נמחק.</span></li>
+          <li class="st s2"><em class="kw">חושף</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 42h16M24 34v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 21s4.5-6 11-6 11 6 11 6-4.5 6-11 6-11-6-11-6z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="21" r="3" fill="currentColor"/></svg></div><span class="yr">2024</span><b>מסלולי צפייה להורים</b><span class="d">רשימה סגורה של דרכי צפייה, לבחירת המפעיל. שעות של וידאו, ואף אחד לא מבין בזמן אמת.</span></li>
+          <li class="st s3 now"><em class="kw">מגן</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true" class="shield"><path pathLength="1" d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path pathLength="1" d="M16.5 24.5l5.5 5.5 10-11" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span></li>
+        </ol>
+        <figcaption><b><span class="cap-k">הפתרון פשוט:</span> להוסיף לרשימה ניתוח בזמן אמת. בלי תיקון חוק, אי אפשר להפעיל אותו.</b></figcaption>
+      </figure>
+
   <h3 class="mgr-h3">ומה זה נותן לגן שלכם, ולילדים</h3>
-  <div class="scards">
-    <div class="scard"><b>הדרכה לצוות, כל יום</b><p>רגעים טובים לחזק, המלצות מעשיות ורעיונות לפעילות, כמו בדוח למעלה. במקום לחכות לביקור פיקוח.</p></div>
-    <div class="scard"><b>תמונת מצב של הגן</b><p>תובנות ישימות לשיפור הגן, במקום לגלות בעיה רק כשהורה מתקשר.</p></div>
-    <div class="scard"><b>אמון מול ההורים</b><p>במקום חשדנות אחרי כל כותרת, כלי שמראה כל יום שהילדים בידיים טובות.</p></div>
+  <div class="scards gives swipe" data-io>
+    <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M8 38V14l16-8 16 8v24"/><path pathLength="1" d="M17 22h14M17 29h14M17 36h8"/></svg><b>הדרכה לצוות, כל יום</b><p>רגעים טובים לחזק, המלצות מעשיות ורעיונות לפעילות, כמו בדוח למעלה. במקום לחכות לביקור פיקוח.</p></div>
+    <div class="scard ic" style="--k:1"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M6 40h36"/><path pathLength="1" d="M12 34V24M22 34V14M32 34V20"/><path pathLength="1" d="M10 18l10-8 8 6 12-9"/></svg><b>תמונת מצב של הגן</b><p>תובנות ישימות לשיפור הגן, במקום לגלות בעיה רק כשהורה מתקשר.</p></div>
+    <div class="scard ic" style="--k:2"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z"/><path pathLength="1" d="M17 24l5 5 9-10"/></svg><b>אמון מול ההורים</b><p>במקום חשדנות אחרי כל כותרת, כלי שמראה כל יום שהילדים בידיים טובות.</p></div>
   </div>
   <p class="snote">החתימה היא תמיכה בשינוי מדיניות, לא במוצר. היא לא מחייבת אתכם או את הגן בשום דבר.</p>
   <div class="mgr-cta">
@@ -1491,6 +1646,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <button class="bigbtn outline" type="button" id="sendParentsM">שלחו להורי הגן שלכם</button>
   </div>
   <p class="mgr-tip">מנהל או מנהלת שמעבירים את הקישור להורים יכולים להביא איתם את כל הקהילה של הגן.</p>
+  </div>
 </section>
 
 <section class="faq wrap" id="faq" aria-labelledby="faq-h">
@@ -1527,7 +1683,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   async function copy(text,done){try{await navigator.clipboard.writeText(text);toast(done)}catch(e){const t=document.createElement("textarea");t.value=text;t.style.cssText="position:fixed;opacity:0";document.body.append(t);t.select();try{document.execCommand("copy")}catch(_){}t.remove();toast(done)}}
   async function shareOr(data,txt,done){if(navigator.share&&matchMedia("(pointer:coarse)").matches){try{await navigator.share(data);return}catch(e){if(e&&e.name==="AbortError")return}}copy(txt,done)}
   const staffUrl="https://maslul4.tsofia.ai/staff?src=staff";
-  const staffMsg="לצוותי חינוך: אנחנו מבקשים לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת. לא מעקב אחרינו, אלא עוד זוג עיניים לצידנו. כדאי לקרוא ולחתום: ";
+  const staffMsg="לצוותי חינוך: אנחנו מבקשים לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת. לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו. כדאי לקרוא ולחתום: ";
   $("#shareCirc").onclick=()=>shareOr({title:document.title,text:staffMsg,url:staffUrl},staffMsg+staffUrl,"הקישור הועתק. הדביקו אותו בקבוצת הצוות");
   const parentsMsg="הורים יקרים,\nהחדשות על מקרי ההתעללות בפעוטות כואבות לכולנו. אנחנו בגן מצטרפים להצהרת הורים ואנשי חינוך שקוראת לעדכן את חוק המצלמות, כך שהמצלמות שכבר נמצאות בגנים יוכלו להתריע על סכנה בזמן אמת, תוך שמירה על הפרטיות.\nאשמח שתקראו ותחתמו:\nhttps://maslul4.tsofia.ai/?src=managers";
   $("#sendParentsM").onclick=()=>shareOr({text:parentsMsg},parentsMsg,"ההודעה להורים הועתקה. הדביקו אותה בקבוצת ההורים");
@@ -1536,13 +1692,33 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <script>(function(){var EP="https://script.google.com/macros/s/AKfycbwL5KzYs6paU6y3_C6ndggCBLdf3WVtEqDpFwZX4enn8LP9jQX_IZgJVryVxGfJQlVU/exec";
 try{fetch(EP,{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){var n=d.count||0;if(n<100)return;var t=n.toLocaleString("en-US");
 document.querySelectorAll(".lcn").forEach(function(e){e.textContent=t});document.querySelectorAll(".lc,.lc2").forEach(function(e){e.hidden=false})}).catch(function(){})}catch(e){}})();</script>
-<script>(function(){var r=document.getElementById("pedRep");if(!r)return;var cs=[].slice.call(r.querySelectorAll(".pc")),dots=r.querySelector(".ped-dots"),i=0,t=null;
-cs.forEach(function(c,k){var d=document.createElement("i");d.onclick=function(){go(k,1)};dots.appendChild(d)});
-function go(k,user){cs[i].classList.remove("is-on");dots.children[i].classList.remove("on");i=(k+cs.length)%cs.length;cs[i].classList.add("is-on");dots.children[i].classList.add("on");if(user)stop()}
-function stop(){if(t){clearInterval(t);t=null}}
-dots.children[0].classList.add("on");
+<script>
+(function(){var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;var els=[].slice.call(document.querySelectorAll("[data-io],#days30,#tline"));
+if(rm||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("go")});return}
+els.forEach(function(e){e.classList.add("armed")});
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var e=en.target;e.classList.add("go");io.unobserve(e);
+ e.querySelectorAll("[data-count]").forEach(function(b){var n=+b.dataset.count,t0=performance.now(),D=1300;(function f(t){var k=Math.min(1,(t-t0)/D),v=Math.round(n*(1-Math.pow(1-k,3)));b.textContent=v+"%";if(k<1)requestAnimationFrame(f)})(t0)})})},{threshold:.3});
+els.forEach(function(e){io.observe(e)})})();
+</script>
+<script>
+(function(){var r=document.getElementById("pedRep");if(!r)return;var cs=[].slice.call(r.querySelectorAll(".pc")),N=cs.length,i=0,t=null,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var CAT={g:"💛 רגעים יפים",k:"👶 ילדים",t:"🎯 המלצות",b:"🧰 כלים ורעיונות",q:"❓ הרהור"};var cats=r.querySelector(".ped-cats"),seen={};
+cs.forEach(function(c,k){var ct=c.dataset.cat;if(seen[ct]!=null)return;seen[ct]=k;var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.dataset.cat=ct;var n=cs.filter(function(x){return x.dataset.cat===ct}).length;b.innerHTML=CAT[ct]+(n>1?" <i>"+n+"</i>":"");b.onclick=function(){go(seen[ct],1)};cats.appendChild(b)});
+var marks=r.querySelector(".pt-marks"),fill=r.querySelector(".pt-fill");
+cs.forEach(function(c,k){var m=document.createElement("button");m.type="button";m.tabIndex=-1;m.setAttribute("aria-hidden","true");m.className="pt-m pt-"+c.dataset.cat;m.style.setProperty("--x",(k/(N-1))*100+"%");m.onclick=function(){go(k,1)};marks.appendChild(m)});
+var prog=r.querySelector(".ped-prog i"),ii=r.querySelector(".ph-i");r.querySelector(".ph-c").textContent=N;
+function paint(){cs.forEach(function(c,k){c.classList.toggle("is-on",k===i)});[].forEach.call(cats.children,function(b){var on=b.dataset.cat===cs[i].dataset.cat;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});
+[].forEach.call(marks.children,function(m,k){m.classList.toggle("on",k===i);m.classList.toggle("done",k<i)});fill.style.width=(i/(N-1))*100+"%";ii.textContent=i+1;
+var a=cats.querySelector(".on");if(a&&cats.scrollWidth>cats.clientWidth){cats.scrollTo({left:a.offsetLeft-cats.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}
+prog.style.animation="none";void prog.offsetWidth;prog.style.animation=t?"pedprog 7s linear forwards":"none"}
+function go(k,user){i=(k+N)%N;if(user)stop();paint()}
+function stop(){if(t){clearInterval(t);t=null}r.dataset.u="1"}
+function start(){if(rm||t||r.dataset.u==="1")return;t=setInterval(function(){go(i+1)},7000);paint()}
 r.querySelector(".pn-next").onclick=function(){go(i+1,1)};r.querySelector(".pn-prev").onclick=function(){go(i-1,1)};
-if(!matchMedia("(prefers-reduced-motion:reduce)").matches&&"IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!t&&r.dataset.u!=="1"){t=setInterval(function(){go(i+1)},7000)}else if(!e.isIntersecting)stop()})},{threshold:.4}).observe(r)}
-r.addEventListener("pointerdown",function(){r.dataset.u="1";stop()});})();</script>
+var x0=null,cc=r.querySelector(".ped-cards");cc.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+cc.addEventListener("touchend",function(e){if(x0==null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx>0?1:-1),1)});
+paint();if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else if(t){clearInterval(t);t=null;paint()}})},{threshold:.35}).observe(r)}
+})();
+</script>
 </body>
 </html>
