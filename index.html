@@ -14,6 +14,11 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://maslul4.tsofia.ai/">
+<link rel="alternate" hreflang="he" href="https://maslul4.tsofia.ai/">
+<link rel="alternate" hreflang="en" href="https://maslul4.tsofia.ai/en/">
+<link rel="alternate" hreflang="ru" href="https://maslul4.tsofia.ai/ru/">
+<link rel="alternate" hreflang="ar" href="https://maslul4.tsofia.ai/ar/">
+<link rel="alternate" hreflang="x-default" href="https://maslul4.tsofia.ai/">
 <link rel="canonical" href="https://maslul4.tsofia.ai/">
 <script>try{if(location.protocol.startsWith("http")&&/\/index\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/index\.html$/,"")+location.search+location.hash)}catch(e){}</script>
 <meta property="og:locale" content="he_IL">
@@ -1174,6 +1179,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @keyframes wvhit3{0%,30%{transform:scaleY(.35);filter:none}38%{transform:scaleY(1.15);filter:drop-shadow(0 0 5px rgba(255,59,85,.9))}46%,85%{transform:scaleY(1);filter:drop-shadow(0 0 4px rgba(255,59,85,.7))}95%,100%{transform:scaleY(.35);filter:none}}
 @keyframes wvhead3{0%{opacity:0;right:0}4%{opacity:1;right:0}32%,85%{opacity:1;right:calc(50% - 2px)}95%,100%{opacity:0;right:calc(50% - 2px)}}
 @keyframes wvlbl3{0%,32%{opacity:0;transform:translateY(4px)}38%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
+
+.lang{display:inline-flex;align-items:center;gap:4px;position:relative;color:var(--ink);font-family:var(--f-ui);font-size:13.5px;font-weight:700;flex:none}
+.lang svg{width:17px;height:17px;flex:none}
+.lang select{appearance:none;-webkit-appearance:none;background:transparent;border:1px solid var(--rule);border-radius:999px;padding:5px 10px;font:inherit;color:inherit;cursor:pointer}
+.lang select:focus-visible{outline:2px solid var(--blue,#1e7cb0);outline-offset:2px}
+@media (max-width:700px){.lang svg{display:none}.lang select{padding:4px 7px;font-size:12.5px}}
+@media (max-width:380px){.sections .go{padding:6px 11px!important;font-size:13px!important}.lang select{padding:3px 5px;font-size:11.5px}.bar{gap:6px!important}.brand .bn{font-size:17px!important}}
+@media (max-width:380px){.brand .btag{font-size:9.5px!important}.brand small{font-size:8.5px!important}.brand .logo{height:32px!important}.brand{gap:5px!important}}
 </style>
 </head>
 <body>
@@ -1182,6 +1195,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <nav class="sticky" aria-label="מדורים"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="logo-hand.png" alt="המסלול הרביעי"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><em class="btag">מגינים על הילדים בזמן אמת</em><small>יוזמה של <span class="ez">עין צופיה</span></small></span></a>
   <div class="sections"><a href="#story">התחקיר</a><a href="#law">החוק</a><a href="#fix">הפתרון</a><a href="#decl">ההצהרה</a><a href="#faq">שאלות</a><a href="atzuma.html" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
+  <label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><select aria-label="Language" onchange="location.href=this.value"><option value="./" selected lang="he">עברית</option><option value="en/" lang="en">English</option><option value="ru/" lang="ru">Русский</option><option value="ar/" lang="ar">العربية</option></select></label>
 </div></nav>
 
 <main>

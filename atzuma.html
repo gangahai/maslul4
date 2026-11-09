@@ -14,6 +14,11 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://maslul4.tsofia.ai/atzuma.html">
+<link rel="alternate" hreflang="he" href="https://maslul4.tsofia.ai/atzuma.html">
+<link rel="alternate" hreflang="en" href="https://maslul4.tsofia.ai/en/atzuma.html">
+<link rel="alternate" hreflang="ru" href="https://maslul4.tsofia.ai/ru/atzuma.html">
+<link rel="alternate" hreflang="ar" href="https://maslul4.tsofia.ai/ar/atzuma.html">
+<link rel="alternate" hreflang="x-default" href="https://maslul4.tsofia.ai/atzuma.html">
 <link rel="canonical" href="https://maslul4.tsofia.ai/atzuma.html">
 <meta property="og:locale" content="he_IL">
 <meta name="twitter:card" content="summary_large_image">
@@ -304,13 +309,20 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 #tallyFirst .tf-goal{font-family:var(--f-ui);font-size:15px;color:var(--ink-2);margin-top:4px}
 #tallyFirst .tf-goal strong{font-family:var(--f-head);font-weight:900;font-size:26px;color:var(--ink);margin-inline-end:4px}
 #tallyFirst .tf-sub{font-size:13px;color:var(--muted)}
+
+.lang{display:inline-flex;align-items:center;gap:4px;position:relative;color:var(--ink);font-family:var(--f-ui);font-size:13.5px;font-weight:700;flex:none}
+.lang svg{width:17px;height:17px;flex:none}
+.lang select{appearance:none;-webkit-appearance:none;background:transparent;border:1px solid var(--rule);border-radius:999px;padding:5px 10px;font:inherit;color:inherit;cursor:pointer}
+.lang select:focus-visible{outline:2px solid var(--blue,#1e7cb0);outline-offset:2px}
+@media (max-width:700px){.lang svg{display:none}.lang select{padding:4px 7px;font-size:12.5px}}
+.hdr-r{display:inline-flex;align-items:center;gap:14px}
 </style>
 </head>
 <body>
 
 <header class="bar"><div class="wrap">
   <a class="brand" href="./"><img src="logo-hand.png" alt=""><span class="bt2"><b>המסלול <span style="color:#c8102e">הרביעי</span></b><em>מגינים על הילדים בזמן אמת</em><small>יוזמה של <span class="ez">עין צופיה</span></small></span></a>
-  <a class="back" href="./">לכתבה המלאה</a>
+  <span class="hdr-r"><label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><select aria-label="Language" onchange="location.href=this.value"><option value="atzuma.html" selected lang="he">עברית</option><option value="en/atzuma.html" lang="en">English</option><option value="ru/atzuma.html" lang="ru">Русский</option><option value="ar/atzuma.html" lang="ar">العربية</option></select></label><a class="back" href="./">לכתבה המלאה</a></span>
 </div></header>
 
 <main class="wrap grid">
@@ -422,11 +434,11 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
         <div class="f" style="grid-column:1/-1"><label for="role">אני חותם/ת בתור</label>
         <select id="role" name="role" required>
           <option value="">בחירה</option>
-          <option>הורה</option>
-          <option>איש או אשת צוות במסגרת</option>
-          <option>מנהל או מנהלת מסגרת</option>
-          <option>איש או אשת חינוך או אקדמיה</option>
-          <option>אחר</option>
+          <option value="הורה">הורה</option>
+          <option value="איש או אשת צוות במסגרת">איש או אשת צוות במסגרת</option>
+          <option value="מנהל או מנהלת מסגרת">מנהל או מנהלת מסגרת</option>
+          <option value="איש או אשת חינוך או אקדמיה">איש או אשת חינוך או אקדמיה</option>
+          <option value="אחר">אחר</option>
         </select>
       </div>
       </div>
@@ -547,7 +559,7 @@ $("#goalTxt").textContent=GOALS[0].toLocaleString("he-IL");
 const exList=$("#exList");
 if(SUPPORTERS.length){SUPPORTERS.forEach(s=>{const li=document.createElement("li");const b=document.createElement("b");b.textContent=s.name;const sp=document.createElement("span");sp.textContent=s.title||"";li.append(b,sp);exList.append(li)})}
 else{exList.hidden=true;$("#exIntro").textContent="אנו מזמינים אנשי מקצוע מתחומי הגיל הרך, החינוך והאקדמיה להצטרף להצהרה. שמות התומכים יופיעו כאן לאחר אישורם."}
-$("#exJoin").addEventListener("click",()=>{setTimeout(()=>{F.role.value="איש או אשת חינוך או אקדמיה";sync();F.name.focus()},300)});
+$("#exJoin").addEventListener("click",()=>{setTimeout(()=>{F.role.selectedIndex=4;sync();F.name.focus()},300)});
 
 /* טלפון נשלח כטקסט עם מקף (050-1234567), כדי שהגיליון לא יוריד את ה-0 שבהתחלה */
 function fmtPhone(p){if(!p)return "";let d=p.replace(/[^\d+]/g,"");if(d.startsWith("+972"))d="0"+d.slice(4);else if(d.startsWith("972"))d="0"+d.slice(3);
@@ -571,7 +583,7 @@ function sync(e){
   const on=$("#partner").checked,box=$("#partnerBox"),was=!box.hidden;
   box.hidden=!on;F.phone.required=on;
   if(on&&!was&&e){box.classList.remove("flash");void box.offsetWidth;box.classList.add("flash");box.scrollIntoView({behavior:"smooth",block:"nearest"})}
-  $("#proBox").hidden=F.role.value!=="איש או אשת חינוך או אקדמיה";
+  $("#proBox").hidden=F.role.selectedIndex!==4;
   const ih=$("#idea"),wasI=!ih.hidden;ih.hidden=!$("#ideaChk").checked;if(!ih.hidden&&!wasI&&e)ih.focus();
   ready();
 }
