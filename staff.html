@@ -1523,6 +1523,27 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .shero-photo::before{display:none}
  .shero-photo figcaption{transform:none;bottom:10px}
 }
+/* join */
+.sjoin h2{font-family:var(--f-head);font-weight:900;font-size:clamp(36px,5vw,60px);line-height:1.05;margin:0}
+.sjoin .lead{margin-top:12px}
+.jsteps{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.jsteps li{position:relative;display:flex;gap:14px;background:#fff;color:var(--ink);border-radius:20px;padding:20px 20px 22px;box-shadow:0 18px 40px rgba(80,0,15,.25)}
+.jn{flex:none;width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;font-family:var(--f-ui);font-weight:900;font-size:20px;display:grid;place-items:center}
+.jsteps b{display:block;font-family:var(--f-ui);font-weight:900;font-size:20px;line-height:1.25}
+.jsteps p{margin:6px 0 14px;font-size:16px;line-height:1.55;color:#3b3f48}
+.jbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:var(--f-ui);font-weight:900;font-size:16px;border-radius:999px;padding:11px 18px;background:var(--red);color:#fff;text-decoration:none;border:2px solid var(--red);cursor:pointer}
+.jbtn.ghost{background:#fff;color:var(--red)}
+.jbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.jcontact{display:flex;gap:8px;flex-wrap:wrap}
+.jsteps small{display:block;font-family:var(--f-ui);font-size:13.5px;color:#5a626c;margin-top:10px}
+.jsteps .lc2[hidden]{display:none}
+.jsteps .lc2 b{display:inline;font-size:14px;color:var(--red)}
+.jsig{font-weight:700}
+.jsteps.armed li{opacity:0;transform:translateY(16px)}
+.jsteps.go li{animation:sUp .6s cubic-bezier(.2,.8,.2,1) calc(.1s + var(--k,0)*.18s) both}
+@media (max-width:900px){.jsteps{grid-template-columns:1fr}}
+.jsteps li>div{text-align:start;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.jcontact{justify-content:flex-start}
 </style>
 </head>
 <body>
@@ -1735,13 +1756,15 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <a class="morelink" href="./#faq">לכל השאלות ולעמוד המאבק המלא</a>
 </section>
 
-<section class="act" id="act" aria-labelledby="act-h">
+<section class="act sjoin" id="act" aria-labelledby="act-h">
   <div class="wrap">
-    <div class="act-top"><div><h2 id="act-h">הקול שלכן הכי חשוב כאן.</h2>
-    <p class="lead">כשגננת וסייעת חותמות לצד הורים, הכנסת שומעת את כל המשפחה של הגן.</p></div>
-    <button class="sharecirc" id="shareCirc" type="button" aria-label="שיתוף העמוד"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>שיתוף</span></button></div>
-    <a class="signbox" href="atzuma.html?role=staff&amp;src=staff"><img class="sbmark" src="logo-hand.png" alt=""><span class="sbtxt"><b>חתמו על ההצהרה כאיש/ת צוות</b><small>תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</small><small class="lc2" hidden><b class="lcn">0</b> כבר חתמו. השלב הראשון: 1,000</small></span><span class="sb-go">לחתימה</span></a>
-    <p class="act-share">ואחרי החתימה, שלחו את העמוד הזה לצוות שלכן ולחברות מהמקצוע.</p>
+    <h2 id="act-h">נעשה את זה יחד.</h2>
+    <p class="lead">כשגננות, סייעות ומנהלים חותמים לצד הורים, הכנסת שומעת את כל המשפחה של הגן. שלושה צעדים:</p>
+    <ol class="jsteps" data-io>
+      <li style="--k:0"><span class="jn">1</span><div><b>תמכו בהצהרה</b><p>חצי דקה, והקול שלכם נספר.</p><a class="jbtn" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה</a><small class="lc2" hidden><b class="lcn">0</b> כבר חתמו. השלב הראשון: 1,000</small></div></li>
+      <li style="--k:1"><span class="jn">2</span><div><b>הפיצו כמה שיותר</b><p>לצוות שלכם, לחברות מהמקצוע, לקבוצות ההורים ולכל מי שאכפת לו.</p><button class="jbtn ghost" type="button" id="shareCirc">שיתוף העמוד</button></div></li>
+      <li style="--k:2"><span class="jn">3</span><div><b>בואו להיות שותפים</b><p>רוצים לעזור יותר, להגיע לכנסת או לחבר ארגון? דברו איתי ישירות.</p><div class="jcontact"><a class="jbtn" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a><a class="jbtn ghost" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18.5V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8z"/></svg>הודעה</a></div><small class="jsig">אהרון נייס, מנהל גן גחליליות</small></div></li>
+    </ol>
   </div>
 </section>
 </main>
