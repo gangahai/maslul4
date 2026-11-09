@@ -1279,12 +1279,19 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .shero .hero-cta{animation:none!important;opacity:1!important;transform:none!important;margin-top:26px}
 .sshot figcaption{display:block!important;text-align:start}
 .sshot figcaption b{color:var(--ink)}
+.sdeep{display:inline-block;margin-top:14px;font-family:var(--f-ui);font-weight:800;font-size:16px;color:#8fe3d4;text-decoration:underline;text-underline-offset:4px}
+.sdeep::after{content:" ←"}
+.sbanner{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:clamp(36px,5vw,56px);padding:22px 24px;border-radius:16px;background:#0f3936;color:#e3f1ee;text-decoration:none;font-family:var(--f-ui);font-size:16.5px;line-height:1.5}
+.sbanner b{display:block;color:#fff;font-size:20px;font-weight:900;margin-bottom:2px}
+.sbanner i{font-style:normal;flex:none;background:#8fe3d4;color:#0b2a28;font-weight:900;border-radius:999px;padding:11px 20px}
+.sbanner:hover i{background:#fff}
+@media (max-width:700px){.sbanner{flex-direction:column;align-items:flex-start}.sbanner i{width:100%;text-align:center}}
 </style>
 </head>
 <body>
 <nav class="sticky" aria-label="מדורים"><div class="wrap bar">
   <a class="brand" href="./"><img class="logo" src="logo-hand.png" alt="המסלול הרביעי"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><em class="btag">מגינים על הילדים בזמן אמת</em><small>יוזמה של <span class="ez">עין צופיה</span></small></span></a>
-  <div class="sections"><a href="#feel">למה עכשיו</a><a href="#what">מה זה</a><a href="#managers">למנהלים</a><a href="#faq">שאלות</a><a href="atzuma.html?role=staff&amp;src=staff" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
+  <div class="sections"><a href="./">עמוד המאבק</a><a href="#feel">למה עכשיו</a><a href="#what">מה זה</a><a href="#managers">למנהלים</a><a href="#faq">שאלות</a><a href="atzuma.html?role=staff&amp;src=staff" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
 </div></nav>
 
 <main>
@@ -1296,6 +1303,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואולי לכן אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחריכן, אלא עוד זוג עיניים לצידכן.</b></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאנשי צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
+      <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
     </div>
     <img class="shero-art" src="thanks-hands.png" alt="" width="276" height="360">
   </div>
@@ -1341,6 +1349,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     </figure>
   </div>
 </section>
+
+<div class="wrap"><a class="sbanner" href="./"><span><b>רוצים להבין לעומק?</b>התחקיר המלא: מה קרה באריאל, מה החוק מאפשר היום, ואיך עובדת המצלמה שמבינה.</span><i>לעמוד המאבק</i></a></div>
 
 <section class="smgr wrap" id="managers" aria-labelledby="mgr-h">
   <h2 id="mgr-h">למנהלים ולמנהלות של מסגרות</h2>
