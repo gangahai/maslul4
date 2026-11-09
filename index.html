@@ -543,6 +543,17 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+/* קיצור: פחות טקסט, יותר כותרות */
+.body p.lede{font-family:var(--f-head);font-size:clamp(20px,2.3vw,24px);line-height:1.45;color:var(--ink)}
+.body p.lede .bsrc{font-family:var(--f-ui);font-size:13px}
+.body h3.subh{font-family:var(--f-head);font-weight:900;font-size:clamp(24px,2.8vw,30px);line-height:1.2;margin:1.4em 0 .3em}
+.bstats{grid-template-columns:repeat(3,1fr)!important}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}
+.duo div{background:var(--tint,#f4f2ee);border-top:4px solid var(--amber);padding:12px 14px}
+.duo b{display:block;font-family:var(--f-ui);font-weight:900;font-size:40px;line-height:1;color:var(--amber)}
+.duo span{display:block;margin-top:6px;font-family:var(--f-ui);font-size:14.5px;line-height:1.4;color:var(--ink-2)}
+@media (max-width:520px){.bstats{grid-template-columns:1fr!important}.bstats div{display:flex;gap:12px;align-items:center}.bstats span{margin:0}}
+
 /* halt: קטע שהגלילה נעצרת עליו */
 .contact p.me{font-family:var(--f-head);font-size:clamp(18px,2vw,21px);line-height:1.55;color:var(--ink);margin-top:14px}
 .halt{position:relative;margin:2.2em calc(-1 * min(4vw,40px));height:240vh}
@@ -711,8 +722,8 @@ footer a{color:#fff}
         <p class="trust-big">הגיע הזמן לשנות את התדמית של הגנים הפרטיים. לא עוד חשד, אלא כלי שמוכיח כל יום שהילדים בידיים טובות, ועוזר לצוות להיות טוב עוד יותר.</p>
       </section>
 
-      <h2 id="law"><small>החוק היום</small>החוק מתעד את הפגיעה. הוא לא מונע אותה.</h2>
-      <p>ב-2018 נחקק חוק המצלמות במעונות היום. מאז, מעונות לפעוטות מלידה עד גיל 3, עם 7 פעוטות ומעלה, חייבים להתקין מצלמות ולצלם, בלי קול, אלא אם 70% מההורים מתנגדים בכתב. אבל הצילומים נעולים: המצלמות פועלות במעגל סגור, ככלל אסור לצוות ולהורים לצפות בהן, ואחרי 30 עד 90 יום הצילומים נמחקים. רק המשטרה והתביעה משתמשות בהם כדי לחקור עבירה, המפקחות רשאיות לעיין בהם כשיש חשד לפגיעה בילד, והמשטרה רשאית לאפשר להורה לצפות בתיעוד של פגיעה בילדו. כלומר, הצילומים נפתחים רק אחרי שכבר יש חשד.</p>
+      <h2 id="law"><small>החוק היום</small>מצלמים הכל. אף אחד לא רואה.</h2>
+      <p class="lede">מאז 2018 מעונות לפעוטות חייבים לצלם. אבל הצילומים נעולים, <b>נפתחים רק אחרי שכבר יש חשד</b>, ונמחקים אחרי 30 עד 90 יום.</p>
       <figure class="inline-fig days30" aria-label="המחשה: 30 ימי צילום שנמחקים">
         <div class="grid" aria-hidden="true">
           <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -721,25 +732,25 @@ footer a{color:#fff}
         <div class="lbls"><span>יום 1: מצלמים הכל</span><span>כמעט אף אחד לא צופה</span><span><b>יום 30 עד 90: נמחק</b></span></div>
       </figure>
       <section class="broken" aria-labelledby="broken-h">
-        <h3 id="broken-h">ויותר מזה: ברבים מהגנים, המצלמות בכלל לא מקליטות</h3>
-        <p>דוח מבקר המדינה שפורסם ביוני 2026 מצא שאין בקרה אמיתית על כך שהמצלמות עובדות. וזו לא בהכרח אשמת המפעילים: לפי החוק, גם להם אסור לצפות בצילומים. לכן תקלה מתגלה בדרך כלל רק כשמבקשים את הצילום, כלומר אחרי שכבר יש חשד לפגיעה. ואז מתברר שאין תיעוד.</p>
+        <h3 id="broken-h">ובהרבה מעונות, המצלמות בכלל לא מקליטות</h3>
+        <p>גם למפעילים אסור לצפות, ולכן תקלה מתגלה רק כשמבקשים את הצילום. ואז מתברר שאין תיעוד.</p>
         <div class="bstats">
-          <div><b>27%</b><span>מהמעונות שנבדקו: תקלה שמנעה הקלטה תקינה (902 מתוך 3,321)</span></div>
-          <div><b>54%</b><span>מהמעונות שנבדקו: תקלה שנמשכה שלושה חודשים רצופים לפחות (798 מתוך 1,472)</span></div>
-          <div><b>89%</b><span>מהמעונות הפרטיים: בלי מערכת הניטור שמשרד החינוך דרש להתקין</span></div>
-          <div><b>51%</b><span>מהמקרים שבהם הניטור לא הותקן: מצלמות שלא תומכות בו, או בלי קליטה סלולרית</span></div>
+          <div><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></div>
+          <div><b>54%</b><span>מהמעונות שנבדקו: תקלה של 3 חודשים ומעלה</span></div>
+          <div><b>89%</b><span>מהמעונות הפרטיים: בלי ניטור תקינות</span></div>
         </div>
-        <p>וזה קורה בשטח: בירושלים הציבו הורים מכשירי הקלטה בגן, והתברר שהמצלמות שהחוק מחייב לא פעלו כבר יותר משנה וחצי. כשהצילום לא קיים, גם החקירה אחרי הפגיעה נשארת בלי תיעוד.</p>
+        <p>בירושלים, הורים שהציבו מכשיר הקלטה גילו שהמצלמות לא פעלו כבר שנה וחצי.</p>
         <p class="bsrc">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, „היבטים בפיקוח ובשמירה על שלום הפעוטות במעונות היום“ (2026)</a> · <a href="https://www.kan.org.il/content/kan-news/local/660126/" target="_blank" rel="noopener">כאן חדשות</a></p>
       </section>
 
-      <p>בנובמבר 2024 אושר תיקון לחוק, שבג״ץ השאיר על כנו באוקטובר 2025. התיקון קבע רשימה סגורה של דרכי צפייה מותרות, והמפעיל רשאי לבחור אחת מהן: צפייה תקופתית בגן או מרחוק, או צפייה חיה של הורה. על הנייר זה נשמע כמו מהפכה. בשטח, כל אחת מהן נתקלת באותה בעיה:</p>
+      <h3 class="subh">התיקון של 2024: עוד צפייה, לא הגנה</h3>
+      <p>התיקון (שבג״ץ אישר ב-2025) קבע רשימה סגורה של דרכי צפייה להורים, והמפעיל בוחר אחת:</p>
       <ul class="fails">
-        <li><b>צפייה בגן, פעם בשבוע</b><span>נציגי הורים יושבים מול המסכים. מי יודע מה לחפש? ומי יצפה בשש הפעמים האחרות?</span></li>
-        <li><b>צפייה מרחוק, 48 שעות בחודש</b><span>שעות של וידאו, הורה עייף בלילה, וחלון זמן שידוע לכולם מראש.</span></li>
-        <li><b>שידור חי לטלפון</b><span>הורה עובד לא צופה שמונה שעות ביום. זה חושף ילדים אחרים, מלחיץ את הצוות, ונשאר וולונטרי.</span></li>
+        <li><b>צפייה בגן, פעם בשבוע</b><span>מי יודע מה לחפש? ומה עם שאר השבוע?</span></li>
+        <li><b>צפייה מרחוק, 48 שעות בחודש</b><span>שעות של וידאו, והורה עייף בלילה.</span></li>
+        <li><b>שידור חי לטלפון</b><span>הורה עובד לא צופה שמונה שעות ביום.</span></li>
       </ul>
-      <p>ובכל הדרכים, ההחלטה בידי המפעיל. ואף אחת מהן לא עונה על השאלה היחידה שחשובה: מי מבין, בזמן אמת, מה קורה לילד? ומכיוון שהחוק קובע רשימה סגורה, ניתוח אוטומטי בזמן אמת פשוט לא נמצא בה. <b>בלי תיקון חוק, אי אפשר להפעיל אותו.</b></p>
+      <p class="lede">ניתוח בזמן אמת לא נמצא ברשימה. <b>בלי תיקון חוק, אי אפשר להפעיל אותו.</b></p>
       <figure class="tline" id="tline" aria-label="ציר הזמן של חוק המצלמות">
         <div class="tl-track" aria-hidden="true"><i class="tl-fill"></i><i class="tl-spark"></i></div>
         <ol>
@@ -750,8 +761,8 @@ footer a{color:#fff}
         <figcaption><b>החוק מ-2018 מתעד, והתיקון מ-2024 חושף. רק המסלול הרביעי מגן על הילדים בזמן אמת.</b></figcaption>
       </figure>
 
-      <h2 class="h-amber"><small>הפיקוח</small>אין מי שיפקח: הצעת התקציב מקצצת כ-75%</h2>
-      <p>באותן שנים שבהן המדינה הרחיבה את חובות התיעוד, היא צמצמה את מי שאמור ללוות את הגנים. התקציב ליישום תקנות הפיקוח על מעונות היום ירד מכ-190 מיליון ש״ח ב-2023 ל-46 מיליון ש״ח בלבד בהצעת התקציב ל-2026, לפי ניתוח של קרן ברל כצנלסון.</p>
+      <h2 class="h-amber"><small>הפיקוח</small>תקציב הפיקוח על המעונות: קיצוץ של 75%</h2>
+      <p class="lede">החובות גדלו, והפיקוח קוצץ.</p>
       <figure class="inline-fig chart" id="budgetChart">
         <h4>התקציב ליישום תקנות הפיקוח על מעונות היום</h4>
         <div class="sub">במיליוני ש״ח</div>
@@ -767,9 +778,13 @@ footer a{color:#fff}
             <g id="cut" opacity="0"><rect x="150" y="96" width="96" height="26" rx="13" fill="#c8102e"/><text x="198" y="114" text-anchor="middle" font-size="15" font-weight="900" fill="#fff">−75%</text></g>
           </g>
         </svg>
-        <div class="note">מקור: ניתוח קרן ברל כצנלסון להצעת התקציב, כפי שפורסם ב-<a href="https://www.ynet.co.il/news/article/ryxnn3hsbx" target="_blank" rel="noopener">ynet, ינואר 2026</a>. הנתונים המדויקים: מתוך עבודת הגמר לתואר שני „המסלול הרביעי“ (מכללת אורנים, 2026).</div>
+        <div class="note">2026: הצעת התקציב. מקור: ניתוח קרן ברל כצנלסון (<a href="https://www.ynet.co.il/news/article/ryxnn3hsbx" target="_blank" rel="noopener">ynet, ינואר 2026</a>); עבודת הגמר „המסלול הרביעי“ (אורנים, 2026).</div>
       </figure>
-      <p>לפי דוח מבקר המדינה (2026), כל מפקחת אחראית בממוצע על 83 מעונות, וכ-14% מהמעונות במחוזות שנבדקו לא זכו אפילו לביקור פיקוח אחד במהלך שנת הלימודים. אי אפשר לסגור את הפער הזה בכוח אדם. הוא חייב להיסגר אחרת.</p>
+      <div class="duo">
+        <div><b>83</b><span>מעונות בממוצע לכל מפקחת</span></div>
+        <div><b>14%</b><span>מהמעונות שנבדקו: אף ביקור פיקוח בשנה</span></div>
+      </div>
+      <p class="lede">את הפער הזה אי אפשר לסגור בכוח אדם. <span class="bsrc">(מבקר המדינה, 2026)</span></p>
       <blockquote class="pull">אני מחויב לתעד את הצוות שלי, ואסור לי להשתמש בתיעוד כדי לעזור לו.<cite>אהרון נייס, מנהל רשת גנים</cite></blockquote>
     </article>
 
