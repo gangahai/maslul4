@@ -312,9 +312,10 @@ footer .ez{color:var(--ink-2)}
         <div class="f"><label for="city">יישוב</label><input type="text" id="city" name="city" autocomplete="address-level2" required maxlength="60"></div>
       </div>
 
+      <div class="f"><label for="email">דוא״ל</label><input type="email" id="email" name="email" autocomplete="email" dir="ltr" required maxlength="100"></div>
+      <p class="hint2">הדוא״ל משמש לאימות החתימה בלבד. לא נשלח אליך הודעות בלי אישורך.</p>
       <div class="two">
-        <div class="f"><label for="email">דוא״ל</label><input type="email" id="email" name="email" autocomplete="email" dir="ltr" required maxlength="100"></div>
-        <div class="f"><label for="role">אני חותם/ת בתור</label>
+        <div class="f" style="grid-column:1/-1"><label for="role">אני חותם/ת בתור</label>
         <select id="role" name="role" required>
           <option value="">בחירה</option>
           <option>הורה</option>
@@ -325,7 +326,6 @@ footer .ez{color:var(--ink-2)}
         </select>
       </div>
       </div>
-      <p class="hint2">הדוא״ל משמש לאימות החתימה בלבד. לא נשלח אליך הודעות בלי אישורך.</p>
 
       <div id="proBox" hidden>
         <div class="f"><label for="title">תפקיד ומוסד</label><input type="text" id="title" name="title" maxlength="120" placeholder="לדוגמה: מרצה לגיל הרך, מכללת…"></div>
@@ -358,7 +358,7 @@ footer .ez{color:var(--ink-2)}
       <div class="consents">
         <label class="chk"><input type="checkbox" name="agree" id="agree" required><span>קראתי את ההצהרה ואני מצטרף/ת אליה. אני מאשר/ת את שמירת הפרטים שמסרתי לצורך ההצהרה והגשתה, בהתאם ל<a href="#privacy">מדיניות הפרטיות</a>.</span></label>
         <label class="chk" id="optinRow" hidden><input type="checkbox" name="optin" id="optin"><span>מאשר/ת לקבל עדכונים בנושא ההצהרה בדוא״ל, ובוואטסאפ אם מסרתי טלפון. ניתן לבטל בכל עת.</span></label>
-        <label class="chk"><input type="checkbox" name="showName" id="showName"><span>מאשר/ת להציג את שמי הפרטי ויישובי ברשימת החותמים באתר.</span></label>
+        <label class="chk"><input type="checkbox" name="showName" id="showName"><span>מאשר/ת להציג את שמי הפרטי ויישובי ברשימת החותמים באתר. <span class="opt">(רשות)</span></span></label>
       </div>
 
       <button class="go" type="submit" id="goBtn">אני מצטרף/ת להצהרה</button>
