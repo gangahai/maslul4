@@ -2084,6 +2084,11 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .dm-tally li.bump b{animation:tBump .5s cubic-bezier(.2,.9,.3,1.6)}
 @keyframes tBump{0%{transform:scale(1)}40%{transform:scale(1.5)}100%{transform:scale(1)}}
 @media (max-width:980px){.ped.demo .ped-vid video{aspect-ratio:16/9}.dm-b1{left:51%;width:25%}.dm-b2{left:56%;width:22%}.dm-tally{margin-top:12px;padding:12px 14px}.dm-tally li{font-size:14.5px;padding:7px 10px}}
+/* join v5: same language as the campaign page */
+.act-two{display:flex;gap:10px;flex:none;flex-wrap:wrap}
+.act-fb{margin:16px 0 0;font-family:var(--f-ui);font-size:16px}
+.act-fb a{color:#fff;font-weight:800;text-underline-offset:4px}
+@media (max-width:700px){.act-two{flex-direction:column}.act-two .bigbtn{justify-content:center}}
 </style>
 </head>
 <body>
@@ -2260,39 +2265,21 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 
 
-<section class="sj3" id="act" aria-labelledby="act-h">
+<section class="act" id="act" aria-labelledby="act-h">
   <div class="wrap">
-    <h2 id="act-h">נעשה את זה <em>יחד.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 9c40-7 150-8 194-2"/></svg></em></h2>
-    <p class="j3-lead">צוותי חינוך והורים, קול אחד למען הילדים.</p>
-    <div class="j3-grid" data-io>
-      <article class="j3-main" style="--k:0">
-        <div class="j3-mt">
-          <span class="j3-n">01</span>
-          <h3>תמכו בהצהרה</h3>
-          <p>חצי דקה מזמנכם, וכל קול מחזק את המאבק. תמיכה בשינוי מדיניות, בלי שום התחייבות.</p>
-          <a class="j3-btn white pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה <span aria-hidden="true">←</span></a>
-        </div>
-        <div class="j3-count lc2" hidden>
-          <b class="lcn j3-num">0</b>
-          <span>כבר חתמו</span>
-          <small><i></i>המספר מתעדכן בזמן אמת</small>
-        </div>
-      </article>
-      <article class="j3c" style="--k:1">
-        <span class="j3-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
-        <div class="j3-tx"><span class="j3-n">02</span><h3>הפיצו הלאה</h3>
-        <p>שתפו את הצוות, עמיתות ועמיתים וקבוצות ההורים.</p></div>
-        <div class="j3-acts"><a class="j3-btn green" id="shareWa" href="https://wa.me/" target="_blank" rel="noopener">שליחה בוואטסאפ</a><button class="j3-btn line" type="button" id="shareCirc">העתקת קישור</button></div>
-      </article>
-      <article class="j3c" style="--k:2">
-        <span class="j3-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span>
-        <div class="j3-tx"><span class="j3-n">03</span><h3>בואו לקחת חלק</h3>
-        <p>חיבור לארגונים, הגעה לכנסת או עזרה בהפצה. דברו איתי ישירות.</p></div>
-        <div class="j3-acts"><a class="j3-btn dark" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a><a class="j3-btn line tel" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a></div>
-        <a class="j3-fb" href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">עקבו אחרינו בפייסבוק</a>
-      </article>
+    <div class="act-top"><div><h2 id="act-h">נעשה את זה יחד.</h2>
+    <p class="lead">צוותי חינוך והורים, קול אחד למען הילדים.</p></div>
+    <button class="sharecirc" id="shareCirc" type="button" aria-label="שיתוף העמוד"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>שיתוף</span></button></div>
+    <a class="signbox" href="atzuma.html?role=staff&amp;src=staff"><img class="sbmark" src="logo-hand.png" alt=""><span class="sbtxt"><b>חתמו על ההצהרה למסלול הרביעי</b><small>תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת. חצי דקה, בלי שום התחייבות.</small><small class="lc2" hidden><b class="lcn">0</b> כבר חתמו.</small></span><span class="sb-go">לחתימה</span></a>
+    <div class="parents">
+      <div><h3>הפיצו הלאה</h3><p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים. הודעה מוכנה עם קישור לעמוד.</p></div>
+      <a class="bigbtn red" id="shareWa" href="https://wa.me/" target="_blank" rel="noopener">שליחה בוואטסאפ</a>
     </div>
-    <p class="j3-foot">יחד נשמור על הילדים ונחזק את צוותי החינוך.</p>
+    <div class="parents">
+      <div><h3>בואו לקחת חלק</h3><p>חיבור לארגונים, הגעה לכנסת או עזרה בהפצה. דברו איתי ישירות, אהרון.</p></div>
+      <div class="act-two"><a class="bigbtn red" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a><a class="bigbtn line" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a></div>
+    </div>
+    <p class="act-fb"><a href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">עקבו אחרינו בפייסבוק</a></p>
   </div>
 </section>
 </main>
