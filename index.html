@@ -543,6 +543,31 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+/* timeline v5: רגע ההדלקה של 2026 */
+.tline figcaption .cap-k{color:#5fe0c8;opacity:1!important}
+.tline .now .node::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid #5fe0c8;opacity:0;pointer-events:none}
+.tline .now .node::before{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid #5fe0c8;opacity:0;pointer-events:none}
+@keyframes shock{0%{transform:scale(1);opacity:.9}100%{transform:scale(5);opacity:0}}
+@keyframes glowburst{0%{transform:translateX(-50%) scale(.2);opacity:0}50%{opacity:1}100%{transform:translateX(-50%) scale(1.25);opacity:.9}}
+@keyframes kwpop{0%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.12)}100%{transform:scale(1)}}
+@keyframes kwglow{0%,100%{text-shadow:0 0 22px rgba(95,224,200,.35)}50%{text-shadow:0 0 34px rgba(95,224,200,.75),0 0 4px rgba(255,255,255,.4)}}
+@keyframes dimdown{to{opacity:.5}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes sweep{0%{transform:translateX(120%)}100%{transform:translateX(-120%)}}
+@media (prefers-reduced-motion:no-preference){
+  .tline.armed .now .node svg path{stroke-dasharray:1;stroke-dashoffset:1}
+  .tline.go .now .node svg path:first-child{animation:draw .7s ease-out 2.3s forwards}
+  .tline.go .now .node svg path:last-child{animation:draw .45s ease-out 2.9s forwards}
+  .tline.go .now .node::after{animation:shock 1.2s cubic-bezier(.2,.7,.3,1) 2.3s both}
+  .tline.go .now .node::before{animation:shock 1.4s cubic-bezier(.2,.7,.3,1) 2.55s both}
+  .tline.go .now::after{animation:glowburst 1.4s ease-out 2.2s both}
+  .tline.go .s3 em.kw{animation:kwpop .8s cubic-bezier(.2,1.3,.4,1) 2.2s both,kwglow 2.6s ease-in-out 3.2s 2!important}
+  .tline.go .s1 .node,.tline.go .s1 .yr,.tline.go .s1 b,.tline.go .s1 .d,.tline.go .s2 .node,.tline.go .s2 .yr,.tline.go .s2 b,.tline.go .s2 .d{animation:dimdown .8s ease-out 2.6s forwards}
+  .tline::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(95,224,200,.10) 50%,transparent 65%);transform:translateX(120%);pointer-events:none;z-index:0}
+  .tline.go::before{animation:sweep 1.6s ease-in-out 2.2s both}
+  .tline.go figcaption b{animation:tlpop .7s ease-out 3.3s both!important}
+}
+
 .solve{display:inline-flex;align-items:baseline;gap:.35em;margin:0 0 14px;padding:.28em .7em .32em;border:2px solid var(--eye);border-radius:999px;font-family:var(--f-ui);font-weight:900;font-size:clamp(24px,3.4vw,38px);line-height:1.1;color:#fff;background:rgba(75,199,227,.1)}
 .solve .sv-l{color:var(--eye);font-weight:800}
 .solve+.kick{display:block;font-size:14px;letter-spacing:0;opacity:.85}
@@ -753,9 +778,9 @@ footer a{color:#fff}
         <ol>
           <li class="st s1"><em class="kw">מתעד</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="26" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 21l10-5v16l-10-5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="13" y="24" width="12" height="9" rx="2" fill="currentColor"/><path d="M15.5 24v-2.5a3.5 3.5 0 017 0V24" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div><span class="yr">2018</span><b>חוק המצלמות</b><span class="d">מצלמים הכל. אף אחד לא צופה. אחרי זמן קצר נמחק.</span></li>
           <li class="st s2"><em class="kw">חושף</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 42h16M24 34v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 21s4.5-6 11-6 11 6 11 6-4.5 6-11 6-11-6-11-6z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="21" r="3" fill="currentColor"/></svg></div><span class="yr">2024</span><b>מסלולי צפייה להורים</b><span class="d">רשימה סגורה של דרכי צפייה, לבחירת המפעיל. שעות של וידאו, ואף אחד לא מבין בזמן אמת.</span></li>
-          <li class="st s3 now"><em class="kw">מגן</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true" class="shield"><path d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path d="M16.5 24.5l5.5 5.5 10-11" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span></li>
+          <li class="st s3 now"><em class="kw">מגן</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true" class="shield"><path pathLength="1" d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path pathLength="1" d="M16.5 24.5l5.5 5.5 10-11" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span></li>
         </ol>
-        <figcaption><b>החוק מ-2018 מתעד, והתיקון מ-2024 חושף. רק המסלול הרביעי מגן על הילדים בזמן אמת.</b></figcaption>
+        <figcaption><b><span class="cap-k">הפתרון פשוט:</span> להוסיף לרשימה ניתוח בזמן אמת. בלי תיקון חוק, אי אפשר להפעיל אותו.</b></figcaption>
       </figure>
 
       <h2 class="h-amber"><small>הפיקוח</small>תקציב הפיקוח על המעונות: קיצוץ של 75%</h2>
