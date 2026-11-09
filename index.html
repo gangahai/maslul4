@@ -1033,6 +1033,16 @@ h1,h2,h3{text-wrap:balance}
 @keyframes wvpulse{0%,100%{filter:drop-shadow(0 0 0 rgba(255,59,85,0))}50%{filter:drop-shadow(0 0 5px rgba(255,59,85,.9))}}
 @keyframes wvhead{0%{opacity:1;right:0}100%{opacity:1;right:calc(50% - 2px)}}
 @keyframes wvlbl{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.vs-title{font-family:var(--f-ui);font-weight:900;font-size:clamp(22px,2.4vw,28px);color:#fff;margin:0 0 14px}
+.blocker.bk2{border:1px solid rgba(255,138,153,.35)!important;background:rgba(255,255,255,.03);border-radius:12px}
+@media (max-width:700px){
+  .body h2,.trust h2,.rec h2,.late h2{font-size:29px!important}
+  h2#law{font-size:32px!important}
+  .body h3.subh{font-size:24px!important}
+  #fix-h{font-size:38px!important}
+  .vs-title{font-size:22px}
+}
 </style>
 </head>
 <body>
@@ -1208,6 +1218,7 @@ h1,h2,h3{text-wrap:balance}
     </figure>
     <div class="spread-grid sg2">
       <div>
+      <h3 class="vs-title">מה משתנה: היום מול המסלול הרביעי</h3>
       <div class="vs vs2">
         <div class="vs-row h"><div class="k"></div><div class="o"><span class="vh-ic x" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>היום</div><div class="n"><span class="vh-ic v" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.8 8.4l2.8 2.8 5.6-6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>המסלול הרביעי</div></div>
         <details class="vrow"><summary class="vs-row"><div class="k">תקינות המצלמות</div><div class="o">אין בקרה. תקלות נמשכות חודשים</div><div class="n">בקרה רציפה והתראה מיידית על תקלה</div></summary><p class="vmore"><span class="vm-o">היום: אין בקרה. תקלות נמשכות חודשים</span>מצלמה כבויה, חסומה או תקולה מזוהה בתוך דקות, ונשלחת התראה למפעיל ולמפקח. היום תקלה כזו מתגלה רק כשכבר צריך את הצילום.</p></details>
@@ -1250,7 +1261,7 @@ h1,h2,h3{text-wrap:balance}
         <div class="pl"><span class="d">שלושה חודשים</span><b>סטנדרט לאומי</b><span>המסלול הרביעי הופך לסטנדרט בכל מסגרת. <strong class="pl-strong">והורים מקבלים תובנות התפתחותיות על ילדיהם.</strong></span></div>
       </div>
       <details class="blocker bk2"><summary><span>הטכנולוגיה כבר קיימת. <b>החסם היחיד הוא החוק.</b></span><em>קראו עוד</em></summary><p>טכנולוגיה כזו כבר עובדת ומוכחת. למשל <b><span class="ez">עין צופיה</span></b>: פועלת בשטח כשנה, בכל קבוצות הגיל, ובפיילוט מחקר בשיתוף מכללת אורנים. המערכת פותחה בתמיכה ובמימון של <span class="ia">רשות החדשנות</span>. והמסלול שאנחנו דורשים מגדיר עיקרון טכנולוגי וסטנדרט, לא מוצר: הוא פתוח לכל מערכת שתעמוד בסטנדרט רגולטורי מחמיר, לא רק לזו.</p></details>
-      <div class="ctas"><a class="bigbtn eye" href="atzuma.html">חתמו על ההצהרה</a><a class="bigbtn line" href="#faq">שאלות וחששות</a></div>
+      <div class="ctas"><a class="bigbtn red" href="atzuma.html">חתמו על ההצהרה</a><a class="bigbtn line" href="#faq">שאלות וחששות</a></div>
     </div>
   </div>
 </section>
