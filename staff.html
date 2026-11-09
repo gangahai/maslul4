@@ -1828,6 +1828,32 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 /* carousel: no overlap between outgoing and incoming card */
 .pc{transition:opacity .15s ease-out,transform .15s ease-out,visibility 0s linear .15s}
 .pc.is-on{transition:opacity .35s ease-out .18s,transform .45s cubic-bezier(.2,.8,.2,1) .18s,visibility 0s}
+/* join: three action cards */
+.act.sjoin .wrap{display:block}
+.act.sjoin h2,.act.sjoin .lead{text-align:center;margin-inline:auto}
+.act.sjoin .lead{max-width:40ch;font-size:clamp(19px,1.9vw,22px)!important;font-weight:700;color:#ffe3e7}
+.jgrid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:18px;margin-top:38px;align-items:stretch}
+.jc{position:relative;display:flex;flex-direction:column;align-items:flex-start;border-radius:22px;padding:26px 24px 24px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(2px)}
+.jc-main{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 24px 50px rgba(80,0,15,.35)}
+.jc-ic{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.16)}
+.jc-main .jc-ic{background:var(--red)}
+.jc-ic svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.jc h3{font-family:var(--f-head);font-weight:900;font-size:clamp(24px,2.3vw,30px);line-height:1.15;margin:16px 0 0}
+.jc p{font-size:17.5px;line-height:1.5;margin:8px 0 0;color:inherit;opacity:.92}
+.jc-count{font-family:var(--f-ui);font-size:16px!important;opacity:1!important;color:#5b5f68}
+.jc-count b{font-family:var(--f-head);font-size:34px;font-weight:900;color:var(--red);margin-inline-end:4px;vertical-align:-3px}
+.jc-btn{margin-top:auto;display:inline-flex;justify-content:center;align-items:center;width:100%;box-sizing:border-box;min-height:52px;padding:12px 18px;border-radius:999px;font-family:var(--f-ui);font-weight:900;font-size:17px;text-decoration:none;cursor:pointer;border:2px solid #fff;background:#fff;color:var(--red);transition:transform .15s,box-shadow .15s}
+.jc>p+.jc-btn,.jc>p+.jc-two{margin-top:22px}
+.jc .jc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.18)}
+.jc-btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.jc-btn.line{background:transparent;color:#fff}
+.jc-two{margin-top:auto;display:grid;gap:10px;width:100%}
+.jc-two .jc-btn{margin-top:0}
+.jc>p.jc-count+.jc-btn{margin-top:18px}
+.jc{min-height:100%}
+.jgrid .jc{margin-top:0}
+@media (prefers-reduced-motion:no-preference){.jgrid.armed .jc{opacity:0;transform:translateY(18px)}.jgrid.go .jc{opacity:1;transform:none;transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--k)*.12s)}}
+@media (max-width:860px){.jgrid{grid-template-columns:1fr;gap:14px;margin-top:28px}.jc{padding:22px 20px}}
 </style>
 </head>
 <body>
@@ -1988,13 +2014,26 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
     <h2 id="act-h">נעשה את זה יחד.</h2>
     <p class="lead">החתימה של גננות, סייעות, מנהלות ומנהלים לצד ההורים משמיעה בכנסת את קולה של כל משפחת הגן.</p>
-    <div class="jpath" data-io>
-      <div class="jline" aria-hidden="true"><i></i></div>
-      <ol>
-        <li style="--k:0"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span><div class="jt"><b>תמכו בהצהרה</b><p>חצי דקה, וכל קול נספר.<small class="lc2" hidden> <b class="lcn">0</b> כבר חתמו.</small></p></div><a class="jbtn pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה</a></li>
-        <li style="--k:1"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span><div class="jt"><b>הפיצו כמה שיותר</b><p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים.</p></div><button class="jbtn ghost" type="button" id="shareCirc">שיתוף העמוד</button></li>
-        <li style="--k:2"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span><div class="jt"><b>בואו לקחת חלק</b><p>להגיע לכנסת, לחבר ארגון, לעזור יותר.</p></div><div class="jcontact"><a class="jbtn" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a><a class="jbtn ghost" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a></div></li>
-      </ol>
+    <div class="jgrid" data-io>
+      <article class="jc jc-main" style="--k:0">
+        <span class="jc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>
+        <h3>תמכו בהצהרה</h3>
+        <p>חצי דקה, וכל קול נספר.</p>
+        <p class="jc-count lc2" hidden><b class="lcn">0</b> כבר חתמו</p>
+        <a class="jc-btn red pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה</a>
+      </article>
+      <article class="jc" style="--k:1">
+        <span class="jc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
+        <h3>הפיצו כמה שיותר</h3>
+        <p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים.</p>
+        <button class="jc-btn" type="button" id="shareCirc">שיתוף העמוד</button>
+      </article>
+      <article class="jc" style="--k:2">
+        <span class="jc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span>
+        <h3>בואו לקחת חלק</h3>
+        <p>להגיע לכנסת, לחבר ארגון, לעזור יותר. דברו איתי ישירות.</p>
+        <div class="jc-two"><a class="jc-btn" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a><a class="jc-btn line" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a></div>
+      </article>
     </div>
   </div>
 </section>
