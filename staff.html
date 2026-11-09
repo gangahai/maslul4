@@ -1496,6 +1496,19 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .ph-av{background:rgba(255,255,255,.14)!important}
 .ph-av svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ped-trust{margin-top:16px}
+.paradox{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:14px}
+.px{border-radius:16px;padding:16px 18px;font-family:var(--f-ui);display:flex;flex-direction:column;gap:4px}
+.px-l{font-size:13px;font-weight:900;letter-spacing:.02em}
+.px b{font-size:18px;line-height:1.4;font-weight:800}
+.px-must{background:#eef2f6;border:1px solid #d5dde6}.px-must .px-l{color:#3a4a5e}
+.px-no{background:#fdecef;border:1px solid #f3c9d1}.px-no .px-l{color:var(--red)}
+.px-vs{align-self:center;font-family:var(--f-head);font-weight:900;font-size:22px;color:var(--red);background:#fff;border:2px solid var(--red);border-radius:999px;padding:4px 14px}
+.px-q{font-family:var(--f-ui);font-size:17px;line-height:1.55;margin:14px 0 0;background:#fff8e6;border-inline-start:4px solid #e2a92b;border-radius:10px;padding:10px 14px}
+.paradox.armed .px-must,.paradox.armed .px-no,.paradox.armed .px-vs{opacity:0}
+.paradox.go .px-must{animation:sUp .5s ease-out .1s both}
+.paradox.go .px-vs{animation:stamp .4s cubic-bezier(.3,1.6,.5,1) .6s both;--r:0deg}
+.paradox.go .px-no{animation:sUp .5s ease-out .9s both}
+@media (max-width:700px){.paradox{grid-template-columns:1fr}.px-vs{justify-self:center}.px b{font-size:16.5px}}
 </style>
 </head>
 <body>
@@ -1622,9 +1635,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="lawstep">
     <span class="ls-y">2018</span>
     <div class="ls-body">
-      <h3>חוק המצלמות: אחראים, בלי יכולת לבדוק</h3>
-      <p class="law-p">במעונות לפעוטות חובה לצלם, <b>ואתם האחראים לכך שהמצלמות יקליטו כל הזמן.</b> אבל אסור לכם לצפות. אז אין לכם דרך לדעת שהן באמת עובדות, ותקלה מתגלה רק כשמבקשים את הצילום.</p>
-      <p class="law-p">גם מבחוץ אין פיקוח אמיתי על תקינות המצלמות. הצילומים נעולים, נפתחים רק אחרי שכבר יש חשד, ואחרי 30 עד 90 יום נמחקים.</p>
+      <h3>חוק המצלמות: סתירה שחוזרת כל יום</h3>
+      <div class="paradox" data-io>
+        <div class="px px-must"><span class="px-l">החוק דורש</span><b>שהמצלמות יקליטו כל הזמן, ואתם האחראים לכך</b></div>
+        <span class="px-vs" aria-hidden="true">אבל</span>
+        <div class="px px-no"><span class="px-l">החוק אוסר</span><b>לצפות, ולכן גם לבדוק שהן באמת עובדות</b></div>
+      </div>
+      <p class="px-q"><b>אז המצלמות עובדות?</b> מגלים רק כשמבקשים את הצילום, ולפעמים מתברר שאין תיעוד.</p>
+      <p class="law-p">וגם מבחוץ אין פיקוח אמיתי על תקינות המצלמות. הצילומים נעולים, נפתחים רק אחרי שכבר יש חשד, ואחרי 30 עד 90 יום נמחקים.</p>
       <figure class="inline-fig days30" id="days30" aria-label="המחשה: 30 ימי צילום. בחלק מהימים המצלמה לא הקליטה, וכמעט אף אחד לא צופה. אחרי 30 עד 90 יום הצילומים נמחקים">
         <div class="grid" aria-hidden="true">
           <i style="--d:0"></i><i style="--d:1"></i><i style="--d:2"></i><i style="--d:3"></i><i style="--d:4"></i><i style="--d:5"></i><i class="miss" style="--d:6"></i><i class="miss" style="--d:7"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i class="miss" style="--d:13"></i><i style="--d:14"></i><i class="seen" style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:18"></i><i class="miss" style="--d:19"></i><i class="dim" style="--d:20"></i><i class="dim" style="--d:21"></i><i class="dim" style="--d:22"></i><i class="dim" style="--d:23"></i><i class="dim" style="--d:24"></i><i class="gone" style="--d:25"></i><i class="gone" style="--d:26"></i><i class="gone" style="--d:27"></i><i class="gone" style="--d:28"></i><i class="gone" style="--d:29"></i>
