@@ -178,7 +178,9 @@ footer .ez{color:var(--ink-2)}
 .ask-list li{margin-bottom:7px}
 .ask-list b{color:var(--ink)}
 .ask .tally{margin-top:16px;border-color:#cfe3f1;background:transparent}
-#tallyFirst{font-weight:600;color:var(--ink)}
+#tallyFirst{color:var(--ink-2);line-height:1.5}
+#tallyFirst b{font-size:15.5px;color:var(--ink);font-weight:700}
+.tally [hidden]{display:none!important}
 .ask .tosign{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;border-radius:8px;padding:11px 22px}
 .doc .doctitle{margin-bottom:0;padding-top:0;color:var(--ink);font-family:var(--f-doc);font-size:clamp(26px,3.4vw,34px);line-height:1.18;margin-top:6px}
 .ia{color:#14833f;font-weight:700;white-space:nowrap}
@@ -237,9 +239,9 @@ footer .ez{color:var(--ink-2)}
       </ul>
       <div class="tally" aria-live="polite">
         <span id="tallyNum"><b id="count">0</b> חתומים</span>
-        <span id="tallyFirst" hidden>היו בין החותמים הראשונים</span>
-        <span class="track" aria-hidden="true"><i id="bar"></i></span>
-        <span class="goal"><span id="goalLbl">היעד הראשון</span>: <span id="goalTxt">1,000</span></span>
+        <span id="tallyFirst" hidden><b>היו בין החותמים הראשונים.</b> <span>כל חתימה נספרת ותוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</span></span>
+        <span class="track" id="trk" aria-hidden="true"><i id="bar"></i></span>
+        <span class="goal" id="goalBox"><span id="goalLbl">היעד הראשון</span>: <span id="goalTxt">1,000</span></span>
       </div>
       <a class="tosign" href="#sign">אני מצטרף/ת</a>
     </section>
@@ -464,7 +466,7 @@ function render(count,recent){
   $("#count").textContent=count.toLocaleString("he-IL");
   const goal=goalFor(count);$("#goalTxt").textContent=goal.toLocaleString("he-IL");
   $("#goalLbl").textContent=goal===GOALS[0]?"היעד הראשון":"היעד הבא";
-  const few=count<25;$("#tallyNum").hidden=few;$("#tallyFirst").hidden=!few;
+  const few=count<25;$("#tallyNum").hidden=few;$("#tallyFirst").hidden=!few;$("#trk").hidden=few;$("#goalBox").hidden=few;
   $("#bar").style.width=Math.min(100,count/goal*100)+"%";
   if(recent&&recent.length){const c=$("#chips");c.textContent="";recent.forEach(r=>{const s=document.createElement("span");const who=r.n?r.n:(r.r&&r.r!=="אחר"?r.r:"חותם/ת");s.textContent=who+(r.c?", "+r.c:"");c.append(s)});$("#recentBox").hidden=false}
 }
