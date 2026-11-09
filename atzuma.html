@@ -296,6 +296,14 @@ footer.ft2 .fslogan span{display:block;font-family:var(--f-ui);font-weight:600;f
 footer.ft2 .fbrand{grid-area:info;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#aab2bf}
 footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);align-self:stretch;align-items:center;font-size:13.5px}
 @media (max-width:700px){footer.ft2 .wrap{grid-template-columns:1fr;grid-template-areas:"logo" "slogan" "info" "links";row-gap:12px}footer.ft2 .flogo-full{width:180px;margin:0}footer.ft2 .flinks{border-top:0;padding-top:0;flex-wrap:wrap;gap:16px}}
+
+/* היו בין החותמים הראשונים */
+.tally:has(#tallyFirst:not([hidden])){justify-content:center;border:0;padding:16px 12px;margin-top:18px;background:#fff;border-radius:14px;box-shadow:0 0 0 1px rgba(200,16,46,.18) inset}
+#tallyFirst{display:grid;justify-items:center;text-align:center;gap:2px;width:100%}
+#tallyFirst>b{font-family:var(--f-head);font-weight:900;font-size:clamp(20px,2.4vw,24px)!important;color:#c8102e!important;line-height:1.2}
+#tallyFirst .tf-goal{font-family:var(--f-ui);font-size:15px;color:var(--ink-2);margin-top:4px}
+#tallyFirst .tf-goal strong{font-family:var(--f-head);font-weight:900;font-size:26px;color:var(--ink);margin-inline-end:4px}
+#tallyFirst .tf-sub{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -319,7 +327,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
       </ul>
       <div class="tally" aria-live="polite">
         <span id="tallyNum"><b id="count">0</b> חתומים</span>
-        <span id="tallyFirst" hidden><b>היו בין החותמים הראשונים.</b> <span>היעד: <strong>10,000 חתימות</strong>, שיוגשו לשר/ת החינוך ולוועדת החינוך של הכנסת.</span></span>
+        <span id="tallyFirst" hidden><b>היו בין החותמים הראשונים</b><span class="tf-goal"><strong>10,000</strong> חתימות</span><span class="tf-sub">יוגשו לשר/ת החינוך ולוועדת החינוך של הכנסת</span></span>
         <span class="track" id="trk" aria-hidden="true"><i id="bar"></i></span>
         <span class="goal" id="goalBox"><span id="goalLbl">השלב הראשון</span>: <span id="goalTxt">1,000</span></span>
       </div>
