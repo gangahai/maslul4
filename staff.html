@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#c8102e">
 <meta property="og:type" content="website">
 <meta property="og:title" content="המסלול הרביעי: לצוותי חינוך ולמנהלי מסגרות">
-<meta property="og:description" content="אתן הלב של הגיל הרך. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
+<meta property="og:description" content="אנחנו הלב של הגיל הרך. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
 <meta property="og:image" content="https://maslul4.tsofia.ai/og-card-2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>המסלול הרביעי: לצוותי חינוך ולמנהלי מסגרות</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="אתן הלב של הגיל הרך. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
+<meta name="description" content="אנחנו הלב של הגיל הרך. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@400;500;700;800;900&display=swap">
 <style>
@@ -1545,6 +1545,25 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .jsteps li>div{text-align:start;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
 .jcontact{justify-content:flex-start}
 .jsteps li>div{flex:1}
+/* hero refinements */
+.shero h1 .mk svg{display:none}
+.shero h1 .mk-line{position:absolute;inset-inline:0;bottom:-.14em;height:4px;border-radius:3px;background:linear-gradient(90deg,#f3c64b,#ffd978);box-shadow:0 0 12px rgba(243,198,75,.45);transform-origin:right center}
+@media (prefers-reduced-motion:no-preference){
+ .shero h1 .tq{animation:writeIn 1.6s cubic-bezier(.45,0,.2,1) .35s both}
+ @keyframes writeIn{from{clip-path:inset(0 0 0 100%);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+ .shero h1 .mk-line{transform:scaleX(0);animation:lineIn .9s cubic-bezier(.6,0,.2,1) 1.8s forwards}
+ @keyframes lineIn{to{transform:scaleX(1)}}
+ .shero-photo{animation:sArt 1s cubic-bezier(.2,.8,.2,1) .2s both,photoSway 9s ease-in-out 1.4s infinite}
+ @keyframes photoSway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(1deg)}}
+ .shero-photo .ph-in{overflow:hidden;border-radius:24px;transform:rotate(-2.5deg)}
+ .shero-photo img{animation:kenBurns 18s ease-in-out infinite alternate}
+ @keyframes kenBurns{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(-2%,-3%)}}
+ .sfeel.go .lt-body .lt-call{animation:writeIn 1.8s cubic-bezier(.45,0,.2,1) 1.3s both}
+}
+.shero-photo .ph-in{overflow:hidden;border-radius:24px;border:6px solid rgba(255,255,255,.92);box-shadow:0 26px 60px rgba(0,0,0,.4);transform:rotate(-2.5deg)}
+.shero-photo .ph-in img{border:0;border-radius:0;box-shadow:none;transform-origin:50% 60%}
+@media (max-width:700px){.shero-photo .ph-in{transform:none;border-width:4px;border-radius:18px}}
+.lt-body .lt-call{background:none!important;display:block!important;font-family:var(--f-head);font-style:italic;font-weight:700;font-size:clamp(20px,2vw,24px)!important;color:#0f3936;line-height:1.55;border-inline-start:3px solid var(--sg-l);padding-inline-start:14px}
 </style>
 </head>
 <body>
@@ -1558,14 +1577,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">לצוותי חינוך ולמנהלי מסגרות</span>
-      <h1>אתן הלב של הגיל הרך.<span class="tq">הגיע הזמן שנקבל <span class="mk">הערכה והוקרה אמיתית.<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 12 C60 5 120 15 180 8 S260 6 296 10"/></svg></span></span></h1>
+      <h1>אנחנו הלב של הגיל הרך.<span class="tq">הגיע הזמן שנקבל <span class="mk">הערכה והוקרה אמיתית.<i class="mk-line" aria-hidden="true"></i></span></span></h1>
       <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואתן אולי מרגישות אותה אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחריכן, אלא עוד זוג עיניים ומשוב פדגוגי לצידכן.</b></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאיש/ת צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
     </div>
     <figure class="shero-photo">
-      <img src="staff-circle.jpg" alt="גננת וילדים יושבים במעגל עם תופים ומרקשות, בהפעלה מוזיקלית בגן. הפנים טושטשו" width="1100" height="1467" fetchpriority="high">
+      <div class="ph-in"><img src="staff-circle.jpg" alt="גננת וילדים יושבים במעגל עם תופים ומרקשות, בהפעלה מוזיקלית בגן. הפנים טושטשו" width="1100" height="1467" fetchpriority="high"></div>
       <figcaption>רגע אמיתי מהגן. הפנים טושטשו.</figcaption>
     </figure>
   </div>
