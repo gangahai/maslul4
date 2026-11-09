@@ -1493,6 +1493,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .orgs-c{display:flex;flex-direction:column;gap:4px;flex:none}
 .orgs-c a{color:var(--sg-l);font-weight:800;text-decoration:none}
 @media (max-width:860px){.letter{grid-template-columns:1fr;gap:16px;padding:22px 20px}.lt-who{flex-direction:row;flex-wrap:wrap;align-items:center}.lt-cred{width:100%}.orgs{flex-direction:column;align-items:flex-start}}
+.ph-av{background:rgba(255,255,255,.14)!important}
+.ph-av svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ped-trust{margin-top:16px}
 </style>
 </head>
 <body>
@@ -1546,7 +1549,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <section class="sped" id="ped" aria-labelledby="ped-h">
   <div class="wrap">
-    <h2 id="ped-h"><small>המשוב לצוות</small>מה הצוות מקבל: <span class="tqd">משוב פדגוגי, כל יום</span></h2>
+    <h2 id="ped-h"><small>המשוב לצוות</small>מה הצוות מקבל: <span class="tqd">משוב פדגוגי לאורך היום</span></h2>
     <p class="slede">כך נראה דוח אמיתי מפיילוט, אחרי בוקר של הכנת פיצות וארוחה בגן. המערכת זיהתה את הרגעים הטובים, ונתנה המלצות מעשיות להמשך. <b>בלי ציונים אישיים לעובדות, ובלי לחפש אשמים.</b></p>
     <div class="ped" id="pedRep">
       <div class="ped-l">
@@ -1556,15 +1559,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
           <span class="ped-anon">הפנים טושטשו והשמות הוסרו</span>
           <span class="scan" aria-hidden="true"></span>
         </figure>
-        <div class="ped-time" aria-hidden="true"><span class="pt-lbl">7 תובנות מהבוקר</span><div class="pt-bar"><i class="pt-fill"></i><div class="pt-marks"></div></div></div>
-        <ul class="ped-trust">
+                <ul class="ped-trust">
           <li><b>נבדק מול הווידאו.</b> מה שלא אומת מסומן, והמנהלת מחליטה מה נכנס לדוח לצוות.</li>
           <li><b>לצוות ולמנהלת.</b> לא להורים.</li>
           <li><b>בלי ציונים אישיים.</b> המטרה היא ללמוד ולהשתפר.</li>
         </ul>
       </div>
       <div class="ped-rep">
-        <div class="ped-head"><span class="ph-av"><img src="logo-hand-white.png" alt=""></span><span class="ph-t"><b>הדוח לצוות</b><small>פעילות פיצות וארוחה</small></span><span class="ph-n"><b class="ph-i">1</b>/<span class="ph-c">7</span></span></div>
+        <div class="ped-head"><span class="ph-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 12h6M10 15.5h6M10 19h4"/></svg></span><span class="ph-t"><b>הדוח לצוות</b><small>פעילות פיצות וארוחה</small></span><span class="ph-n"><b class="ph-i">1</b>/<span class="ph-c">7</span></span></div>
         <div class="ped-prog" aria-hidden="true"><i></i></div>
         <div class="ped-cats" role="tablist" aria-label="סוגי תובנות"></div>
         <div class="ped-cards" aria-live="polite">
@@ -1743,11 +1745,10 @@ els.forEach(function(e){io.observe(e)})})();
 (function(){var r=document.getElementById("pedRep");if(!r)return;var cs=[].slice.call(r.querySelectorAll(".pc")),N=cs.length,i=0,t=null,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 var CAT={g:"💛 רגעים יפים",k:"👶 ילדים",t:"🎯 המלצות",b:"🧰 כלים ורעיונות",q:"❓ הרהור"};var cats=r.querySelector(".ped-cats"),seen={};
 cs.forEach(function(c,k){var ct=c.dataset.cat;if(seen[ct]!=null)return;seen[ct]=k;var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.dataset.cat=ct;var n=cs.filter(function(x){return x.dataset.cat===ct}).length;b.innerHTML=CAT[ct]+(n>1?" <i>"+n+"</i>":"");b.onclick=function(){go(seen[ct],1)};cats.appendChild(b)});
-var marks=r.querySelector(".pt-marks"),fill=r.querySelector(".pt-fill");
-cs.forEach(function(c,k){var m=document.createElement("button");m.type="button";m.tabIndex=-1;m.setAttribute("aria-hidden","true");m.className="pt-m pt-"+c.dataset.cat;m.style.setProperty("--x",(k/(N-1))*100+"%");m.onclick=function(){go(k,1)};marks.appendChild(m)});
+
 var prog=r.querySelector(".ped-prog i"),ii=r.querySelector(".ph-i");r.querySelector(".ph-c").textContent=N;
 function paint(){cs.forEach(function(c,k){c.classList.toggle("is-on",k===i)});[].forEach.call(cats.children,function(b){var on=b.dataset.cat===cs[i].dataset.cat;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});
-[].forEach.call(marks.children,function(m,k){m.classList.toggle("on",k===i);m.classList.toggle("done",k<i)});fill.style.width=(i/(N-1))*100+"%";ii.textContent=i+1;
+ii.textContent=i+1;
 var a=cats.querySelector(".on");if(a&&cats.scrollWidth>cats.clientWidth){cats.scrollTo({left:a.offsetLeft-cats.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}
 prog.style.animation="none";void prog.offsetWidth;prog.style.animation=t?"pedprog 7s linear forwards":"none"}
 function go(k,user){i=(k+N)%N;if(user)stop();paint()}
