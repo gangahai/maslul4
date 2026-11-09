@@ -804,5 +804,6 @@ b.addEventListener('click',function(e){e.stopPropagation();m.hidden?op(e.detail=
 b.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();op(true);}});
 m.addEventListener('keydown',function(e){var i=it.indexOf(document.activeElement);if(e.key==='Escape'){cl(true);}else if(e.key==='ArrowDown'){e.preventDefault();it[(i+1)%it.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();it[(i-1+it.length)%it.length].focus();}else if(e.key==='Tab'){cl();}});
 document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});})();</script>
+<script>(function(){var r=new URLSearchParams(location.search).get("role");var s=document.getElementById("role");if(!s||!r)return;var m={staff:2,manager:3,edu:4};if(m[r]){s.selectedIndex=m[r];s.dispatchEvent(new Event("change",{bubbles:true}))}})();</script>
 </body>
 </html>
