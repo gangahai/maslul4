@@ -252,6 +252,39 @@ footer .ez{color:var(--ink-2)}
 .idea{width:100%;margin-top:2px;font:inherit;font-size:14.5px;padding:8px 10px;border:1px solid var(--rule-2);border-radius:8px;box-sizing:border-box}
 .bt2{display:grid;line-height:1.05}.bt2 b{font-size:18px}.bt2 em{font-style:normal;font-weight:800;font-size:11.5px;color:var(--ink);margin-top:2px}.bt2 small{font-size:10px;font-weight:600;margin-top:2px}
 .bt2 b span,.bt2 small span{font-size:inherit!important;font-weight:inherit}
+
+/* קיפול: בקשה ונוסח */
+.ask-list details>summary{cursor:pointer;list-style:none}
+.ask-list details>summary::-webkit-details-marker{display:none}
+.ask-list details>summary::after{content:" +";color:var(--blue);font-weight:900}
+.ask-list details[open]>summary::after{content:" −"}
+.ask-list details p{margin:4px 0 0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.dsec{border-top:1px solid var(--rule)}
+.dsec>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.dsec>summary::-webkit-details-marker{display:none}
+.dsec>summary h2{margin:14px 0!important}
+.dsec>summary::after{content:"+";font-family:var(--f-ui);font-weight:900;font-size:20px;color:var(--blue)}
+.dsec[open]>summary::after{content:"−"}
+/* טופס: מסגרת בולטת והכוונה לשלב הבא */
+.card{border:2px solid var(--ink)!important;box-shadow:0 12px 34px rgba(20,30,50,.12)!important}
+.f.nextf>label,.f.nextf>.lb{color:var(--ink);font-weight:900}
+.f.nextf>label::before,.f.nextf>.lb::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-inline-end:6px;vertical-align:middle;animation:nfp 1.4s ease-in-out infinite}
+.f.nextf input,.f.nextf select{border:2px solid var(--blue)!important;box-shadow:0 0 0 4px rgba(30,124,176,.15)}
+@keyframes nfp{50%{transform:scale(1.5);opacity:.6}}
+@media (prefers-reduced-motion:reduce){.f.nextf>label::before,.f.nextf>.lb::before{animation:none}}
+@media (max-width:700px){
+  .ask{padding:16px!important}
+  .ask h1{font-size:22px!important}
+  .ask-lead{font-size:14.5px!important;margin-bottom:6px!important}
+  .ask-list li{font-size:14.5px!important;margin-bottom:6px!important}
+  .askmark{width:40px!important}
+  .faq h2{font-size:24px!important}
+  .faq summary{font-size:15px!important;padding-block:11px!important}
+  .faq p{font-size:14.5px!important}
+  .doc{font-size:15px}
+  .doc h2{font-size:19px!important}
+}
+@media (min-width:901px){.card{padding-top:12px!important;padding-bottom:12px!important}.chk.agree{padding-block:2px!important}#sign-h{margin-bottom:6px!important}.hint2{margin-top:2px!important}.partner{margin-top:8px!important}}
 </style>
 </head>
 <body>
@@ -269,9 +302,9 @@ footer .ez{color:var(--ink-2)}
       <h1 id="ask-h">שהמצלמות שכבר בגנים יעזרו להגן על הילדים, בזמן אמת.</h1>
       <p class="ask-lead">אנחנו מבקשים משר/ת החינוך ומהכנסת לעדכן את חוק המצלמות:</p>
       <ul class="ask-list">
-        <li><b>התראה כשעוד אפשר לעצור.</b> המצלמות הקיימות ינותחו בזמן אמת, וכשילד בסכנה, הגורם האחראי במסגרת יידע מיד. באירוע חמור, גם גורם חיצוני ובלתי תלוי.</li>
-        <li><b>בלי צפייה שוטפת בילדים.</b> המערכת מפיקה התראות ותובנות כתובות, לא וידאו לצפייה. בלי דירוג עובדים, ובפיקוח של הרשות להגנת הפרטיות.</li>
-        <li><b>עיקרון, לא מוצר.</b> המסלול פתוח לכל טכנולוגיה שתעמוד בסטנדרט רגולטורי מחמיר. החתימה אינה תמיכה במוצר, ואינה מחייבת אתכם בדבר.</li>
+        <li><details><summary><b>התראה כשעוד אפשר לעצור.</b></summary><p>המצלמות הקיימות ינותחו בזמן אמת, וכשילד בסכנה, הגורם האחראי במסגרת יידע מיד. באירוע חמור, גם גורם חיצוני ובלתי תלוי.</p></details></li>
+        <li><details><summary><b>בלי צפייה שוטפת בילדים.</b></summary><p>המערכת מפיקה התראות ותובנות כתובות, לא וידאו לצפייה. בלי דירוג עובדים, ובפיקוח של הרשות להגנת הפרטיות.</p></details></li>
+        <li><details><summary><b>עיקרון, לא מוצר.</b></summary><p>המסלול פתוח לכל טכנולוגיה שתעמוד בסטנדרט רגולטורי מחמיר. החתימה אינה תמיכה במוצר, ואינה מחייבת אתכם בדבר.</p></details></li>
       </ul>
       <div class="tally" aria-live="polite">
         <span id="tallyNum"><b id="count">0</b> חתומים</span>
@@ -279,7 +312,6 @@ footer .ez{color:var(--ink-2)}
         <span class="track" id="trk" aria-hidden="true"><i id="bar"></i></span>
         <span class="goal" id="goalBox"><span id="goalLbl">השלב הראשון</span>: <span id="goalTxt">1,000</span></span>
       </div>
-      <a class="tosign" href="#sign">אני מצטרף/ת</a>
     </section>
   </div>
   <article class="doc" aria-labelledby="doc-h">
@@ -295,7 +327,7 @@ footer .ez{color:var(--ink-2)}
 
     <p class="opening">אנו, החתומים מטה, הורים לילדים במסגרות לגיל הרך, אנשי צוות, מנהלות ואנשי חינוך ואקדמיה, פונים לשר/ת החינוך ולחברי הכנסת בבקשה לעדכן את החוק כמפורט להלן.</p>
 
-    <h2><span>א.</span>רקע</h2>
+    <details class="dsec"><summary><h2><span>א.</span>רקע</h2></summary>
     <ol>
       <li>החוק מחייב התקנת מצלמות במעונות היום לפעוטות עם 7 פעוטות ומעלה, אלא אם 70% מההורים מתנגדים בכתב. המצלמות מצלמות בלי קול ובמעגל סגור, הצילומים נשמרים 30 עד 90 יום, וככלל אין צופים בהם אלא כשיש חשד, ובידי גורמים מוסמכים בלבד.</li>
       <li>אין בקרה אמיתית על תקינות המצלמות. לפי דוח מבקר המדינה (2026), בכ-27% מהמעונות שנבדקו נמצאה תקלה שמנעה הקלטה תקינה, וביותר ממחצית המעונות שנבדקו נמשכה תקלה שלושה חודשים רצופים לפחות. מערכת הניטור שמשרד החינוך דרש לא הותקנה ברוב המעונות הפרטיים, בין היתר משום שהמצלמות הקיימות אינן תומכות בה. מכיוון שגם למפעילים אסור לצפות בצילומים, תקלה מתגלה בדרך כלל רק כשמבקשים את הצילום, אחרי שכבר יש חשד.</li>
@@ -305,8 +337,9 @@ footer .ez{color:var(--ink-2)}
       <li>המצב הקיים פוגע בילדים, וגם באמון הציבור בצוותים המסורים, שהם רוב העובדים במסגרות.</li>
     </ol>
     <p class="refs">מקורות: <a href="https://fs.knesset.gov.il/20/law/20_lsr_528209.pdf" target="_blank" rel="noopener">נוסח החוק (רשומות, 2018)</a> · <a href="https://pob.education.gov.il/institutions/main-daycare/daycare-cameras-installation/" target="_blank" rel="noopener">משרד החינוך</a> · <a href="https://www.law.co.il/media/computer-law/little_brother.pdf" target="_blank" rel="noopener">בג״ץ על התיקון, 2025</a> · <a href="https://www.gov.il/BlobFolder/news/cameras_daycare_guide/he/fdr.pdf" target="_blank" rel="noopener">הרשות להגנת הפרטיות</a> · <a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">התיקון לחוק, 2024</a> · <a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">כתב האישום באריאל, 2026</a> · <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, 2026</a> · <a href="https://www.ynet.co.il/news/article/ryxnn3hsbx" target="_blank" rel="noopener">תקציב: קרן ברל כצנלסון (ynet), 2026</a></p>
+    </details>
 
-    <h2><span>ב.</span>עקרונות</h2>
+<details class="dsec"><summary><h2><span>ב.</span>עקרונות</h2></summary>
     <ul class="princ">
       <li><b>הגנה בזמן אמת.</b> מנגנון ההגנה צריך לזהות מוקדם מצבים שמגדילים את הסיכון, ולסייע במניעת פגיעה בזמן שהיא מתרחשת, ולא רק לתעד אותה לאחר מעשה.</li>
       <li><b>ליווי מקצועי ותמיכה פדגוגית לצוות.</b> הכלי צריך לשמש גם לליווי, למשוב ולחיזוק הצוותים, ולא רק לאיתור כשלים.</li>
@@ -314,8 +347,9 @@ footer .ez{color:var(--ink-2)}
       <li><b>שקיפות ובקרה.</b> כל שימוש בטכנולוגיה צריך להיות מוסדר, מתועד וכפוף לביקורת חיצונית.</li>
       <li><b>אחריות ממלכתית.</b> הורים אינם צריכים לפעול בעצמם, למשל באמצעות מכשירי הקלטה, כדי להגן על ילדיהם.</li>
     </ul>
+    </details>
 
-    <h2 id="request"><span>ג.</span>הבקשה</h2>
+<details class="dsec" open><summary><h2 id="request"><span>ג.</span>הבקשה</h2></summary>
     <ol>
       <li>לעדכן את החוק ולהוסיף לו <b>מסלול רביעי</b>: ניתוח אוטומטי, בזמן אמת, של צילומי המצלמות הקיימות, שתוצריו הם התראות ותובנות כתובות לגורם האחראי במסגרת, ובאירוע חמור גם לגורם חיצוני ובלתי תלוי, ללא צפייה אנושית שוטפת בווידאו. המסלול יגדיר עיקרון טכנולוגי ולא מוצר, ויהיה פתוח לכל מערכת שתעמוד בסטנדרט הרגולטורי.</li>
       <li>לקבוע סטנדרט רגולטורי מחמיר ותנאים מחייבים למסלול:
@@ -329,9 +363,11 @@ footer .ez{color:var(--ink-2)}
       <li>לאפשר הפעלה במסגרות כבר בשלב הראשון, בליווי מחקר הערכה חיצוני ובלתי תלוי שתוצאותיו יפורסמו לציבור.</li>
       <li>להקצות תקציב ייעודי למסלול ולליווי המקצועי, בנוסף על משאבי הפיקוח הקיימים.</li>
     </ol>
+    </details>
 
-    <h2><span>ד.</span>הגשה ומעקב</h2>
+<details class="dsec"><summary><h2><span>ד.</span>הגשה ומעקב</h2></summary>
     <p class="para">ההצהרה תוגש לשר/ת החינוך וליו״ר ועדת החינוך של הכנסת בצירוף מכתב נלווה ומספר החותמים המאומת, עם ההגעה ל-10,000 חתימות או לקראת דיון בנושא בוועדה, המוקדם מביניהם. החתימה תימשך גם לאחר ההגשה, ומספר החותמים המעודכן יוגש שוב בכל אבן דרך ובכל דיון. ההגשה תיעשה בפגישה או במכתב רשמי, ועותק יישלח לגורמים המפורטים בראש ההצהרה. חותמים שאישרו קבלת עדכונים יעודכנו על ההגשה ועל התגובה שתתקבל.</p>
+    </details>
 
     <section class="meaning" aria-labelledby="mean-h">
       <h2 id="mean-h">משמעות החתימה</h2>
@@ -624,6 +660,14 @@ inp.addEventListener("blur",()=>{
   setTimeout(close,0);
 });
 })();
+
+/* הכוונה: השדה הבא שצריך למלא */
+(function(){const F=document.getElementById("form");if(!F)return;
+function nx(){const fs=[["name",v=>v.trim().length>1],["city",v=>v.trim().length>1],["email",v=>/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim())],["role",v=>!!v]];
+ document.querySelectorAll(".f.nextf").forEach(e=>e.classList.remove("nextf"));
+ for(const [id,ok] of fs){const el=document.getElementById(id);if(el&&!ok(el.value)){el.closest(".f").classList.add("nextf");return}}
+ const ph=document.getElementById("phone");if(document.getElementById("partner").checked&&ph.value.replace(/\D/g,"").length<9){ph.closest(".f").classList.add("nextf")}}
+F.addEventListener("input",nx);F.addEventListener("change",nx);nx()})();
 </script>
 </body>
 </html>
