@@ -576,6 +576,19 @@ footer a{color:#fff}
   .ticker:hover .tick-in,.ticker:focus .tick-in,.ticker:focus-within .tick-in{animation-play-state:paused}
 }
 @media (prefers-reduced-motion:reduce){.ticker{height:auto;-webkit-mask-image:none;mask-image:none}}
+.tc{border:1px solid #cfe3f1;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(30,124,176,.08)}
+.tc-head{padding:24px 26px 20px;background:var(--teal-soft);border-bottom:1px solid #cfe3f1}
+.tc-head h2{font-weight:900;font-size:clamp(24px,3vw,34px);line-height:1.15;margin:6px 0 12px}
+.tc-head .tech-badge{margin:0}
+.tc-body{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:start;padding:24px 26px 18px}
+.tc-logo{width:96px;height:96px;object-fit:contain;border-radius:20px;border:1px solid var(--rule);padding:8px;background:#fff}
+.tc-body h3{font-family:var(--f-ui);font-weight:800;font-size:clamp(20px,2.3vw,24px);color:#0b4f78}
+.tc-body p{font-family:var(--f-ui);font-size:16.5px;line-height:1.65;color:var(--ink-2);margin:8px 0 0}
+.tc-emma{display:flex;align-items:center;gap:10px;margin-top:16px!important;padding-top:14px;border-top:1px dashed var(--rule);font-size:15.5px!important}
+.tc-emma img{width:34px;height:34px;border-radius:9px;flex:none}
+.tc-emma a{color:#7c3aed;font-weight:800}
+.tc-note{margin:0;padding:14px 26px 18px;background:var(--tint,#f4f2ee);font-family:var(--f-ui);font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:600px){.tc-body{grid-template-columns:1fr}.tc-logo{width:72px;height:72px}.tc-head,.tc-body,.tc-note{padding-inline:18px}}
 </style>
 </head>
 <body>
@@ -897,19 +910,22 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
 </section>
 
 <section class="tech wrap" id="tech" aria-labelledby="tech-h">
-  <span class="tech-k">הטכנולוגיה שמאחורי הדוגמה</span>
-  <h2 id="tech-h">טכנולוגיה ישראלית שמבינה התנהגות ילדים מתוך וידאו</h2>
-  <p class="tech-badge">פותחה בתמיכה ובמימון של <span class="ia">רשות החדשנות</span></p>
-  <p class="tech-lead">הדוח שבסרטון נוצר בטכנולוגיה הזו. היא לא רק מזהה תנועה, אלא מבינה סיטואציות חינוכיות: מי עושה מה, מה עבד, מה דורש תשומת לב ומה אפשר לעשות אחרת. </p>
-  <div class="tmain">
-    <img src="logo-ein.png" alt="" class="tlogo-l">
-    <div>
-      <h3><span class="ez">עין צופיה</span> · בגנים ובמעונות</h3>
-      <p>שכבת הבנה: זיהוי אנשים ותפקידים, הבנת סיטואציות, התראות בזמן אמת וליווי מקצועי יומי לצוות. פועלת בשטח כשנה, בכל קבוצות הגיל, ובפיילוט מחקר בשיתוף מכללת אורנים.</p>
+  <div class="tc">
+    <div class="tc-head">
+      <span class="tech-k">הטכנולוגיה שמאחורי הדוגמה</span>
+      <h2 id="tech-h">טכנולוגיה ישראלית שמבינה התנהגות ילדים מתוך וידאו</h2>
+      <span class="tech-badge">פותחה בתמיכה ובמימון של <span class="ia">רשות החדשנות</span></span>
     </div>
+    <div class="tc-body">
+      <img src="logo-ein.png" alt="" class="tc-logo">
+      <div>
+        <h3><span class="ez">עין צופיה</span> · בגנים ובמעונות</h3>
+        <p>הדוח שבסרטון נוצר בטכנולוגיה הזו. היא מזהה אנשים ותפקידים, מבינה סיטואציות, מתריעה בזמן אמת ומלווה את הצוות כל יום. פועלת בשטח כשנה, בכל קבוצות הגיל, ובפיילוט מחקר בשיתוף מכללת אורנים.</p>
+        <p class="tc-emma"><img src="logo-emma.jpg" alt=""><span>אותה טכנולוגיה משמשת גם את <a href="https://emma-il.netlify.app" target="_blank" rel="noopener">אמה</a>, להורים בבית.</span></p>
+      </div>
+    </div>
+    <p class="tc-note"><b>חשוב לדעת:</b> <span class="ez">עין צופיה</span> מוצגת כאן כהדגמה לכך שהטכנולוגיה כבר קיימת ועובדת. מטרת היוזמה היא ההצהרה ושינוי החוק, לא קידום מוצר: המסלול שאנחנו דורשים פתוח לכל מערכת שתעמוד בסטנדרט רגולטורי מחמיר.</p>
   </div>
-  <p class="tside"><img src="logo-emma.jpg" alt=""><span>אותה טכנולוגיה משמשת גם את <a href="https://emma-il.netlify.app" target="_blank" rel="noopener">אמה</a>, להורים בבית.</span></p>
-  <p class="tech-note"><b>חשוב לדעת:</b> <span class="ez">עין צופיה</span> מוצגת כאן כהדגמה לכך שהטכנולוגיה כבר קיימת ועובדת. מטרת היוזמה היא ההצהרה ושינוי החוק, לא קידום מוצר: המסלול שאנחנו דורשים פתוח לכל מערכת שתעמוד בסטנדרט רגולטורי מחמיר.</p>
 </section>
 
 <section class="sources wrap" aria-labelledby="src-h">
