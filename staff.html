@@ -1645,6 +1645,48 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .jsteps p .lc2[hidden]{display:none}
 .jsteps li>.jcontact{display:flex;width:100%;gap:8px}
 .jsteps li>.jcontact{flex-direction:row!important;flex:none!important;align-items:center}
+/* ===== join path v3 ===== */
+.jpath{position:relative;margin-top:26px;background:#fff;color:var(--ink);border-radius:22px;padding:8px 22px;box-shadow:0 22px 50px rgba(80,0,15,.28)}
+.jpath ol{list-style:none;margin:0;padding:0;position:relative;z-index:1}
+.jpath li{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #f1e6e8}
+.jpath li:last-child{border-bottom:0}
+.jpath .jn{width:52px;height:52px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 6px #fff,0 0 0 7px #f3d4da}
+.jpath .jn svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.jt b{display:block;font-family:var(--f-ui);font-weight:900;font-size:20px;line-height:1.25}
+.jt p{margin:3px 0 0;font-size:16px;line-height:1.45;color:#4a525c}
+.jt .lc2{display:inline!important;font-family:var(--f-ui);font-size:14px;color:#6a727c}
+.jt .lc2[hidden]{display:none!important}
+.jt .lc2 b{display:inline;font-size:14px;color:var(--red);font-weight:900}
+.jpath .jcontact{display:flex;gap:8px;flex-wrap:nowrap}
+.jline{position:absolute;inset-block:42px;inset-inline-start:47px;width:3px;background:#f3d4da;border-radius:2px;z-index:0}
+.jline i{position:absolute;inset:0;background:var(--red);border-radius:2px;transform-origin:top;transform:scaleY(1)}
+.jpath.armed li{opacity:0;transform:translateX(-14px)}
+.jpath.go li{animation:jIn .55s cubic-bezier(.2,.8,.2,1) calc(.25s + var(--k)*.45s) both}
+.jpath.armed .jline i{transform:scaleY(0)}
+.jpath.go .jline i{animation:jLine 1.4s cubic-bezier(.6,0,.2,1) .3s both}
+.jpath.go .jn{animation:jPop .5s cubic-bezier(.3,1.6,.5,1) calc(.3s + var(--k)*.45s) both}
+@keyframes jIn{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@keyframes jLine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes jPop{from{transform:scale(.4)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:no-preference){.jbtn.pulse{animation:jPulse 2.4s ease-out 2.5s infinite}@keyframes jPulse{0%{box-shadow:0 0 0 0 rgba(200,16,46,.45)}70%{box-shadow:0 0 0 12px rgba(200,16,46,0)}100%{box-shadow:0 0 0 0 rgba(200,16,46,0)}}}
+@media (max-width:700px){.jpath{padding:4px 16px}.jpath li{grid-template-columns:44px 1fr;gap:12px}.jpath .jn{width:44px;height:44px}.jline{inset-inline-start:37px}.jpath li>.jbtn,.jpath li>.jcontact{grid-column:2;justify-self:start}}
+/* gentle motion across page */
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+ .scard,.lc3,.syes,.sno{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+ .scard:hover,.lc3:hover,.syes:hover,.sno:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.08)}
+}
+@media (prefers-reduced-motion:no-preference){
+ .sgives .sico,.sfeel .sico{transform-origin:center}
+ [data-io].go .sico{animation:icoBob 4s ease-in-out calc(2s + var(--k,0)*.4s) infinite}
+ @keyframes icoBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+}
+@media (min-width:1000px){
+ .sjoin .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center}
+ .sjoin h2,.sjoin .lead{grid-column:1}
+ .sjoin .lead{grid-row:2;align-self:start}
+ .sjoin h2{grid-row:1;align-self:end}
+ .sjoin .jpath{grid-column:2;grid-row:1/3;margin-top:0}
+}
 </style>
 </head>
 <body>
@@ -1829,11 +1871,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
     <h2 id="act-h">נעשה את זה יחד.</h2>
     <p class="lead">כשגננות, סייעות ומנהלים חותמים לצד הורים, הכנסת שומעת את כל המשפחה של הגן.</p>
-    <ol class="jsteps" data-io>
-      <li style="--k:0"><span class="jn">1</span><b>תמכו בהצהרה</b><p>חצי דקה, וכל קול נספר. <small class="lc2" hidden><b class="lcn">0</b> כבר חתמו</small></p><a class="jbtn" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה</a></li>
-      <li style="--k:1"><span class="jn">2</span><b>הפיצו כמה שיותר</b><p>לצוות, לחברים מהמקצוע ולקבוצות ההורים.</p><button class="jbtn ghost" type="button" id="shareCirc">שיתוף העמוד</button></li>
-      <li style="--k:2"><span class="jn">3</span><b>בואו להיות שותפים</b><p>להגיע לכנסת, לחבר ארגון, לעזור יותר.</p><div class="jcontact"><a class="jbtn" href="tel:+972508787431" dir="ltr">050-878-7431</a><a class="jbtn ghost" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">הודעה</a></div></li>
-    </ol>
+    <div class="jpath" data-io>
+      <div class="jline" aria-hidden="true"><i></i></div>
+      <ol>
+        <li style="--k:0"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span><div class="jt"><b>תמכו בהצהרה</b><p>חצי דקה, וכל קול נספר.<small class="lc2" hidden> <b class="lcn">0</b> כבר חתמו.</small></p></div><a class="jbtn pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה</a></li>
+        <li style="--k:1"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span><div class="jt"><b>הפיצו כמה שיותר</b><p>לצוות, לחברים מהמקצוע ולקבוצות ההורים.</p></div><button class="jbtn ghost" type="button" id="shareCirc">שיתוף</button></li>
+        <li style="--k:2"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span><div class="jt"><b>בואו להיות שותפים</b><p>להגיע לכנסת, לחבר ארגון, לעזור יותר.</p></div><div class="jcontact"><a class="jbtn" href="tel:+972508787431" dir="ltr">050-878-7431</a><a class="jbtn ghost" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">הודעה</a></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 </main>
