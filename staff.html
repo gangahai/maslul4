@@ -1808,6 +1808,23 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 }
 .shero-turn .st-no,.shero-turn .st-yes{display:block}
 .shero-turn .st-yes{background:none;padding:0;color:#fff;text-decoration:underline;text-decoration-color:#f3c64b;text-decoration-thickness:4px;text-underline-offset:.28em}
+/* subtitle: one phrase per line */
+.shero h1 .tql{display:block}
+.shero-deck{text-wrap:pretty}
+/* photo mosaic */
+.pmos{position:relative;justify-self:center;width:min(100%,440px);aspect-ratio:1/1.05;display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:12px}
+.mt{position:relative;margin:0;overflow:hidden;border-radius:18px;border:5px solid rgba(255,255,255,.95);box-shadow:0 18px 44px rgba(0,0,0,.35);background:#0f3936}
+.mt0{grid-row:1/3}
+.mt1{transform:rotate(1.5deg)}.mt2{transform:rotate(-1.5deg)}.mt0{transform:rotate(-1deg)}
+.mt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.mt img.mt-new{z-index:1;clip-path:circle(0% at 50% 50%);animation:iris 1.2s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes iris{to{clip-path:circle(75% at 50% 50%)}}
+.mt figcaption{position:absolute;z-index:2;bottom:8px;inset-inline-start:8px;max-width:calc(100% - 16px);background:rgba(255,255,255,.94);color:#14302d;font-family:var(--f-ui);font-weight:800;font-size:13.5px;line-height:1.25;border-radius:999px;padding:5px 11px;transition:opacity .4s}
+.mt figcaption.fade{opacity:0}
+.pmos .ps-note{position:absolute;bottom:-36px;inset-inline:0;text-align:center;font-family:var(--f-ui);font-size:14px;color:#cfe9e4}
+@media (prefers-reduced-motion:no-preference){.pmos{animation:sArt 1s cubic-bezier(.2,.8,.2,1) .2s both}}
+@media (max-width:700px){.pmos{order:2;width:100%;max-width:420px;aspect-ratio:1/.8;margin:30px auto 48px;gap:9px}.mt{border-width:4px;border-radius:14px}.mt figcaption{font-size:12.5px}}
+@media (max-width:700px){.mt figcaption{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;padding:4px 9px}}
 </style>
 </head>
 <body>
@@ -1821,26 +1838,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">לצוותי חינוך ולהנהלות מסגרות</span>
-      <h1>אנחנו הלב של הגיל הרך.<span class="tq">נגן על הילדים. <span class="mk">נחזק את הצוות.<i class="mk-line" aria-hidden="true"></i></span> נשמור על הפרטיות.</span></h1>
+      <h1>אנחנו הלב של הגיל הרך.<span class="tq"><span class="tql">נגן על הילדים.</span> <span class="tql"><span class="mk">נחזק את הצוות.<i class="mk-line" aria-hidden="true"></i></span></span> <span class="tql">נשמור על הפרטיות.</span></span></h1>
       <p class="shero-deck">הפרשה כואבת לכולנו. כצוותי חינוך, כואב לנו גם לראות איך מעשים קשים מערערים את האמון בצוותים מסורים. הבקשה שלנו: לעדכן את חוק המצלמות, עם מערכת שמזהה סימנים אפשריים לסכנה, ומתריעה לצורך בדיקה ותגובה של הצוות.</p>
       <p class="shero-turn"><span class="st-no">לא מעקב אחרינו,</span> <span class="st-yes">אלא עוד זוג עיניים לצידנו.</span></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאיש/ת צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
     </div>
-    <div class="pstack" id="pstack" aria-label="רגעים אמיתיים מהגנים. הפנים טושטשו">
-      <figure class="pc1" data-i="0"><img src="staff-circle.jpg" alt="גננת וילדים במעגל עם תופים, בהפעלה מוזיקלית" fetchpriority="high"><figcaption>הפעלה מוזיקלית במעגל</figcaption></figure>
-      <figure class="pc1" data-i="1"><img src="staff-autumn.jpg" alt="מטפלת מחופשת לסתיו משחקת עם פעוטות בעלים צבעוניים" loading="lazy"><figcaption>יום של סתיו עם הפעוטות</figcaption></figure>
-      <figure class="pc1" data-i="2"><img src="staff-shabbat.jpg" alt="מטפלת ושני פעוטות בוצעים חלה בקבלת שבת" loading="lazy"><figcaption>קבלת שבת</figcaption></figure>
-      <figure class="pc1" data-i="3"><img src="staff-pets.jpg" alt="מטפלת מציגה יונה לשני פעוטות" loading="lazy"><figcaption>חוג חיות</figcaption></figure>
-      <figure class="pc1" data-i="4"><img src="staff-parachute.jpg" alt="מטפלת ופעוטות משחקים יחד עם יריעה שקופה בחצר" loading="lazy"><figcaption>משחק יריעה בחצר</figcaption></figure>
-      <figure class="pc1" data-i="5"><img src="staff-yard.jpg" alt="מטפלת ופעוטות בפעילות תנועה עם סרטים אדומים על הדשא" loading="lazy"><figcaption>תנועה בחצר</figcaption></figure>
-      <figure class="pc1" data-i="6"><img src="staff-art.jpg" alt="מטפלת ופעוטות יושבים סביב שולחן ומציירים" loading="lazy"><figcaption>יצירה סביב השולחן</figcaption></figure>
-      <figure class="pc1" data-i="7"><img src="staff-sticks.jpg" alt="מטפלת ופעוטות ממיינים מקלות צבעוניים סביב שולחן" loading="lazy"><figcaption>מיון צבעים עם מקלות</figcaption></figure>
-      <figure class="pc1" data-i="8"><img src="staff-birthday.jpg" alt="מטפלת מדליקה נרות בעוגת יום הולדת לפעוטה" loading="lazy"><figcaption>יום הולדת בגן</figcaption></figure>
-      <figure class="pc1" data-i="9"><img src="staff-nature.jpg" alt="מטפלת ופעוטות אוספים עלים לסל בחצר" loading="lazy"><figcaption>אוספים עלים בחצר</figcaption></figure>
-      <figure class="pc1" data-i="10"><img src="staff-play.jpg" alt="פעוטה מחייכת במשחק בפינת החצר" loading="lazy"><figcaption>משחק חופשי בחצר</figcaption></figure>
-      <span class="ps-note">רגעים אמיתיים מהגנים. הפנים טושטשו.</span>
+    <div class="pmos" id="pmos" aria-label="רגעים אמיתיים מהגנים. הפנים טושטשו" data-p='[{"s": "staff-circle.jpg", "a": "גננת וילדים במעגל עם תופים, בהפעלה מוזיקלית", "c": "הפעלה מוזיקלית במעגל"}, {"s": "staff-autumn.jpg", "a": "מטפלת מחופשת לסתיו משחקת עם פעוטות בעלים צבעוניים", "c": "יום של סתיו עם הפעוטות"}, {"s": "staff-shabbat.jpg", "a": "מטפלת ושני פעוטות בוצעים חלה בקבלת שבת", "c": "קבלת שבת"}, {"s": "staff-pets.jpg", "a": "מטפלת מציגה יונה לשני פעוטות", "c": "חוג חיות"}, {"s": "staff-parachute.jpg", "a": "מטפלת ופעוטות משחקים יחד עם יריעה שקופה בחצר", "c": "משחק יריעה בחצר"}, {"s": "staff-yard.jpg", "a": "מטפלת ופעוטות בפעילות תנועה עם סרטים אדומים על הדשא", "c": "תנועה בחצר"}, {"s": "staff-art.jpg", "a": "מטפלת ופעוטות יושבים סביב שולחן ומציירים", "c": "יצירה סביב השולחן"}, {"s": "staff-sticks.jpg", "a": "מטפלת ופעוטות ממיינים מקלות צבעוניים סביב שולחן", "c": "מיון צבעים עם מקלות"}, {"s": "staff-birthday.jpg", "a": "מטפלת מדליקה נרות בעוגת יום הולדת לפעוטה", "c": "יום הולדת בגן"}, {"s": "staff-nature.jpg", "a": "מטפלת ופעוטות אוספים עלים לסל בחצר", "c": "אוספים עלים בחצר"}, {"s": "staff-play.jpg", "a": "פעוטה מחייכת במשחק בפינת החצר", "c": "משחק חופשי בחצר"}]'><figure class="mt mt0"><img src="staff-circle.jpg" alt="גננת וילדים במעגל עם תופים, בהפעלה מוזיקלית" fetchpriority="high"><figcaption>הפעלה מוזיקלית במעגל</figcaption></figure><figure class="mt mt1"><img src="staff-autumn.jpg" alt="מטפלת מחופשת לסתיו משחקת עם פעוטות בעלים צבעוניים"><figcaption>יום של סתיו עם הפעוטות</figcaption></figure><figure class="mt mt2"><img src="staff-shabbat.jpg" alt="מטפלת ושני פעוטות בוצעים חלה בקבלת שבת"><figcaption>קבלת שבת</figcaption></figure><span class="ps-note">רגעים אמיתיים מהגנים. הפנים טושטשו.</span>
     </div>
   </div>
 </header>
@@ -2038,10 +2043,15 @@ cc.addEventListener("touchend",function(e){if(x0==null)return;var dx=e.changedTo
 paint();if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else if(t){clearInterval(t);t=null;paint()}})},{threshold:.35}).observe(r)}
 })();
 </script>
-<script>(function(){var st=document.getElementById("pstack");if(!st)return;var cs=[].slice.call(st.querySelectorAll(".pc1")),N=cs.length,i=0;
-function lay(){cs.forEach(function(c,k){var d=(k-i+N)%N;c.style.setProperty("--d",Math.min(d,3));c.classList.toggle("top",d===0);c.classList.toggle("hid",d>2)})}
-lay();if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
-var t=setInterval(function(){var top=cs[i];top.classList.add("out");setTimeout(function(){top.classList.remove("out");i=(i+1)%N;lay()},650)},4200);
-st.addEventListener("click",function(){var top=cs[i];top.classList.add("out");setTimeout(function(){top.classList.remove("out");i=(i+1)%N;lay()},650)});})();</script>
+<script>(function(){var m=document.getElementById("pmos");if(!m)return;var P=JSON.parse(m.dataset.p),T=[].slice.call(m.querySelectorAll(".mt")),shown=[0,1,2],nx=3,k=0;
+if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+P.slice(3).forEach(function(p){var im=new Image();im.src=p.s});
+function swap(){var t=T[k],p=P[nx];shown[k]=nx;nx=(nx+1)%P.length;while(shown.indexOf(nx)>-1)nx=(nx+1)%P.length;
+var im=document.createElement("img");im.src=p.s;im.alt=p.a;im.className="mt-new";t.appendChild(im);
+var cap=t.querySelector("figcaption");cap.classList.add("fade");
+setTimeout(function(){cap.textContent=p.c;cap.classList.remove("fade")},500);
+setTimeout(function(){var old=t.querySelector("img:not(.mt-new)");if(old)old.remove();im.classList.remove("mt-new")},1300);
+k=[2,0,1][k];}
+var iv=setInterval(swap,3000);document.addEventListener("visibilitychange",function(){clearInterval(iv);if(!document.hidden)iv=setInterval(swap,3000)});})();</script>
 </body>
 </html>
