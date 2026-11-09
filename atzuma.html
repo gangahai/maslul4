@@ -285,6 +285,17 @@ footer .ez{color:var(--ink-2)}
   .doc h2{font-size:19px!important}
 }
 @media (min-width:901px){.card{padding-top:12px!important;padding-bottom:12px!important}.chk.agree{padding-block:2px!important}#sign-h{margin-bottom:6px!important}.hint2{margin-top:2px!important}.partner{margin-top:8px!important}}
+
+footer.ft2{background:#111;color:#c9c9c9;font-family:var(--f-ui);font-size:14px;padding:28px 0 18px;margin-top:40px}
+footer.ft2 a{color:#fff}
+footer.ft2 .ez{color:#4bc7e3}
+footer.ft2 .wrap{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"logo slogan slogan" "info info links";align-items:center;column-gap:0;row-gap:18px}
+footer.ft2 .flogo-full{grid-area:logo;width:200px;height:auto;background:#fff;border-radius:10px;padding:8px 12px;margin:0 0 0 28px;box-sizing:content-box}
+footer.ft2 .fslogan{grid-area:slogan;margin:0;font-family:var(--f-head);font-weight:900;font-size:clamp(26px,3vw,34px);color:#fff;line-height:1.2}
+footer.ft2 .fslogan span{display:block;font-family:var(--f-ui);font-weight:600;font-size:15px;color:#bfc6d2;margin-top:4px}
+footer.ft2 .fbrand{grid-area:info;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#aab2bf}
+footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);align-self:stretch;align-items:center;font-size:13.5px}
+@media (max-width:700px){footer.ft2 .wrap{grid-template-columns:1fr;grid-template-areas:"logo" "slogan" "info" "links";row-gap:12px}footer.ft2 .flogo-full{width:180px;margin:0}footer.ft2 .flinks{border-top:0;padding-top:0;flex-wrap:wrap;gap:16px}}
 </style>
 </head>
 <body>
@@ -502,7 +513,7 @@ footer .ez{color:var(--ink-2)}
   </details>
 </section>
 
-<footer><div class="wrap"><span><a href="#a11y" onclick="document.getElementById('a11y').open=true">הצהרת נגישות</a> · <a href="#privacy" onclick="document.querySelector('#privacy details').open=true">מדיניות פרטיות</a> · המסלול הרביעי · יוזמה של <a href="https://emma-il.netlify.app" target="_blank" rel="noopener"><span class="ez">עין צופיה</span></a></span><span dir="ltr">emma@tsofia.ai · 050-878-7431</span></div></footer>
+<footer class="ft2"><div class="wrap"><img src="logo-full.png" alt="המסלול הרביעי: מגינים על הילדים בזמן אמת" class="flogo-full" width="640" height="322"><p class="fslogan">מספיק עם הפלסטר! <span>הגיע הזמן לפתרון שעובד.</span></p><div class="fbrand">יוזמה של <a href="./#contact"><b><span class="ez">עין צופיה</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><div class="flinks"><a href="./">לכתבה המלאה</a><a href="#a11y" onclick="document.getElementById('a11y').open=true">הצהרת נגישות</a><a href="#privacy" onclick="document.querySelector('#privacy details').open=true">מדיניות פרטיות</a></div></div></footer>
 <div class="toast" id="toast" hidden></div>
 
 <script>
