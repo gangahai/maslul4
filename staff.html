@@ -1286,12 +1286,70 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .sbanner i{font-style:normal;flex:none;background:#8fe3d4;color:#0b2a28;font-weight:900;border-radius:999px;padding:11px 20px}
 .sbanner:hover i{background:#fff}
 @media (max-width:700px){.sbanner{flex-direction:column;align-items:flex-start}.sbanner i{width:100%;text-align:center}}
+/* pedagogy showcase */
+.sped{padding-block:clamp(44px,6vw,72px) 0}
+.sped h2,.smgr h2{font-family:var(--f-head);font-weight:900;font-size:clamp(30px,3.8vw,46px);line-height:1.12;margin:0}
+.ped{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin-top:26px;align-items:stretch}
+.ped-vid{position:relative;margin:0;border-radius:16px;overflow:hidden;background:#111;box-shadow:0 14px 34px rgba(0,0,0,.16);align-self:start}
+.ped-vid video{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.ped-live{position:absolute;top:10px;inset-inline-end:10px;background:var(--red);color:#fff;font-family:var(--f-ui);font-weight:800;font-size:12.5px;border-radius:6px;padding:3px 9px}
+.ped-anon{position:absolute;bottom:10px;inset-inline-start:10px;background:rgba(15,20,28,.78);color:#fff;font-family:var(--f-ui);font-size:12.5px;border-radius:6px;padding:3px 9px}
+.ped-rep{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:16px 18px 12px;display:flex;flex-direction:column;min-height:330px}
+.ped-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--rule);padding-bottom:10px;font-family:var(--f-ui)}
+.ped-head b{font-weight:900;font-size:17px}
+.ped-head span{font-size:13.5px;color:#6a727c}
+.ped-cards{position:relative;flex:1;display:grid}
+.pc{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s,transform .35s,visibility .35s;padding-top:12px}
+.pc.is-on{opacity:1;visibility:visible;transform:none}
+.pc small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--f-ui);font-size:13px}
+.pc-tag{font-weight:800;border-radius:999px;padding:2px 10px;background:#f3f1ec}
+.pc-g .pc-tag{background:#fff3d6;color:#8a5a00}
+.pc-k .pc-tag{background:#e8f1fb;color:#1e5f91}
+.pc-t .pc-tag{background:#e3f4f1;color:#1f6f66}
+.pc-q .pc-tag{background:#f1ecf8;color:#5a3d8a}
+.pc-ok{color:#1f7a70;font-weight:700}
+.pc-ok::before{content:"✓ "}
+.pc h4{font-family:var(--f-ui);font-weight:800;font-size:18px;line-height:1.4;margin:10px 0 0}
+.pc-why{font-size:16px;line-height:1.6;margin:8px 0 0;color:#3b3f48}
+.pc ul{margin:6px 0 0;padding-inline-start:20px;font-size:15.5px;line-height:1.55;color:#3b3f48}
+.pc-msg{font-size:15.5px;line-height:1.6;margin:10px 0 0;background:#fbf8ef;border-inline-start:3px solid #e2b13c;border-radius:8px;padding:8px 12px}
+.pc-msg b{font-family:var(--f-ui);font-size:13.5px;display:block;color:#6b5000}
+.ped-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}
+.ped-nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);background:#fff;font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
+.ped-dots{display:flex;gap:6px}
+.ped-dots i{width:8px;height:8px;border-radius:50%;background:#d6d2c8;cursor:pointer}
+.ped-dots i.on{background:#2a8f84;width:20px;border-radius:4px}
+.ped-note{font-family:var(--f-ui);font-size:14.5px;color:#5a626c;margin:14px 0 0;max-width:80ch}
+/* law */
+.law3{display:grid;gap:16px;margin-top:24px}
+.law-blk{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:20px 22px}
+.law-blk h3{font-family:var(--f-ui);font-weight:900;font-size:clamp(19px,2vw,22px);line-height:1.35;margin:0}
+.law-list{margin:10px 0 0;padding-inline-start:20px;font-size:17px;line-height:1.6}
+.law-list li{margin-top:6px}
+.law-p{font-size:17px;line-height:1.6;margin:10px 0 0}
+.law-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.law-stats div{background:#fbeef0;border-radius:12px;padding:10px 12px}
+.law-stats b{display:block;font-family:var(--f-ui);font-weight:900;font-size:28px;color:var(--red);line-height:1.1}
+.law-stats span{font-family:var(--f-ui);font-size:14px;line-height:1.4;color:#4a2a30}
+.law-src{font-family:var(--f-ui);font-size:13px;color:#6a727c;margin:8px 0 0}
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.trk{border:1px solid var(--rule);border-top:4px solid var(--red);border-radius:12px;padding:12px 14px}
+.trk b{font-family:var(--f-ui);font-weight:800;font-size:16px;display:block}
+.trk p{margin:6px 0 0;font-size:15.5px;line-height:1.5;color:#3b3f48}
+.law-fix{border-color:#bfe2dc;background:#f4fbf9}
+.fixgrid{display:grid;gap:8px;margin-top:12px}
+.fx{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;align-items:center;background:#fff;border-radius:10px;padding:10px 14px;font-family:var(--f-ui);font-size:15.5px;line-height:1.45}
+.fx-o{color:#8a1f2e;text-decoration:line-through;text-decoration-color:rgba(200,16,46,.45)}
+.fx-n{font-weight:800;color:#1f6f66}
+.fx-n::before{content:"✓ ";color:#2a8f84}
+.mgr-h3{font-family:var(--f-ui);font-weight:900;font-size:22px;margin:30px 0 0}
+@media (max-width:860px){.ped{grid-template-columns:1fr}.ped-rep{min-height:0}.tracks,.law-stats{grid-template-columns:1fr}.fx{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
 <body>
 <nav class="sticky" aria-label="מדורים"><div class="wrap bar">
   <a class="brand" href="./"><img class="logo" src="logo-hand.png" alt="המסלול הרביעי"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><em class="btag">מגינים על הילדים בזמן אמת</em><small>יוזמה של <span class="ez">עין צופיה</span></small></span></a>
-  <div class="sections"><a href="./">עמוד המאבק</a><a href="#feel">למה עכשיו</a><a href="#what">מה זה</a><a href="#managers">למנהלים</a><a href="#faq">שאלות</a><a href="atzuma.html?role=staff&amp;src=staff" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
+  <div class="sections"><a href="./">עמוד המאבק</a><a href="#ped">המשוב לצוות</a><a href="#what">מה זה</a><a href="#managers">למנהלים</a><a href="#faq">שאלות</a><a href="atzuma.html?role=staff&amp;src=staff" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
 </div></nav>
 
 <main>
@@ -1300,7 +1358,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <div class="shero-txt">
       <span class="kicker">לצוותי חינוך ולמנהלי מסגרות</span>
       <h1>אתן הלב של הגן.<br><span class="tq">הגיע הזמן שגם המערכת תשמור עליכן.</span></h1>
-      <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואולי לכן אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחריכן, אלא עוד זוג עיניים לצידכן.</b></p>
+      <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואולי לכן אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחריכן, אלא עוד זוג עיניים ומשוב פדגוגי לצידכן.</b></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאנשי צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
@@ -1316,6 +1374,35 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <div class="scard"><b>חשד, רק בדיעבד</b><p>הצילומים נפתחים רק אחרי שכבר יש חשד. עד אז אף אחד לא רואה, ואז כולן נכנסות לחשד, גם מי שלא עשתה דבר.</p></div>
     <div class="scard"><b>לבד ברגעי העומס</b><p>מפקחת אחת על כ-83 מעונות, ותקציב הפיקוח קוצץ ב-75%. ברגעים הכי עמוסים של היום, הצוות לבד.</p></div>
     <div class="scard"><b>העבודה הטובה לא נראית</b><p>חיבוק לילד שבוכה, מעגל בוקר שהרגיע קבוצה שלמה. מאות רגעים טובים ביום, שאף אחד לא רואה ולא אומר עליהם תודה.</p></div>
+  </div>
+</section>
+
+
+<section class="sped" id="ped" aria-labelledby="ped-h">
+  <div class="wrap">
+    <h2 id="ped-h">מה הצוות מקבל: משוב פדגוגי, כל יום</h2>
+    <p class="slede">כך נראה דוח אמיתי שצוות קיבל אחרי בוקר של הכנת פיצות וארוחה בגן. המערכת זיהתה את הרגעים הטובים, ונתנה המלצות מעשיות להמשך. <b>בלי ציונים לעובדות, ובלי לחפש אשמים.</b></p>
+    <div class="ped">
+      <figure class="ped-vid">
+        <video src="pizza.mp4" poster="pizza-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="קטע ממצלמת הגן בזמן פעילות הכנת פיצות. האנשים מטושטשים"></video>
+        <span class="ped-live">ניתוח בזמן אמת</span>
+        <span class="ped-anon">הפנים טושטשו והשמות הוסרו</span>
+      </figure>
+      <div class="ped-rep" id="pedRep">
+        <div class="ped-head"><b>הדוח לצוות</b><span>פעילות פיצות וארוחת בוקר</span></div>
+        <div class="ped-cards">
+          <article class="pc pc-g is-on"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><p class="pc-msg"><b>המסר שאשת הצוות מקבלת:</b> „ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></article>
+          <article class="pc pc-g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>חלוקת אבטיח, עם פנייה אישית לכל ילד בשמו.</h4><p class="pc-why">מעניק לילד תחושת נראות ומונע מאבקים סביב האוכל.</p><p class="pc-msg"><b>המסר שאשת הצוות מקבלת:</b> „ראיתי איך את מחלקת את האבטיח, ורגע אחד שממש תפס אותי היה שהקפדת לקרוא לכל ילד בשמו. זה יצר אווירה כל כך רגועה ומכבדת סביב השולחן.“</p></article>
+          <article class="pc pc-k"><small><span class="pc-tag">👶 צורך של ילדה</span></small><h4>ילדה עמדה בצד ולא הצטרפה להכנת הפיצות.</h4><p class="pc-why">כנראה זקוקה לוויסות לפני כניסה לפעילות קבוצתית עמוסה. רעיונות לצוות:</p><ul><li>„אני שמה לך חתיכת בצק קטנה בקצה השולחן. את יכולה רק להסתכל או לגעת באצבע אחת.“</li><li>תפקיד בלי מגע: לעזור לחלק מפיות.</li></ul></article>
+          <article class="pc pc-t"><small><span class="pc-tag">🎯 המלצה מעשית</span></small><h4>בזמני מעבר: אשת צוות אחת „עוגן“, ואחת „לוגיסטיקה“.</h4><p class="pc-why">כשכל הצוות עסוק בניקיון ובארגון, הילדים מאבדים מיקוד ומתחילים לשוטט. „עוגן“ יושבת עם הילדים ושרה או מפעילה, ו„לוגיסטיקה“ מנקה ומארגנת.</p><p class="pc-msg"><b>תוצאה צפויה תוך שבוע:</b> פחות שוטטות וחוסר שקט במעברים.</p></article>
+          <article class="pc pc-t"><small><span class="pc-tag">🧰 מארגז הכלים</span></small><h4>שיר המתנה</h4><p class="pc-why"><b>מתי:</b> כשהילדים יושבים ליד השולחן ומחכים לאוכל. <b>איך:</b> משחק אצבעות או שיר מוכר עם תנועות ידיים. <b>למה זה עובד:</b> נותן לילדים עוגן, כדי שלא „ילכו לאיבוד“ בהמתנה.</p></article>
+          <article class="pc pc-t"><small><span class="pc-tag">🎨 רעיון לפעם הבאה</span></small><h4>פיצה משלנו, בבצק משחק</h4><p class="pc-why">משחק חושי בקבוצות קטנות, בלי הלחץ של תוצר אכיל. מתאים יותר לילדים שנרתעו מהמרקם הדביק של בצק אמיתי.</p></article>
+          <article class="pc pc-q"><small><span class="pc-tag">❓ שאלה להרהור בצוות</span></small><h4>בזמן שאנחנו מנקות ומארגנות לפעילות הבאה, מה הילדים עושים, ומי מתווך להם את הזמן הזה?</h4></article>
+        </div>
+        <div class="ped-nav"><button type="button" class="pn-prev" aria-label="הקודם">›</button><span class="ped-dots" aria-hidden="true"></span><button type="button" class="pn-next" aria-label="הבא">‹</button></div>
+      </div>
+    </div>
+    <p class="ped-note">דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים. הדוח מגיע לצוות ולמנהלת, לא להורים. כל טענה נבדקת מול הווידאו, ומה שלא אומת מסומן, כדי שהמנהלת תבדוק לפני שזה נכנס לדוח לצוות.</p>
   </div>
 </section>
 
@@ -1343,22 +1430,56 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         </ul>
       </div>
     </div>
-    <figure class="sshot">
-      <img src="understands.jpg" alt="המחשה של המערכת: אשת צוות מסייעת לילד מסומנת כאינטראקציה תומכת, וילד שעומד לבד מסומן לתשומת לב. הפנים מטושטשות" loading="lazy" width="1600" height="895">
-      <figcaption>כך זה נראה: <b>"אינטראקציה תומכת: אשת צוות מסייעת לילד"</b>, ולצידה "שימו לב: ילד עומד לבד כבר 4 דקות". הווידאו לא נשמר לצפייה, יוצאות רק תובנות.</figcaption>
-    </figure>
   </div>
 </section>
 
 <div class="wrap"><a class="sbanner" href="./"><span><b>רוצים להבין לעומק?</b>התחקיר המלא: מה קרה באריאל, מה החוק מאפשר היום, ואיך עובדת המצלמה שמבינה.</span><i>לעמוד המאבק</i></a></div>
 
 <section class="smgr wrap" id="managers" aria-labelledby="mgr-h">
-  <h2 id="mgr-h">למנהלים ולמנהלות של מסגרות</h2>
-  <p class="slede">אתם מכירים את הלחץ מבפנים: אחריות על כל ילד, על כל אשת צוות, ועל האמון של עשרות משפחות.</p>
+  <h2 id="mgr-h">למנהלים ולמנהלות: החוק היום עובד נגדכם</h2>
+  <p class="slede">אתם מכירים את חוק המצלמות מבפנים. אתם חייבים לצלם את הצוות שלכם, <b>ואסור לכם להשתמש בתיעוד כדי לעזור לו.</b></p>
+
+  <div class="law3">
+    <div class="law-blk">
+      <h3>חוק המצלמות, 2018: מצלמים הכל, אף אחד לא רואה</h3>
+      <ul class="law-list">
+        <li>הצילומים נעולים, ו<b>נפתחים רק אחרי שכבר יש חשד</b>: למשטרה, למפקחות כשיש חשד, ולהורה לילד שנפגע באישור המשטרה.</li>
+        <li>אחרי 30 עד 90 יום הצילומים נמחקים.</li>
+        <li>גם לכם, המפעילים, אסור לצפות. לכן תקלה במצלמה מתגלה רק כשמבקשים את הצילום, ואז מתברר שאין תיעוד.</li>
+      </ul>
+      <div class="law-stats"><div><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></div><div><b>54%</b><span>תקלה של 3 חודשים ומעלה</span></div><div><b>89%</b><span>מהמעונות הפרטיים: בלי ניטור תקינות</span></div></div>
+      <p class="law-src">מקור: מבקר המדינה, 2026</p>
+    </div>
+
+    <div class="law-blk">
+      <h3>התיקון של 2024: שלוש דרכי צפייה, ואף אחת לא מגינה</h3>
+      <p class="law-p">התיקון קבע רשימה סגורה של דרכי צפייה להורים, והמפעיל בוחר אחת. בבג״ץ נקבע ב-2025 שהרשימה סגורה: כל שימוש שלא מופיע בחוק, אסור.</p>
+      <div class="tracks">
+        <div class="trk"><b>צפייה בגן, פעם בשבוע</b><p>מי יודע מה לחפש? ומה עם שאר השבוע?</p></div>
+        <div class="trk"><b>צפייה מרחוק, 48 שעות בחודש</b><p>שעות של וידאו, והורה עייף בלילה.</p></div>
+        <div class="trk"><b>שידור חי לטלפון</b><p>הורה עובד לא צופה שמונה שעות ביום.</p></div>
+      </div>
+      <p class="law-p">ובכל שלוש הדרכים, הורה צופה בלי הקשר ובלי כלים מקצועיים, והצוות שלכם לא מקבל מזה שום משוב או עזרה.</p>
+    </div>
+
+    <div class="law-blk law-fix">
+      <h3>המסלול הרביעי: מה הוא פותר</h3>
+      <div class="fixgrid">
+        <div class="fx"><span class="fx-o">אף אחד לא רואה בזמן</span><span class="fx-n">המצלמות מבינות בזמן אמת, ומתריעות כשעוד אפשר לעצור</span></div>
+        <div class="fx"><span class="fx-o">מי יודע מה לחפש?</span><span class="fx-n">ניתוח מקצועי של כל היום, לא קטע אקראי</span></div>
+        <div class="fx"><span class="fx-o">שעות של וידאו</span><span class="fx-n">תובנות כתובות, בלי צפייה שוטפת</span></div>
+        <div class="fx"><span class="fx-o">תקלות שנמשכות חודשים</span><span class="fx-n">בקרה רציפה והתראה מיידית על תקלה</span></div>
+        <div class="fx"><span class="fx-o">מפקחת אחת לכ-83 מעונות</span><span class="fx-n">משוב יומי ותמיכה פדגוגית לצוות</span></div>
+      </div>
+      <p class="law-p">הפתרון פשוט: להוסיף לרשימה ניתוח בזמן אמת. <b>בלי תיקון חוק, אי אפשר להפעיל אותו.</b></p>
+    </div>
+  </div>
+
+  <h3 class="mgr-h3">ומה זה נותן לגן שלכם, ולילדים</h3>
   <div class="scards">
+    <div class="scard"><b>הדרכה לצוות, כל יום</b><p>רגעים טובים לחזק, המלצות מעשיות ורעיונות לפעילות, כמו בדוח למעלה. במקום לחכות לביקור פיקוח.</p></div>
     <div class="scard"><b>תמונת מצב של הגן</b><p>תובנות ישימות לשיפור הגן, במקום לגלות בעיה רק כשהורה מתקשר.</p></div>
-    <div class="scard"><b>גב לצוות שלכם</b><p>משוב יומי ותמיכה פדגוגית לכל אשת צוות, בלי לחכות למפקחת שמגיעה פעם בשנה.</p></div>
-    <div class="scard"><b>שקט מול ההורים</b><p>במקום חשדנות אחרי כל כותרת, כלי שמראה כל יום שהילדים בידיים טובות.</p></div>
+    <div class="scard"><b>אמון מול ההורים</b><p>במקום חשדנות אחרי כל כותרת, כלי שמראה כל יום שהילדים בידיים טובות.</p></div>
   </div>
   <p class="snote">החתימה היא תמיכה בשינוי מדיניות, לא במוצר. היא לא מחייבת אתכם או את הגן בשום דבר.</p>
   <div class="mgr-cta">
@@ -1411,5 +1532,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <script>(function(){var EP="https://script.google.com/macros/s/AKfycbwL5KzYs6paU6y3_C6ndggCBLdf3WVtEqDpFwZX4enn8LP9jQX_IZgJVryVxGfJQlVU/exec";
 try{fetch(EP,{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){var n=d.count||0;if(n<100)return;var t=n.toLocaleString("en-US");
 document.querySelectorAll(".lcn").forEach(function(e){e.textContent=t});document.querySelectorAll(".lc,.lc2").forEach(function(e){e.hidden=false})}).catch(function(){})}catch(e){}})();</script>
+<script>(function(){var r=document.getElementById("pedRep");if(!r)return;var cs=[].slice.call(r.querySelectorAll(".pc")),dots=r.querySelector(".ped-dots"),i=0,t=null;
+cs.forEach(function(c,k){var d=document.createElement("i");d.onclick=function(){go(k,1)};dots.appendChild(d)});
+function go(k,user){cs[i].classList.remove("is-on");dots.children[i].classList.remove("on");i=(k+cs.length)%cs.length;cs[i].classList.add("is-on");dots.children[i].classList.add("on");if(user)stop()}
+function stop(){if(t){clearInterval(t);t=null}}
+dots.children[0].classList.add("on");
+r.querySelector(".pn-next").onclick=function(){go(i+1,1)};r.querySelector(".pn-prev").onclick=function(){go(i-1,1)};
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches&&"IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!t&&r.dataset.u!=="1"){t=setInterval(function(){go(i+1)},7000)}else if(!e.isIntersecting)stop()})},{threshold:.4}).observe(r)}
+r.addEventListener("pointerdown",function(){r.dataset.u="1";stop()});})();</script>
 </body>
 </html>
