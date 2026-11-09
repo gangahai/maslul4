@@ -1867,6 +1867,79 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .jc-btn.tel svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linejoin:round}
 .jc-btn.wa{background:#1fa855;border-color:#1fa855;color:#fff}
 .jc-two{gap:12px}
+/* ped: phone with arriving notifications */
+.ped{align-items:center}
+.ped-phone{display:flex;justify-content:center}
+.phn{position:relative;width:min(100%,340px);height:640px;border-radius:46px;background:#14211f;padding:11px;box-shadow:0 30px 70px rgba(10,40,36,.35),inset 0 0 0 2px #2c3d3a}
+.phn-scr{position:relative;height:100%;border-radius:36px;overflow:hidden;background:radial-gradient(120% 70% at 80% 0%,#2a6b63 0%,#164340 45%,#0d2c2a 100%);color:#fff;display:flex;flex-direction:column}
+.phn-st{display:flex;justify-content:space-between;align-items:center;padding:12px 24px 0;font-family:var(--f-ui);font-size:14px;direction:ltr}
+.phn-isl{width:92px;height:26px;border-radius:20px;background:#000}
+.phn-bat{width:24px;height:12px;border:1.5px solid #fff;border-radius:3px;padding:1px;box-sizing:border-box}.phn-bat i{display:block;height:100%;width:70%;background:#fff;border-radius:1px}
+.phn-day{text-align:center;padding:18px 16px 12px}
+.phn-day b{display:block;font-family:var(--f-head);font-weight:900;font-size:26px}
+.phn-day span{font-family:var(--f-ui);font-size:14px;color:#cfe9e4}
+.phn-feed{flex:1;display:flex;flex-direction:column;gap:9px;padding:4px 10px 14px;overflow:hidden;transition:opacity .6s}
+.phn-feed.clr{opacity:0}
+.nt{background:rgba(255,255,255,.93);color:var(--ink);border-radius:20px;padding:11px 14px 12px;box-shadow:0 8px 22px rgba(0,0,0,.22);cursor:pointer;flex-shrink:0;opacity:0;transform:translateY(-26px) scale(.96);transition:opacity .45s,transform .55s cubic-bezier(.2,.9,.25,1.15)}
+.nt.in{opacity:1;transform:none}
+.nt:not(.on){background:rgba(255,255,255,.78)}
+.nt-top{display:flex;align-items:center;gap:7px;font-family:var(--f-ui);font-size:12.5px;color:#5b5f68}
+.nt-ic{display:grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--sg-d,#1f6b62)}
+.nt-ic svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2;stroke-linejoin:round}
+.nt-app{font-weight:800;color:#2b2f36}
+.nt-time{margin-inline-start:auto}
+.nt-tag{display:block;font-family:var(--f-ui);font-size:13.5px;font-weight:900;margin-top:6px}
+.nt-g .nt-tag{color:#8a5a00}.nt-k .nt-tag{color:#1e5f91}.nt-t .nt-tag{color:var(--sg-d)}.nt-b .nt-tag{color:#22766b}.nt-q .nt-tag{color:#5a3d8a}
+.nt-h{font-family:var(--f-ui);font-weight:800;font-size:16px;line-height:1.35;margin:2px 0 0}
+.nt:not(.on) .nt-h{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px}
+.nt-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s}
+.nt-more>*{min-height:0}
+.nt.on .nt-more{grid-template-rows:1fr}
+.nt-more{overflow:hidden}
+.nt:not(.on) .nt-more{display:none}
+.nt-more .pc-why,.nt-more ul,.nt-more .pc-res,.nt-more .pc-dl{font-size:14.5px;line-height:1.5;margin:6px 0 0}
+.nt-more .pc-msg{margin:8px 0 0;padding:8px 11px;border-radius:12px}
+.nt-more .pc-msg p{font-size:14px;line-height:1.5}
+.nt-more .pm-l{font-size:12px}
+.nt-ver{font-family:var(--f-ui);font-size:12.5px;margin:4px 0 0}
+.nt-q.on .nt-h{font-family:var(--f-head);font-size:19px;color:#3d2a63;white-space:normal}
+@media (max-width:860px){.phn{height:600px;width:min(100%,330px)}}
+/* join v3: civic cards on light background */
+.sjoin2{position:relative;overflow:hidden;background:#fbf8f4;padding-block:clamp(56px,7vw,90px);text-align:center;color:#0f3936}
+.sjoin2::before,.sjoin2::after{content:"";position:absolute;width:300px;height:380px;background:url(logo-hand-white.png) no-repeat center/contain;pointer-events:none}
+.sjoin2::before{top:-40px;left:-30px;transform:rotate(20deg);filter:brightness(0) saturate(100%) invert(80%) sepia(12%) saturate(500%) hue-rotate(110deg);opacity:.25}
+.sjoin2::after{bottom:-90px;right:-60px;transform:rotate(-25deg);filter:brightness(0) saturate(100%) invert(70%) sepia(40%) saturate(600%) hue-rotate(310deg);opacity:.12}
+.sjoin2 .wrap{position:relative;z-index:1}
+.j2-pill{display:inline-block;font-family:var(--f-ui);font-weight:900;font-size:16px;color:#0f3936;background:#dcefe9;border-radius:999px;padding:8px 22px}
+.sjoin2 h2{font-family:var(--f-head);font-weight:900;font-size:clamp(42px,6vw,76px);line-height:1.05;margin:16px 0 0;color:#0f3936}
+.sjoin2 h2 em{font-style:normal;color:var(--red)}
+.j2-lead{font-size:clamp(20px,2.2vw,28px);margin:10px auto 0;color:#1d2a28}
+.j2-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:22px;margin-top:44px;align-items:stretch;text-align:center}
+.j2c{display:flex;flex-direction:column;align-items:center;background:#fff;border-radius:22px;padding:30px 24px 26px;box-shadow:0 14px 40px rgba(15,57,54,.10)}
+.j2-main{border-top:5px solid var(--red);box-shadow:0 20px 50px rgba(200,16,46,.13)}
+.j2-mint{background:#e6f4ef}
+.j2-ic{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:#dcefe9}
+.j2-main .j2-ic{background:#fde4e8}
+.j2-ic svg{width:42px;height:42px;fill:none;stroke:#0f3936;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.j2-main .j2-ic svg{stroke:var(--red)}
+.j2-n{margin-top:14px;font-family:var(--f-ui);font-weight:900;font-size:15px;color:#0f3936;background:#cfe9e1;border-radius:999px;padding:2px 14px}
+.j2-main .j2-n{background:#fde0e5;color:var(--red)}
+.j2c h3{font-family:var(--f-head);font-weight:900;font-size:clamp(26px,2.6vw,34px);line-height:1.15;margin:10px 0 0;color:#0f3936}
+.j2c p{font-size:18px;line-height:1.5;margin:10px 0 0;color:#2b3634;max-width:28ch}
+.j2-btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:12px;width:100%;box-sizing:border-box;min-height:60px;padding:12px 20px;border-radius:999px;font-family:var(--f-ui);font-weight:900;font-size:19px;text-decoration:none;cursor:pointer;border:2px solid #0f3936;background:#fff;color:#0f3936;transition:transform .15s,box-shadow .15s}
+.j2c p+.j2-btn{margin-top:24px}
+.j2-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(15,57,54,.18)}
+.j2-btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.j2-btn.red span{font-size:22px}
+.j2-btn.dark{background:#0f3936;color:#fff}
+.j2-tel{margin-top:12px;font-family:var(--f-ui);font-weight:900;font-size:22px;letter-spacing:.04em;color:#0f3936;text-decoration:none}
+.j2-tel:hover{text-decoration:underline}
+.j2-fine{margin-top:12px;font-family:var(--f-ui);font-size:14px;color:#5b5f68}
+.j2-fine b{color:var(--red)}
+.j2-foot{display:flex;align-items:center;justify-content:center;gap:18px;margin:44px 0 0;font-family:var(--f-ui);font-weight:800;font-size:clamp(17px,1.8vw,21px);color:#0f3936}
+.j2-foot::before,.j2-foot::after{content:"";width:min(110px,12vw);height:2px;background:#b9dcd2}
+@media (prefers-reduced-motion:no-preference){.j2-grid.armed .j2c{opacity:0;transform:translateY(18px)}.j2-grid.go .j2c{opacity:1;transform:none;transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--k)*.12s)}}
+@media (max-width:860px){.j2-grid{grid-template-columns:1fr;gap:16px;margin-top:30px}.j2-ic{width:80px;height:80px}.j2-ic svg{width:36px;height:36px}.j2-foot::before,.j2-foot::after{display:none}}
 </style>
 </head>
 <body>
@@ -1983,23 +2056,25 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         </figure>
         
       </div>
-      <div class="ped-rep">
-        <div class="ped-head"><span class="ph-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 12h6M10 15.5h6M10 19h4"/></svg></span><span class="ph-t"><b>הדוח לצוות</b><small>פעילות פיצות וארוחה</small></span><span class="ph-n"><b class="ph-i">1</b>/<span class="ph-c">7</span></span></div>
-        <div class="ped-prog" aria-hidden="true"><i></i></div>
-        <div class="ped-cats" role="tablist" aria-label="סוגי תובנות"></div>
-        <div class="ped-cards" aria-live="polite">
-          <article class="pc pc-g is-on" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></div></article>
+      <div class="ped-phone" id="pedPhone">
+        <div class="phn" aria-label="כך מגיע המשוב לטלפון של הצוות">
+          <div class="phn-scr">
+            <div class="phn-st" aria-hidden="true"><b>9:41</b><span class="phn-isl"></span><span class="phn-bat"><i></i></span></div>
+            <div class="phn-day"><b>המשוב של היום</b><span>פעילות פיצות וארוחה</span></div>
+            <div class="phn-feed" aria-live="polite"></div>
+          </div>
+        </div>
+        <template id="pedSrc">
+          <article class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></div></article>
           <article class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>חלוקת אבטיח, עם פנייה אישית לכל ילד בשמו.</h4><p class="pc-why">מעניק לילד תחושת נראות ומונע מאבקים סביב האוכל.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את מחלקת את האבטיח, ורגע אחד שממש תפס אותי היה שהקפדת לקרוא לכל ילד בשמו. זה יצר אווירה כל כך רגועה ומכבדת סביב השולחן.“</p></div></article>
           <article class="pc pc-k" data-cat="k"><small><span class="pc-tag">👶 צורך של ילדה</span></small><h4>ילדה עמדה בצד ולא הצטרפה להכנת הפיצות.</h4><p class="pc-why">כנראה זקוקה לוויסות לפני כניסה לפעילות קבוצתית עמוסה. רעיונות לצוות:</p><ul><li>„אני שמה לך חתיכת בצק קטנה כאן בקצה השולחן, את יכולה רק להסתכל עליה או לגעת באצבע אחת.“</li><li>תפקיד בלי מגע: לעזור לחלק מפיות.</li></ul></article>
           <article class="pc pc-t" data-cat="t"><small><span class="pc-tag">🎯 המלצה מעשית</span><span class="pc-un">טרם אומת מול הווידאו</span></small><h4>בזמני מעבר: אשת צוות אחת „עוגן“, ואחת „לוגיסטיקה“.</h4><p class="pc-why">כשכל הצוות עסוק בניקיון ובארגון, הילדים מאבדים מיקוד ומתחילים לשוטט. „עוגן“ יושבת עם הילדים ושרה או מפעילה, ו„לוגיסטיקה“ מנקה ומארגנת.</p><p class="pc-res"><b>תוצאה צפויה תוך שבוע:</b> פחות שוטטות ופחות חוסר שקט במעברים.</p></article>
           <article class="pc pc-b" data-cat="b"><small><span class="pc-tag">🧰 מארגז הכלים</span></small><h4>שיר המתנה</h4><dl class="pc-dl"><dt>מתי</dt><dd>כשהילדים יושבים ליד השולחן ומחכים לאוכל.</dd><dt>איך</dt><dd>משחק אצבעות או שיר מוכר עם תנועות ידיים.</dd><dt>למה</dt><dd>נותן לילדים עוגן, כדי שלא „ילכו לאיבוד“ בהמתנה.</dd></dl></article>
           <article class="pc pc-b" data-cat="b"><small><span class="pc-tag">🎨 רעיון לפעם הבאה</span></small><h4>פיצה משלנו, בבצק משחק</h4><p class="pc-why">משחק חושי בקבוצות קטנות, בלי הלחץ של תוצר אכיל. מתאים יותר לילדים שנרתעו מהמרקם הדביק של בצק אמיתי.</p></article>
           <article class="pc pc-q" data-cat="q"><small><span class="pc-tag">❓ שאלה להרהור בצוות</span></small><h4 class="pc-big">בזמן שאנחנו מנקות ומארגנות לפעילות הבאה, מה הילדים עושים, ומי מתווך להם את הזמן הזה?</h4></article>
-        </div>
-        <div class="ped-nav"><button type="button" class="pn-prev" aria-label="התובנה הקודמת"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></button><span class="ped-hint">החליקו או לחצו לתובנה הבאה</span><button type="button" class="pn-next" aria-label="התובנה הבאה"><svg viewBox="0 0 16 16"><path d="M10 3L5 8l5 5"/></svg></button></div>
+        </template>
       </div>
     </div>
-    
     <p class="ped-note">דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים.</p>
   </div>
 </section>
@@ -2023,31 +2098,37 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 
 
-<section class="act sjoin" id="act" aria-labelledby="act-h">
+<section class="sjoin2" id="act" aria-labelledby="act-h">
   <div class="wrap">
-    <h2 id="act-h">נעשה את זה יחד.</h2>
-    <p class="lead">החתימה של גננות, סייעות, מנהלות ומנהלים לצד ההורים משמיעה בכנסת את קולה של כל משפחת הגן.</p>
-    <div class="jgrid" data-io>
-      <article class="jc jc-main" style="--k:0">
-        <span class="jc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>
+    <span class="j2-pill">המסלול הרביעי</span>
+    <h2 id="act-h">נעשה את זה <em>יחד.</em></h2>
+    <p class="j2-lead">צוותי חינוך והורים, קול אחד למען הילדים.</p>
+    <div class="j2-grid" data-io>
+      <article class="j2c j2-main" style="--k:0">
+        <span class="j2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>
+        <span class="j2-n">01</span>
         <h3>תמכו בהצהרה</h3>
-        <p>חצי דקה, וכל קול נספר.</p>
-        <p class="jc-count lc2" hidden><b class="lcn">0</b> כבר חתמו</p>
-        <a class="jc-btn red pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה</a>
+        <p>חצי דקה מזמנכם. כל קול מחזק את המאבק.</p>
+        <a class="j2-btn red" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה <span aria-hidden="true">←</span></a>
+        <small class="j2-fine"><span class="lc2" hidden><b class="lcn">0</b> כבר חתמו · </span>תמיכה בשינוי מדיניות, בלי התחייבות לרכישה</small>
       </article>
-      <article class="jc" style="--k:1">
-        <span class="jc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
-        <h3>הפיצו כמה שיותר</h3>
-        <p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים.</p>
-        <button class="jc-btn" type="button" id="shareCirc">שיתוף העמוד</button>
+      <article class="j2c" style="--k:1">
+        <span class="j2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
+        <span class="j2-n">02</span>
+        <h3>הפיצו הלאה</h3>
+        <p>שתפו את הצוות, עמיתות ועמיתים וקבוצות ההורים.</p>
+        <button class="j2-btn line" type="button" id="shareCirc">שיתוף העמוד</button>
       </article>
-      <article class="jc" style="--k:2">
-        <span class="jc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span>
+      <article class="j2c j2-mint" style="--k:2">
+        <span class="j2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span>
+        <span class="j2-n">03</span>
         <h3>בואו לקחת חלק</h3>
-        <p>להגיע לכנסת, לחבר ארגון, לעזור יותר. דברו איתי ישירות.</p>
-        <div class="jc-two"><a class="jc-btn tel" href="tel:+972508787431"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span dir="ltr">050-878-7431</span></a><a class="jc-btn wa" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a></div>
+        <p>חיבור לארגונים, הגעה לכנסת או עזרה בהפצה.</p>
+        <a class="j2-btn dark" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">דברו איתי בוואטסאפ</a>
+        <a class="j2-tel" href="tel:+972508787431" dir="ltr">050-878-7431</a>
       </article>
     </div>
+    <p class="j2-foot">יחד נשמור על הילדים ונחזק את צוותי החינוך.</p>
   </div>
 </section>
 </main>
@@ -2080,22 +2161,19 @@ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIn
 els.forEach(function(e){io.observe(e)})})();
 </script>
 <script>
-(function(){var r=document.getElementById("pedRep");if(!r)return;var cs=[].slice.call(r.querySelectorAll(".pc")),N=cs.length,i=0,t=null,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
-var CAT={g:"💛 רגעים יפים",k:"👶 ילדים",t:"🎯 המלצות",b:"🧰 כלים ורעיונות",q:"❓ הרהור"};var cats=r.querySelector(".ped-cats"),seen={};
-cs.forEach(function(c,k){var ct=c.dataset.cat;if(seen[ct]!=null)return;seen[ct]=k;var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.dataset.cat=ct;var n=cs.filter(function(x){return x.dataset.cat===ct}).length;b.innerHTML=CAT[ct]+(n>1?" <i>"+n+"</i>":"");b.onclick=function(){go(seen[ct],1)};cats.appendChild(b)});
-
-var prog=r.querySelector(".ped-prog i"),ii=r.querySelector(".ph-i");r.querySelector(".ph-c").textContent=N;
-function paint(){cs.forEach(function(c,k){c.classList.toggle("is-on",k===i)});[].forEach.call(cats.children,function(b){var on=b.dataset.cat===cs[i].dataset.cat;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});
-ii.textContent=i+1;
-var a=cats.querySelector(".on");if(a&&cats.scrollWidth>cats.clientWidth){cats.scrollTo({left:a.offsetLeft-cats.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}
-prog.style.animation="none";void prog.offsetWidth;prog.style.animation=t?"pedprog 7s linear forwards":"none"}
-function go(k,user){i=(k+N)%N;if(user)stop();paint()}
-function stop(){if(t){clearInterval(t);t=null}r.dataset.u="1"}
-function start(){if(rm||t||r.dataset.u==="1")return;t=setInterval(function(){go(i+1)},7000);paint()}
-r.querySelector(".pn-next").onclick=function(){go(i+1,1)};r.querySelector(".pn-prev").onclick=function(){go(i-1,1)};
-var x0=null,cc=r.querySelector(".ped-cards");cc.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
-cc.addEventListener("touchend",function(e){if(x0==null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx>0?1:-1),1)});
-paint();if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else if(t){clearInterval(t);t=null;paint()}})},{threshold:.35}).observe(r)}
+(function(){var ph=document.getElementById("pedPhone");if(!ph)return;var feed=ph.querySelector(".phn-feed"),src=document.getElementById("pedSrc").content.querySelectorAll(".pc"),N=src.length,i=0,t=null,user=false,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 12h6M10 15.5h6"/></svg>';
+function make(a){var n=document.createElement("article");n.className="nt nt-"+a.dataset.cat;var tag=a.querySelector(".pc-tag").textContent,h=a.querySelector("h4").textContent;var ver=a.querySelector(".pc-ok,.pc-un");var rest=a.cloneNode(true);rest.querySelector("small").remove();rest.querySelector("h4").remove();
+n.innerHTML='<div class="nt-top"><span class="nt-ic">'+ICO+'</span><span class="nt-app">משוב לצוות</span><span class="nt-time">עכשיו</span></div><b class="nt-tag">'+tag+'</b><p class="nt-h">'+h+'</p><div class="nt-more">'+(ver?'<p class="nt-ver '+ver.className+'">'+ver.textContent+'</p>':'')+rest.innerHTML+'</div>';
+n.addEventListener("click",function(){user=true;stop();open(n)});return n}
+function open(n){[].forEach.call(feed.children,function(x){x.classList.toggle("on",x===n)})}
+function push(){if(i>=N){feed.classList.add("clr");setTimeout(function(){feed.innerHTML="";feed.classList.remove("clr");i=0;push()},700);return}
+var n=make(src[i++]);[].forEach.call(feed.querySelectorAll(".nt-time"),function(x){x.textContent="קודם"});feed.insertBefore(n,feed.firstChild);requestAnimationFrame(function(){n.classList.add("in");open(n)});
+while(feed.children.length>4)feed.removeChild(feed.lastChild)}
+function start(){if(rm||t||user)return;t=setInterval(push,5200)}
+function stop(){if(t){clearInterval(t);t=null}}
+if(rm){for(var k=N-1;k>=0;k--){var n=make(src[k]);n.classList.add("in");feed.appendChild(n)}i=N;open(feed.firstChild);return}
+push();if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else stop()})},{threshold:.3}).observe(ph)}else start();
 })();
 </script>
 <script>(function(){var m=document.getElementById("pmos");if(!m)return;var P=JSON.parse(m.dataset.p),T=[].slice.call(m.querySelectorAll(".mt")),shown=[0,1,2],nx=3,k=0;
