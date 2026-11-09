@@ -1207,6 +1207,11 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .lang select{max-width:84px;text-overflow:ellipsis}
 }
 @media (max-width:1080px){.sections a:not(.go){display:none}}
+.sections{margin-inline-start:28px}
+@media (max-width:1240px){.sections a:not(.go){display:none}}
+@media (max-width:1320px){html[lang=ru] .sections a:not(.go){display:none}}
+@media (max-width:1240px){.sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
+@media (max-width:1320px){html[lang=ru] .sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
 :root{--f-head:"PT Serif","Times New Roman",serif;--f-body:"PT Serif","Times New Roman",serif;--f-ui:"Rubik",system-ui,sans-serif;}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}

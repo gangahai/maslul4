@@ -335,6 +335,11 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
  .lang select{max-width:84px;text-overflow:ellipsis}
 }
 @media (max-width:1080px){.sections a:not(.go){display:none}}
+.sections{margin-inline-start:28px}
+@media (max-width:1240px){.sections a:not(.go){display:none}}
+@media (max-width:1320px){html[lang=ru] .sections a:not(.go){display:none}}
+@media (max-width:1240px){.sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
+@media (max-width:1320px){html[lang=ru] .sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}
 [dir=ltr] .days30 .grid{direction:ltr}
