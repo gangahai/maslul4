@@ -543,6 +543,39 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+/* timeline v4: כהה ושקט. שלוש עמודות זהות, 2026 מואר בטורקיז */
+.tline ol{grid-template-columns:repeat(3,1fr)!important;gap:18px}
+.tline .now{background:none!important;border:0!important;box-shadow:none!important;margin-top:0!important;padding:0 8px 14px!important;overflow:visible!important;filter:none!important;animation:none}
+.tline .now::before{content:none!important;animation:none!important}
+.tline .now::after{content:"";position:absolute;left:50%;top:40px;width:260px;height:200px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(45,190,165,.22),rgba(45,190,165,0));pointer-events:none;z-index:0}
+.tline .now>*{position:relative;z-index:1}
+.tline .st em.kw,.tline .now em.kw{font-size:clamp(30px,3.4vw,42px)!important;filter:none!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;animation:none}
+.tline .s1 em.kw{color:#566279!important}
+.tline .s2 em.kw{color:#7d8aa1!important}
+.tline .now em.kw{color:#5fe0c8!important;text-shadow:0 0 22px rgba(95,224,200,.35)}
+.tline .node,.tline .now .node{width:64px!important;height:64px!important}
+.tline .now .node{background:#169a86!important;border-color:#7ee8d4!important;color:#fff}
+.tline .now .node svg.shield{width:34px!important;height:34px!important}
+.tline .now .yr{color:#5fe0c8!important;font-size:13px!important}
+.tline .now b{color:#fff!important;font-size:19px!important}
+.tline .now .d{color:#cfe3e0!important}
+.tl-fill{background:linear-gradient(270deg,#3e4b62 0%,#6f7c93 50%,#2fc3a8 100%)!important}
+.tl-spark{background:#e9fffa!important;box-shadow:0 0 0 4px rgba(47,195,168,.3),0 0 22px 6px rgba(95,224,200,.5)!important}
+.tline figcaption .w3{color:#5fe0c8!important;background:none!important}
+@media (prefers-reduced-motion:no-preference){
+  .tline.go .s3 em.kw{animation:kwin .8s ease-out 2.2s both!important}
+  .tline.go .now{animation:tlpop .7s ease-out 2.1s both!important}
+  .tline.go .s3 .node{animation:tlnode .6s ease-out 2.1s both,ring3 1.8s ease-out 2.8s 2!important}
+}
+@keyframes ring3{0%{box-shadow:0 0 0 0 rgba(95,224,200,.55)}100%{box-shadow:0 0 0 22px rgba(95,224,200,0)}}
+@media (max-width:640px){
+  .tline ol{grid-template-columns:1fr!important}
+  .tline .now{padding:0 82px 6px 0!important}
+  .tline .now .node{position:absolute!important;right:16px!important;top:0!important;width:60px!important;height:60px!important}
+  .tline .st em.kw,.tline .now em.kw{font-size:28px!important}
+  .tline .now::after{left:auto;right:-30px;top:-30px;transform:none;width:200px;height:160px}
+}
+
 /* phone: notifications arrive one by one */
 #phoneDemo .scr{position:relative}
 #phoneDemo .typing{position:absolute;bottom:14px;right:50%;transform:translateX(50%);display:flex;align-items:center;gap:5px;font-family:var(--f-ui);font-size:12px;color:#8fa3bd;opacity:0}
@@ -687,7 +720,7 @@ footer a{color:#fff}
         <ol>
           <li class="st s1"><em class="kw">מתעד</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="26" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 21l10-5v16l-10-5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="13" y="24" width="12" height="9" rx="2" fill="currentColor"/><path d="M15.5 24v-2.5a3.5 3.5 0 017 0V24" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div><span class="yr">2018</span><b>חוק המצלמות</b><span class="d">מצלמים הכל. אף אחד לא צופה. אחרי זמן קצר נמחק.</span></li>
           <li class="st s2"><em class="kw">חושף</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 42h16M24 34v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 21s4.5-6 11-6 11 6 11 6-4.5 6-11 6-11-6-11-6z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="21" r="3" fill="currentColor"/></svg></div><span class="yr">2024</span><b>מסלולי צפייה להורים</b><span class="d">רשימה סגורה של דרכי צפייה, לבחירת המפעיל. שעות של וידאו, ואף אחד לא מבין בזמן אמת.</span></li>
-          <li class="st s3 now"><span class="glints" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><em class="kw">מגן</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true" class="shield"><path d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path d="M16.5 24.5l5.5 5.5 10-11" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span></li>
+          <li class="st s3 now"><em class="kw">מגן</em><div class="node"><svg viewBox="0 0 48 48" aria-hidden="true" class="shield"><path d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path d="M16.5 24.5l5.5 5.5 10-11" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="yr">2026</span><b>המסלול הרביעי</b><span class="d">המצלמות הקיימות מבינות בזמן אמת, מתריעות כשעוד אפשר לעצור, ומלוות את הצוות. בלי צפייה שוטפת, בפיקוח מחמיר.</span></li>
         </ol>
         <figcaption><b>החוק מ-2018 מתעד, והתיקון מ-2024 חושף. רק המסלול הרביעי מגן על הילדים בזמן אמת.</b></figcaption>
       </figure>
