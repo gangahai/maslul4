@@ -1188,6 +1188,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:380px){.sections .go{padding:6px 11px!important;font-size:13px!important}.lang select{padding:3px 5px;font-size:11.5px}.bar{gap:6px!important}.brand .bn{font-size:17px!important}}
 @media (max-width:380px){.brand .btag{font-size:9.5px!important}.brand small{font-size:8.5px!important}.brand .logo{height:32px!important}.brand{gap:5px!important}}
 @media (min-width:701px){.hero .credit{left:auto;right:max(18px,calc((100vw - 1160px)/2 + 18px));bottom:12px;max-width:none;white-space:nowrap;text-align:right}}
+.lang{border:1px solid var(--rule);border-radius:999px;padding:5px 11px;gap:6px;background:#fff;cursor:pointer}
+.lang svg{display:block!important;width:15px!important;height:15px!important;opacity:.7}
+.lang select{border:0!important;padding:0 2px!important;border-radius:0!important;background:transparent!important;field-sizing:content;text-align-last:center;outline-offset:4px}
+.lang::after{content:"";flex:none;width:6px;height:6px;border:solid currentColor;border-width:0 1.6px 1.6px 0;transform:translateY(-2px) rotate(45deg);opacity:.55;pointer-events:none}
+@media (max-width:600px){.lang{padding:5px 9px;gap:5px}.lang select{font-size:12.5px!important}}
+@media (max-width:420px){.lang svg{display:none!important}.lang{padding:5px 8px;gap:4px}}
+.lcode{display:none}
 </style>
 </head>
 <body>
@@ -1196,7 +1203,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <nav class="sticky" aria-label="מדורים"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="logo-hand.png" alt="המסלול הרביעי"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><em class="btag">מגינים על הילדים בזמן אמת</em><small>יוזמה של <span class="ez">עין צופיה</span></small></span></a>
   <div class="sections"><a href="#story">התחקיר</a><a href="#law">החוק</a><a href="#fix">הפתרון</a><a href="#decl">ההצהרה</a><a href="#faq">שאלות</a><a href="atzuma.html" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
-  <label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><select aria-label="Language" onchange="location.href=this.value"><option value="./" selected lang="he">עברית</option><option value="en/" lang="en">English</option><option value="ru/" lang="ru">Русский</option><option value="ar/" lang="ar">العربية</option></select></label>
+  <label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lcode" aria-hidden="true">HE</span><select aria-label="Language" onchange="location.href=this.value"><option value="./" selected lang="he">עברית</option><option value="en/" lang="en">English</option><option value="ru/" lang="ru">Русский</option><option value="ar/" lang="ar">العربية</option></select></label>
 </div></nav>
 
 <main>

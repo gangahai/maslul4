@@ -1188,6 +1188,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:380px){.sections .go{padding:6px 11px!important;font-size:13px!important}.lang select{padding:3px 5px;font-size:11.5px}.bar{gap:6px!important}.brand .bn{font-size:17px!important}}
 @media (max-width:380px){.brand .btag{font-size:9.5px!important}.brand small{font-size:8.5px!important}.brand .logo{height:32px!important}.brand{gap:5px!important}}
 @media (min-width:701px){.hero .credit{left:auto;right:max(18px,calc((100vw - 1160px)/2 + 18px));bottom:12px;max-width:none;white-space:nowrap;text-align:right}}
+.lang{border:1px solid var(--rule);border-radius:999px;padding:5px 11px;gap:6px;background:#fff;cursor:pointer}
+.lang svg{display:block!important;width:15px!important;height:15px!important;opacity:.7}
+.lang select{border:0!important;padding:0 2px!important;border-radius:0!important;background:transparent!important;field-sizing:content;text-align-last:center;outline-offset:4px}
+.lang::after{content:"";flex:none;width:6px;height:6px;border:solid currentColor;border-width:0 1.6px 1.6px 0;transform:translateY(-2px) rotate(45deg);opacity:.55;pointer-events:none}
+@media (max-width:600px){.lang{padding:5px 9px;gap:5px}.lang select{font-size:12.5px!important}}
+@media (max-width:420px){.lang svg{display:none!important}.lang{padding:5px 8px;gap:4px}}
+.lcode{display:none}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -1204,7 +1211,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .vs-title{white-space:normal!important;line-height:1.35!important}
  .brand,.bt,.bt2{min-width:0}
  .btag,.bt2 em{white-space:normal!important;font-size:9px!important;line-height:1.15}
- .lang select{max-width:84px;text-overflow:ellipsis}
+
 }
 @media (max-width:1080px){.sections a:not(.go){display:none}}
 .sections{margin-inline-start:28px}
@@ -1212,6 +1219,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:1320px){html[lang=ru] .sections a:not(.go){display:none}}
 @media (max-width:1240px){.sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
 @media (max-width:1320px){html[lang=ru] .sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
+@media (max-width:420px){html:not([lang=ar]) .bt2 em,html:not([lang=ar]) .btag{display:none!important}html[lang=ru] .brand .bn{font-size:16px!important}.sections .go{padding:6px 11px!important;font-size:13px!important}}
+@media (max-width:420px){.sections{margin-inline-start:6px!important;margin-inline-end:8px!important}html[lang=ru] .sections .go{font-size:12px!important;padding:6px 9px!important}}
+@media (max-width:420px){.lcode{display:inline!important;font-size:12.5px}.lang select{position:absolute!important;inset:0;width:100%!important;height:100%;opacity:0;font-size:16px!important}}
 :root{--f-head:"PT Serif","Times New Roman",serif;--f-body:"PT Serif","Times New Roman",serif;--f-ui:"Rubik",system-ui,sans-serif;}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}
@@ -1259,7 +1269,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <nav class="sticky" aria-label="Разделы"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="../logo-hand.png" alt="Четвёртый путь"><span class="bt"><span class="bn"><span>Четвёртый</span> путь</span><em class="btag">Защищаем детей в реальном времени</em><small>Инициатива <span class="ez">Эйн Цофия</span></small></span></a>
   <div class="sections"><a href="#story">Расследование</a><a href="#law">Закон</a><a href="#fix">Решение</a><a href="#decl">Декларация</a><a href="#faq">Вопросы</a><a href="../atzuma.html" class="go"><span class="l">Подписать декларацию</span><span class="s">Подписать</span></a></div>
-  <label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><select aria-label="Language" onchange="location.href=this.value"><option value="../" lang="he">עברית</option><option value="../en/" lang="en">English</option><option value="../ru/" selected lang="ru">Русский</option><option value="../ar/" lang="ar">العربية</option></select></label>
+  <label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lcode" aria-hidden="true">RU</span><select aria-label="Language" onchange="location.href=this.value"><option value="../" lang="he">עברית</option><option value="../en/" lang="en">English</option><option value="../ru/" selected lang="ru">Русский</option><option value="../ar/" lang="ar">العربية</option></select></label>
 </div></nav>
 
 <main>
