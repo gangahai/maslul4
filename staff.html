@@ -2001,6 +2001,65 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .ped.demo .ped-vid{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.dm-box{display:none}}
 .ped.demo>.dm-chip{position:absolute}
+/* join v4 */
+.sj3{position:relative;overflow:hidden;background:#fbf8f4;padding-block:clamp(60px,7vw,96px);color:#0f3936}
+.sj3 .wrap{position:relative;z-index:1}
+.sj3 h2{font-family:var(--f-head);font-weight:900;font-size:clamp(46px,7vw,92px);line-height:1;margin:0;text-align:center;color:#0f3936}
+.sj3 h2 em{font-style:normal;color:var(--red);position:relative;display:inline-block}
+.sj3 h2 em svg{position:absolute;inset-inline:0;bottom:-.16em;width:100%;height:.2em;overflow:visible}
+.sj3 h2 em path{fill:none;stroke:#f3c64b;stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+.j3-lead{text-align:center;font-size:clamp(21px,2.3vw,29px);margin:18px auto 0;color:#1d2a28}
+.j3-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.j3-main{grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;align-items:stretch;border-radius:28px;overflow:hidden;background:var(--red);color:#fff;box-shadow:0 26px 60px rgba(200,16,46,.28);position:relative}
+.j3-main::after{content:"";position:absolute;left:-30px;bottom:-70px;width:260px;height:330px;background:url(logo-hand-white.png) no-repeat center/contain;opacity:.1;pointer-events:none}
+.j3-mt{padding:clamp(26px,3.4vw,44px);position:relative;z-index:1}
+.j3-n{display:inline-block;font-family:var(--f-ui);font-weight:900;font-size:15px;border-radius:999px;padding:3px 14px;background:#dcefe9;color:#0f3936}
+.j3-main .j3-n{background:rgba(255,255,255,.2);color:#fff}
+.j3-main h3{font-family:var(--f-head);font-weight:900;font-size:clamp(34px,4vw,54px);line-height:1.05;margin:12px 0 0}
+.j3-main p{font-size:clamp(19px,1.9vw,22px);line-height:1.5;margin:12px 0 0;max-width:34ch;color:#ffe9ec}
+.j3-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:60px;padding:12px 26px;border-radius:999px;font-family:var(--f-ui);font-weight:900;font-size:19px;text-decoration:none;cursor:pointer;border:2px solid #0f3936;background:#fff;color:#0f3936;transition:transform .15s,box-shadow .15s}
+.j3-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(15,57,54,.2)}
+.j3-btn.white{margin-top:26px;min-height:68px;font-size:22px;padding-inline:34px;border-color:#fff;background:#fff;color:var(--red);box-shadow:0 12px 28px rgba(90,0,15,.35)}
+.j3-btn.white span{font-size:24px}
+.j3-btn.green{background:#1fa855;border-color:#1fa855;color:#fff}
+.j3-btn.dark{background:#0f3936;color:#fff}
+.j3-btn.tel{font-size:21px;letter-spacing:.03em}
+.j3-count{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(0,0,0,.14);padding:26px 20px;font-family:var(--f-ui)}
+.j3-count[hidden]{display:none}
+.j3-num{font-family:var(--f-head);font-weight:900;font-size:clamp(76px,10vw,132px);line-height:.95;color:#fff;font-variant-numeric:tabular-nums}
+.j3-count span{font-weight:900;font-size:clamp(22px,2.3vw,28px);margin-top:4px}
+.j3-count small{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:15px;color:#ffd9de}
+.j3-count small i{width:9px;height:9px;border-radius:50%;background:#7dffb0;box-shadow:0 0 0 0 rgba(125,255,176,.7)}
+@media (prefers-reduced-motion:no-preference){.j3-count small i{animation:livePing 1.8s ease-out infinite}}
+@keyframes livePing{to{box-shadow:0 0 0 12px rgba(125,255,176,0)}}
+.j3c{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:start;background:#fff;border-radius:24px;padding:28px 26px 26px;box-shadow:0 14px 40px rgba(15,57,54,.10)}
+.j3-ic{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:#dcefe9}
+.j3-ic svg{width:34px;height:34px;fill:none;stroke:#0f3936;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.j3c h3{font-family:var(--f-head);font-weight:900;font-size:clamp(28px,2.8vw,36px);line-height:1.1;margin:8px 0 0;color:#0f3936}
+.j3c p{font-size:19px;line-height:1.5;margin:8px 0 0;color:#2b3634}
+.j3-acts{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.j3-fb{grid-column:1/-1;justify-self:center;margin-top:14px;font-family:var(--f-ui);font-weight:800;font-size:17px;color:#0f3936;text-underline-offset:4px}
+.j3-foot{display:flex;align-items:center;justify-content:center;gap:18px;margin:44px 0 0;font-family:var(--f-ui);font-weight:800;font-size:clamp(18px,1.9vw,22px);color:#0f3936;text-align:center}
+.j3-foot::before,.j3-foot::after{content:"";width:min(110px,12vw);height:2px;background:#b9dcd2}
+@media (prefers-reduced-motion:no-preference){
+ .j3-grid.armed>*{opacity:0;transform:translateY(22px)}
+ .j3-grid.go>*{opacity:1;transform:none;transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--k)*.14s)}
+ .sj3 h2 em path{stroke-dashoffset:1}
+ .sj3:has(.j3-grid.go) h2 em path{animation:mkDraw .9s cubic-bezier(.6,0,.2,1) .2s forwards}
+}
+@media (max-width:860px){
+ .j3-grid{grid-template-columns:1fr;gap:16px;margin-top:30px}
+ .j3-main{grid-template-columns:1fr}
+ .j3-count{order:-1;flex-direction:row;flex-wrap:wrap;gap:4px 12px;padding:18px 16px 14px;align-items:baseline}
+ .j3-num{font-size:64px}
+ .j3-count small{width:100%;justify-content:center;margin-top:2px}
+ .j3-btn.white{width:100%}
+ .j3c{padding:22px 18px}
+ .j3-ic{width:60px;height:60px}.j3-ic svg{width:28px;height:28px}
+ .j3-acts{grid-template-columns:1fr}
+ .j3-foot::before,.j3-foot::after{display:none}
+}
+@media (max-width:860px){.j3-btn.white{font-size:19px;padding-inline:18px;white-space:nowrap;min-height:62px}}.j3c .j3-acts{align-self:end}
 </style>
 </head>
 <body>
@@ -2166,38 +2225,39 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 
 
-<section class="sjoin2" id="act" aria-labelledby="act-h">
+<section class="sj3" id="act" aria-labelledby="act-h">
   <div class="wrap">
-    <span class="j2-pill">המסלול הרביעי</span>
-    <h2 id="act-h">נעשה את זה <em>יחד.</em></h2>
-    <p class="j2-lead">צוותי חינוך והורים, קול אחד למען הילדים.</p>
-    <div class="j2-grid" data-io>
-      <article class="j2c j2-main" style="--k:0">
-        <span class="j2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>
-        <span class="j2-n">01</span>
-        <h3>תמכו בהצהרה</h3>
-        <p>חצי דקה מזמנכם. כל קול מחזק את המאבק.</p>
-        <a class="j2-btn red" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה <span aria-hidden="true">←</span></a>
-        <small class="j2-fine"><span class="lc2" hidden><b class="lcn">0</b> כבר חתמו · </span>תמיכה בשינוי מדיניות, בלי התחייבות לרכישה</small>
+    <h2 id="act-h">נעשה את זה <em>יחד.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 9c40-7 150-8 194-2"/></svg></em></h2>
+    <p class="j3-lead">צוותי חינוך והורים, קול אחד למען הילדים.</p>
+    <div class="j3-grid" data-io>
+      <article class="j3-main" style="--k:0">
+        <div class="j3-mt">
+          <span class="j3-n">01</span>
+          <h3>תמכו בהצהרה</h3>
+          <p>חצי דקה מזמנכם, וכל קול מחזק את המאבק. תמיכה בשינוי מדיניות, בלי שום התחייבות.</p>
+          <a class="j3-btn white pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה על ההצהרה <span aria-hidden="true">←</span></a>
+        </div>
+        <div class="j3-count lc2" hidden>
+          <b class="lcn j3-num">0</b>
+          <span>כבר חתמו</span>
+          <small><i></i>המספר מתעדכן בזמן אמת</small>
+        </div>
       </article>
-      <article class="j2c" style="--k:1">
-        <span class="j2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
-        <span class="j2-n">02</span>
-        <h3>הפיצו הלאה</h3>
-        <p>שתפו את הצוות, עמיתות ועמיתים וקבוצות ההורים.</p>
-        <button class="j2-btn line" type="button" id="shareCirc">שיתוף העמוד</button>
+      <article class="j3c" style="--k:1">
+        <span class="j3-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
+        <div class="j3-tx"><span class="j3-n">02</span><h3>הפיצו הלאה</h3>
+        <p>שתפו את הצוות, עמיתות ועמיתים וקבוצות ההורים.</p></div>
+        <div class="j3-acts"><a class="j3-btn green" id="shareWa" href="https://wa.me/" target="_blank" rel="noopener">שליחה בוואטסאפ</a><button class="j3-btn line" type="button" id="shareCirc">העתקת קישור</button></div>
       </article>
-      <article class="j2c j2-mint" style="--k:2">
-        <span class="j2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span>
-        <span class="j2-n">03</span>
-        <h3>בואו לקחת חלק</h3>
-        <p>חיבור לארגונים, הגעה לכנסת או עזרה בהפצה.</p>
-        <a class="j2-btn dark" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">דברו איתי בוואטסאפ</a>
-        <a class="j2-tel" href="tel:+972508787431" dir="ltr">050-878-7431</a>
-        <a class="j2-fb" href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">עקבו אחרינו בפייסבוק</a>
+      <article class="j3c" style="--k:2">
+        <span class="j3-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span>
+        <div class="j3-tx"><span class="j3-n">03</span><h3>בואו לקחת חלק</h3>
+        <p>חיבור לארגונים, הגעה לכנסת או עזרה בהפצה. דברו איתי ישירות.</p></div>
+        <div class="j3-acts"><a class="j3-btn dark" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a><a class="j3-btn line tel" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a></div>
+        <a class="j3-fb" href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">עקבו אחרינו בפייסבוק</a>
       </article>
     </div>
-    <p class="j2-foot">יחד נשמור על הילדים ונחזק את צוותי החינוך.</p>
+    <p class="j3-foot">יחד נשמור על הילדים ונחזק את צוותי החינוך.</p>
   </div>
 </section>
 </main>
@@ -2213,6 +2273,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   async function shareOr(data,txt,done){if(navigator.share&&matchMedia("(pointer:coarse)").matches){try{await navigator.share(data);return}catch(e){if(e&&e.name==="AbortError")return}}copy(txt,done)}
   const staffUrl="https://maslul4.tsofia.ai/staff?src=staff";
   const staffMsg="לצוותי חינוך: הבקשה שלנו היא לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת. לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו. כדאי לקרוא ולחתום: ";
+  var sw=$("#shareWa");if(sw)sw.href="https://wa.me/?text="+encodeURIComponent(staffMsg+staffUrl);
   $("#shareCirc").onclick=()=>shareOr({title:document.title,text:staffMsg,url:staffUrl},staffMsg+staffUrl,"הקישור הועתק. הדביקו אותו בקבוצת הצוות");
   const parentsMsg="הורים יקרים,\nהחדשות על מקרי ההתעללות בפעוטות כואבות לכולנו. אנחנו בגן מצטרפים להצהרת הורים ואנשי חינוך שקוראת לעדכן את חוק המצלמות, כך שהמצלמות שכבר נמצאות בגנים יוכלו להתריע על סכנה בזמן אמת, תוך שמירה על הפרטיות.\nאשמח שתקראו ותחתמו:\nhttps://maslul4.tsofia.ai/?src=managers";
   var spm=$("#sendParentsM");if(spm)spm.onclick=()=>shareOr({text:parentsMsg},parentsMsg,"ההודעה להורים הועתקה. הדביקו אותה בקבוצת ההורים");
@@ -2264,6 +2325,10 @@ var cap=t.querySelector("figcaption");cap.classList.add("fade");
 setTimeout(function(){cap.textContent=p.c;cap.classList.remove("fade")},500);
 setTimeout(function(){var old=t.querySelector("img:not(.mt-new)");if(old)old.remove();im.classList.remove("mt-new")},1300);
 k=[2,0,1][k];}
-var iv=setInterval(swap,3000);document.addEventListener("visibilitychange",function(){clearInterval(iv);if(!document.hidden)iv=setInterval(swap,3000)});})();</script>
+var iv=setInterval(swap,3000);document.addEventListener("visibilitychange",function(){clearInterval(iv);if(!document.hidden)iv=setInterval(swap,3000)});})();
+(function(){var n=document.querySelector(".j3-num");if(!n||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var done=false;
+new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting||done)return;var v=parseInt(n.textContent.replace(/\D/g,""),10);if(!v)return;done=true;var t0=performance.now(),from=Math.max(0,v-60);
+(function f(t){var p=Math.min(1,(t-t0)/1100);p=1-Math.pow(1-p,3);n.textContent=Math.round(from+(v-from)*p);if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.5}).observe(n)})();
+</script>
 </body>
 </html>
