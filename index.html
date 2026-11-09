@@ -1140,14 +1140,27 @@ footer .flinks a{color:#cfd6e2}
 .sources li{font-size:14.5px}
 /* יצירת קשר: במחשב גדול יותר */
 @media (min-width:701px){.cc{padding:14px 18px!important;grid-template-columns:90px 1fr auto!important}.cc .l{font-size:14px!important}.cc .v{font-size:19px!important}.cc .chipbtn{min-width:80px!important;padding:8px 14px!important;font-size:14px!important}.contact .cards{gap:10px!important}}
-/* תחתית מסודרת */
-footer .wrap{display:grid!important;grid-template-columns:auto 1fr auto;grid-template-areas:"logo slogan links" "logo info links";align-items:center;column-gap:28px;row-gap:6px}
-footer .flogo-full{grid-area:logo;margin:0}
-footer .fslogan{grid-area:slogan;margin:0}
-footer .fbrand{grid-area:info}
-footer .flinks{grid-area:links;margin:0;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
-footer .flinks a+a::before{content:none}
-@media (max-width:700px){footer .wrap{grid-template-columns:1fr;grid-template-areas:"logo" "slogan" "info" "links";row-gap:12px}footer .flinks{flex-direction:row;align-items:center;flex-wrap:wrap;gap:16px}}
+/* תחתית מסודרת v2 */
+footer{padding-block:28px 18px!important}
+footer .wrap{display:grid!important;grid-template-columns:auto 1fr auto;grid-template-areas:"logo slogan slogan" "info info links";align-items:center;column-gap:0;row-gap:18px}
+footer .flogo-full{grid-area:logo;margin:0 0 0 28px;width:200px}
+footer .fslogan{grid-area:slogan;margin:0;font-size:clamp(26px,3vw,34px)!important}
+footer .fbrand{grid-area:info;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#aab2bf}
+footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);align-self:stretch;align-items:center}
+@media (max-width:700px){footer .wrap{grid-template-columns:1fr;grid-template-areas:"logo" "slogan" "info" "links";row-gap:12px}footer .flinks{border-top:0;padding-top:0;flex-wrap:wrap;gap:16px}footer .fbrand{padding-top:12px}}
+
+.hglass{overflow:visible;width:62px!important;height:64px!important}
+.hg-gr{opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .late.go .hg-gr{animation:hgGrain .55s linear infinite}
+  .late.go .hg-gr.g2{animation-delay:.18s}.late.go .hg-gr.g3{animation-delay:.36s}
+  .late.go .hg-flip{animation:hg2Flip 6s cubic-bezier(.7,0,.3,1) infinite}
+}
+@keyframes hgGrain{0%{transform:translateY(0);opacity:1}100%{transform:translateY(26px);opacity:.2}}
+@keyframes hgGate{0%,58%{opacity:1}62%,100%{opacity:0}}
+.late.go .hg-grains{animation:hgGate 6s linear infinite}
+.late:not(.go) .hg-gr{display:none}
+@media (max-width:700px){.hglass{width:52px!important;height:54px!important}}
 </style>
 </head>
 <body>
@@ -1191,12 +1204,12 @@ footer .flinks a+a::before{content:none}
       <div class="halt" id="halt"><p class="halt-box"><span class="h1">הפתרון כבר קיים.</span> <span class="h2">אז איך ייתכן שכולנו מחכים <mark>לאסון הבא?!</mark></span></p></div>
 
       <section class="late" aria-labelledby="late-h">
-        <h2 id="late-h" class="late-h"><span>כשהכל בדיעבד, זה כבר מאוחר מדי</span><svg class="hglass" viewBox="0 0 64 88" aria-hidden="true"><defs><linearGradient id="hgSand" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff5a6e"/><stop offset="1" stop-color="#b30d28"/></linearGradient><linearGradient id="hgGlass" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient><clipPath id="hgcT"><path d="M15 12h34c0 14-11 20-15 30h-4c-4-10-15-16-15-30z"/></clipPath><clipPath id="hgcB"><path d="M15 76h34c0-14-11-20-15-30h-4c-4 10-15 16-15 30z"/></clipPath></defs>
+        <h2 id="late-h" class="late-h"><span>כשהכל בדיעבד, זה כבר מאוחר מדי</span><svg class="hglass" viewBox="-14 -4 92 96" aria-hidden="true"><defs><linearGradient id="hgSand" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff5a6e"/><stop offset="1" stop-color="#b30d28"/></linearGradient><linearGradient id="hgGlass" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient><clipPath id="hgcT"><path d="M15 12h34c0 14-11 20-15 30h-4c-4-10-15-16-15-30z"/></clipPath><clipPath id="hgcB"><path d="M15 76h34c0-14-11-20-15-30h-4c-4 10-15 16-15 30z"/></clipPath></defs>
 <g class="hg-flip">
 <path d="M14 11c0 15 12 21 16 33-4 12-16 18-16 33h36c0-15-12-21-16-33 4-12 16-18 16-33z" fill="url(#hgGlass)" stroke="#c8102e" stroke-width="2.2" stroke-linejoin="round" opacity=".95"/>
 <g clip-path="url(#hgcT)"><rect class="hg-top" x="12" y="12" width="40" height="32" fill="url(#hgSand)"/></g>
 <g clip-path="url(#hgcB)"><path class="hg-bot" d="M12 76V60c6-6 14-9 20-9s14 3 20 9v16z" fill="url(#hgSand)"/></g>
-<line class="hg-stream" x1="32" y1="42" x2="32" y2="74" stroke="#d81b3a" stroke-width="1.6" stroke-dasharray="2 3"/>
+<line class="hg-stream" x1="32" y1="42" x2="32" y2="74" stroke="#d81b3a" stroke-width="1.6" stroke-dasharray="2 3"/><g class="hg-grains"><circle class="hg-gr g1" cx="32" cy="46" r="1.3" fill="#ff5a6e"/><circle class="hg-gr g2" cx="31.4" cy="46" r="1.1" fill="#ff5a6e"/><circle class="hg-gr g3" cx="32.6" cy="46" r="1.2" fill="#ff5a6e"/></g><path d="M19 16c1 10 7 15 10 21" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".55"/><path d="M19 72c1-9 6-14 9-19" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".4"/>
 <rect x="8" y="4" width="48" height="8" rx="3" fill="#8e0b20"/><rect x="8" y="76" width="48" height="8" rx="3" fill="#8e0b20"/>
 <rect x="10" y="12" width="3" height="64" rx="1.5" fill="#8e0b20"/><rect x="51" y="12" width="3" height="64" rx="1.5" fill="#8e0b20"/>
 </g></svg></h2>
