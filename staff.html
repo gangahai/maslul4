@@ -8,8 +8,8 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#c8102e">
 <meta property="og:type" content="website">
-<meta property="og:title" content="המסלול הרביעי: לצוותי חינוך ולמנהלי מסגרות">
-<meta property="og:description" content="אנחנו הלב של הגיל הרך. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
+<meta property="og:title" content="המסלול הרביעי: לצוותי חינוך ולהנהלות מסגרות">
+<meta property="og:description" content="אנחנו הלב של הגיל הרך. נגן על הילדים, נחזק את הצוות ונשמור על הפרטיות: מערכת שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי לדרג את הצוות.">
 <meta property="og:image" content="https://maslul4.tsofia.ai/og-card-2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -18,9 +18,9 @@
 <meta property="og:locale" content="he_IL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>המסלול הרביעי: לצוותי חינוך ולמנהלי מסגרות</title>
+<title>המסלול הרביעי: לצוותי חינוך ולהנהלות מסגרות</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="אנחנו הלב של הגיל הרך. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
+<meta name="description" content="אנחנו הלב של הגיל הרך. נגן על הילדים, נחזק את הצוות ונשמור על הפרטיות: מערכת שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי לדרג את הצוות.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@400;500;700;800;900&display=swap">
 <style>
@@ -1793,6 +1793,21 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .faq details p{font-size:17.5px}
 }
 .jpath li:last-child{grid-template-columns:52px 1fr}.jpath li:last-child>.jcontact{grid-column:2;margin-top:4px}
+/* hero turn line */
+.shero-turn{margin:18px 0 0;font-family:var(--f-head);font-weight:900;font-size:clamp(22px,2.4vw,28px);line-height:1.35}
+.shero-turn .st-no{color:#ff6b7d;display:inline-block}
+.shero-turn .st-yes{color:#fff;background:linear-gradient(transparent 62%,rgba(243,198,75,.55) 62%);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media (prefers-reduced-motion:no-preference){.shero-turn .st-no{animation:stIn .6s ease-out 1.2s both}.shero-turn .st-yes{animation:stIn .6s ease-out 1.8s both}}
+@keyframes stIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* photo stack: fan back cards up and toward the text, away from the note */
+.pc1{transform:translate(calc(var(--d,0)*16px),calc(var(--d,0)*-12px)) rotate(calc(-3deg + var(--d,0)*4deg)) scale(calc(1 - var(--d,0)*.04))}
+.ps-note{bottom:-38px}
+@media (max-width:700px){
+ .pstack{order:2;width:56%;max-width:220px;margin:34px auto 48px}
+ .shero-turn{font-size:21px}
+}
+.shero-turn .st-no,.shero-turn .st-yes{display:block}
+.shero-turn .st-yes{background:none;padding:0;color:#fff;text-decoration:underline;text-decoration-color:#f3c64b;text-decoration-thickness:4px;text-underline-offset:.28em}
 </style>
 </head>
 <body>
@@ -1805,9 +1820,10 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <header class="shero" id="top">
   <div class="wrap shero-in">
     <div class="shero-txt">
-      <span class="kicker">לצוותי חינוך ולמנהלי מסגרות</span>
-      <h1>אנחנו הלב של הגיל הרך.<span class="tq">מגינים על הילדים. <span class="mk">מחזקים את הצוות.<i class="mk-line" aria-hidden="true"></i></span> שומרים על הפרטיות.</span></h1>
-      <p class="shero-deck">הפרשה כואבת לכולנו. כאנשי חינוך, כואב לנו גם לראות איך מעשים קשים מערערים את האמון בצוותים מסורים. אנחנו מבקשים לעדכן את חוק המצלמות: מערכת שמזהה סימנים אפשריים לסכנה, ומתריעה לצורך בדיקה ותגובה של הצוות. <b>לא מעקב אחרינו, אלא עוד זוג עיניים לצידנו.</b></p>
+      <span class="kicker">לצוותי חינוך ולהנהלות מסגרות</span>
+      <h1>אנחנו הלב של הגיל הרך.<span class="tq">נגן על הילדים. <span class="mk">נחזק את הצוות.<i class="mk-line" aria-hidden="true"></i></span> נשמור על הפרטיות.</span></h1>
+      <p class="shero-deck">הפרשה כואבת לכולנו. כצוותי חינוך, כואב לנו גם לראות איך מעשים קשים מערערים את האמון בצוותים מסורים. הבקשה שלנו: לעדכן את חוק המצלמות, עם מערכת שמזהה סימנים אפשריים לסכנה, ומתריעה לצורך בדיקה ותגובה של הצוות.</p>
+      <p class="shero-turn"><span class="st-no">לא מעקב אחרינו,</span> <span class="st-yes">אלא עוד זוג עיניים לצידנו.</span></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאיש/ת צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
@@ -1838,8 +1854,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <p class="lt-open">שלום, אני אהרון.</p>
       <p>הגן שלנו פועל כבר 25 שנה. חינכנו דורות של ילדים, ועבדנו כאן הרבה לפני שהיו מצלמות. וכשהן נכנסו לגנים, ראינו מה הן עושות: מתעדות הכל, אבל לא מתריעות בזמן אמת, ולא נותנות לצוות שום משוב.</p>
       <p>אחרי כל פרשה, הכותרות צובעות את כולנו בשחור. <b>לא שומעים אותנו, לא רואים אותנו.</b> ובינתיים שוב מקצצים בגיל הרך: לפי הצעת התקציב ל-2026, תקציב הפיקוח על המעונות צפוי להתקצץ בכ-75%.</p>
-      <p class="lt-call">הגיע הזמן שנתאחד. שנגיע לכנסת ונשמיע את קולנו, שנראה שאנחנו כאן, ושכולם יראו את הטוב ואת עבודת הקודש שאנחנו עושים כל יום.</p>
-      <p class="lt-sign">מזמין אתכם להצטרף למאבק.</p>
+      <p class="lt-call">הגיע הזמן שנתאחד. שנגיע לכנסת ונשמיע את קולנו, שנראה שאנחנו כאן, ושכולם יראו את הטוב ואת עבודת הקודש שלנו, כל יום.</p>
+      <p class="lt-sign">גננות, סייעות, מנהלות ומנהלים: מזמין את כולכן וכולכם להצטרף למאבק.</p>
     </div>
   </div>
   <h3 class="feel-h3">וזה מה שקורה לנו אחרי כל כותרת</h3>
@@ -1849,8 +1865,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <div class="scard ic" style="--k:2"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 40S8 30 8 19a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 11-16 21-16 21z"/><path pathLength="1" d="M4 4l40 40"/></svg><b>העבודה הטובה לא נראית</b><p>מאות רגעים טובים ביום, שאף אחד לא רואה ולא אומר עליהם תודה.</p></div>
 
     <div class="scard ic" style="--k:3"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="17" cy="15" r="5"/><circle pathLength="1" cx="31" cy="15" r="5"/><path pathLength="1" d="M8 38c1-7 4-11 9-11s8 4 9 11M22 38c1-7 4-11 9-11s8 4 9 11"/></svg><b>הורים חוששים</b><p>כל פרשה כזו מערערת את האמון, גם בגנים שבהם הכל בסדר.</p></div>
-    <div class="scard ic" style="--k:4"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M18 8h12v8H18z"/><path pathLength="1" d="M12 16h24v24H12z"/><path pathLength="1" d="M30 28h12M37 23l5 5-5 5"/></svg><b>תסכול, ואנשים עוזבים</b><p>אין מספיק כוח אדם, וקשה למצוא ולשמר אנשי צוות איכותיים.</p></div>
-    <div class="scard ic" style="--k:5"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 10L4 19l20 9 20-9z"/><path pathLength="1" d="M12 23v9c0 3 5 6 12 6s12-3 12-6v-9"/><path pathLength="1" d="M6 6l36 36"/></svg><b>אין מי שמדריך לידנו</b><p>אין מדריכה פדגוגית שנמצאת לצידנו בזמן הפעילות, ומכשירה אותנו תוך כדי עבודה.</p></div>
+    <div class="scard ic" style="--k:4"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M18 8h12v8H18z"/><path pathLength="1" d="M12 16h24v24H12z"/><path pathLength="1" d="M30 28h12M37 23l5 5-5 5"/></svg><b>תסכול, ואנשים עוזבים</b><p>אין מספיק כוח אדם, וקשה למצוא ולשמר צוות איכותי.</p></div>
+    <div class="scard ic" style="--k:5"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 10L4 19l20 9 20-9z"/><path pathLength="1" d="M12 23v9c0 3 5 6 12 6s12-3 12-6v-9"/><path pathLength="1" d="M6 6l36 36"/></svg><b>אין הדרכה לצידנו</b><p>אין מדריכה פדגוגית שנמצאת לצידנו בזמן הפעילות, ומכשירה אותנו תוך כדי עבודה.</p></div>
   </div>
   <p class="law-src">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, 2026</a>; <a href="https://www.ynet.co.il/news/article/ryxnn3hsbx" target="_blank" rel="noopener">ניתוח קרן ברל כצנלסון (ynet, ינואר 2026)</a></p>
 </section>
@@ -1877,9 +1893,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <h3>ההגנות על הצוות, כפי שההצהרה דורשת</h3>
       <dl>
         <div><dt>מי רואה?</dt><dd>הגורם האחראי במסגרת מקבל התרעות, ובאירוע חמור גם גורם חיצוני ובלתי תלוי. הצוות מקבל משוב על העבודה שלו. הורים לא רואים מידע על ילדים אחרים.</dd></div>
-        <div><dt>ואם המערכת טועה?</dt><dd>התרעה ותובנה הן סימן לבדיקה, לא פסק דין. כל קביעה לגבי עובד נעשית רק אחרי בדיקה מקצועית מסודרת, ובדיקת דיוק חיצונית מודדת ומפרסמת את שיעור הטעויות.</dd></div>
-        <div><dt>מה מונע שימוש נגדנו?</dt><dd>איסור על דירוג עובדים, איסור על החלטה נגד עובד על סמך תובנה בלבד, ושקיפות מלאה לצוות על מה שנאסף.</dd></div>
-        <div><dt>המערכת תסמן עובדים כ"מסוכנים"?</dt><dd>לא. היא מזהה מצבים שמגדילים סיכון, כמו בכי ממושך בלי מענה או עומס, כדי שאפשר יהיה לתת עזרה. היא לא מנבאת מי יפגע, ולא מדרגת אנשים.</dd></div>
+        <div><dt>ואם המערכת טועה?</dt><dd>התרעה ותובנה הן סימן לבדיקה, לא פסק דין. כל קביעה לגבי מישהו מהצוות נעשית רק אחרי בדיקה מקצועית מסודרת, ובדיקת דיוק חיצונית מודדת ומפרסמת את שיעור הטעויות.</dd></div>
+        <div><dt>מה מונע שימוש נגדנו?</dt><dd>איסור לדרג את הצוות, איסור להחליט נגד מישהו מהצוות על סמך תובנה בלבד, ושקיפות מלאה לצוות על מה שנאסף.</dd></div>
+        <div><dt>המערכת תסמן אנשים מהצוות כ"מסוכנים"?</dt><dd>לא. היא מזהה מצבים שמגדילים סיכון, כמו בכי ממושך בלי מענה או עומס, כדי שאפשר יהיה לתת עזרה. היא לא מנבאת מי יפגע, ולא מדרגת אנשים.</dd></div>
         <div><dt>החתימה מחייבת מערכת מסוימת?</dt><dd>לא. המסלול הרביעי הוא עיקרון, לא מוצר: פתוח לכל מערכת שתעמוד בסטנדרט מחמיר. החתימה לא מחייבת אף אחד מאיתנו או את הגן בשום דבר.</dd></div>
         <div><dt>ומה עם הפרטיות?</dt><dd>בלי צפייה שוטפת. כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</dd></div>
       </dl>
@@ -1893,12 +1909,12 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <h2 id="mgr-h"><small>למנהלים ולמנהלות</small>החוק היום <span class="cut75">עובד נגדנו</span></h2>
   <p class="mgr-q">„במסגרת חוק המצלמות של היום, אני מחויב לתעד את הצוות שלי, ואסור לי להשתמש בתיעוד כדי לעזור לו.“ <cite>אהרון נייס</cite></p>
   <div class="law3c" data-io>
-    <article class="lc3" style="--k:0"><span class="lc-y">2018 · חוק המצלמות</span><em class="lc-kw">מתעד</em><h3>אחראים, בלי יכולת לבדוק</h3>
-      <ul><li>החוק דורש שהמצלמות יקליטו כל הזמן, ואנחנו האחראים לכך.</li><li>אבל אסור לנו לצפות, אז אין דרך לדעת שהן עובדות.</li></ul>
+    <article class="lc3" style="--k:0"><span class="lc-y">2018 · חוק המצלמות</span><em class="lc-kw">מתעד</em><h3>האחריות עלינו, בלי יכולת לבדוק</h3>
+      <ul><li>החוק דורש שהמצלמות יקליטו כל הזמן, והאחריות לכך עלינו.</li><li>אבל אסור לנו לצפות, אז אין דרך לדעת שהן עובדות.</li></ul>
       <p class="lc-stat"><b>27%</b> מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</p></article>
     <article class="lc3" style="--k:1"><span class="lc-y">2024 · התיקון</span><em class="lc-kw">חושף</em><h3>שלוש דרכי צפייה להורים, והמחיר עלינו</h3>
       <ul class="lc-tr"><li><b>צפייה בגן, עם נציגות ההורים</b><span class="st">גוזל זמן</span></li><li><b>48 שעות בחודש, מרחוק</b><span class="st">בלי הקשר</span></li><li><b>שידור חי לטלפון</b><span class="st">מעמיס</span></li></ul>
-      <p class="lc-stat">ולנו, המנהלים, אין גישה עצמאית לצילומים.</p></article>
+      <p class="lc-stat">ולנו, בהנהלת המסגרת, אין גישה עצמאית לצילומים.</p></article>
     <article class="lc3 now" style="--k:2"><span class="lc-y">2026 · המסלול הרביעי</span><em class="lc-kw">מגן</em><h3>המצלמות מבינות, ועוזרות</h3>
       <ul class="lc-ok"><li>התרעה על סימני סכנה, כשעוד אפשר לעצור</li><li>תובנות כתובות, בלי צפייה שוטפת</li><li>בקרה על תקינות המצלמות</li><li>משוב יומי ותמיכה פדגוגית לצוות</li></ul></article>
   </div>
@@ -1908,8 +1924,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <section class="sped" id="ped" aria-labelledby="ped-h">
   <div class="wrap">
-    <h2 id="ped-h"><small>המשוב לצוות</small>מה אנחנו מקבלים: <span class="tqd">משוב פדגוגי לאורך היום</span></h2>
-    <p class="slede">כך נראה דוח אמיתי מפיילוט, אחרי בוקר של הכנת פיצות וארוחה בגן. המערכת זיהתה את הרגעים הטובים, ונתנה המלצות מעשיות להמשך. <b>בלי ציונים אישיים לעובדות, ובלי לחפש אשמים.</b></p>
+    <h2 id="ped-h"><small>המשוב לצוות</small>מה זה נותן לנו: <span class="tqd">משוב פדגוגי לאורך היום</span></h2>
+    <p class="slede">כך נראה דוח אמיתי מפיילוט, אחרי בוקר של הכנת פיצות וארוחה בגן. המערכת זיהתה את הרגעים הטובים, ונתנה המלצות מעשיות להמשך. <b>בלי ציונים אישיים, ובלי לחפש אשמים.</b></p>
     <div class="ped" id="pedRep">
       <div class="ped-l">
         <figure class="ped-vid">
@@ -1945,7 +1961,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
   <h2 id="gives-h"><small>בשורה התחתונה</small>מה זה נותן לגנים שלנו, ולילדים</h2>
   <div class="scards gives swipe" data-io>
-    <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M8 38V14l16-8 16 8v24"/><path pathLength="1" d="M17 22h14M17 29h14M17 36h8"/></svg><b>כמו מדריכה פדגוגית לצידנו</b><p>רגעים טובים לחזק, המלצות מעשיות ורעיונות לפעילות, כל יום. כך מכשירים ומחזקים צוותים איכותיים, ושומרים עליהם.</p></div>
+    <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M8 38V14l16-8 16 8v24"/><path pathLength="1" d="M17 22h14M17 29h14M17 36h8"/></svg><b>כמו מדריכה פדגוגית לצידנו</b><p>רגעים טובים לחזק, המלצות מעשיות ורעיונות לפעילות, כל יום. כך צוותים איכותיים מתחזקים, צומחים, ונשארים.</p></div>
     <div class="scard ic" style="--k:1"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M6 40h36"/><path pathLength="1" d="M12 34V24M22 34V14M32 34V20"/><path pathLength="1" d="M10 18l10-8 8 6 12-9"/></svg><b>תמונת מצב של הגן</b><p>תובנות ישימות לשיפור הגן, במקום לגלות בעיה רק כשהורה מתקשר.</p></div>
     <div class="scard ic" style="--k:2"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z"/><path pathLength="1" d="M17 24l5 5 9-10"/></svg><b>אמון מול ההורים</b><p>במקום חשדנות אחרי כל כותרת, כלי שמראה כל יום שהילדים בידיים טובות.</p></div>
   </div>
@@ -1963,13 +1979,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <section class="act sjoin" id="act" aria-labelledby="act-h">
   <div class="wrap">
     <h2 id="act-h">נעשה את זה יחד.</h2>
-    <p class="lead">כשגננות, סייעות ומנהלים חותמים לצד הורים, הכנסת שומעת את כל המשפחה של הגן.</p>
+    <p class="lead">החתימה של גננות, סייעות, מנהלות ומנהלים לצד ההורים משמיעה בכנסת את קולה של כל משפחת הגן.</p>
     <div class="jpath" data-io>
       <div class="jline" aria-hidden="true"><i></i></div>
       <ol>
         <li style="--k:0"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span><div class="jt"><b>תמכו בהצהרה</b><p>חצי דקה, וכל קול נספר.<small class="lc2" hidden> <b class="lcn">0</b> כבר חתמו.</small></p></div><a class="jbtn pulse" href="atzuma.html?role=staff&amp;src=staff">לחתימה</a></li>
-        <li style="--k:1"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span><div class="jt"><b>הפיצו כמה שיותר</b><p>לצוות, לחברים מהמקצוע ולקבוצות ההורים.</p></div><button class="jbtn ghost" type="button" id="shareCirc">שיתוף העמוד</button></li>
-        <li style="--k:2"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span><div class="jt"><b>בואו להיות שותפים</b><p>להגיע לכנסת, לחבר ארגון, לעזור יותר.</p></div><div class="jcontact"><a class="jbtn" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a><a class="jbtn ghost" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a></div></li>
+        <li style="--k:1"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span><div class="jt"><b>הפיצו כמה שיותר</b><p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים.</p></div><button class="jbtn ghost" type="button" id="shareCirc">שיתוף העמוד</button></li>
+        <li style="--k:2"><span class="jn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 20c.5-4 3-6 6-6s5.5 2 6 6M12 15c1-.7 2.4-1 4-1 3 0 5.5 2 6 6"/></svg></span><div class="jt"><b>בואו לקחת חלק</b><p>להגיע לכנסת, לחבר ארגון, לעזור יותר.</p></div><div class="jcontact"><a class="jbtn" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a><a class="jbtn ghost" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a></div></li>
       </ol>
     </div>
   </div>
@@ -1986,7 +2002,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   async function copy(text,done){try{await navigator.clipboard.writeText(text);toast(done)}catch(e){const t=document.createElement("textarea");t.value=text;t.style.cssText="position:fixed;opacity:0";document.body.append(t);t.select();try{document.execCommand("copy")}catch(_){}t.remove();toast(done)}}
   async function shareOr(data,txt,done){if(navigator.share&&matchMedia("(pointer:coarse)").matches){try{await navigator.share(data);return}catch(e){if(e&&e.name==="AbortError")return}}copy(txt,done)}
   const staffUrl="https://maslul4.tsofia.ai/staff?src=staff";
-  const staffMsg="לצוותי חינוך: אנחנו מבקשים לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת. לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו. כדאי לקרוא ולחתום: ";
+  const staffMsg="לצוותי חינוך: הבקשה שלנו היא לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת. לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו. כדאי לקרוא ולחתום: ";
   $("#shareCirc").onclick=()=>shareOr({title:document.title,text:staffMsg,url:staffUrl},staffMsg+staffUrl,"הקישור הועתק. הדביקו אותו בקבוצת הצוות");
   const parentsMsg="הורים יקרים,\nהחדשות על מקרי ההתעללות בפעוטות כואבות לכולנו. אנחנו בגן מצטרפים להצהרת הורים ואנשי חינוך שקוראת לעדכן את חוק המצלמות, כך שהמצלמות שכבר נמצאות בגנים יוכלו להתריע על סכנה בזמן אמת, תוך שמירה על הפרטיות.\nאשמח שתקראו ותחתמו:\nhttps://maslul4.tsofia.ai/?src=managers";
   var spm=$("#sendParentsM");if(spm)spm.onclick=()=>shareOr({text:parentsMsg},parentsMsg,"ההודעה להורים הועתקה. הדביקו אותה בקבוצת ההורים");
