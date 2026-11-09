@@ -221,6 +221,33 @@ footer .ez{color:var(--ink-2)}
 .doc ol ul.sub{margin:8px 0 2px;padding-inline-start:18px;list-style:disc}
 .doc ol ul.sub li{margin-bottom:6px;font-size:16px}
 .doc ol ul.sub b{color:var(--ink);font-weight:600}
+
+/* שותפות: כרטיס אחד */
+.partner{position:relative;display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:center;margin:12px 0 2px;padding:9px 12px;border:1.5px solid #e9a3ad;border-radius:10px;background:#fff6f7;cursor:pointer;transition:background .2s,border-color .2s}
+.partner input{position:absolute;opacity:0;pointer-events:none}
+.pt-box{width:20px;height:20px;border:2px solid #c8102e;border-radius:5px;background:#fff;display:grid;place-items:center}
+.partner input:checked~.pt-box{background:#c8102e}
+.partner input:checked~.pt-box::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.pt-t b{display:block;font-size:15.5px;font-weight:700;color:#a50d26}
+.pt-t span{display:block;font-size:13px;color:var(--muted);margin-top:1px}
+.partner:has(input:checked){border-color:#c8102e;background:#fdeef0}
+.partner:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:2px}
+.partner .lvl-tag{position:absolute;top:-9px;left:14px;transform:none}
+.partner-box{margin:0 0 6px;padding:12px 14px 14px;border:1.5px solid #c8102e;border-top:0;border-radius:0 0 10px 10px;background:#fffafa}
+.partner:has(input:checked){border-radius:10px 10px 0 0;margin-bottom:0}
+.partner-box .acts{background:#fff}
+.phonef input{border-color:#c8102e;border-width:1.5px}
+.req{color:#c8102e;font-weight:700}
+.partner-box.flash{animation:pbin .5s ease-out}
+@keyframes pbin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.chk.agree{padding:4px 8px;margin:0 0 -2px;border-radius:8px;transition:background .3s,box-shadow .3s}
+.chk.agree b{color:var(--ink);font-weight:700}
+.chk.agree.next{background:#fff6dc;box-shadow:0 0 0 2px #f0b429 inset;animation:nudge 1.6s ease-in-out 2}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 2px #f0b429 inset}50%{box-shadow:0 0 0 2px #f0b429 inset,0 0 0 6px rgba(240,180,41,.25)}}
+.go{opacity:.82;transition:opacity .2s,transform .2s,box-shadow .2s}
+.go.ready{opacity:1;box-shadow:0 8px 22px rgba(30,124,176,.35);animation:goin .5s ease-out}
+@keyframes goin{0%{transform:scale(.98)}60%{transform:scale(1.02)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.partner-box.flash,.chk.agree.next,.go.ready{animation:none}}
 </style>
 </head>
 <body>
@@ -331,7 +358,7 @@ footer .ez{color:var(--ink-2)}
       </div>
 
       <div class="f"><label for="email">דוא״ל</label><input type="email" id="email" name="email" autocomplete="email" dir="ltr" required maxlength="100"></div>
-      <p class="hint2">הדוא״ל משמש לאימות החתימה בלבד. לא נשלח אליך הודעות בלי אישורך.</p>
+      <p class="hint2">לאימות החתימה בלבד. לא נשלח הודעות בלי אישורך.</p>
       <div class="two">
         <div class="f" style="grid-column:1/-1"><label for="role">אני חותם/ת בתור</label>
         <select id="role" name="role" required>
@@ -350,33 +377,28 @@ footer .ez{color:var(--ink-2)}
         <label class="chk" style="margin-bottom:13px"><input type="checkbox" name="proPublic" id="proPublic"><span>מאשר/ת להציג את שמי ואת תפקידי ברשימת התומכים המקצועיים</span></label>
       </div>
 
-      <div class="f"><span class="lb" id="lvl-l">רוצים להיות שותפים? <span class="opt">(רשות)</span></span>
-        <div class="levels" role="radiogroup" aria-labelledby="lvl-l">
-          <label class="lvl"><input type="radio" name="level" value="sign" checked><span><b>חתימה</b></span></label>
-          <label class="lvl"><input type="radio" name="level" value="updates"><span><b>+ עדכונים</b></span></label>
-          <label class="lvl lvl-act"><input type="radio" name="level" value="active"><span><b>+ פעילות</b></span><em class="lvl-tag" aria-hidden="true">הכי עוזר</em></label>
-        </div>
-      </div>
+      <label class="partner" id="partnerCard"><input type="checkbox" id="partner" aria-controls="partnerBox">
+        <span class="pt-box" aria-hidden="true"></span>
+        <span class="pt-t"><b>אני רוצה להיות שותף/ה פעיל/ה</b><span>לעזור בהפצה, במסגרת, בכנסת או באזור שלי</span></span>
+        <em class="lvl-tag" aria-hidden="true">הכי עוזר</em>
+      </label>
 
-      <div class="f" id="actBox" hidden><span class="lb">באיזה אופן <span class="opt">(אפשר לבחור כמה)</span></span>
-        <div class="acts">
-          <label class="chk"><input type="checkbox" name="acts" value="הפצה להורים"><span>הפצת ההצהרה להורים נוספים</span></label>
-          <label class="chk"><input type="checkbox" name="acts" value="הצגה במסגרת"><span>הצגת ההצהרה במסגרת של ילדי</span></label>
-          <label class="chk"><input type="checkbox" name="acts" value="כנסת ותקשורת"><span>השתתפות בדיונים בכנסת או בתקשורת</span></label>
-          <label class="chk"><input type="checkbox" name="acts" value="ריכוז אזורי"><span>ריכוז הורים באזור מגוריי</span></label>
+      <div class="partner-box" id="partnerBox" hidden>
+        <div class="f"><span class="lb">באיזה אופן <span class="opt">(אפשר לבחור כמה)</span></span>
+          <div class="acts">
+            <label class="chk"><input type="checkbox" name="acts" value="הפצה להורים"><span>הפצת ההצהרה להורים נוספים</span></label>
+            <label class="chk"><input type="checkbox" name="acts" value="הצגה במסגרת"><span>הצגת ההצהרה במסגרת של ילדי</span></label>
+            <label class="chk"><input type="checkbox" name="acts" value="כנסת ותקשורת"><span>השתתפות בדיונים בכנסת או בתקשורת</span></label>
+            <label class="chk"><input type="checkbox" name="acts" value="ריכוז אזורי"><span>ריכוז הורים באזור מגוריי</span></label>
+          </div>
         </div>
-      </div>
-
-      <div id="contactBox" hidden>
-        <div class="two">
-          <div class="f" style="grid-column:1/-1"><label for="phone">טלפון <span class="opt" id="phoneOpt">(רשות, לעדכונים בוואטסאפ)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" dir="ltr" inputmode="tel" maxlength="20"></div>
-        </div>
+        <div class="f phonef"><label for="phone">טלפון <span class="req">*</span> <span class="opt">כדי שנוכל לתאם איתך</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" dir="ltr" inputmode="tel" maxlength="20" placeholder="050-0000000"></div>
       </div>
 
       <div class="consents">
-        <label class="chk"><input type="checkbox" name="agree" id="agree" required><span>קראתי את ההצהרה ואני מצטרף/ת אליה. אני מאשר/ת את שמירת הפרטים שמסרתי לצורך ההצהרה והגשתה, בהתאם ל<a href="#privacy">מדיניות הפרטיות</a>.</span></label>
-        <label class="chk" id="optinRow" hidden><input type="checkbox" name="optin" id="optin"><span>מאשר/ת לקבל עדכונים בנושא ההצהרה בדוא״ל, ובוואטסאפ אם מסרתי טלפון. ניתן לבטל בכל עת.</span></label>
-        <label class="chk"><input type="checkbox" name="showName" id="showName"><span>מאשר/ת להציג את שמי הפרטי ויישובי ברשימת החותמים באתר. <span class="opt">(רשות)</span></span></label>
+        <label class="chk agree" id="agreeRow"><input type="checkbox" name="agree" id="agree" required><span><b>קראתי את ההצהרה ואני מצטרף/ת אליה.</b> <span class="req">(חובה)</span> הפרטים יישמרו לצורך ההצהרה והגשתה, לפי <a href="#privacy">מדיניות הפרטיות</a>.</span></label>
+        <label class="chk" id="optinRow"><input type="checkbox" name="optin" id="optin"><span>מאשר/ת לקבל עדכונים בדוא״ל (ובוואטסאפ, אם מסרתי טלפון). ניתן לבטל בכל עת.</span></label>
+        <label class="chk"><input type="checkbox" name="showName" id="showName"><span>מאשר/ת להציג את שמי הפרטי ויישובי באתר. <span class="opt">(רשות)</span></span></label>
       </div>
 
       <button class="go" type="submit" id="goBtn">אני מצטרף/ת להצהרה</button>
@@ -484,21 +506,27 @@ let count=0;
   try{const r=await fetch(ENDPOINT,{cache:"no-store"});const d=await r.json();count=d.count||0;render(count,d.recent||[])}catch(e){render(0,[])}
 })();
 
-function sync(){
-  const lvl=F.level.value;
-  $("#actBox").hidden=lvl!=="active";
-  $("#contactBox").hidden=lvl==="sign";
-  $("#optinRow").hidden=lvl==="sign";
-  F.phone.required=lvl==="active";
-  $("#phoneOpt").textContent=lvl==="active"?"(לתיאום הסיוע)":"(רשות, לעדכונים בוואטסאפ)";
+const lvlOf=()=>$("#partner").checked?"active":(F.optin.checked?"updates":"sign");
+function sync(e){
+  const on=$("#partner").checked,box=$("#partnerBox"),was=!box.hidden;
+  box.hidden=!on;F.phone.required=on;
+  if(on&&!was&&e){box.classList.remove("flash");void box.offsetWidth;box.classList.add("flash");box.scrollIntoView({behavior:"smooth",block:"nearest"})}
   $("#proBox").hidden=F.role.value!=="איש או אשת חינוך או אקדמיה";
+  ready();
 }
+/* הכוונה: מה הצעד הבא */
+function ready(){
+  const ok=F.name.value.trim().length>1&&F.city.value.trim().length>1&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(F.email.value.trim())&&F.role.value&&(!$("#partner").checked||F.phone.value.replace(/\D/g,"").length>=9);
+  $("#agreeRow").classList.toggle("next",ok&&!F.agree.checked);
+  $("#goBtn").classList.toggle("ready",ok&&F.agree.checked);
+}
+form.addEventListener("input",ready);
 form.addEventListener("change",sync);sync();
 
 const err=m=>{const e=$("#err");e.textContent=m;e.hidden=!m};
 form.addEventListener("submit",async ev=>{
   ev.preventDefault();err("");
-  const name=F.name.value.trim(),city=F.city.value.trim(),role=F.role.value,lvl=F.level.value;
+  const name=F.name.value.trim(),city=F.city.value.trim(),role=F.role.value,lvl=lvlOf();
   const phone=F.phone.value.trim(),email=F.email.value.trim();
   if(name.length<2){err("יש למלא שם מלא.");F.name.focus();return}
   if(city.length<2){err("יש למלא יישוב.");F.city.focus();return}
@@ -512,8 +540,8 @@ form.addEventListener("submit",async ev=>{
     title:pro?F.title.value.trim():"",proPublic:pro&&F.proPublic.checked,
     level:{sign:"חתימה",updates:"עדכונים",active:"פעילות"}[lvl],
     acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value).join(", "):"",
-    phone:lvl==="sign"?"":fmtPhone(phone),email,
-    optin:lvl!=="sign"&&F.optin.checked,showName:F.showName.checked,
+    phone:lvl==="active"?fmtPhone(phone):"",email,
+    optin:F.optin.checked,showName:F.showName.checked,
     source:new URLSearchParams(location.search).get("src")||document.referrer||""
   };
   const btn=$("#goBtn");btn.disabled=true;btn.textContent="שולח…";
