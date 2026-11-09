@@ -1101,6 +1101,32 @@ footer .flinks a{color:#cfd6e2}
 .brand small{font-size:10.5px!important;font-weight:600!important;margin-top:2px!important}
 .flogo-full{display:block;width:220px;height:auto;background:#fff;border-radius:10px;padding:8px 12px;margin-bottom:14px}
 @media (max-width:700px){.brand .bn{font-size:20px}.brand .btag{font-size:11px}.brand small{font-size:9.5px!important}.brand .logo{height:40px}.flogo-full{width:190px}}
+
+.pull .pq-hurt{color:#c8102e;font-weight:900;background:linear-gradient(transparent 62%,rgba(200,16,46,.15) 62%)}
+/* שעון חול */
+.late-h{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.hglass{flex:none;width:34px;height:48px;color:var(--red)}
+.hg-flip{transform-origin:20px 28px;transform-box:view-box}
+.hg-top{transform-origin:20px 28px;transform-box:view-box}
+.hg-bot{transform-origin:20px 51px;transform-box:view-box}
+.hg-top{transform:scaleY(0)}.hg-bot{transform:scaleY(1)}.hg-stream{opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .late.go .hg-top{animation:hgTop 1.6s linear 3 both}
+  .late.go .hg-bot{animation:hgBot 1.6s linear 3 both}
+  .late.go .hg-stream{animation:hgStream 1.6s linear 3 both}
+  .late.go .hg-flip{animation:hgFlip 1.6s ease-in-out 2 backwards}
+  .late.go .hglass{animation:hgShake .45s ease-in-out 4.9s 2}
+}
+@keyframes hgTop{0%{transform:scaleY(1)}80%{transform:scaleY(0)}100%{transform:scaleY(0)}}
+@keyframes hgBot{0%{transform:scaleY(0)}80%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+@keyframes hgStream{0%,78%{opacity:1}80%,100%{opacity:0}}
+@keyframes hgFlip{0%,82%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+@keyframes hgShake{25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+
+.hglass{width:44px;height:62px}
+.sec-d>summary #broken-h{color:#c8102e;font-size:clamp(24px,2.8vw,32px)!important;line-height:1.2}
+.sec-d>summary:has(#broken-h)::after{color:#c8102e}
+@media (max-width:700px){.sec-d>summary #broken-h{font-size:24px!important}.hglass{width:36px;height:50px}}
 </style>
 </head>
 <body>
@@ -1140,11 +1166,11 @@ footer .flinks a{color:#cfd6e2}
     <article class="body">
       <p class="first">ביום ראשון השבוע הוגש כתב אישום נגד מנהלת מעון פרטי באריאל ושתי מטפלות. לפי האישום, במשך תקופה ארוכה הן ביצעו <b>יותר מ-400 מעשי התעללות ותקיפה ב-17 תינוקות ופעוטות</b>, חלקם בני חצי שנה בלבד: חסימת דרכי נשימה, טלטול, האכלה בכוח ונעילה בחדר חשוך.</p>
       <p><b>אף מערכת לא התריעה בזמן אמת.</b> אחת האמהות סיפרה שהבחינה בחבלות חוזרות אצל בנה, ושהמשטרה הגיעה לפני שהספיקה לפעול. שבוע קודם לכן, ברעננה, נעצרו שלוש סייעות אחרי שפעוט פונה לבית החולים עם פציעה. בלוד, ב-2025, ההורים כבר לא חיכו: הם הציבו בעצמם מכשיר הקלטה בגן.</p>
-      <blockquote class="pull"><span class="pq-red">הורה. רופא. מזל.</span> אלה מנגנוני הגילוי של היום, וכל יום שעובר עד הגילוי הוא עוד יום של פגיעה.</blockquote>
+      <blockquote class="pull"><span class="pq-red">הורה. רופא. מזל.</span> אלה מנגנוני הגילוי של היום, וכל יום שעובר עד הגילוי הוא <b class="pq-hurt">עוד יום של פגיעה.</b></blockquote>
       <div class="halt" id="halt"><p class="halt-box"><span class="h1">הפתרון כבר קיים.</span> <span class="h2">אז איך ייתכן שכולנו מחכים <mark>לאסון הבא?!</mark></span></p></div>
 
       <section class="late" aria-labelledby="late-h">
-        <h2 id="late-h">כשהכל בדיעבד, זה כבר מאוחר מדי</h2>
+        <h2 id="late-h" class="late-h"><span>כשהכל בדיעבד, זה כבר מאוחר מדי</span><svg class="hglass" viewBox="0 0 40 56" aria-hidden="true"><g class="hg-flip"><path d="M6 3h28M6 53h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M9 4c0 12 9 16 9 24S9 40 9 52h22c0-12-9-16-9-24s9-12 9-24z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><clipPath id="hgTop"><path d="M10 5c0 11 8 15 9 23h2c1-8 9-12 9-23z"/></clipPath><clipPath id="hgBot"><path d="M10 51c0-11 8-15 9-23h2c1 8 9 12 9 23z"/></clipPath><rect class="hg-top" clip-path="url(#hgTop)" x="8" y="5" width="24" height="23" fill="currentColor"/><rect class="hg-bot" clip-path="url(#hgBot)" x="8" y="28" width="24" height="23" fill="currentColor"/><rect class="hg-stream" x="19.2" y="27" width="1.6" height="22" fill="currentColor"/></g></svg></h2>
         <p>גם כשהפגיעה מתגלה, היא מתגלה מאוחר מדי. עד שהורה מבחין בחבלה או שילד מגיע לבית החולים, שבועות של פגיעה כבר מאחורינו. פעוט בן שנה וחצי לא יכול לספר, והנזק הרגשי נשאר איתו ועם המשפחה הרבה אחרי שהפרשה יורדת מהכותרות.</p>
       </section>
       <section class="rec" aria-labelledby="rec-h">
@@ -1523,6 +1549,8 @@ els.forEach(el=>{const t=el.textContent;el.dataset.t=t;});
 const run=el=>{const t=el.dataset.t,m=t.match(/[\d,]+/);if(!m)return;const target=+m[0].replace(/,/g,""),pre=t.slice(0,m.index),post=t.slice(m.index+m[0].length);const t0=performance.now(),d=1400;
  (function f(now){const k=Math.min(1,(now-t0)/d),e=1-Math.pow(1-k,3),v=Math.round(target*e);el.textContent=pre+v.toLocaleString("en-US")+post;if(k<1)requestAnimationFrame(f)})(t0)};
 new IntersectionObserver((es,o)=>{es.forEach(en=>{if(en.isIntersecting){els.forEach(run);o.disconnect()}})},{threshold:.4}).observe(document.querySelector(".mstats"))})();
+
+(function(){const d=document.querySelector(".late");if(!d||!("IntersectionObserver" in window))return;new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){d.classList.add("go");o.disconnect()}})},{threshold:.6}).observe(d)})();
 </script>
 </body>
 </html>
