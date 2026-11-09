@@ -2060,6 +2060,30 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .j3-foot::before,.j3-foot::after{display:none}
 }
 @media (max-width:860px){.j3-btn.white{font-size:19px;padding-inline:18px;white-space:nowrap;min-height:62px}}.j3c .j3-acts{align-self:end}
+/* demo: fill the camera column */
+.ped.demo{align-items:stretch}
+.ped.demo .ped-l{display:flex;flex-direction:column;justify-content:center}
+.ped.demo .dm-step{align-self:flex-start}
+.ped.demo .ped-vid video{aspect-ratio:4/3}
+.dm-b1{left:50%;width:34%}.dm-b2{left:57%;width:30%}
+.dm-flow{align-self:center}
+.dm-tally{margin-top:18px;background:rgba(255,255,255,.06);border:1px solid rgba(143,227,212,.22);border-radius:18px;padding:16px 18px 14px;color:#e3f1ee;font-family:var(--f-ui)}
+.dm-th{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dm-th b{font-size:19px;font-weight:900;color:#fff}.dm-th b span{color:#ffd45e;font-size:24px}
+.dm-th>span{font-size:14.5px;color:#a9d3cb}
+.dm-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.12);margin-top:10px;overflow:hidden}
+.dm-bar i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#8fe3d4,#ffd45e);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.dm-tally ul{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dm-tally li{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:700;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.05);color:#9fc4bd;transition:background .4s,color .4s}
+.dm-tally li:last-child{grid-column:1/-1}
+.dm-tally li span{font-size:18px;filter:grayscale(1);opacity:.6;transition:filter .4s,opacity .4s}
+.dm-tally li b{margin-inline-start:auto;min-width:26px;height:26px;display:grid;place-items:center;border-radius:13px;background:rgba(255,255,255,.1);font-size:14px;color:#cfe9e4}
+.dm-tally li.on{background:rgba(255,255,255,.13);color:#fff}
+.dm-tally li.on span{filter:none;opacity:1}
+.dm-tally li.on b{background:#ffd45e;color:#0b2a28}
+.dm-tally li.bump b{animation:tBump .5s cubic-bezier(.2,.9,.3,1.6)}
+@keyframes tBump{0%{transform:scale(1)}40%{transform:scale(1.5)}100%{transform:scale(1)}}
+@media (max-width:980px){.ped.demo .ped-vid video{aspect-ratio:16/9}.dm-b1{left:51%;width:25%}.dm-b2{left:56%;width:22%}.dm-tally{margin-top:12px;padding:12px 14px}.dm-tally li{font-size:14.5px;padding:7px 10px}}
 </style>
 </head>
 <body>
@@ -2176,6 +2200,17 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
           <span class="scan" aria-hidden="true"></span>
           <span class="dm-box dm-b1" id="dmB1" aria-hidden="true"><i></i><em></em></span><span class="dm-box dm-b2" id="dmB2" aria-hidden="true"><i></i></span>
         </figure>
+        <div class="dm-tally" id="dmTally" aria-hidden="true">
+          <div class="dm-th"><b><span id="dmCnt">0</span> מתוך 7 תובנות</b><span>מבוקר אחד בגן</span></div>
+          <div class="dm-bar"><i id="dmBar"></i></div>
+          <ul>
+            <li data-cat="g"><span>💛</span>רגעים יפים<b>0</b></li>
+            <li data-cat="k"><span>👶</span>צרכים של ילדים<b>0</b></li>
+            <li data-cat="t"><span>🎯</span>המלצות מעשיות<b>0</b></li>
+            <li data-cat="b"><span>🧰</span>כלים ורעיונות<b>0</b></li>
+            <li data-cat="q"><span>❓</span>שאלות לצוות<b>0</b></li>
+          </ul>
+        </div>
       </div>
       <div class="dm-flow" id="dmFlow" aria-hidden="true">
         <div class="dm-step"><b>2</b> ניתוח</div>
@@ -2303,12 +2338,16 @@ function fly(emo){var c=document.createElement("span");c.className="dm-chip";c.t
 function tr(p,s){return "translate("+(p[0]-22)+"px,"+(p[1]-22)+"px) scale("+s+")"}
 var an=c.animate([{transform:tr(A,.4),opacity:0},{transform:tr(A,1.15),opacity:1,offset:.12},{transform:tr(B,.9),opacity:1,offset:.5},{transform:tr(B,1.1),opacity:1,offset:.6},{transform:tr(C,1),opacity:1,offset:.93},{transform:tr(C,.5),opacity:0}],{duration:1500,easing:"cubic-bezier(.5,0,.3,1)"});
 an.onfinish=function(){c.remove()};setTimeout(function(){flow.classList.remove("go");void flow.offsetWidth;flow.classList.add("go")},620)}
-function push(){if(i>=N){feed.classList.add("clr");setTimeout(function(){feed.innerHTML="";feed.classList.remove("clr");i=0;push()},700);return}
+function push(){if(i>=N){feed.classList.add("clr");setTimeout(function(){feed.innerHTML="";feed.classList.remove("clr");i=0;tally(null);push()},700);return}
 var a=src[i],tag=a.querySelector(".pc-tag").textContent;b1.querySelector("em").textContent=tag;b1.classList.add("hit");if(FOOD[i])b2.classList.add("hit");
 setTimeout(function(){fly(tag.trim().split(" ")[0])},800);
 setTimeout(land,2150);
 setTimeout(function(){b1.classList.remove("hit");b2.classList.remove("hit")},3000)}
-function land(){var n=make(src[i++]);[].forEach.call(feed.querySelectorAll(".nt-time"),function(x){x.textContent="קודם"});feed.insertBefore(n,feed.firstChild);requestAnimationFrame(function(){n.classList.add("in","fresh");open(n)});
+var tl=document.getElementById("dmTally");
+function tally(cat){if(!tl)return;if(cat==null){[].forEach.call(tl.querySelectorAll("li"),function(l){l.classList.remove("on","bump");l.querySelector("b").textContent="0"});document.getElementById("dmCnt").textContent="0";document.getElementById("dmBar").style.width="0";return}
+var l=tl.querySelector('li[data-cat="'+cat+'"]');if(l){var b=l.querySelector("b");b.textContent=+b.textContent+1;l.classList.add("on");l.classList.remove("bump");void l.offsetWidth;l.classList.add("bump")}
+document.getElementById("dmCnt").textContent=i;document.getElementById("dmBar").style.width=(i/N*100)+"%"}
+function land(){var n=make(src[i++]);tally(src[i-1].dataset.cat);[].forEach.call(feed.querySelectorAll(".nt-time"),function(x){x.textContent="קודם"});feed.insertBefore(n,feed.firstChild);requestAnimationFrame(function(){n.classList.add("in","fresh");open(n)});
 while(feed.children.length>4)feed.removeChild(feed.lastChild)}
 function start(){if(rm||t||user)return;t=setInterval(push,6200)}
 function stop(){if(t){clearInterval(t);t=null}}
