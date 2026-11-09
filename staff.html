@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#c8102e">
 <meta property="og:type" content="website">
 <meta property="og:title" content="המסלול הרביעי: לצוותי חינוך ולמנהלי מסגרות">
-<meta property="og:description" content="אתן הלב של הגן. הגיע הזמן שגם המערכת תשמור עליכן: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
+<meta property="og:description" content="אתן הלב של הגן. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
 <meta property="og:image" content="https://maslul4.tsofia.ai/og-card-2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>המסלול הרביעי: לצוותי חינוך ולמנהלי מסגרות</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="אתן הלב של הגן. הגיע הזמן שגם המערכת תשמור עליכן: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
+<meta name="description" content="אתן הלב של הגן. הגיע הזמן שנקבל הערכה והוקרה אמיתית: בינה מלאכותית שמתריעה על סכנה בזמן אמת, בלי צפייה שוטפת ובלי דירוג עובדים.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@400;500;700;800;900&display=swap">
 <style>
@@ -1509,6 +1509,20 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .paradox.go .px-vs{animation:stamp .4s cubic-bezier(.3,1.6,.5,1) .6s both;--r:0deg}
 .paradox.go .px-no{animation:sUp .5s ease-out .9s both}
 @media (max-width:700px){.paradox{grid-template-columns:1fr}.px-vs{justify-self:center}.px b{font-size:16.5px}}
+/* hero photo */
+.shero-photo{position:relative;margin:0;justify-self:center;width:min(100%,420px)}
+.shero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 62%;border-radius:24px;border:6px solid rgba(255,255,255,.92);box-shadow:0 26px 60px rgba(0,0,0,.4);transform:rotate(-2.5deg)}
+.shero-photo::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border-radius:28px;border:2px solid rgba(143,227,212,.45);transform:rotate(3deg)}
+.shero-photo figcaption{position:absolute;bottom:18px;inset-inline-start:14px;transform:rotate(-2.5deg);background:rgba(11,42,40,.85);color:#e3f1ee;font-family:var(--f-ui);font-size:12.5px;border-radius:999px;padding:5px 12px}
+@media (prefers-reduced-motion:no-preference){.shero-photo{animation:sArt 1s cubic-bezier(.2,.8,.2,1) .2s both}}
+.lt-av{background:#e6f4f1!important}
+.lt-av img{width:40px;height:auto}
+@media (max-width:700px){
+ .shero-photo{order:-1;width:100%;max-width:none}
+ .shero-photo img{aspect-ratio:16/10;object-position:50% 55%;transform:none;border-width:4px;border-radius:18px}
+ .shero-photo::before{display:none}
+ .shero-photo figcaption{transform:none;bottom:10px}
+}
 </style>
 </head>
 <body>
@@ -1522,25 +1536,23 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">לצוותי חינוך ולמנהלי מסגרות</span>
-      <h1>אתן הלב של הגן.<span class="tq">הגיע הזמן שגם המערכת <span class="mk">תשמור עליכן.<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 12 C60 5 120 15 180 8 S260 6 296 10"/></svg></span></span></h1>
+      <h1>אתן הלב של הגן.<span class="tq">הגיע הזמן שנקבל <span class="mk">הערכה והוקרה אמיתית.<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 12 C60 5 120 15 180 8 S260 6 296 10"/></svg></span></span></h1>
       <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואתן אולי מרגישות אותה אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחריכן, אלא עוד זוג עיניים ומשוב פדגוגי לצידכן.</b></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאיש/ת צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
     </div>
-    <div class="shero-vis" aria-hidden="true">
-      <img class="shero-art" src="thanks-hands.png" alt="" width="276" height="360">
-      <span class="chip c1"><i>💛</i>רגע יפה: פנייה מכבדת לילדים</span>
-      <span class="chip c2"><i>🎯</i>המלצה: „עוגן“ בזמני מעבר</span>
-      <span class="chip c3"><i>🛡️</i>התראה: ילד בוכה לבד</span>
-    </div>
+    <figure class="shero-photo">
+      <img src="staff-circle.jpg" alt="גננת וילדים יושבים במעגל עם תופים ומרקשות, בהפעלה מוזיקלית בגן. הפנים טושטשו" width="1100" height="1467" fetchpriority="high">
+      <figcaption>רגע אמיתי מהגן. הפנים טושטשו.</figcaption>
+    </figure>
   </div>
 </header>
 
 <section class="sfeel wrap" id="feel" aria-labelledby="feel-h" data-io>
   <h2 id="feel-h"><small>מכתב אישי</small>פרשה אחת <span class="sbrush">צובעת את כולנו בשחור</span></h2>
   <div class="letter">
-    <div class="lt-who"><span class="lt-av" aria-hidden="true">א</span><span class="lt-id"><b>אהרון נייס</b><span>מנהל גן גחליליות</span></span>
+    <div class="lt-who"><span class="lt-av" aria-hidden="true"><img src="thanks-hands.png" alt=""></span><span class="lt-id"><b>אהרון נייס</b><span>מנהל גן גחליליות</span></span>
       <ul class="lt-cred"><li>גנן מוסמך</li><li>תואר שני בחינוך</li><li>מנתח התנהגות (BCBA)</li></ul></div>
     <div class="lt-body">
       <p class="lt-open">שלום, אני אהרון.</p>
