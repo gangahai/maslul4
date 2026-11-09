@@ -602,7 +602,9 @@ footer a{color:#fff}
 @keyframes plflash{0%{color:#fff;text-shadow:0 0 14px rgba(75,199,227,.9)}100%{text-shadow:none}}
 @media (max-width:700px){.pl-track{display:none}}
 
-.days30 i.seen,.dlegend .k.seen{background:#1e7cb0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12z' fill='none' stroke='white' stroke-width='2.2'/%3E%3Ccircle cx='12' cy='12' r='3' fill='white'/%3E%3C/svg%3E") center/70% no-repeat}
+.days30 i.seen,.dlegend .k.seen{background:#3a4252}
+.days30 i.seen::after,.dlegend .k.seen::after{content:"";position:absolute;top:0;bottom:0;right:44%;width:12%;background:#4bc7e3;box-shadow:0 0 6px rgba(75,199,227,.8)}
+.dlegend .k.seen::after{width:22%}
 @media (prefers-reduced-motion:no-preference){.days30.go .grid i.seen{animation:dayin .35s ease-out calc(var(--d) * 70ms) both,missblink .5s ease-in-out calc(var(--d) * 70ms + .35s) 2}}
 .cut75{color:#c8102e}
 /* days30: הקוביות מתמלאות, תקלות באדום */
@@ -862,8 +864,8 @@ footer a{color:#fff}
         <div class="grid" aria-hidden="true">
           <i style="--d:0"></i><i style="--d:1"></i><i style="--d:2"></i><i style="--d:3"></i><i style="--d:4"></i><i style="--d:5"></i><i class="miss" style="--d:6"></i><i class="miss" style="--d:7"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i class="miss" style="--d:13"></i><i style="--d:14"></i><i class="seen" style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:18"></i><i class="miss" style="--d:19"></i><i class="dim" style="--d:20"></i><i class="dim" style="--d:21"></i><i class="dim" style="--d:22"></i><i class="dim" style="--d:23"></i><i class="dim" style="--d:24"></i><i class="gone" style="--d:25"></i><i class="gone" style="--d:26"></i><i class="gone" style="--d:27"></i><i class="gone" style="--d:28"></i><i class="gone" style="--d:29"></i>
         </div>
-        <div class="lbls"><span>יום 1: מצלמים הכל</span><span>אף אחד לא צפה, חוץ מיום אחד</span><span><b>יום 30 עד 90: נמחק</b></span></div>
-        <div class="dlegend"><span><i class="k"></i>יום מצולם</span><span><i class="k seen"></i>נצפה פעם אחת</span><span><i class="k miss"></i>תקלה: אין תיעוד</span><span><i class="k gone"></i>נמחק</span></div>
+        <div class="lbls"><span>יום 1: מצלמים הכל</span><span>אף אחד לא צפה, חוץ מכמה דקות ביום אחד</span><span><b>יום 30 עד 90: נמחק</b></span></div>
+        <div class="dlegend"><span><i class="k"></i>יום מצולם</span><span><i class="k seen"></i>צפייה של כמה דקות</span><span><i class="k miss"></i>תקלה: אין תיעוד</span><span><i class="k gone"></i>נמחק</span></div>
       </figure>
       <section class="broken" aria-labelledby="broken-h">
         <h3 id="broken-h">ובהרבה מעונות, המצלמות בכלל לא מקליטות</h3>
