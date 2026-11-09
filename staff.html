@@ -1687,6 +1687,22 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .sjoin h2{grid-row:1;align-self:end}
  .sjoin .jpath{grid-column:2;grid-row:1/3;margin-top:0}
 }
+.two-uses{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.use{position:relative;background:#fff;border:1px solid var(--rule);border-radius:18px;padding:20px 22px}
+.u-alert{box-shadow:inset 0 4px 0 var(--red)}
+.u-ped{box-shadow:inset 0 4px 0 var(--sg)}
+.use-n{position:absolute;top:18px;inset-inline-end:18px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-ui);font-weight:900;color:#fff;background:var(--red)}
+.u-ped .use-n{background:var(--sg)}
+.use h3{font-family:var(--f-ui);font-weight:900;font-size:21px;margin:0}
+.use p{margin:8px 0 0;font-size:16.5px;line-height:1.6;color:#3b3f48}
+.use-plus{font-family:var(--f-ui);font-size:14.5px!important;color:#5a626c!important}
+.guards{margin-top:20px;background:#f4fbf9;border:1px solid #cfe8e3;border-radius:18px;padding:20px 22px}
+.guards h3{font-family:var(--f-ui);font-weight:900;font-size:19px;margin:0;color:var(--sg-d)}
+.guards dl{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin:12px 0 0}
+.guards dt{font-family:var(--f-ui);font-weight:900;font-size:16px}
+.guards dd{margin:3px 0 0;font-size:15.5px;line-height:1.55;color:#3b3f48}
+.law-src a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media (max-width:860px){.two-uses,.guards dl{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1700,8 +1716,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">לצוותי חינוך ולמנהלי מסגרות</span>
-      <h1>אנחנו הלב של הגיל הרך.<span class="tq">הגיע הזמן שנקבל <span class="mk">הערכה והוקרה אמיתית.<i class="mk-line" aria-hidden="true"></i></span></span></h1>
-      <p class="shero-deck">פרשת אריאל כואבת לכולנו, ואנחנו, אנשי הצוות, מרגישים אותה אפילו יותר. אנחנו מבקשים לעדכן את חוק המצלמות: בינה מלאכותית שמתריעה על סכנה בזמן אמת. <b>לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו.</b></p>
+      <h1>אנחנו הלב של הגיל הרך.<span class="tq">מגינים על הילדים. <span class="mk">מחזקים את הצוות.<i class="mk-line" aria-hidden="true"></i></span> שומרים על הפרטיות.</span></h1>
+      <p class="shero-deck">הפרשה כואבת לכולנו. כאנשי חינוך, כואב לנו גם לראות איך מעשים קשים מערערים את האמון בצוותים מסורים. אנחנו מבקשים לעדכן את חוק המצלמות: מערכת שמזהה סימנים אפשריים לסכנה, ומתריעה לצורך בדיקה ותגובה של הצוות. <b>לא מעקב אחרינו, אלא עוד זוג עיניים לצידנו.</b></p>
       <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">חתמו כאיש/ת צוות</a><a class="bigbtn glass" href="#managers">אני מנהל/ת מסגרת</a></div>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
       <a class="sdeep" href="./">לתחקיר המלא ולעמוד המאבק</a>
@@ -1717,10 +1733,10 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <h2 id="feel-h"><small>מכתב אישי</small>פרשה אחת <span class="sbrush">צובעת את כולנו בשחור</span></h2>
   <div class="letter">
     <div class="lt-who"><img class="lt-ph" src="aharon.jpg" alt="אהרון נייס" width="500" height="600"><span class="lt-id"><b>אהרון נייס</b><span>מנהל גן גחליליות</span></span>
-      <ul class="lt-cred"><li>גנן מוסמך</li><li>תואר שני ביזמות טכנולוגית</li><li>מנתח התנהגות (BCBA)</li></ul></div>
+      <ul class="lt-cred"><li>גנן מוסמך</li><li>לקראת תואר שני ביזמות טכנולוגית</li><li>מנתח התנהגות מוסמך (BCBA)</li></ul></div>
     <div class="lt-body">
       <p class="lt-open">שלום, אני אהרון, מנהל גן גחליליות.</p>
-      <p>הגן שלנו פועל כבר 25 שנה. חינכנו דורות של ילדים, ועבדנו כאן הרבה לפני שהיו מצלמות. וכשהן נכנסו לגנים, ראינו מה הן עושות: מתעדות הכל, ולא עוזרות לאף אחד. לא לילדים, ולא לצוות.</p>
+      <p>הגן שלנו פועל כבר 25 שנה. חינכנו דורות של ילדים, ועבדנו כאן הרבה לפני שהיו מצלמות. וכשהן נכנסו לגנים, ראינו מה הן עושות: מתעדות הכל, אבל לא מתריעות בזמן אמת, ולא נותנות לצוות שום משוב.</p>
       <p>אחרי כל פרשה, הכותרות צובעות את כולנו בשחור. <b>לא שומעים אותנו, לא רואים אותנו.</b> ובינתיים שוב מקצצים בגיל הרך: לפי הצעת התקציב ל-2026, תקציב הפיקוח על המעונות צפוי להתקצץ בכ-75%.</p>
       <p class="lt-call">הגיע הזמן שנתאחד. שנגיע לכנסת ונשמיע את קולנו, שנראה שאנחנו כאן, ושכולם יראו את הטוב ואת עבודת הקודש שאנחנו עושים כל יום.</p>
       <p class="lt-sign">מזמין אתכם להצטרף למאבק. <b>אהרון</b></p>
@@ -1736,7 +1752,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <div class="scard ic" style="--k:4"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M18 8h12v8H18z"/><path pathLength="1" d="M12 16h24v24H12z"/><path pathLength="1" d="M30 28h12M37 23l5 5-5 5"/></svg><b>תסכול, ואנשים עוזבים</b><p>אין מספיק כוח אדם, וקשה למצוא ולשמר אנשי צוות איכותיים.</p></div>
     <div class="scard ic" style="--k:5"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 10L4 19l20 9 20-9z"/><path pathLength="1" d="M12 23v9c0 3 5 6 12 6s12-3 12-6v-9"/><path pathLength="1" d="M6 6l36 36"/></svg><b>אין מי שמדריך לידנו</b><p>אין מדריכה פדגוגית שנמצאת לצידנו בזמן הפעילות, ומכשירה אותנו תוך כדי עבודה.</p></div>
   </div>
-  <p class="law-src">מקורות: מבקר המדינה, 2026; ניתוח קרן ברל כצנלסון (ynet, ינואר 2026)</p>
+  <p class="law-src">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, 2026</a>; <a href="https://www.ynet.co.il/news/article/ryxnn3hsbx" target="_blank" rel="noopener">ניתוח קרן ברל כצנלסון (ynet, ינואר 2026)</a></p>
 </section>
 
 
@@ -1751,27 +1767,20 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <section class="swhat" id="what" aria-labelledby="what-h" data-io>
   <div class="wrap">
-    <h2 id="what-h"><small>בפשטות</small>מה זה המסלול הרביעי, <span class="nt">ומה זה לא</span></h2>
-    <p class="slede">המצלמות שכבר נמצאות בגנים יעבדו עם בינה מלאכותית שמבינה מה קורה בזמן אמת, ומתריעה רק כשיש סכנה. אף אחד לא יושב וצופה.</p>
-    <div class="sno-yes">
-      <div class="syes">
-        <h3><span class="yn y">✓</span>מה זה כן</h3>
-        <ul>
-          <li style="--k:0"><b>התראה על סכנה אמיתית,</b> כמו ילד שבוכה לבד זמן רב, אירוע חריג או עומס, כדי שמישהו יגיע לעזור.</li>
-          <li style="--k:1"><b>משוב יומי ותמיכה פדגוגית לצוות,</b> עם מדדים ברורים.</li>
-          <li style="--k:2"><b>רואה גם את הטוב:</b> נקודות חוזק ורגעים של מגע ותמיכה, שהיום נעלמים.</li>
-          <li style="--k:3"><b>בקרה על המצלמות עצמן,</b> עם התראה מיידית על תקלה.</li>
-        </ul>
-      </div>
-      <div class="sno">
-        <h3><span class="yn n">✕</span>מה זה לא</h3>
-        <ul>
-          <li style="--k:0"><b>לא צפייה שוטפת.</b> אף אחד לא יושב מול מסך ומסתכל עלינו.</li>
-          <li style="--k:1"><b>לא דירוג עובדים.</b> זה אחד התנאים בהצהרה.</li>
-          <li style="--k:2"><b>לא החלטה נגד עובד על סמך התראה.</b> כל קביעה לגבי עובד נעשית רק אחרי בדיקה מקצועית מסודרת.</li>
-          <li style="--k:3"><b>לא תחליף לצוות או לפיקוח.</b> כלי בידיים שלנו, וההצהרה דורשת תקציב ייעודי בנוסף לפיקוח הקיים.</li>
-        </ul>
-      </div>
+    <h2 id="what-h"><small>בפשטות</small>מה זה המסלול הרביעי, <span class="nt">ואיך הוא שומר עלינו</span></h2>
+    <p class="slede">המצלמות שכבר נמצאות בגנים יעבדו עם מערכת שמזהה סימנים אפשריים לסכנה, ומתריעה לצוות לבדוק ולהגיב. אף אחד לא יושב וצופה.</p>
+    <div class="two-uses">
+      <div class="use u-alert"><span class="use-n">1</span><h3>התרעות בטיחות</h3><p>כשמזוהה סימן אפשרי לסכנה, כמו ילד שבוכה לבד זמן רב, אירוע חריג או עומס, נשלחת התרעה לגורם האחראי, שבודק ומגיב. זו הליבה של המסלול הרביעי.</p><p class="use-plus">ובנוסף: בקרה על המצלמות עצמן, עם התראה מיידית על תקלה.</p></div>
+      <div class="use u-ped"><span class="use-n">2</span><h3>משוב פדגוגי לצוות</h3><p>כלי למידה נפרד: רגעים טובים, המלצות מעשיות ורעיונות לפעילות. המשוב מיועד לצוות ולמנהלת, ונועד ללמוד ולהשתפר, לא להעריך עובדים.</p></div>
+    </div>
+    <div class="guards">
+      <h3>ההגנות על הצוות, כפי שההצהרה דורשת</h3>
+      <dl>
+        <div><dt>מי רואה?</dt><dd>הגורם האחראי במסגרת מקבל התרעות, ובאירוע חמור גם גורם חיצוני ובלתי תלוי. הצוות מקבל משוב על העבודה שלו. הורים לא רואים מידע על ילדים אחרים.</dd></div>
+        <div><dt>ואם המערכת טועה?</dt><dd>התרעה ותובנה הן סימן לבדיקה, לא פסק דין. כל קביעה לגבי עובד נעשית רק אחרי בדיקה מקצועית מסודרת, ובדיקת דיוק חיצונית מודדת ומפרסמת את שיעור הטעויות.</dd></div>
+        <div><dt>מה מונע שימוש נגדנו?</dt><dd>איסור על דירוג עובדים, איסור על החלטה נגד עובד על סמך תובנה בלבד, ושקיפות מלאה לצוות על מה שנאסף.</dd></div>
+        <div><dt>ומה עם הפרטיות?</dt><dd>בלי צפייה שוטפת. כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</dd></div>
+      </dl>
     </div>
   </div>
 </section>
@@ -1788,9 +1797,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <ul class="lc-tr"><li><b>צפייה בגן, עם נציגות ההורים</b><span class="st">גוזל זמן</span></li><li><b>48 שעות בחודש, מרחוק</b><span class="st">בלי הקשר</span></li><li><b>שידור חי לטלפון</b><span class="st">מעמיס</span></li></ul>
       <p class="lc-stat">ולנו, המנהלים, אין גישה עצמאית לצילומים.</p></article>
     <article class="lc3 now" style="--k:2"><span class="lc-y">2026 · המסלול הרביעי</span><em class="lc-kw">מגן</em><h3>המצלמות מבינות, ועוזרות</h3>
-      <ul class="lc-ok"><li>התראה בזמן אמת, כשעוד אפשר לעצור</li><li>תובנות כתובות, בלי צפייה שוטפת</li><li>בקרה על תקינות המצלמות</li><li>משוב יומי ותמיכה פדגוגית לצוות</li></ul></article>
+      <ul class="lc-ok"><li>התרעה על סימני סכנה, כשעוד אפשר לעצור</li><li>תובנות כתובות, בלי צפייה שוטפת</li><li>בקרה על תקינות המצלמות</li><li>משוב יומי ותמיכה פדגוגית לצוות</li></ul></article>
   </div>
-  <p class="law-src">מקורות: מבקר המדינה, 2026; ynet ו-וואלה (נובמבר 2024); טיוטת הנחיית הרשות להגנת הפרטיות (2025)</p>
+  <p class="law-src">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, 2026</a>; <a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">ynet</a> ו-<a href="https://www.walla.co.il/news/israel/3704078" target="_blank" rel="noopener">וואלה</a> (נובמבר 2024); <a href="https://www.mako.co.il/home-family-toddlers/Article-72a1a93b0035a91027.htm" target="_blank" rel="noopener">טיוטת הנחיית הרשות להגנת הפרטיות (2025)</a></p>
   </div>
 </section>
 
