@@ -543,6 +543,18 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+.cc .chipbtn{min-width:84px;justify-content:center;text-align:center;box-sizing:border-box}
+.tc-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.tc-head h2{margin-bottom:0!important}
+.tc-seal{display:grid;justify-items:center;text-align:center;gap:2px;padding:14px 20px;border:2px solid #9fdcb6;border-radius:14px;background:#eefaf2;font-family:var(--f-ui)}
+.tc-seal small{font-size:13px;color:#2e6b45;font-weight:600}
+.tc-seal b{font-size:clamp(20px,2.2vw,24px);font-weight:900;color:#14833f!important}
+.tc-facts{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tc-facts li{background:var(--teal-soft);border-radius:12px;padding:12px 14px;font-family:var(--f-ui)}
+.tc-facts b{display:block;font-size:22px;font-weight:900;color:#0b4f78;line-height:1.1}
+.tc-facts span{display:block;font-size:14px;color:var(--ink-2);margin-top:3px}
+@media (max-width:600px){.tc-head{grid-template-columns:1fr}.tc-seal{justify-items:start;text-align:start}.tc-facts{grid-template-columns:1fr 1fr 1fr;gap:6px}.tc-facts li{padding:10px}.tc-facts b{font-size:18px}.tc-facts span{font-size:12.5px}}
+
 /* act: הורי הגן במרכז, כפתור חתימה בולט */
 .ac-main{background:#fff;color:var(--ink);border-top:0;border-radius:14px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.2)}
 .ac-main h3{color:var(--ink)}
@@ -995,15 +1007,16 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
 <section class="tech wrap" id="tech" aria-labelledby="tech-h">
   <div class="tc">
     <div class="tc-head">
-      <span class="tech-k">הטכנולוגיה שמאחורי הדוגמה</span>
-      <h2 id="tech-h">טכנולוגיה ישראלית שמבינה התנהגות ילדים מתוך וידאו</h2>
-      <span class="tech-badge">פותחה בתמיכה ובמימון של <span class="ia">רשות החדשנות</span></span>
+      <div class="tc-ht"><span class="tech-k">הטכנולוגיה שמאחורי הדוגמה</span>
+      <h2 id="tech-h">טכנולוגיה ישראלית שמבינה התנהגות ילדים מתוך וידאו</h2></div>
+      <span class="tc-seal"><small>פותחה בתמיכה ובמימון של</small><b class="ia">רשות החדשנות</b></span>
     </div>
     <div class="tc-body">
       <img src="logo-ein.png" alt="" class="tc-logo">
       <div>
         <h3><span class="ez">עין צופיה</span> · בגנים ובמעונות</h3>
-        <p>הדוח שבסרטון נוצר בטכנולוגיה הזו. היא מזהה אנשים ותפקידים, מבינה סיטואציות, מתריעה בזמן אמת ומלווה את הצוות כל יום. פועלת בשטח כשנה, בכל קבוצות הגיל, ובפיילוט מחקר בשיתוף מכללת אורנים.</p>
+        <p>הדוח שבסרטון נוצר בטכנולוגיה הזו. היא מזהה אנשים ותפקידים, מבינה סיטואציות, מתריעה בזמן אמת ומלווה את הצוות כל יום.</p>
+        <ul class="tc-facts"><li><b>כשנה</b><span>פועלת בשטח</span></li><li><b>כל הגילים</b><span>במעונות ובגנים</span></li><li><b>מחקר</b><span>פיילוט עם מכללת אורנים</span></li></ul>
         <p class="tc-emma"><img src="logo-emma.jpg" alt=""><span>אותה טכנולוגיה משמשת גם את <a href="https://emma-il.netlify.app" target="_blank" rel="noopener">אמה</a>, להורים בבית.</span></p>
       </div>
     </div>
