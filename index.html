@@ -566,6 +566,16 @@ footer a{color:#fff}
 .spread .fgrid p b{display:block;margin-bottom:6px;font-family:var(--f-ui);font-size:18px;color:#fff}
 @media (max-width:700px){.spread .cols.fgrid{grid-template-columns:1fr}}
 .pl-head{font-family:var(--f-ui);font-weight:800;font-size:16px;color:var(--eye);margin:30px 0 8px}
+.tick-lead{font-family:var(--f-ui);font-size:13.5px;color:var(--muted);margin:2px 0 8px}
+.ticker{height:340px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent)}
+.ticker .dup{display:none}
+@keyframes tickup{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@media (prefers-reduced-motion:no-preference){
+  .ticker .dup{display:block}
+  .ticker .tick-in{animation:tickup 30s linear infinite}
+  .ticker:hover .tick-in,.ticker:focus .tick-in,.ticker:focus-within .tick-in{animation-play-state:paused}
+}
+@media (prefers-reduced-motion:reduce){.ticker{height:auto;-webkit-mask-image:none;mask-image:none}}
 </style>
 </head>
 <body>
@@ -695,16 +705,16 @@ footer a{color:#fff}
     <aside class="side" aria-label="נתונים ומקרים">
       <div class="box">
         <h3>במספרים</h3>
-        <div class="stat"><b>17</b><span>תינוקות ופעוטות בכתב האישום שהוגש השבוע באריאל</span></div>
-        <div class="stat"><b>400+</b><span>מעשי התעללות ותקיפה שמיוחסים לשלוש נשות צוות</span></div>
-        <div class="stat"><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי (מבקר המדינה, 2026)</span></div>
-        <div class="stat"><b>6</b><span>חודשים: גילם של הצעירים שבפעוטות בכתב האישום</span></div>
+        <div class="stat"><b>2,473</b><span>תיקי משטרה שנפתחו בחשד לעבירות נגד פעוטות עד גיל 3 במסגרות, 2017–2024</span></div>
+        <div class="stat"><b>278</b><span>תיקים בחצי הראשון של 2025 בלבד. יותר מתיק וחצי בכל יום</span></div>
+        <div class="stat"><b>400+</b><span>מעשי התעללות ותקיפה בכתב האישום באריאל, נגד 17 פעוטות</span></div>
+        <div class="stat"><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></div>
+        <div class="note" style="font-size:12.5px;margin-top:8px"><a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מקור: מבקר המדינה, 2026</a> · Times of Israel</div>
       </div>
       <div class="box">
-        <h3>המקרים</h3>
-        <div class="case"><span class="t">אריאל</span><span class="w">נובמבר 2026 · כתב אישום</span><span class="h"><em>אם</em> סיפרה שהבחינה בחבלות חוזרות אצל בנה.</span><a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">Times of Israel</a></div>
-        <div class="case"><span class="t">רעננה</span><span class="w">נובמבר 2026 · בחקירה</span><span class="h">פעוט פונה <em>לבית החולים</em> עם פציעה. שלוש סייעות נעצרו.</span><a href="https://www.maariv.co.il/news/law/article-1384244" target="_blank" rel="noopener">מעריב</a></div>
-        <div class="case"><span class="t">לוד</span><span class="w">מרץ 2025 · כתב אישום</span><span class="h">ההורים <em>הציבו בעצמם</em> מכשיר הקלטה.</span><a href="https://www.walla.co.il/news/law/3736944" target="_blank" rel="noopener">וואלה</a></div>
+        <h3>המקרים האחרונים</h3>
+        <p class="tick-lead">אלה רק המקרים שהגיעו לכותרות. מאחוריהם מאות תיקים בשנה.</p>
+        <div class="ticker" tabindex="0" aria-label="רשימת מקרים אחרונים"><div class="tick-in"><div class="case"><span class="t">אריאל</span><span class="w">נובמבר 2026 · כתב אישום</span><span class="h">יותר מ-400 מעשי התעללות ב-17 תינוקות ופעוטות.</span><a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">Times of Israel</a></div><div class="case"><span class="t">רעננה</span><span class="w">נובמבר 2026 · בחקירה</span><span class="h">פעוט פונה לבית החולים. שלוש סייעות נעצרו.</span><a href="https://www.maariv.co.il/news/law/article-1384244" target="_blank" rel="noopener">מעריב</a></div><div class="case"><span class="t">ירושלים</span><span class="w">ינואר 2026 · מעון ללא רישיון</span><span class="h">שני תינוקות מתו, עשרות פונו לבתי החולים.</span><a href="https://www.ynetnews.com/article/sk0ik3jr11x" target="_blank" rel="noopener">ynetnews</a></div><div class="case"><span class="t">ירושלים</span><span class="w">אוגוסט 2025 · מעצר</span><span class="h">מטפלת נעצרה בחשד לאלימות. התגלה כשהמפקחת צפתה בצילומים.</span><a href="https://www.israelhayom.co.il/news/crime/article/18707897" target="_blank" rel="noopener">ישראל היום</a></div><div class="case"><span class="t">לוד</span><span class="w">מרץ 2025 · כתב אישום</span><span class="h">ארבע גננות הואשמו בהתעללות ב-11 פעוטות. ההורים הציבו מכשיר הקלטה.</span><a href="https://www.walla.co.il/news/law/3736944" target="_blank" rel="noopener">וואלה</a></div><div class="case"><span class="t">חיפה</span><span class="w">ינואר 2025 · מעצר</span><span class="h">שלוש סייעות נעצרו בחשד לאלימות כלפי פעוטות. הורים תיעדו בעצמם.</span><a href="https://www.maariv.co.il/news/law/article-1165846" target="_blank" rel="noopener">מעריב</a></div><div class="dup" aria-hidden="true"><div class="case"><span class="t">אריאל</span><span class="w">נובמבר 2026 · כתב אישום</span><span class="h">יותר מ-400 מעשי התעללות ב-17 תינוקות ופעוטות.</span><a href="https://www.timesofisrael.com/daycare-manager-2-caregivers-charged-with-over-400-acts-of-abuse-against-babies-toddlers/" target="_blank" rel="noopener">Times of Israel</a></div><div class="case"><span class="t">רעננה</span><span class="w">נובמבר 2026 · בחקירה</span><span class="h">פעוט פונה לבית החולים. שלוש סייעות נעצרו.</span><a href="https://www.maariv.co.il/news/law/article-1384244" target="_blank" rel="noopener">מעריב</a></div><div class="case"><span class="t">ירושלים</span><span class="w">ינואר 2026 · מעון ללא רישיון</span><span class="h">שני תינוקות מתו, עשרות פונו לבתי החולים.</span><a href="https://www.ynetnews.com/article/sk0ik3jr11x" target="_blank" rel="noopener">ynetnews</a></div><div class="case"><span class="t">ירושלים</span><span class="w">אוגוסט 2025 · מעצר</span><span class="h">מטפלת נעצרה בחשד לאלימות. התגלה כשהמפקחת צפתה בצילומים.</span><a href="https://www.israelhayom.co.il/news/crime/article/18707897" target="_blank" rel="noopener">ישראל היום</a></div><div class="case"><span class="t">לוד</span><span class="w">מרץ 2025 · כתב אישום</span><span class="h">ארבע גננות הואשמו בהתעללות ב-11 פעוטות. ההורים הציבו מכשיר הקלטה.</span><a href="https://www.walla.co.il/news/law/3736944" target="_blank" rel="noopener">וואלה</a></div><div class="case"><span class="t">חיפה</span><span class="w">ינואר 2025 · מעצר</span><span class="h">שלוש סייעות נעצרו בחשד לאלימות כלפי פעוטות. הורים תיעדו בעצמם.</span><a href="https://www.maariv.co.il/news/law/article-1165846" target="_blank" rel="noopener">מעריב</a></div></div></div></div>
       </div>
       <div class="box">
         <h3>מה אומר החוק היום</h3>
@@ -916,6 +926,9 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
     <li><a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">ynet: תיקון חוק המצלמות אושר סופית (נובמבר 2024)</a></li>
     <li><a href="https://www.kipa.co.il/1191739-0" target="_blank" rel="noopener">כיפה: שלושת מסלולי הצפייה בתיקון לחוק (2024)</a></li>
     <li><a href="https://www.mako.co.il/home-family-toddlers/education/Article-65f285786421081027.htm" target="_blank" rel="noopener">mako: האם מותר להורים להקליט בגן? (אפריל 2022)</a></li>
+    <li><a href="https://www.ynetnews.com/article/sk0ik3jr11x" target="_blank" rel="noopener">ynetnews: שני תינוקות מתו במעון ללא רישיון בירושלים (ינואר 2026)</a></li>
+    <li><a href="https://www.israelhayom.co.il/news/crime/article/18707897" target="_blank" rel="noopener">ישראל היום: מטפלת נעצרה במעון בירושלים (אוגוסט 2025)</a></li>
+    <li><a href="https://www.maariv.co.il/news/law/article-1165846" target="_blank" rel="noopener">מעריב: מעצר סייעות בגבעת אולגה, חיפה (ינואר 2025)</a></li>
     <li><a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה: היבטים בפיקוח ובשמירה על שלום הפעוטות במעונות היום (יוני 2026)</a></li>
     <li><a href="https://www.kan.org.il/content/kan-news/local/660126/" target="_blank" rel="noopener">כאן חדשות: הורים חשפו התעללות בגן, והמצלמות לא פעלו</a></li>
     <li><a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2022/2022.5/2022.5-103-Meonot-Yom.pdf" target="_blank" rel="noopener">מבקר המדינה: דוח על מעונות היום (2022)</a></li>
