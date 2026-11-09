@@ -1180,21 +1180,44 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @keyframes wvhead3{0%{opacity:0;right:0}4%{opacity:1;right:0}32%,85%{opacity:1;right:calc(50% - 2px)}95%,100%{opacity:0;right:calc(50% - 2px)}}
 @keyframes wvlbl3{0%,32%{opacity:0;transform:translateY(4px)}38%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
 
-.lang{display:inline-flex;align-items:center;gap:4px;position:relative;color:var(--ink);font-family:var(--f-ui);font-size:13.5px;font-weight:700;flex:none}
-.lang svg{width:17px;height:17px;flex:none}
-.lang select{appearance:none;-webkit-appearance:none;background:transparent;border:1px solid var(--rule);border-radius:999px;padding:5px 10px;font:inherit;color:inherit;cursor:pointer}
-.lang select:focus-visible{outline:2px solid var(--blue,#1e7cb0);outline-offset:2px}
-@media (max-width:700px){.lang svg{display:none}.lang select{padding:4px 7px;font-size:12.5px}}
-@media (max-width:380px){.sections .go{padding:6px 11px!important;font-size:13px!important}.lang select{padding:3px 5px;font-size:11.5px}.bar{gap:6px!important}.brand .bn{font-size:17px!important}}
+
+
+
+
+
+@media (max-width:380px){.sections .go{padding:6px 11px!important;font-size:13px!important}.bar{gap:6px!important}.brand .bn{font-size:17px!important}}
 @media (max-width:380px){.brand .btag{font-size:9.5px!important}.brand small{font-size:8.5px!important}.brand .logo{height:32px!important}.brand{gap:5px!important}}
 @media (min-width:701px){.hero .credit{left:auto;right:max(18px,calc((100vw - 1160px)/2 + 18px));bottom:12px;max-width:none;white-space:nowrap;text-align:right}}
-.lang{border:1px solid var(--rule);border-radius:999px;padding:5px 11px;gap:6px;background:#fff;cursor:pointer}
-.lang svg{display:block!important;width:15px!important;height:15px!important;opacity:.7}
-.lang select{border:0!important;padding:0 2px!important;border-radius:0!important;background:transparent!important;field-sizing:content;text-align-last:center;outline-offset:4px}
-.lang::after{content:"";flex:none;width:6px;height:6px;border:solid currentColor;border-width:0 1.6px 1.6px 0;transform:translateY(-2px) rotate(45deg);opacity:.55;pointer-events:none}
-@media (max-width:600px){.lang{padding:5px 9px;gap:5px}.lang select{font-size:12.5px!important}}
-@media (max-width:420px){.lang svg{display:none!important}.lang{padding:5px 8px;gap:4px}}
-.lcode{display:none}
+
+
+
+
+
+
+
+.lsw{position:relative;flex:none;font-family:var(--f-ui)}
+.lsw-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--rule);border-radius:999px;padding:6px 11px;font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);cursor:pointer;line-height:1;transition:border-color .15s,box-shadow .15s}
+.lsw-btn:hover{border-color:#c9c3b8}
+.lsw-btn:focus{outline:none}
+.lsw-btn:focus-visible{box-shadow:0 0 0 3px rgba(30,124,176,.35)}
+.lsw-btn[aria-expanded="true"]{border-color:var(--ink)}
+.lg-globe{width:15px;height:15px;opacity:.65;flex:none}
+.lg-chev{width:11px;height:11px;opacity:.6;flex:none;transition:transform .2s}
+.lsw-btn[aria-expanded="true"] .lg-chev{transform:rotate(180deg)}
+.lsw-code{display:none}
+.lsw-menu{position:absolute;top:calc(100% + 8px);inset-inline-end:0;z-index:200;min-width:178px;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:0 14px 34px rgba(20,24,40,.16),0 2px 6px rgba(20,24,40,.08);transform-origin:top;animation:lswIn .16s ease-out}
+.lsw-menu[hidden]{display:none}
+@keyframes lswIn{from{opacity:0;transform:translateY(-4px) scale(.98)}to{opacity:1;transform:none}}
+.lopt{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-size:15px;font-weight:600}
+.lopt:hover,.lopt:focus-visible{background:#f3f1ec;outline:none}
+.lopt .lo-n{flex:1}
+.lopt .lo-c{font-size:11px;font-weight:700;letter-spacing:.04em;color:#8a8a8a}
+.lopt .lg-ok{width:16px;height:16px;color:var(--red);visibility:hidden;flex:none}
+.lopt[aria-current="true"]{font-weight:800}
+.lopt[aria-current="true"] .lg-ok{visibility:visible}
+.lopt[lang="ar"] .lo-n{font-family:"Noto Sans Arabic",var(--f-ui)}
+@media (max-width:600px){.lsw-btn{padding:6px 10px;gap:5px;font-size:12.5px}}
+@media (max-width:420px){.lg-globe{display:none}.lsw-btn{padding:6px 9px}}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -1221,7 +1244,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:1320px){html[lang=ru] .sections{justify-content:flex-end!important;margin-inline-start:auto;margin-inline-end:14px}}
 @media (max-width:420px){html:not([lang=ar]) .bt2 em,html:not([lang=ar]) .btag{display:none!important}html[lang=ru] .brand .bn{font-size:16px!important}.sections .go{padding:6px 11px!important;font-size:13px!important}}
 @media (max-width:420px){.sections{margin-inline-start:6px!important;margin-inline-end:8px!important}html[lang=ru] .sections .go{font-size:12px!important;padding:6px 9px!important}}
-@media (max-width:420px){.lcode{display:inline!important;font-size:12.5px}.lang select{position:absolute!important;inset:0;width:100%!important;height:100%;opacity:0;font-size:16px!important}}
+
+@media (max-width:420px){.lsw-name{display:none}.lsw-code{display:inline}}
 :root{--f-head:"Noto Naskh Arabic","Times New Roman",serif;--f-body:"Noto Naskh Arabic","Times New Roman",serif;--f-ui:"Noto Sans Arabic",system-ui,sans-serif;}
 </style>
 </head>
@@ -1231,7 +1255,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <nav class="sticky" aria-label="الأقسام"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="../logo-hand.png" alt="المسار الرابع"><span class="bt"><span class="bn">المسار <span>الرابع</span></span><em class="btag">نحمي الأطفال في الوقت الحقيقي</em><small>مبادرة من <span class="ez">عين تسوفيا</span></small></span></a>
   <div class="sections"><a href="#story">التحقيق</a><a href="#law">القانون</a><a href="#fix">الحلّ</a><a href="#decl">الإعلان</a><a href="#faq">أسئلة</a><a href="../atzuma.html" class="go"><span class="l">وقّعوا على الإعلان</span><span class="s">للتوقيع</span></a></div>
-  <label class="lang" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lcode" aria-hidden="true">AR</span><select aria-label="Language" onchange="location.href=this.value"><option value="../" lang="he">עברית</option><option value="../en/" lang="en">English</option><option value="../ru/" lang="ru">Русский</option><option value="../ar/" selected lang="ar">العربية</option></select></label>
+  <div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">العربية</span><span class="lsw-code" aria-hidden="true">AR</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="../" lang="he" hreflang="he"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../en/" lang="en" hreflang="en"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ru/" lang="ru" hreflang="ru"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ar/" lang="ar" hreflang="ar" aria-current="true"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div>
 </div></nav>
 
 <main>
@@ -1659,5 +1683,12 @@ new IntersectionObserver((es,o)=>{es.forEach(en=>{if(en.isIntersecting){els.forE
 
 (function(){const b=document.getElementById("srcMore"),l=document.getElementById("srcList");if(!b||!l)return;const t=b.textContent;b.onclick=()=>{const open=l.classList.toggle("src-cut")===false;b.setAttribute("aria-expanded",open);b.textContent=open?"عرض أقل −":t}})();
 </script>
+<script>(function(){var w=document.querySelector('.lsw');if(!w)return;var b=w.querySelector('.lsw-btn'),m=w.querySelector('.lsw-menu'),it=[].slice.call(m.querySelectorAll('a'));
+function op(f){m.hidden=false;b.setAttribute('aria-expanded','true');if(f)(m.querySelector('[aria-current]')||it[0]).focus();}
+function cl(r){m.hidden=true;b.setAttribute('aria-expanded','false');if(r)b.focus();}
+b.addEventListener('click',function(e){e.stopPropagation();m.hidden?op(e.detail===0):cl();});
+b.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();op(true);}});
+m.addEventListener('keydown',function(e){var i=it.indexOf(document.activeElement);if(e.key==='Escape'){cl(true);}else if(e.key==='ArrowDown'){e.preventDefault();it[(i+1)%it.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();it[(i-1+it.length)%it.length].focus();}else if(e.key==='Tab'){cl();}});
+document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});})();</script>
 </body>
 </html>
