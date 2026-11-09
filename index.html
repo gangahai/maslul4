@@ -562,7 +562,7 @@ footer a{color:#fff}
 @media (max-width:700px){
   /* פתיחה: הטקסט מתחיל למעלה */
   .hero{min-height:auto!important;align-items:flex-start!important}
-  .hero-in{padding-top:84px!important;padding-bottom:36px!important}
+  .hero-in{padding-top:22px!important;padding-bottom:36px!important}
   .hero h1{font-size:44px!important;line-height:1.02!important}
   /* המקרים האחרונים אחרי המספרים */
   .mcases{margin:0 18px;padding:16px 0;border-bottom:1px solid var(--rule)}
@@ -906,13 +906,13 @@ h1,h2,h3{text-wrap:balance}
 .body .halt-box{margin:0;padding:18px 8px 10px;border:0;text-align:center;font-family:var(--f-ui);font-weight:900;font-size:clamp(30px,4.2vw,46px);line-height:1.18;letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
 .halt .h1{display:block;color:#0f8f7a;font-size:.72em;font-weight:800;margin-bottom:.25em}
 .halt .h2{display:block;color:#121212}
-.halt mark{background:linear-gradient(#c8102e,#c8102e) no-repeat 100% 100%/100% .12em;color:#c8102e;padding:0 .05em .16em}
+.halt mark{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C40 9 80 17 120 12 S200 8 240 13 S285 11 296 9' fill='none' stroke='%23c8102e' stroke-width='7' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E") no-repeat 100% 100%/100% .38em;color:#c8102e;padding:0 .05em .2em}
 @media (prefers-reduced-motion:no-preference){
   .halt.armed .h1,.halt.armed .h2{opacity:0;transform:translateY(10px)}
-  .halt.armed mark{background-size:0% .12em}
+  .halt.armed mark{background-size:0% .38em}
   .halt.go .h1{animation:hin .6s ease-out both}
   .halt.go .h2{animation:hin .7s ease-out .35s both}
-  .halt.go mark{transition:background-size .8s cubic-bezier(.65,0,.25,1) 1.1s;background-size:100% .12em}
+  .halt.go mark{transition:background-size .8s cubic-bezier(.65,0,.25,1) 1.1s;background-size:100% .38em}
 }
 @keyframes hin{to{opacity:1;transform:none}}
 .contact p.me{font-family:var(--f-head);font-size:clamp(18px,2vw,21px);line-height:1.55;color:var(--ink);margin-top:14px}
@@ -996,6 +996,43 @@ h1,h2,h3{text-wrap:balance}
 .tc-emma a{color:#7c3aed;font-weight:800}
 .tc-note{margin:0;padding:14px 26px 18px;background:var(--tint,#f4f2ee);font-family:var(--f-ui);font-size:14.5px;line-height:1.6;color:var(--ink-2)}
 @media (max-width:600px){.tc-body{grid-template-columns:1fr}.tc-logo{width:72px;height:72px}.tc-head,.tc-body,.tc-note{padding-inline:18px}}
+
+.vm-o{display:none}
+@media (max-width:700px){
+  .hero-in{padding-top:22px!important}
+  .vs2 .vs-row .o{display:none!important}
+  .vs2 .vs-row .k{padding-top:9px!important;font-size:12px!important}
+  .vs2 .vs-row .n{padding:2px 12px 9px!important;font-size:15px!important;line-height:1.35!important}
+  .vm-o{display:block;font-size:13px;color:#c99aa1;margin-bottom:6px}
+  .vm-o::first-line{font-weight:400}
+  .tc2-top{grid-template-columns:44px 1fr!important;gap:12px!important;align-items:start}
+  .tc2-logo{width:44px!important;height:44px!important;border-radius:11px!important;padding:5px!important;margin-top:4px}
+  .tc2 .tech-k{font-size:12.5px}
+  .tc2 h2{font-size:22px!important;margin:2px 0 6px!important}
+  .tc2-sub{font-size:14.5px!important}
+}
+
+/* גל ההקלטה: קטן, זז, נעצר ברגע החשוב */
+.wave{max-width:520px;padding:10px 12px 8px!important}
+.wv-in{position:relative}
+.wave svg{height:54px!important}
+.wave rect{fill:#5c6475;transform-box:fill-box;transform-origin:center}
+.wave rect.hb{fill:#ff3b55}
+.wv-head{position:absolute;top:-4px;bottom:-4px;right:0;width:2px;background:#fff;box-shadow:0 0 8px 2px rgba(255,255,255,.5);opacity:0}
+.wave-lbl .hit{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .wave.go rect.wb{animation:wvb 1.1s ease-in-out calc(var(--k) * -1.1s) infinite alternate}
+  .wave.armed rect.hb{transform:scaleY(.35)}
+  .wave.go rect.hb{animation:wvhit .7s cubic-bezier(.2,1.6,.4,1) 2.3s forwards,wvpulse 1.4s ease-in-out 3s infinite}
+  .wave.go .wv-head{animation:wvhead 2.3s cubic-bezier(.5,0,.4,1) .1s forwards}
+  .wave.armed .wave-lbl .hit{opacity:0}
+  .wave.go .wave-lbl .hit{animation:wvlbl .5s ease-out 2.4s forwards}
+}
+@keyframes wvb{from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+@keyframes wvhit{from{transform:scaleY(.35)}to{transform:scaleY(1.05)}}
+@keyframes wvpulse{0%,100%{filter:drop-shadow(0 0 0 rgba(255,59,85,0))}50%{filter:drop-shadow(0 0 5px rgba(255,59,85,.9))}}
+@keyframes wvhead{0%{opacity:1;right:0}100%{opacity:1;right:calc(50% - 2px)}}
+@keyframes wvlbl{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -1046,7 +1083,7 @@ h1,h2,h3{text-wrap:balance}
         <h2 id="rec-h"><small>מה הורים עושים היום</small>מכשיר הקלטה בתיק: מעשה של ייאוש, לא פתרון</h2>
         <p class="lede"><b>הורים לא צריכים להפוך לחוקרים.</b> הם צריכים מערכת שמגינה על כל הילדים, בזמן אמת ובחוק.</p>
         <figure class="wave" aria-label="המחשה: יום שלם של הקלטה, ורגע אחד שחשוב">
-          <svg viewBox="0 0 640 96" preserveAspectRatio="none" aria-hidden="true" id="waveSvg"></svg>
+          <div class="wv-in"><svg viewBox="0 0 640 96" preserveAspectRatio="none" aria-hidden="true" id="waveSvg"></svg><i class="wv-head" aria-hidden="true"></i></div>
           <div class="wave-lbl"><span>07:30 הקלטה מתחילה</span><span class="hit">10:42 הרגע שחשוב</span><span>16:00 שמונה וחצי שעות של אודיו</span></div>
         </figure>
 <details class="recmore"><summary>למה זה לא פתרון? <span>שש סיבות</span></summary>
@@ -1173,13 +1210,13 @@ h1,h2,h3{text-wrap:balance}
       <div>
       <div class="vs vs2">
         <div class="vs-row h"><div class="k"></div><div class="o"><span class="vh-ic x" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>היום</div><div class="n"><span class="vh-ic v" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.8 8.4l2.8 2.8 5.6-6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>המסלול הרביעי</div></div>
-        <details class="vrow"><summary class="vs-row"><div class="k">תקינות המצלמות</div><div class="o">אין בקרה. תקלות נמשכות חודשים</div><div class="n">בקרה רציפה והתראה מיידית על תקלה</div></summary><p class="vmore">מצלמה כבויה, חסומה או תקולה מזוהה בתוך דקות, ונשלחת התראה למפעיל ולמפקח. היום תקלה כזו מתגלה רק כשכבר צריך את הצילום.</p></details>
-        <details class="vrow"><summary class="vs-row"><div class="k">מניעה</div><div class="o">אין</div><div class="n">חיזוי סיכון לפני שפגיעה קורית</div></summary><p class="vmore">מזהה מצבים שמקדימים פגיעה: צעקות, בכי ממושך בלי מענה, מגע חריג, אשת צוות לבד עם יותר מדי ילדים. מצביעה על מצבים, לא על אנשים.</p></details>
-        <details class="vrow"><summary class="vs-row"><div class="k">מתי מגלים</div><div class="o">אחרי שילד נפגע</div><div class="n">בזמן אמת, כשעוד אפשר לעצור</div></summary><p class="vmore">ילד שבוכה לבד, אירוע חריג, מבוגר שמאבד שליטה: ההתראה מגיעה בזמן שזה קורה. לא חודשים אחרי, אם בכלל.</p></details>
-        <details class="vrow"><summary class="vs-row"><div class="k">מי יודע</div><div class="o">משטרה ומפקחות, רק אחרי חשד</div><div class="n">הצוות וההנהלה מיד, ובאירוע חמור גם גורם חיצוני</div></summary><p class="vmore">באירוע חמור ההתראה מגיעה גם לגורם מפקח חיצוני, ואי אפשר למחוק או להסתיר אותה. כך ההגנה לא תלויה רק במי שמנהל את המעון.</p></details>
-        <details class="vrow"><summary class="vs-row"><div class="k">מי צופה</div><div class="o">חוקר אחרי חשד, או הורה שצופה שעות</div><div class="n">אף אחד. המערכת מבינה</div></summary><p class="vmore">המערכת מעבדת את מה שקורה בגן ומפיקה טקסט: מה קרה, מתי ואיפה. אף אחד לא יושב מול וידאו, ושום הורה לא רואה ילדים שאינם שלו.</p></details>
-        <details class="vrow"><summary class="vs-row"><div class="k">מה נשמר</div><div class="o">וידאו של כל היום</div><div class="n">תובנות כתובות, וקטעים נבחרים להדרכה</div></summary><p class="vmore">גם תובנה כתובה על ילד היא מידע רגיש. לכן: מינימום מידע, הרשאות לפי תפקיד, תיעוד של כל עיון, מחיקה אחרי זמן מוגדר ופיקוח חיצוני.</p></details>
-        <details class="vrow"><summary class="vs-row"><div class="k">ליווי מקצועי</div><div class="o">מפקחת אחת לכ-83 מעונות</div><div class="n">משוב יומי לצוות, עם מדדים ברורים</div></summary><p class="vmore">בכל יום הצוות מקבל משוב ותמיכה פדגוגית: מה עבד, איפה היה עומס, מה לשפר מחר. התובנות לא משמשות לדירוג עובדים או להחלטה נגד עובד.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">תקינות המצלמות</div><div class="o">אין בקרה. תקלות נמשכות חודשים</div><div class="n">בקרה רציפה והתראה מיידית על תקלה</div></summary><p class="vmore"><span class="vm-o">היום: אין בקרה. תקלות נמשכות חודשים</span>מצלמה כבויה, חסומה או תקולה מזוהה בתוך דקות, ונשלחת התראה למפעיל ולמפקח. היום תקלה כזו מתגלה רק כשכבר צריך את הצילום.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">מניעה</div><div class="o">אין</div><div class="n">חיזוי סיכון לפני שפגיעה קורית</div></summary><p class="vmore"><span class="vm-o">היום: אין</span>מזהה מצבים שמקדימים פגיעה: צעקות, בכי ממושך בלי מענה, מגע חריג, אשת צוות לבד עם יותר מדי ילדים. מצביעה על מצבים, לא על אנשים.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">מתי מגלים</div><div class="o">אחרי שילד נפגע</div><div class="n">בזמן אמת, כשעוד אפשר לעצור</div></summary><p class="vmore"><span class="vm-o">היום: אחרי שילד נפגע</span>ילד שבוכה לבד, אירוע חריג, מבוגר שמאבד שליטה: ההתראה מגיעה בזמן שזה קורה. לא חודשים אחרי, אם בכלל.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">מי יודע</div><div class="o">משטרה ומפקחות, רק אחרי חשד</div><div class="n">הצוות וההנהלה מיד, ובאירוע חמור גם גורם חיצוני</div></summary><p class="vmore"><span class="vm-o">היום: משטרה ומפקחות, רק אחרי חשד</span>באירוע חמור ההתראה מגיעה גם לגורם מפקח חיצוני, ואי אפשר למחוק או להסתיר אותה. כך ההגנה לא תלויה רק במי שמנהל את המעון.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">מי צופה</div><div class="o">חוקר אחרי חשד, או הורה שצופה שעות</div><div class="n">אף אחד. המערכת מבינה</div></summary><p class="vmore"><span class="vm-o">היום: חוקר אחרי חשד, או הורה שצופה שעות</span>המערכת מעבדת את מה שקורה בגן ומפיקה טקסט: מה קרה, מתי ואיפה. אף אחד לא יושב מול וידאו, ושום הורה לא רואה ילדים שאינם שלו.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">מה נשמר</div><div class="o">וידאו של כל היום</div><div class="n">תובנות כתובות, וקטעים נבחרים להדרכה</div></summary><p class="vmore"><span class="vm-o">היום: וידאו של כל היום</span>גם תובנה כתובה על ילד היא מידע רגיש. לכן: מינימום מידע, הרשאות לפי תפקיד, תיעוד של כל עיון, מחיקה אחרי זמן מוגדר ופיקוח חיצוני.</p></details>
+        <details class="vrow"><summary class="vs-row"><div class="k">ליווי מקצועי</div><div class="o">מפקחת אחת לכ-83 מעונות</div><div class="n">משוב יומי לצוות, עם מדדים ברורים</div></summary><p class="vmore"><span class="vm-o">היום: מפקחת אחת לכ-83 מעונות</span>בכל יום הצוות מקבל משוב ותמיכה פדגוגית: מה עבד, איפה היה עומס, מה לשפר מחר. התובנות לא משמשות לדירוג עובדים או להחלטה נגד עובד.</p></details>
         <p class="vhint">לחצו על שורה להסבר</p>
       </div>
       </div>
@@ -1357,10 +1394,11 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
 })();
 </script>
 <script>
-(()=>{const s=document.getElementById('waveSvg');if(!s)return;let r=7,h='';const n=160,hit=Math.round(n*0.5);
-for(let i=0;i<n;i++){r=(r*9301+49297)%233280;let a=6+(r/233280)*16;const d=Math.abs(i-hit);if(d<3)a=40-d*4;
-h+=`<rect x="${i*4}" y="${48-a}" width="2.4" height="${a*2}" rx="1" fill="${d<3?'#ff3b55':'#5c6475'}"/>`}
-s.innerHTML=h})();
+(()=>{const s=document.getElementById('waveSvg');if(!s)return;let r=7,h='';const n=128,hit=Math.round(n*0.5);
+for(let i=0;i<n;i++){r=(r*9301+49297)%233280;let a=8+(r/233280)*20;const d=Math.abs(i-hit);const isHit=d<3;if(isHit)a=44-d*6;
+h+=`<rect class="${isHit?'hb':'wb'}" style="--i:${i};--k:${(r%7)/7}" x="${i*5}" y="${48-a}" width="3" height="${a*2}" rx="1.5"/>`}
+s.innerHTML=h;const f=s.closest('.wave');if(!("IntersectionObserver" in window)){f.classList.add('go');return}f.classList.add('armed');
+new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){f.classList.add('go');o.disconnect()}})},{threshold:.6}).observe(f)})();
 </script>
 
 <script>
