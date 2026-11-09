@@ -1187,7 +1187,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:700px){.lang svg{display:none}.lang select{padding:4px 7px;font-size:12.5px}}
 @media (max-width:380px){.sections .go{padding:6px 11px!important;font-size:13px!important}.lang select{padding:3px 5px;font-size:11.5px}.bar{gap:6px!important}.brand .bn{font-size:17px!important}}
 @media (max-width:380px){.brand .btag{font-size:9.5px!important}.brand small{font-size:8.5px!important}.brand .logo{height:32px!important}.brand{gap:5px!important}}
-@media (min-width:701px){.hero .credit{left:auto;right:max(18px,calc((100vw - 1160px)/2 + 18px));bottom:12px;max-width:520px;text-align:right}}
+@media (min-width:701px){.hero .credit{left:auto;right:max(18px,calc((100vw - 1160px)/2 + 18px));bottom:12px;max-width:none;white-space:nowrap;text-align:right}}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -1206,6 +1206,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .btag,.bt2 em{white-space:normal!important;font-size:9px!important;line-height:1.15}
  .lang select{max-width:84px;text-overflow:ellipsis}
 }
+@media (max-width:1080px){.sections a:not(.go){display:none}}
 :root{--f-head:"PT Serif","Times New Roman",serif;--f-body:"PT Serif","Times New Roman",serif;--f-ui:"Rubik",system-ui,sans-serif;}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}
