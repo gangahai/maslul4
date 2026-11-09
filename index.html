@@ -543,6 +543,18 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+/* act: הורי הגן במרכז, כפתור חתימה בולט */
+.ac-main{background:#fff;color:var(--ink);border-top:0;border-radius:14px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.2)}
+.ac-main h3{color:var(--ink)}
+.ac-main p{color:var(--ink-2)}
+.bigbtn.wa{display:inline-flex;align-items:center;gap:8px;background:#128c4a;color:#fff;border:0}
+.bigbtn.wa:hover{background:#0e7a40}
+.bigbtn.wa .ic{width:20px;height:20px}
+.linkbtn{background:none;border:0;padding:6px 2px;font:inherit;font-size:14px;color:var(--ink-2);text-decoration:underline;cursor:pointer}
+.signbox .sb-go{font-size:22px!important;padding:16px 34px!important;border-radius:12px!important}
+@media (prefers-reduced-motion:no-preference){.signbox .sb-go{animation:sbpulse 2.2s ease-in-out infinite}}
+@keyframes sbpulse{0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,.5);transform:scale(1)}50%{box-shadow:0 0 0 12px rgba(200,16,46,0);transform:scale(1.04)}}
+
 .pl .pl-strong{display:block;margin-top:6px;color:#fff;font-weight:700}
 /* timeline v5: רגע ההדלקה של 2026 */
 .tline figcaption .cap-k{color:#5fe0c8;opacity:1!important}
@@ -921,9 +933,9 @@ footer a{color:#fff}
     <p class="lead">כל תיקון חוק עד היום קרה כי הורים לא שתקו.</p>
     <a class="signbox" href="atzuma.html"><img class="sbmark" src="logo-hand.png" alt=""><span class="sbtxt"><b>חתמו על הצהרת ההורים למסלול הרביעי</b><small>הורים, צוותים ואנשי חינוך. ההצהרה תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</small></span><span class="sb-go">לחתימה</span></a>
     <div class="agrid">
-      <div class="ac"><h3>שתפו את הכתבה</h3><p>למשפחה ולחברים.</p><div class="row"><a class="bigbtn white" id="wa2" href="#" target="_blank" rel="noopener">וואטסאפ</a><button class="bigbtn white" type="button" data-share>העתקת קישור</button></div></div>
+      <div class="ac"><h3>שתפו את הכתבה</h3><p>למשפחה ולחברים.</p><div class="row"><button class="bigbtn white" type="button" data-share>העתקת קישור</button></div></div>
+      <div class="ac ac-main"><h3>צרפו את הורי הגן</h3><p>הודעה מוכנה, נשלחת בלחיצה אחת.</p><div class="row"><a class="bigbtn wa" id="waParents" href="#" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 9.5c.3 2.4 2.6 4.8 5 5.2l1.3-1.3 2 1-.4 1.6c-3.8.4-8.3-3.9-8-7.9l1.6-.4 1 2z" fill="currentColor"/></svg>שליחה לקבוצת ההורים</a><button class="linkbtn" id="copyParents" type="button">או העתקת ההודעה</button></div></div>
       <div class="ac"><h3>כתבו למשרד החינוך</h3><p>מכתב מוכן נפתח במייל שלכם. מוסיפים שם ושולחים.</p><div class="row"><a class="bigbtn white" id="mailLetter" href="#">פתיחת המכתב</a></div></div>
-      <div class="ac"><h3>צרפו את הורי הגן</h3><p>הודעה מוכנה לקבוצת ההורים.</p><div class="row"><a class="bigbtn white" id="waParents" href="#" target="_blank" rel="noopener">וואטסאפ</a><button class="bigbtn white" id="copyParents" type="button">העתקה</button></div></div>
     </div>
     <textarea id="parentsTxt" hidden aria-hidden="true">הורים יקרים,
 שוב נחשפו מקרי פגיעה קשים בפעוטות במעונות, ושוב הם התגלו במקרה ובאיחור.
