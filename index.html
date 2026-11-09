@@ -543,6 +543,17 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+/* act: שיתוף בעיגול, הודעה להורים */
+.act-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.sharecirc{flex:none;display:grid;justify-items:center;gap:6px;background:none;border:0;color:#fff;font:inherit;font-family:var(--f-ui);font-weight:800;font-size:14px;cursor:pointer;padding:0}
+.sharecirc svg{width:64px;height:64px;padding:17px;box-sizing:border-box;border-radius:50%;background:#fff;color:var(--red);fill:currentColor;box-shadow:0 10px 26px rgba(0,0,0,.2);transition:transform .2s}
+.sharecirc:hover svg{transform:scale(1.07)}
+.parents{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:18px;padding:18px 22px;border:2px solid rgba(255,255,255,.8);border-radius:14px;font-family:var(--f-ui)}
+.parents h3{font-family:var(--f-ui);font-weight:800;font-size:21px;color:#fff;margin:0}
+.parents p{margin:4px 0 0;color:#ffe3e7;font-size:16px}
+.parents .bigbtn.red{background:#fff;color:var(--red);border-color:#fff;flex:none}
+@media (max-width:700px){.parents{flex-direction:column;align-items:stretch}.parents .bigbtn{text-align:center;justify-content:center;display:flex}.sharecirc svg{width:52px;height:52px;padding:14px}}
+
 /* proofline: התהליך מתקדם */
 .proofline{position:relative}
 .pl-track{position:absolute;top:-3px;right:0;left:0;height:3px;background:var(--eye);transform-origin:right;transform:scaleX(1);pointer-events:none}
@@ -990,13 +1001,13 @@ footer a{color:#fff}
 
 <section class="act" id="act" aria-labelledby="act-h">
   <div class="wrap">
-    <h2 id="act-h">הורים, הגיע הזמן להתאחד.</h2>
-    <p class="lead">כל תיקון חוק עד היום קרה כי הורים לא שתקו.</p>
+    <div class="act-top"><div><h2 id="act-h">הורים, הגיע הזמן להתאחד.</h2>
+    <p class="lead">כל תיקון חוק עד היום קרה כי הורים לא שתקו.</p></div>
+    <button class="sharecirc" id="shareCirc" type="button" aria-label="שיתוף הכתבה"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>שיתוף</span></button></div>
     <a class="signbox" href="atzuma.html"><img class="sbmark" src="logo-hand.png" alt=""><span class="sbtxt"><b>חתמו על הצהרת ההורים למסלול הרביעי</b><small>תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת.</small></span><span class="sb-go">לחתימה</span></a>
-    <div class="agrid">
-      <div class="ac"><h3>שתפו את הכתבה</h3><p>למשפחה ולחברים.</p><div class="row"><button class="bigbtn white" type="button" data-share>העתקת קישור</button></div></div>
-      <div class="ac ac-main"><h3>צרפו את הורי הגן</h3><p>הודעה מוכנה, נשלחת בלחיצה אחת.</p><div class="row"><a class="bigbtn wa" id="waParents" href="#" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 9.5c.3 2.4 2.6 4.8 5 5.2l1.3-1.3 2 1-.4 1.6c-3.8.4-8.3-3.9-8-7.9l1.6-.4 1 2z" fill="currentColor"/></svg>שליחה לקבוצת ההורים</a><button class="linkbtn" id="copyParents" type="button">או העתקת ההודעה</button></div></div>
-      <div class="ac"><h3>כתבו למשרד החינוך</h3><p>מכתב מוכן נפתח במייל שלכם. מוסיפים שם ושולחים.</p><div class="row"><a class="bigbtn white" id="mailLetter" href="#">פתיחת המכתב</a></div></div>
+    <div class="parents">
+      <div><h3>צרפו את הורי הגן</h3><p>הודעה מוכנה. שלחו אותה לקבוצת ההורים של הגן, וגם למנהל/ת הגן.</p></div>
+      <button class="bigbtn red" id="sendParents" type="button">שליחת ההודעה</button>
     </div>
     <textarea id="parentsTxt" hidden aria-hidden="true">הורים יקרים,
 שוב נחשפו מקרי פגיעה קשים בפעוטות במעונות, ושוב הם התגלו במקרה ובאיחור.
@@ -1007,22 +1018,6 @@ footer a{color:#fff}
 https://maslul4.tsofia.ai/atzuma.html?src=parents
 
 אם כל הורי הגן יחתמו, זה קול שאי אפשר להתעלם ממנו 🙏</textarea>
-    <textarea id="letterTxt" hidden aria-hidden="true">לכבוד שר/ת החינוך,
-ובהעתק לחברי ועדת החינוך של הכנסת,
-
-אני הורה לילד במסגרת לגיל הרך. בשבועות האחרונים נחשפו שוב מקרי התעללות קשים בפעוטות, ושוב הם התגלו במקרה: חבלה שהורה הבחין בה, ילד שהגיע לבית החולים.
-
-חוק המצלמות ומסלולי הצפייה שנוספו לו הם צעדים חשובים, אבל הם מתעדים את הפגיעה ולא מונעים אותה. אף הורה לא יכול לצפות שמונה שעות ביום, והצעת התקציב מקצצת כשלושה רבעים מהפיקוח על המעונות.
-
-אני דורש/ת:
-1. להכיר בחוק במסלול רביעי: עיבוד בזמן אמת של המצלמות הקיימות, בלי צפייה שוטפת בווידאו ובלי שמירת צילומים מעבר לנדרש, שמתריע ומלווה את הצוות.
-2. לאשר הפעלה בשטח כבר עכשיו, לכל מערכת שתעמוד בתנאים ובפיקוח. מערכות כאלה כבר קיימות ופועלות בישראל, ואפשר להפעיל אותן מהחודש הראשון, עם מחקר הערכה חיצוני ובלתי תלוי.
-3. לתקצב שכבת הבנה מעל התשתית הקיימת, במקום לקצץ בפיקוח.
-
-כשפגיעה מתגלה היום, היא כבר קרתה, וכל פרשה פוגעת גם באלפי צוותים מסורים ובאמון ההורים בגנים. הילדים שלנו לא יכולים לספר. המערכת צריכה לראות ולהבין בשבילם.
-
-בכבוד רב,
-</textarea>
   </div>
 </section>
 
@@ -1119,9 +1114,9 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
   }
   document.querySelectorAll("[data-share]").forEach(b=>b.onclick=()=>copy(msg+url,"הקישור הועתק"));
   document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>copy(b.dataset.copy,"הועתק"));
-  const ml=$("#mailLetter"); if(ml){ const updM=()=>ml.href="mailto:info@education.gov.il?subject="+encodeURIComponent("בקשה לעדכון חוק המצלמות במעונות היום: המסלול הרביעי")+"&body="+encodeURIComponent($("#letterTxt").value); updM(); $("#letterTxt").addEventListener("input",updM); }
-  $("#copyParents").onclick=()=>copy($("#parentsTxt").value,"ההודעה הועתקה",$("#parentsTxt"));
-  const wp=$("#waParents"); if(wp){ const upd=()=>wp.href="https://wa.me/?text="+encodeURIComponent($("#parentsTxt").value); upd(); $("#parentsTxt").addEventListener("input",upd); }
+  async function shareOr(data,fallbackText,done){ if(navigator.share&&matchMedia("(pointer:coarse)").matches){ try{ await navigator.share(data); return; }catch(e){ if(e&&e.name==="AbortError") return; } } copy(fallbackText,done); }
+  $("#shareCirc").onclick=()=>shareOr({title:document.title,text:msg,url:url},msg+url,"הקישור הועתק. הדביקו אותו בקבוצה הרלוונטית");
+  $("#sendParents").onclick=()=>shareOr({text:$("#parentsTxt").value},$("#parentsTxt").value,"ההודעה הועתקה. הדביקו אותה בקבוצת ההורים");
 })();
 </script>
 <script>
