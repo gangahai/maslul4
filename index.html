@@ -545,6 +545,58 @@ footer a{color:#fff}
 .tline.armed figcaption .flow i{opacity:0}
 @media (prefers-reduced-motion:no-preference){.tline.go figcaption .flow i:nth-of-type(1){animation:tlword .4s ease-out 1.1s both}.tline.go figcaption .flow i:nth-of-type(2){animation:tlword .4s ease-out 2.2s both}}
 #cut{transform-origin:198px 109px;transform-box:view-box}
+/* מקטעים נפתחים */
+.sec-d>summary{cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.sec-d>summary::-webkit-details-marker{display:none}
+.sec-d>summary h3{margin:0!important}
+.sec-d>summary::after{content:"+";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;font-family:var(--f-ui);font-weight:900;font-size:17px}
+.sec-d[open]>summary::after{content:"−"}
+.sec-d[open]>summary{margin-bottom:10px}
+.cap-d{display:inline}
+.cap-d>summary{display:inline;cursor:pointer;color:var(--eye);font-weight:700;list-style:none}
+.cap-d>summary::-webkit-details-marker{display:none}
+.cap-d>summary::after{content:" +"}
+.cap-d[open]>summary::after{content:" −"}
+.cap-d[open]{display:block;margin-top:4px}
+.sup-d{margin-top:4px}
+@media (max-width:700px){
+  /* פתיחה: הטקסט מתחיל למעלה */
+  .hero{min-height:auto!important;align-items:flex-start!important}
+  .hero-in{padding-top:84px!important;padding-bottom:36px!important}
+  .hero h1{font-size:44px!important;line-height:1.02!important}
+  /* המקרים האחרונים אחרי המספרים */
+  .mcases{margin:0 18px;padding:16px 0;border-bottom:1px solid var(--rule)}
+  .mcases .ticker{max-height:250px}
+  /* מהיום שהחוק יאפשר: כרטיסים בהחלקה */
+  .proofline{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:8px;border-top:0!important;-webkit-overflow-scrolling:touch}
+  .proofline .pl{flex:0 0 78%;scroll-snap-align:start;border:1px solid var(--night-line)!important;border-radius:12px;padding:14px!important;background:rgba(255,255,255,.03)}
+  .proofline .pl-track{display:none}
+  .pl-head::after{content:"החליקו לצד ←";display:block;font-size:12px;font-weight:600;color:var(--night-muted);margin-top:6px}
+  /* תיבת "החסם היחיד" */
+  .bk2 summary{padding:14px 16px!important;font-size:17px!important;flex-direction:row!important;align-items:center!important}
+  .bk2 summary em{font-size:12.5px;padding:5px 10px}
+  .bk2 p{padding:0 16px 16px!important;font-size:15px!important}
+  /* הצהרה במסך אחד */
+  .dbox{padding:20px 16px!important}
+  .dbox .dmark{width:44px!important;top:16px!important}
+  .dbox h2{font-size:24px!important;margin-top:8px!important}
+  .dlist{grid-template-columns:1fr 1fr!important;gap:12px!important;margin-top:14px!important}
+  .dlist>div{padding-top:10px!important}
+  .dlist h3{font-size:15px!important}
+  .dlist p{font-size:13px!important;line-height:1.45!important}
+  .dlist>div::before{font-size:26px!important}
+  .dfoot{flex-direction:column;align-items:stretch;gap:10px;margin-top:14px!important;padding-top:12px!important}
+  .dfoot p{font-size:13px!important}
+  /* טכנולוגיה בנייד */
+  .tc2{padding-top:18px}
+  .tc2-top{grid-template-columns:1fr!important;gap:10px!important}
+  .tc2-logo{width:52px!important;height:52px!important}
+  .tc2 h2{font-size:24px!important}
+  .tc2-facts b{font-size:17px!important}
+  .tc2-facts span{font-size:12.5px!important}
+  .tc2-emma img{width:32px;height:32px}
+}
+
 .lawbox>summary,.srcd>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .lawbox>summary::-webkit-details-marker,.srcd>summary::-webkit-details-marker{display:none}
 .lawbox>summary::after,.srcd>summary::after{content:"+";font-family:var(--f-ui);font-weight:900;font-size:18px;color:var(--red)}
@@ -614,7 +666,7 @@ footer a{color:#fff}
   .vhint{font-size:12px}
 }
 
-.bk2{text-align:start!important;padding:0!important}
+.blocker.bk2{text-align:start!important;padding:0!important;min-height:0!important}
 .bk2 summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-size:clamp(18px,2vw,22px)}
 .bk2 summary::-webkit-details-marker{display:none}
 .bk2 summary b{color:#ff8a99}
@@ -1024,7 +1076,7 @@ h1,h2,h3{text-wrap:balance}
         <div class="dlegend"><span><i class="k"></i>יום מצולם</span><span><i class="k seen"></i>צפייה של כמה דקות</span><span><i class="k miss"></i>תקלה: אין תיעוד</span><span><i class="k gone"></i>נמחק</span></div>
       </figure>
       <section class="broken" aria-labelledby="broken-h">
-        <h3 id="broken-h">ובהרבה מעונות, המצלמות בכלל לא מקליטות</h3>
+        <details class="sec-d"><summary><h3 id="broken-h">ובהרבה מעונות, המצלמות בכלל לא מקליטות</h3></summary>
         <p>גם למפעילים אסור לצפות, ולכן תקלה מתגלה רק כשמבקשים את הצילום. ואז מתברר שאין תיעוד.</p>
         <div class="bstats">
           <div><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></div>
@@ -1034,6 +1086,7 @@ h1,h2,h3{text-wrap:balance}
 <details class="more-d"><summary>דוגמה ומקורות</summary>
         <p>בירושלים, הורים שהציבו מכשיר הקלטה גילו שהמצלמות לא פעלו כבר שנה וחצי.</p>
         <p class="bsrc">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, „היבטים בפיקוח ובשמירה על שלום הפעוטות במעונות היום“ (2026)</a> · <a href="https://www.kan.org.il/content/kan-news/local/660126/" target="_blank" rel="noopener">כאן חדשות</a></p>
+        </details>
         </details>
       </section>
 
@@ -1057,6 +1110,7 @@ h1,h2,h3{text-wrap:balance}
       </figure>
 
       <h2 class="h-amber"><small>הפיקוח</small>תקציב הפיקוח על המעונות: <span class="cut75">קיצוץ של 75%</span></h2>
+      <details class="more-d sup-d"><summary>הגרף והנתונים</summary>
       <figure class="inline-fig chart" id="budgetChart">
         <h4>התקציב ליישום תקנות הפיקוח על מעונות היום</h4>
         <div class="sub">במיליוני ש״ח</div>
@@ -1080,6 +1134,7 @@ h1,h2,h3{text-wrap:balance}
         <div><b>14%</b><span>מהמעונות שנבדקו לא קיבלו אפילו ביקור פיקוח אחד בשנה</span></div>
       </div>
       <p class="bsrc">מקור: מבקר המדינה, 2026</p>
+      </details>
       <blockquote class="pull">במסגרת חוק המצלמות של היום, אני מחויב לתעד את הצוות שלי, ואסור לי להשתמש בתיעוד כדי לעזור לו.<cite>אהרון נייס, מנהל רשת גנים</cite></blockquote>
     </article>
 
@@ -1112,7 +1167,7 @@ h1,h2,h3{text-wrap:balance}
     <p class="deck2">בלי עוד מצלמה ובלי עוד מסך: המצלמות הקיימות מבינות בזמן אמת, ומתריעות למי שיכול לפעול.</p>
     <figure class="big-shot vid">
       <video id="reportVid" data-wide="report.mp4" data-wide-poster="report-poster.jpg" data-narrow="report-vertical.mp4" data-narrow-poster="report-vertical-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון: דוח אמיתי של המערכת על חוג חיות בגן ילדים. זיהוי אנשים ותפקידים, זיהוי סיטואציה, רגע חזק, נקודה לתשומת לב ופעולה חלופית, לצד הדוח שנכתב בזמן אמת"></video>
-      <figcaption><span><b>זה לא הדמיה. זה דוח אמיתי של המערכת, מפיילוט פעיל בגן ילדים, במסגרת מחקר בשיתוף מכללת אורנים.</b> המערכת מזהה מי בחדר ומה התפקיד של כל אחד, מבינה את הסיטואציה, מצביעה על רגעים חזקים ועל מה שדורש תשומת לב, ומציעה לצוות פעולה חלופית למחר. הילדים והצוות טושטשו, ושמות הצוות הוסרו.</span><span><span class="ez">עין צופיה</span></span></figcaption>
+      <figcaption><span><b>זה לא הדמיה. זה דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים.</b> <details class="cap-d"><summary>מה רואים בסרטון</summary>המערכת מזהה מי בחדר ומה התפקיד של כל אחד, מבינה את הסיטואציה, מצביעה על רגעים חזקים ועל מה שדורש תשומת לב, ומציעה לצוות פעולה חלופית למחר. הילדים והצוות טושטשו, ושמות הצוות הוסרו.</details></span><span><span class="ez">עין צופיה</span></span></figcaption>
     </figure>
     <div class="spread-grid sg2">
       <div>
@@ -1205,7 +1260,7 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
   <h2 id="faq-h">שאלות וחששות</h2>
   <p class="faq-lead">תשובות קצרות לשאלות שהורים ואנשי צוות שואלים אותנו. בכל תשובה: מה ההצהרה דורשת שהחוק יקבע.</p>
   <div class="qa">
-    <details open><summary><span class="q">האם המערכת עלולה לטעות?</span></summary><p>כן. כל מערכת עלולה לטעות, ולכן מבחינים בין שני דברים. כשההתראה מצביעה על סכנה לילד, מגיבים מיד ומגנים עליו, בלי לחכות לשום בדיקה. אבל קביעה שמישהו פגע, או כל צעד נגד עובד, נעשים רק אחרי בדיקה אנושית מסודרת. תובנה היא סימן לבדיקה, לא פסק דין, והמחקר החיצוני שאנחנו דורשים ימדוד ויפרסם את שיעור הטעויות.</p></details>
+    <details><summary><span class="q">האם המערכת עלולה לטעות?</span></summary><p>כן. כל מערכת עלולה לטעות, ולכן מבחינים בין שני דברים. כשההתראה מצביעה על סכנה לילד, מגיבים מיד ומגנים עליו, בלי לחכות לשום בדיקה. אבל קביעה שמישהו פגע, או כל צעד נגד עובד, נעשים רק אחרי בדיקה אנושית מסודרת. תובנה היא סימן לבדיקה, לא פסק דין, והמחקר החיצוני שאנחנו דורשים ימדוד ויפרסם את שיעור הטעויות.</p></details>
     <details><summary><span class="q">מה קורה מרגע שמתקבלת התראה?</span></summary><p>ההתראה מגיעה בזמן אמת לגורם האחראי במסגרת, שניגש מיד, מוודא שהילד בטוח ומטפל במצב. התראה חמורה מגיעה במקביל גם לגורם חיצוני ובלתי תלוי, כמו גורם פיקוח או מוקד ייעודי, כדי שההגנה לא תהיה תלויה רק במי שנמצא בתוך המסגרת. אי אפשר למחוק או להסתיר התראות, והאירוע והטיפול בו מתועדים. אם עולה חשד לפגיעה בילד, פועלים לפי החובות שכבר קיימות בחוק, כולל דיווח לגורמים המוסמכים. כל קביעה לגבי אחריות של עובד נעשית רק אחרי בירור מסודר, ולא על סמך ההתראה לבדה.</p></details>
     <details><summary><span class="q">האם היא מחליפה פיקוח ואנשי צוות?</span></summary><p>לא. היא כלי בידי הצוות והמפקחות, לא תחליף להם. הגננות והסייעות הן שמטפלות בילדים, והמפקחות הן שמלוות את המסגרות. לכן ההצהרה דורשת תקציב ייעודי בנוסף על משאבי הפיקוח הקיימים, ולא במקומם.</p></details>
     <details><summary><span class="q">מי מקבל את המידע ומי רשאי לעיין בו?</span></summary><p>רק מי שצריך לפעול: הגורם האחראי במסגרת מקבל התראות, והתראות חמורות מגיעות גם לגורם חיצוני ובלתי תלוי, הצוות מקבל משוב על העבודה שלו ותמיכה פדגוגית, וגורמי הפיקוח מקבלים תמונת מצב ברמת הגן. הורים לא רואים מידע על ילדים אחרים. כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</p></details>
@@ -1351,6 +1406,16 @@ new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){d.classLis
 /* trust: המברשת עוברת כשמגיעים */
 (function(){const d=document.querySelector("section.trust");if(!d||!("IntersectionObserver" in window))return;d.classList.add("armed");
 new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){d.classList.add("go");o.disconnect()}})},{threshold:.6}).observe(d)})();
+
+/* מובייל: המקרים האחרונים עולים אחרי המספרים */
+(function(){const mq=matchMedia("(max-width:700px)");const box=document.querySelector(".side .box:nth-child(2)");const ms=document.querySelector(".mstats");if(!box||!ms)return;const home=box.parentElement,next=box.nextElementSibling;
+function place(){if(mq.matches){if(box.parentElement!==ms.parentElement){box.classList.add("mcases");ms.after(box)}}else if(box.parentElement!==home){box.classList.remove("mcases");home.insertBefore(box,next)}}place();mq.addEventListener("change",place)})();
+/* מספרים רצים */
+(function(){const els=[...document.querySelectorAll(".mstats b")];if(!els.length||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+els.forEach(el=>{const t=el.textContent;el.dataset.t=t;});
+const run=el=>{const t=el.dataset.t,m=t.match(/[\d,]+/);if(!m)return;const target=+m[0].replace(/,/g,""),pre=t.slice(0,m.index),post=t.slice(m.index+m[0].length);const t0=performance.now(),d=1400;
+ (function f(now){const k=Math.min(1,(now-t0)/d),e=1-Math.pow(1-k,3),v=Math.round(target*e);el.textContent=pre+v.toLocaleString("en-US")+post;if(k<1)requestAnimationFrame(f)})(t0)};
+new IntersectionObserver((es,o)=>{es.forEach(en=>{if(en.isIntersecting){els.forEach(run);o.disconnect()}})},{threshold:.4}).observe(document.querySelector(".mstats"))})();
 </script>
 </body>
 </html>
