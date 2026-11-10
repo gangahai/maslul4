@@ -2342,6 +2342,87 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .sh-reel i.in{opacity:.55}
 .sh-reel i.in.out{opacity:0}
 .sh-reel i.rv0.in{animation:rv0 8s linear forwards}.sh-reel i.rv1.in{animation:rv1 8s linear forwards}.sh-reel i.rv2.in{animation:rv2 8s linear forwards}
+/* ===== mobile pass (Nov 10) ===== */
+.sw-hint,.sw-dots{display:none}
+.fh-l1{display:inline}
+/* idea switch: today -> fourth track (all sizes) */
+div.pi-sw{display:flex;align-items:stretch;gap:12px;margin:18px 0 0}
+div.pi-sw p{margin:0;flex:1;border-radius:14px;padding:12px 16px;font-size:clamp(17px,1.8vw,20px);line-height:1.4}
+div.pi-sw p b{display:block;font-family:var(--f-ui);font-weight:900;font-size:13.5px;margin-bottom:2px}
+div.pi-sw .pi-old{background:#eceeed;color:#5d6664;padding-inline-start:16px}
+div.pi-sw .pi-old b{color:#8a9290}
+div.pi-sw .pi-new{background:#0f3936;color:#fff;font-weight:800;padding-inline-start:16px}
+div.pi-sw .pi-new::before{display:none}
+div.pi-sw .pi-new b{color:var(--sg-l)}
+.pi-arr{flex:none;align-self:center;width:34px;height:34px;border-radius:50%;background:var(--sg);position:relative}
+.pi-arr::before{content:"←";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:900;font-size:18px}
+.pi-no span{background:linear-gradient(transparent 58%,rgba(243,198,75,.6) 58%);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* proof cards: more modern */
+.pi-proof>div{border:0;border-radius:18px;background:linear-gradient(135deg,#ffffff 0%,#eef7f4 100%);box-shadow:0 10px 26px rgba(15,57,54,.10),inset 0 0 0 1px rgba(42,143,132,.18);padding:16px 18px}
+.pi-proof svg{width:46px;height:46px;padding:10px;box-sizing:border-box;border-radius:14px;background:linear-gradient(135deg,#1f6b62,#2a8f84);stroke:#fff;stroke-width:2}
+@media (max-width:700px){
+ /* hero */
+ .sh-msg .sh-stop{font-size:31px;font-weight:900;margin-top:20px;padding:8px 0;border-block:2px solid rgba(255,212,94,.75);color:#fff}
+ .shero.sh2 .hero-cta{gap:8px;margin-top:22px}
+ .shero.sh2 .hero-cta .bigbtn{font-size:15.5px!important;padding:10px 16px!important;min-height:0}
+ .shero.sh2 .hero-cta .bigbtn.red{font-size:17px!important;padding:12px 18px!important}
+ .shero.sh2 .hero-cta{flex-direction:row;flex-wrap:wrap}
+ .shero.sh2 .hero-cta .bigbtn.red{flex:1 1 100%}
+ .shero.sh2 .hero-cta .bigbtn.glass{flex:1 1 0;white-space:nowrap;font-size:14px!important;padding:10px 8px!important}
+ /* feel */
+ .sfeel h2.feel-one{font-size:min(7.1vw,30px)!important;white-space:nowrap;line-height:1.5}
+ .sfeel h2.feel-one .sbrush{padding:.02em .14em .06em}
+ .feel-lede{font-size:18.5px;line-height:1.65;background:#fff;border:1px solid #e8e2d6;border-inline-start:5px solid var(--red);border-radius:14px;padding:16px 16px 16px 14px;margin-top:18px;text-wrap:pretty}
+ .feel-lede::first-letter{float:none;font-size:1em;line-height:inherit;margin:0;color:inherit;font-weight:900}
+ .feel-lede::first-line{font-weight:900}
+ /* letter */
+ .lt-who{flex-direction:column!important;align-items:center!important;text-align:center;gap:10px}
+ .lt-ph{width:120px!important;max-width:120px!important;border-radius:50%!important;aspect-ratio:1!important;object-position:50% 22%}
+ .lt-id{align-items:center}
+ .lt-cred{justify-content:center}
+ .letter{padding:22px 18px!important}
+ .lt-body p{font-size:18px!important;line-height:1.65!important;margin-bottom:14px!important;text-wrap:pretty}
+ .lt-body .lt-open{font-size:24px!important;text-align:center}
+ .lt-body .lt-call{font-size:19.5px!important;padding-inline-start:12px}
+ .lt-sign{font-size:17px!important}
+ /* second heading: two lines */
+ .sfeel .feel-h2{font-size:30px!important;line-height:1.5}
+ .fh-l1{display:block}
+ .sfeel .feel-h2 .sbrush{white-space:nowrap;font-size:min(7vw,30px)}
+ /* swipe affordance */
+ .sw-hint{display:flex;align-items:center;gap:8px;margin:14px 0 0;font-family:var(--f-ui);font-weight:800;font-size:14.5px;color:var(--sg-d)}
+ .sw-hint i{width:26px;height:26px;border-radius:50%;background:var(--sg-d);position:relative;animation:swNudge 1.4s ease-in-out infinite}
+ .sw-hint i::before{content:"←";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:900;font-size:14px}
+ @keyframes swNudge{50%{transform:translateX(-7px)}}
+ .swipe>*{flex:0 0 76%!important}
+ .sw-dots{display:flex;justify-content:center;gap:7px;margin-top:4px}
+ .sw-dots i{width:8px;height:8px;border-radius:50%;background:#cfd8d6;transition:background .2s,width .2s}
+ .sw-dots i.on{background:var(--sg-d);width:22px;border-radius:4px}
+ .sfeel .sw-dots i.on{background:var(--red)}.sfeel .sw-hint{color:var(--red)}.sfeel .sw-hint i{background:var(--red)}
+ /* what */
+ .swhat h2{font-size:38px!important;line-height:1.1}
+ .what-turn span{display:block}
+ .what-turn{font-size:25px}
+ /* ped */
+ .sped h2{font-size:36px!important}
+ .ped-now{font-size:21px;line-height:1.4;text-wrap:balance}
+ .pi-lead{font-size:23px;line-height:1.35}
+ .pi-l1{display:block}
+ div.pi-sw{flex-direction:column;gap:6px}
+ .pi-arr{width:30px;height:30px;transform:rotate(-90deg)}
+ .pi-chips{flex-wrap:nowrap;gap:6px}
+ .pi-chips li{font-size:13.5px!important;padding:7px 9px!important;white-space:nowrap}
+ .pi-no{font-size:19px}
+ .pi-proof{grid-template-columns:1fr 1fr!important;gap:10px}
+ .pi-proof>div{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
+ .pi-proof span{font-size:14.5px}.pi-proof b{font-size:17px}
+ /* gives */
+ .sgives h2{font-size:32px!important;text-wrap:balance}
+ /* footer links on one line */
+ footer .flinks{flex-wrap:nowrap!important;gap:0!important;justify-content:space-between;font-size:12px!important}
+ footer .flinks a{white-space:nowrap}
+}
+@media (max-width:700px){.sfeel h2.feel-one{font-size:min(6.2vw,26px)!important}.sfeel h2.feel-one .sbrush{padding-inline:.1em}}
 </style>
 </head>
 <body>
@@ -2372,7 +2453,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 </header>
 
 <section class="sfeel wrap" id="feel" aria-labelledby="feel-h" data-io>
-  <h2 id="feel-h">פרשה אחת <span class="sbrush">צובעת את כולנו בשחור</span></h2>
+  <h2 id="feel-h" class="feel-one">פרשה אחת <span class="sbrush">צובעת את כולנו בשחור</span></h2>
   <p class="feel-lede">הפרשה כואבת לכולנו. כצוותי חינוך, כואב לנו גם לראות איך מעשים קשים מערערים את האמון בצוותים מסורים. הבקשה שלנו: לעדכן את חוק המצלמות, עם מערכת שמזהה סימנים אפשריים לסכנה, ומתריעה לצורך בדיקה ותגובה של הצוות.</p>
   <p class="feel-tag">מכתב אישי</p>
   <div class="letter">
@@ -2386,8 +2467,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <p class="lt-sign">גננות, סייעות, מנהלות ומנהלים: מזמין את כולכן וכולכם להצטרף למאבק.</p>
     </div>
   </div>
-  <h2 class="feel-h2" data-io>המצב היום פשוט <span class="sbrush sb-red">מבייש את מערכת החינוך</span></h2>
-  <div class="scards swipe">
+  <h2 class="feel-h2" data-io><span class="fh-l1">המצב היום פשוט</span> <span class="sbrush sb-red">מבייש את מערכת החינוך</span></h2>
+  <p class="sw-hint" aria-hidden="true"><span>החליקו בין הכרטיסים</span><i></i></p>
+  <div class="scards swipe" data-dots>
     <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="21" cy="21" r="12"/><path pathLength="1" d="M30 30l11 11"/><path pathLength="1" d="M21 15v7M21 27v.5"/></svg><b>חשד, רק בדיעבד</b><p>הצילומים נפתחים רק אחרי שיש חשד. ואז כל הצוות נחשד, גם מי שלא עשתה דבר.</p></div>
     <div class="scard ic" style="--k:1"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="24" cy="14" r="6"/><path pathLength="1" d="M12 40c1-8 6-13 12-13s11 5 12 13"/><path pathLength="1" d="M6 22l4 2M42 22l-4 2M9 33l4-1M39 33l-4-1"/></svg><b>לבד ברגעי העומס</b><p>מפקחת אחת לכ-83 מעונות. ברגעים הכי עמוסים, אנחנו לבד.</p></div>
     <div class="scard ic" style="--k:2"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 40S8 30 8 19a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 11-16 21-16 21z"/><path pathLength="1" d="M4 4l40 40"/></svg><b>העבודה הטובה לא נראית</b><p>מאות רגעים טובים ביום, שאף אחד לא רואה ולא אומר עליהם תודה.</p></div>
@@ -2455,13 +2537,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <section class="sped" id="ped" aria-labelledby="ped-h">
   <div class="wrap">
-    <h2 id="ped-h"><small>מעטפת שלמה לגן ולצוות</small>הטכנולוגיה כבר קיימת. <span class="tqd">זה אפשרי.</span></h2>
+    <h2 id="ped-h"><small>מעטפת שלמה לגן ולצוות</small>הטכנולוגיה <span class="tqd">כבר קיימת.</span></h2>
     <p class="ped-now">בזכות מהפכת ה-AI, משתמשים בטכנולוגיה למען הילדים.</p>
     <div class="ped-idea" data-io>
-      <p class="pi-lead">הרעיון פשוט: המצלמות שכבר נמצאות בגן יכולות <span class="tqd">לעבוד בשבילנו.</span></p>
-      <p class="pi-sw"><span class="pi-old">במקום הקלטה שאף אחד לא רואה</span><span class="pi-new">משוב פדגוגי שמגיע לצוות כל יום</span></p>
+      <p class="pi-lead"><span class="pi-l1">הרעיון פשוט:</span> המצלמות שכבר בגן יכולות <span class="tqd">לעבוד בשבילנו.</span></p>
+      <div class="pi-sw"><p class="pi-old"><b>היום</b>הקלטה שאף אחד לא רואה</p><span class="pi-arr" aria-hidden="true"></span><p class="pi-new"><b>במסלול הרביעי</b>משוב פדגוגי שמגיע לצוות כל יום</p></div>
       <ul class="pi-chips"><li>מה עבד</li><li>מה כדאי לחזק</li><li>איפה ילד צריך אותנו</li></ul>
-      <p class="pi-no">בלי ציונים אישיים, ובלי לחפש אשמים.</p>
+      <p class="pi-no"><span>בלי ציונים אישיים, ובלי לחפש אשמים.</span></p>
       <div class="pi-proof">
         <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span><b>כבר עובד היום</b>פיילוט מחקרי, בשיתוף מכללת אורנים</span></div>
         <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.600 5.600 6 .700-4.400 4.200 1.100 6-5.300-3-5.300 3 1.100-6L3.400 9.300l6-.700z"/></svg><span><b class="ia">רשות החדשנות</b>הטכנולוגיה פותחה בתמיכתה ובמימונה</span></div>
@@ -2524,7 +2606,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <section class="sgives" id="gives" aria-labelledby="gives-h">
   <div class="wrap">
   <h2 id="gives-h"><small>בשורה התחתונה</small>כך נחזק את החינוך <span class="tqd">בגיל הרך</span></h2>
-  <div class="scards gives swipe" data-io>
+  <p class="sw-hint" aria-hidden="true"><span>החליקו בין הכרטיסים</span><i></i></p>
+  <div class="scards gives swipe" data-io data-dots>
     <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M8 38V14l16-8 16 8v24"/><path pathLength="1" d="M17 22h14M17 29h14M17 36h8"/></svg><b>כמו מדריכה פדגוגית לצידנו</b><p>רגעים טובים לחזק, המלצות מעשיות ורעיונות לפעילות, כל יום. כך צוותים איכותיים מתחזקים, צומחים, ונשארים.</p></div>
     <div class="scard ic" style="--k:1"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M6 40h36"/><path pathLength="1" d="M12 34V24M22 34V14M32 34V20"/><path pathLength="1" d="M10 18l10-8 8 6 12-9"/></svg><b>תמונת מצב של הגן</b><p>תובנות ישימות לשיפור הגן, במקום לגלות בעיה רק כשהורה מתקשר.</p></div>
     <div class="scard ic" style="--k:2"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z"/><path pathLength="1" d="M17 24l5 5 9-10"/></svg><b>אמון מול ההורים</b><p>במקום חשדנות אחרי כל כותרת, כלי שמראה כל יום שהילדים בידיים טובות.</p></div>
@@ -2629,6 +2712,10 @@ function start(){if(t||!vis||document.hidden)return;t=setInterval(next,5000)}
 function stop(){clearInterval(t);t=null}
 hero.classList.add("reel-on");var f=new Image();f.onload=function(){next();start()};f.src=P[0];
 document.addEventListener("visibilitychange",function(){document.hidden?stop():start()});
-if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;vis?start():stop()},{threshold:.05}).observe(hero);})();</script>
+if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;vis?start():stop()},{threshold:.05}).observe(hero);})();
+(function(){[].forEach.call(document.querySelectorAll(".swipe[data-dots]"),function(w){var n=w.children.length,d=document.createElement("div");d.className="sw-dots";d.setAttribute("aria-hidden","true");for(var i=0;i<n;i++){d.appendChild(document.createElement("i"))}w.parentNode.insertBefore(d,w.nextSibling);
+function upd(){var c=w.getBoundingClientRect(),mid=c.left+c.width/2,best=0,bd=1e9;[].forEach.call(w.children,function(el,i){var r=el.getBoundingClientRect(),x=Math.abs(r.left+r.width/2-mid);if(x<bd){bd=x;best=i}});[].forEach.call(d.children,function(el,i){el.classList.toggle("on",i===best)})}
+w.addEventListener("scroll",function(){requestAnimationFrame(upd)},{passive:true});upd()})})();
+</script>
 </body>
 </html>
