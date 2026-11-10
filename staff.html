@@ -2190,6 +2190,22 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .sfeel .feel-h2.armed .sbrush.sb-red{background-size:0% 100%;color:var(--ink)}
 .sfeel .feel-h2.go .sbrush.sb-red{animation:sBrushSlow 2.8s cubic-bezier(.45,0,.25,1) .3s both}
 @keyframes sBrushSlow{0%{background-size:0% 100%;color:var(--ink)}40%{color:var(--ink)}75%{color:#fff}100%{background-size:100% 100%;color:#fff}}
+/* guards v2 */
+.guards.g2{background:none;border:0;padding:0;margin-top:34px}
+.guards.g2 h3{display:flex;align-items:center;gap:10px;font-family:var(--f-head);font-weight:900;font-size:clamp(26px,3vw,36px);color:var(--ink);margin:0 0 18px}
+.guards.g2 h3 svg{flex:none;width:34px;height:34px;fill:var(--sg-d);stroke:none}
+.guards.g2 dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0}
+.guards.g2 dl>div{position:relative;background:#fff;border:1px solid #d9e6e3;border-radius:18px;padding:22px 20px 20px;margin:0;box-shadow:0 8px 24px rgba(15,57,54,.06);transition:transform .2s,box-shadow .2s,border-color .2s}
+.guards.g2 dl>div:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(15,57,54,.12);border-color:var(--sg)}
+.g-ic{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#e3f3ef;margin-bottom:14px}
+.g-ic svg{width:26px;height:26px;fill:none;stroke:var(--sg-d);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.guards.g2 dt{font-family:var(--f-ui);font-weight:900;font-size:19px;line-height:1.3;color:var(--ink);margin:0}
+.guards.g2 dd{margin:8px 0 0;font-size:16.5px;line-height:1.55;color:#3b4442}
+.guards.g2 .g-lead{display:block;font-family:var(--f-head);font-weight:900;font-size:22px;line-height:1.25;color:var(--sg-d);margin-bottom:6px}
+.guards.g2 .guards-more,.guards.g2>a,.guards.g2>p{display:inline-block;margin-top:18px}
+@media (prefers-reduced-motion:no-preference){.guards.g2 dl.armed>div{opacity:0;transform:translateY(16px)}.guards.g2 dl.go>div{opacity:1;transform:none;transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .2s,border-color .2s;transition-delay:calc(var(--k)*.09s)}}
+@media (max-width:980px){.guards.g2 dl{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.guards.g2 dl{grid-template-columns:1fr;gap:12px}.guards.g2 dl>div{display:grid;grid-template-columns:auto 1fr;gap:0 14px;padding:18px 16px}.g-ic{grid-row:1/3;margin:0}.guards.g2 dd{grid-column:2}}
 </style>
 </head>
 <body>
@@ -2266,15 +2282,15 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div class="use u-alert"><span class="use-n">1</span><h3>התרעות בטיחות</h3><p>כשמזוהה סימן אפשרי לסכנה, כמו ילד שבוכה לבד זמן רב, אירוע חריג או עומס, נשלחת התרעה לגורם האחראי, שבודק ומגיב. זו הליבה של המסלול הרביעי.</p><p class="use-plus">ובנוסף: בקרה על המצלמות עצמן, עם התראה מיידית על תקלה.</p></div>
       <div class="use u-ped"><span class="use-n">2</span><h3>משוב פדגוגי לצוות</h3><p>כלי למידה נפרד: רגעים טובים, המלצות מעשיות ורעיונות לפעילות. המשוב מיועד לצוות ולמנהלת, ונועד ללמוד ולהשתפר, לא להעריך עובדים.</p></div>
     </div>
-    <div class="guards">
-      <h3>ההגנות על הצוות, כפי שההצהרה דורשת</h3>
-      <dl>
-        <div><dt>מי רואה?</dt><dd>הגורם האחראי במסגרת מקבל התרעות, ובאירוע חמור גם גורם חיצוני ובלתי תלוי. הצוות מקבל משוב על העבודה שלו. הורים לא רואים מידע על ילדים אחרים.</dd></div>
-        <div><dt>ואם המערכת טועה?</dt><dd>התרעה ותובנה הן סימן לבדיקה, לא פסק דין. כל קביעה לגבי מישהו מהצוות נעשית רק אחרי בדיקה מקצועית מסודרת, ובדיקת דיוק חיצונית מודדת ומפרסמת את שיעור הטעויות.</dd></div>
-        <div><dt>מה מונע שימוש נגדנו?</dt><dd>איסור לדרג את הצוות, איסור להחליט נגד מישהו מהצוות על סמך תובנה בלבד, ושקיפות מלאה לצוות על מה שנאסף.</dd></div>
-        <div><dt>המערכת תסמן אנשים מהצוות כ"מסוכנים"?</dt><dd>לא. היא מזהה מצבים שמגדילים סיכון, כמו בכי ממושך בלי מענה או עומס, כדי שאפשר יהיה לתת עזרה. היא לא מנבאת מי יפגע, ולא מדרגת אנשים.</dd></div>
-        <div><dt>החתימה מחייבת מערכת מסוימת?</dt><dd>לא. המסלול הרביעי הוא עיקרון, לא מוצר: פתוח לכל מערכת שתעמוד בסטנדרט מחמיר. החתימה לא מחייבת אף אחד מאיתנו או את הגן בשום דבר.</dd></div>
-        <div><dt>ומה עם הפרטיות?</dt><dd>בלי צפייה שוטפת. כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</dd></div>
+    <div class="guards g2">
+      <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.1 8-7.5 9.5-4.4-1.5-7.5-4.9-7.5-9.500V6z"/></svg>ההגנות על הצוות, כפי שההצהרה דורשת</h3>
+      <dl data-io>
+        <div style="--k:0"><span class="g-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></svg></span><dt>מי רואה?</dt><dd><b class="g-lead">רק מי שצריך.</b> הגורם האחראי במסגרת מקבל התרעות, ובאירוע חמור גם גורם חיצוני ובלתי תלוי. הצוות מקבל משוב על העבודה שלו. הורים לא רואים מידע על ילדים אחרים.</dd></div>
+        <div style="--k:1"><span class="g-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.2v.3"/></svg></span><dt>ואם המערכת טועה?</dt><dd><b class="g-lead">סימן לבדיקה, לא פסק דין.</b> כל קביעה לגבי מישהו מהצוות נעשית רק אחרי בדיקה מקצועית מסודרת, ובדיקת דיוק חיצונית מודדת ומפרסמת את שיעור הטעויות.</dd></div>
+        <div style="--k:2"><span class="g-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.1 8-7.5 9.5-4.4-1.500-7.5-4.900-7.5-9.500V6z"/><path d="M8.800 12.200l2.300 2.300 4.200-4.600"/></svg></span><dt>מה מונע שימוש נגדנו?</dt><dd><b class="g-lead">כללים מפורשים בהצהרה.</b> איסור לדרג את הצוות, איסור להחליט נגד מישהו מהצוות על סמך תובנה בלבד, ושקיפות מלאה לצוות על מה שנאסף.</dd></div>
+        <div style="--k:3"><span class="g-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.6-3.800 3.300-6 7-6s6.400 2.200 7 6"/><path d="M4 4l16 16"/></svg></span><dt>המערכת תסמן אנשים מהצוות כ"מסוכנים"?</dt><dd><b class="g-lead">לא.</b> היא מזהה מצבים שמגדילים סיכון, כמו בכי ממושך בלי מענה או עומס, כדי שאפשר יהיה לתת עזרה. היא לא מנבאת מי יפגע, ולא מדרגת אנשים.</dd></div>
+        <div style="--k:4"><span class="g-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 14.500l2 2 3.500-4"/></svg></span><dt>החתימה מחייבת מערכת מסוימת?</dt><dd><b class="g-lead">לא. עיקרון, לא מוצר.</b> המסלול הרביעי פתוח לכל מערכת שתעמוד בסטנדרט מחמיר. החתימה לא מחייבת אף אחד מאיתנו או את הגן בשום דבר.</dd></div>
+        <div style="--k:5"><span class="g-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.500" width="14" height="9.500" rx="2"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg></span><dt>ומה עם הפרטיות?</dt><dd><b class="g-lead">בלי צפייה שוטפת.</b> כל עיון מתועד, המידע נמחק אחרי זמן מוגדר, והרשות להגנת הפרטיות מפקחת.</dd></div>
       </dl>
       <a class="morelink" href="./#faq">לכל השאלות בעמוד המאבק</a>
     </div>
