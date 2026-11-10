@@ -423,7 +423,9 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
 [dir=ltr] .feel-lede::first-letter{float:left;margin:.06em .12em 0 0}
 [dir=ltr] .sw-hint i{scale:-1 1}
 </style>
+<script src="../m4src.js"></script>
 <script src="../m4px.js" defer></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
 </head>
 <body>
 
@@ -624,6 +626,7 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
       <li>Your email address is used to verify your signature and to prevent duplicate signatures. Messages will be sent to it only with separate consent.</li>
       <li>Your details will not be used to market products and will not be passed on to third parties. Upon submission, only names and towns will be provided, without phone numbers or email addresses.</li>
       <li>This site uses a Meta measurement cookie (pixel), only for visitors who agreed, solely to measure ad effectiveness. No name, email or phone is passed to Meta.<button type="button" class="pv-reset" onclick="m4reset()">Change my choice</button></li>
+      <li>The site counts visits with Cloudflare Web Analytics, without cookies or identifying information. When you sign, we also save which link brought you to the site (for example an ad, WhatsApp or Facebook), so we know which channels work.</li>
       <li>First names and towns are shown on the site only for those who consented. Professionals are shown by name and role only with their consent.</li>
       <li>Updates will be sent only to those who separately consented. You can unsubscribe at any time.</li>
       <li>Your details will be kept for as long as needed to receive a response from decision-makers and to complete the process of updating the law, and will then be deleted.</li>
@@ -723,7 +726,7 @@ form.addEventListener("submit",async ev=>{
     acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value==="רעיון"?("רעיון: "+($("#idea").value.trim()||"—")):i.value).join(", "):"",
     phone:lvl==="active"?fmtPhone(phone):"",email,
     optin:F.optin.checked,showName:F.showName.checked,
-    source:new URLSearchParams(location.search).get("src")||document.referrer||""
+    source:[new URLSearchParams(location.search).get("src")||"",(function(){try{return sessionStorage.getItem("m4src")||""}catch(e){return ""}})()].filter(Boolean).join(" ; ")||document.referrer||""
   };
   const btn=$("#goBtn");btn.disabled=true;btn.textContent="Sending…";
   try{

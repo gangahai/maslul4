@@ -384,7 +384,9 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
 .meta div{grid-template-columns:minmax(52px,80px) 1fr}.meta dt{overflow-wrap:anywhere}
 :root{--f-head:"Noto Naskh Arabic","Times New Roman",serif;--f-body:"Noto Naskh Arabic","Times New Roman",serif;--f-ui:"Noto Sans Arabic",system-ui,sans-serif;}
 </style>
+<script src="../m4src.js"></script>
 <script src="../m4px.js" defer></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
 </head>
 <body>
 
@@ -585,6 +587,7 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
       <li>يُستخدم عنوان البريد الإلكتروني للتحقّق من التوقيع ولمنع التوقيعات المكرّرة. ولن تُرسَل إليه رسائل إلا بموافقة منفصلة.</li>
       <li>لن تُستخدم التفاصيل لتسويق منتجات ولن تُنقل إلى طرف ثالث. وعند التقديم تُسلَّم الأسماء والبلدات فقط، دون الهاتف والبريد الإلكتروني.</li>
       <li>يعمل في الموقع ملف قياس من Meta (بيكسل)، فقط لمن وافق على ذلك، لقياس فعالية الإعلانات فحسب. لا يُنقَل إلى Meta الاسم أو البريد الإلكتروني أو الهاتف.<button type="button" class="pv-reset" onclick="m4reset()">تغيير الاختيار</button></li>
+      <li>يحصي الموقع الزيارات بواسطة Cloudflare Web Analytics، دون ملفات تعريف ارتباط ودون معلومات تعريفية. عند التوقيع نحفظ أيضًا الرابط الذي أوصلك إلى الموقع (مثل إعلان أو واتساب أو فيسبوك)، لنعرف أي القنوات تنجح.</li>
       <li>يُعرض في الموقع الاسم الشخصي والبلدة فقط لمَن وافق على ذلك. ويُعرض المهنيون بأسمائهم ووظائفهم فقط بموافقتهم.</li>
       <li>تُرسَل التحديثات فقط لمَن وافق على ذلك بشكل منفصل. يمكن الإلغاء في أي وقت.</li>
       <li>تُحفظ التفاصيل طوال المدة اللازمة لتلقّي ردّ من صنّاع القرار ولاستكمال إجراءات تحديث القانون، ثم تُحذف.</li>
@@ -684,7 +687,7 @@ form.addEventListener("submit",async ev=>{
     acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value==="רעיון"?("רעיון: "+($("#idea").value.trim()||"—")):i.value).join(", "):"",
     phone:lvl==="active"?fmtPhone(phone):"",email,
     optin:F.optin.checked,showName:F.showName.checked,
-    source:new URLSearchParams(location.search).get("src")||document.referrer||""
+    source:[new URLSearchParams(location.search).get("src")||"",(function(){try{return sessionStorage.getItem("m4src")||""}catch(e){return ""}})()].filter(Boolean).join(" ; ")||document.referrer||""
   };
   const btn=$("#goBtn");btn.disabled=true;btn.textContent="جارٍ الإرسال…";
   try{

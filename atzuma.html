@@ -348,7 +348,9 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 @media (max-width:420px){.lg-globe{display:none}.lsw-btn{padding:6px 9px}}
 .pv-reset{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
 </style>
+<script src="m4src.js"></script>
 <script src="m4px.js" defer></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
 </head>
 <body>
 
@@ -549,6 +551,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
       <li>כתובת הדוא״ל משמשת לאימות החתימה ולמניעת חתימות כפולות. הודעות יישלחו אליה רק באישור נפרד.</li>
       <li>הפרטים לא ישמשו לשיווק מוצרים ולא יועברו לצד שלישי. בהגשה יימסרו שמות ויישובים בלבד, ללא טלפון ודוא״ל.</li>
       <li>באתר פועלת עוגיית מדידה של Meta (פיקסל), רק למי שהסכים לכך, לצורך מדידת יעילות המודעות בלבד. לא מועברים ל-Meta שם, דוא״ל או טלפון. <button type="button" class="pv-reset" onclick="m4reset()">לשינוי הבחירה</button></li>
+      <li>האתר סופר כניסות בעזרת Cloudflare Web Analytics, בלי עוגיות ובלי מידע מזהה. בעת החתימה נשמר גם מאיזה קישור הגעת לאתר (למשל מודעה, וואטסאפ או פייסבוק), כדי לדעת אילו ערוצים עובדים.</li>
       <li>באתר מוצגים שם פרטי ויישוב רק למי שאישר זאת. אנשי מקצוע מוצגים בשמם ובתפקידם רק באישורם.</li>
       <li>עדכונים יישלחו רק למי שאישר זאת בנפרד. ניתן לבטל בכל עת.</li>
       <li>הפרטים יישמרו למשך הזמן הנדרש לקבלת מענה ממקבלי ההחלטות ולהשלמת הליך עדכון החוק, ולאחר מכן יימחקו.</li>
@@ -648,7 +651,7 @@ form.addEventListener("submit",async ev=>{
     acts:lvl==="active"?[...form.querySelectorAll('input[name=acts]:checked')].map(i=>i.value==="רעיון"?("רעיון: "+($("#idea").value.trim()||"—")):i.value).join(", "):"",
     phone:lvl==="active"?fmtPhone(phone):"",email,
     optin:F.optin.checked,showName:F.showName.checked,
-    source:new URLSearchParams(location.search).get("src")||document.referrer||""
+    source:[new URLSearchParams(location.search).get("src")||"",(function(){try{return sessionStorage.getItem("m4src")||""}catch(e){return ""}})()].filter(Boolean).join(" ; ")||document.referrer||""
   };
   const btn=$("#goBtn");btn.disabled=true;btn.textContent="שולח…";
   try{

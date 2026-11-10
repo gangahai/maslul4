@@ -2598,7 +2598,9 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
 [dir=ltr] .feel-lede::first-letter{float:left;margin:.06em .12em 0 0}
 [dir=ltr] .sw-hint i{scale:-1 1}
 </style>
+<script src="../m4src.js"></script>
 <script src="../m4px.js" defer></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
 </head>
 <body>
 <nav class="sticky" aria-label="Sections"><div class="wrap bar">
@@ -2616,7 +2618,7 @@ document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});}
 
 <main>
 <header class="shero sh2" id="top">
-  <div class="sh-reel" id="shReel" data-p='["staff-circle.jpg", "staff-autumn.jpg", "staff-shabbat.jpg", "staff-pets.jpg", "staff-parachute.jpg", "staff-yard.jpg", "staff-art.jpg", "staff-sticks.jpg", "staff-birthday.jpg", "staff-nature.jpg", "staff-play.jpg"]' aria-hidden="true"></div>
+  <div class="sh-reel" id="shReel" data-p='["../staff-circle.jpg", "../staff-autumn.jpg", "../staff-shabbat.jpg", "../staff-pets.jpg", "../staff-parachute.jpg", "../staff-yard.jpg", "../staff-art.jpg", "../staff-sticks.jpg", "../staff-birthday.jpg", "../staff-nature.jpg", "../staff-play.jpg"]' aria-hidden="true"></div>
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">Educators and parents, one voice for the children</span>
@@ -2889,7 +2891,7 @@ push();if("IntersectionObserver" in window){new IntersectionObserver(function(es
 })();
 </script>
 <script>(function(){var r=document.getElementById("shReel");if(!r||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var P=JSON.parse(r.dataset.p),i=0,hero=r.parentNode,t=null,vis=true;
-function next(){var d=document.createElement("i");d.style.backgroundImage="url("../+P[i%P.length]+")";d.className="rv"+(i%3);var old=r.lastChild;r.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add("in");if(old)old.classList.add("out")})});
+function next(){var d=document.createElement("i");d.style.backgroundImage="url("+P[i%P.length]+")";d.className="rv"+(i%3);var old=r.lastChild;r.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add("in");if(old)old.classList.add("out")})});
 if(old)setTimeout(function(){if(old.parentNode)old.remove()},2800);i++;var im=new Image();im.src=P[i%P.length]}
 function start(){if(t||!vis||document.hidden)return;t=setInterval(next,5000)}
 function stop(){clearInterval(t);t=null}
