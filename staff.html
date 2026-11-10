@@ -2337,6 +2337,11 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .law3c .lc3.now>ul li{font-size:18.5px;line-height:1.45}
 .lc-go{margin-top:18px;display:flex;justify-content:center;align-items:center;min-height:54px;border-radius:999px;background:#fff;color:#0f3936;font-family:var(--f-ui);font-weight:900;font-size:18px;text-decoration:none;transition:transform .15s,box-shadow .15s}
 .lc-go:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.3)}
+/* reel: looping, gentle crossfade */
+.sh-reel i{transition:opacity 2.6s ease-in-out}
+.sh-reel i.in{opacity:.55}
+.sh-reel i.in.out{opacity:0}
+.sh-reel i.rv0.in{animation:rv0 8s linear forwards}.sh-reel i.rv1.in{animation:rv1 8s linear forwards}.sh-reel i.rv2.in{animation:rv2 8s linear forwards}
 </style>
 </head>
 <body>
@@ -2617,11 +2622,13 @@ if(rm){for(var k=N-1;k>=0;k--){var n=make(src[k]);n.classList.add("in");feed.app
 push();if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else stop()})},{threshold:.3}).observe(ph)}else start();
 })();
 </script>
-<script>(function(){var r=document.getElementById("shReel");if(!r||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var P=JSON.parse(r.dataset.p),i=0,hero=r.parentNode;
-function next(){if(i>=P.length){hero.classList.add("reel-done");setTimeout(function(){r.innerHTML=""},1600);return}
-var d=document.createElement("i");d.style.backgroundImage="url("+P[i]+")";d.className="rv"+(i%3);r.appendChild(d);requestAnimationFrame(function(){d.classList.add("in")});
-var old=r.children.length>2?r.firstChild:null;if(old)setTimeout(function(){old.remove()},1300);
-i++;if(i<P.length){var im=new Image();im.src=P[i]}setTimeout(next,1500)}
-hero.classList.add("reel-on");var f=new Image();f.onload=function(){setTimeout(next,300)};f.onerror=function(){hero.classList.add("reel-done")};f.src=P[0];})();</script>
+<script>(function(){var r=document.getElementById("shReel");if(!r||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var P=JSON.parse(r.dataset.p),i=0,hero=r.parentNode,t=null,vis=true;
+function next(){var d=document.createElement("i");d.style.backgroundImage="url("+P[i%P.length]+")";d.className="rv"+(i%3);var old=r.lastChild;r.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add("in");if(old)old.classList.add("out")})});
+if(old)setTimeout(function(){if(old.parentNode)old.remove()},2800);i++;var im=new Image();im.src=P[i%P.length]}
+function start(){if(t||!vis||document.hidden)return;t=setInterval(next,5000)}
+function stop(){clearInterval(t);t=null}
+hero.classList.add("reel-on");var f=new Image();f.onload=function(){next();start()};f.src=P[0];
+document.addEventListener("visibilitychange",function(){document.hidden?stop():start()});
+if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;vis?start():stop()},{threshold:.05}).observe(hero);})();</script>
 </body>
 </html>
