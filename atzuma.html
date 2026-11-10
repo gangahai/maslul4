@@ -346,7 +346,9 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 .lopt[lang="ar"] .lo-n{font-family:"Noto Sans Arabic",var(--f-ui)}
 @media (max-width:600px){.lsw-btn{padding:6px 10px;gap:5px;font-size:12.5px}}
 @media (max-width:420px){.lg-globe{display:none}.lsw-btn{padding:6px 9px}}
+.pv-reset{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
 </style>
+<script src="m4px.js" defer></script>
 </head>
 <body>
 
@@ -546,6 +548,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
       <li>הפרטים נאספים לצורך ההצהרה בלבד: ספירת החותמים, הגשת ההצהרה לחברי הכנסת ולמשרדי הממשלה, ויצירת קשר בנושא ההצהרה עם מי שביקש זאת.</li>
       <li>כתובת הדוא״ל משמשת לאימות החתימה ולמניעת חתימות כפולות. הודעות יישלחו אליה רק באישור נפרד.</li>
       <li>הפרטים לא ישמשו לשיווק מוצרים ולא יועברו לצד שלישי. בהגשה יימסרו שמות ויישובים בלבד, ללא טלפון ודוא״ל.</li>
+      <li>באתר פועלת עוגיית מדידה של Meta (פיקסל), רק למי שהסכים לכך, לצורך מדידת יעילות המודעות בלבד. לא מועברים ל-Meta שם, דוא״ל או טלפון. <button type="button" class="pv-reset" onclick="m4reset()">לשינוי הבחירה</button></li>
       <li>באתר מוצגים שם פרטי ויישוב רק למי שאישר זאת. אנשי מקצוע מוצגים בשמם ובתפקידם רק באישורם.</li>
       <li>עדכונים יישלחו רק למי שאישר זאת בנפרד. ניתן לבטל בכל עת.</li>
       <li>הפרטים יישמרו למשך הזמן הנדרש לקבלת מענה ממקבלי ההחלטות ולהשלמת הליך עדכון החוק, ולאחר מכן יימחקו.</li>
@@ -662,6 +665,7 @@ form.addEventListener("submit",async ev=>{
 });
 
 function done(name,lvl,dup){
+  if(!dup&&window.m4lead)m4lead(lvl);
   form.hidden=true;const t=$("#thanks");t.hidden=false;
   $("#tName").textContent=name.split(/\s+/)[0];
   if(dup) $("#thanks h2").textContent="כתובת הדוא״ל הזו כבר חתומה על ההצהרה. תודה!";

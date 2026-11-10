@@ -346,6 +346,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 .lopt[lang="ar"] .lo-n{font-family:"Noto Sans Arabic",var(--f-ui)}
 @media (max-width:600px){.lsw-btn{padding:6px 10px;gap:5px;font-size:12.5px}}
 @media (max-width:420px){.lg-globe{display:none}.lsw-btn{padding:6px 9px}}
+.pv-reset{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -414,6 +415,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 [dir=ltr] .body p.first::first-letter{float:left;margin:.06em .12em 0 0}
 @media (min-width:701px){[dir=ltr] .hero .credit{right:auto;left:max(18px,calc((100vw - 1160px)/2 + 18px));text-align:left}}
 </style>
+<script src="../m4px.js" defer></script>
 </head>
 <body>
 
@@ -613,6 +615,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
       <li>Данные собираются исключительно для целей декларации: подсчёта подписей, передачи декларации депутатам Кнессета и министерствам, а также связи по вопросам декларации с теми, кто об этом попросил.</li>
       <li>Адрес эл. почты используется для подтверждения подписи и предотвращения повторных подписей. Сообщения на него будут отправляться только с отдельного согласия.</li>
       <li>Данные не будут использоваться для маркетинга продуктов и не будут переданы третьим лицам. При подаче декларации будут переданы только имена и населённые пункты, без телефонов и адресов эл. почты.</li>
+      <li>באתר פועלת עוגיית מדידה של Meta (פיקסל), רק למי שהסכים לכך, לצורך מדידת יעילות המודעות בלבד. לא מועברים ל-Meta שם, דוא״ל או טלפון. <button type="button" class="pv-reset" onclick="m4reset()">Изменить выбор</button></li>
       <li>На сайте имя и населённый пункт отображаются только у тех, кто дал на это согласие. Специалисты указываются с именем и должностью только с их согласия.</li>
       <li>Новости будут отправляться только тем, кто отдельно дал на это согласие. Отписаться можно в любой момент.</li>
       <li>Данные будут храниться в течение срока, необходимого для получения ответа от лиц, принимающих решения, и завершения процесса обновления закона, после чего будут удалены.</li>
@@ -729,6 +732,7 @@ form.addEventListener("submit",async ev=>{
 });
 
 function done(name,lvl,dup){
+  if(!dup&&window.m4lead)m4lead(lvl);
   form.hidden=true;const t=$("#thanks");t.hidden=false;
   $("#tName").textContent=name.split(/\s+/)[0];
   if(dup) $("#thanks h2").textContent="С этого адреса эл. почты декларация уже подписана. Спасибо!";
