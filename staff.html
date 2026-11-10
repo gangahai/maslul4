@@ -2492,6 +2492,13 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
  92%{transform:translate(-1.02em,.27em) scale(.62) rotate(0deg)}
  100%{transform:translate(-1.02em,.27em) scale(.5) rotate(0deg)}
 }
+/* floating button to the campaign page (mobile) */
+.fab{display:none}
+@media (max-width:860px){
+ .fab{position:fixed;z-index:60;bottom:calc(16px + env(safe-area-inset-bottom));left:14px;display:inline-flex;align-items:center;gap:6px;background:#0f3936;color:#fff;font-family:var(--f-ui);font-weight:900;font-size:15.5px;text-decoration:none;border-radius:999px;padding:12px 18px 12px 12px;box-shadow:0 10px 26px rgba(0,0,0,.35),0 0 0 2px rgba(255,255,255,.85);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .3s,transform .3s}
+ .fab.on{opacity:1;transform:none;pointer-events:auto}
+ .fab svg{width:18px;height:18px;fill:none;stroke:#8fe3d4;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+}
 </style>
 </head>
 <body>
@@ -2711,6 +2718,7 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
 </main>
 
 <footer><div class="wrap"><img src="logo-full.png" alt="המסלול הרביעי: מגינים על הילדים בזמן אמת" class="flogo-full" width="640" height="322"><div class="fbrand">יוזמה של <a href="./#contact"><b><span class="ez">עין צופיה</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">מספיק עם הפלסטר! <span>הגיע הזמן לפתרון שעובד.</span></p><div class="flinks"><a href="./">עמוד המאבק</a><a href="atzuma.html">ההצהרה</a><a href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">פייסבוק</a><a href="atzuma.html#a11y">הצהרת נגישות</a><a href="atzuma.html#privacy">מדיניות פרטיות</a></div></div></footer>
+<a class="fab" id="fab" href="./">לעמוד המאבק<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
 <div class="toast" id="toast" hidden></div>
 
 <script>
@@ -2784,6 +2792,8 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es
 (function(){[].forEach.call(document.querySelectorAll(".swipe[data-dots]"),function(w){var n=w.children.length,d=document.createElement("div");d.className="sw-dots";d.setAttribute("aria-hidden","true");for(var i=0;i<n;i++){d.appendChild(document.createElement("i"))}w.parentNode.insertBefore(d,w.nextSibling);
 function upd(){var c=w.getBoundingClientRect(),mid=c.left+c.width/2,best=0,bd=1e9;[].forEach.call(w.children,function(el,i){var r=el.getBoundingClientRect(),x=Math.abs(r.left+r.width/2-mid);if(x<bd){bd=x;best=i}});[].forEach.call(d.children,function(el,i){el.classList.toggle("on",i===best)})}
 w.addEventListener("scroll",function(){requestAnimationFrame(upd)},{passive:true});upd()})})();
+
+(function(){var f=document.getElementById("fab"),h=document.querySelector(".shero"),a=document.getElementById("act");if(!f)return;function u(){var y=scrollY,past=y>h.offsetHeight*.6,end=a&&a.getBoundingClientRect().top<innerHeight*.7;f.classList.toggle("on",past&&!end)}addEventListener("scroll",u,{passive:true});u()})();
 </script>
 </body>
 </html>
