@@ -2206,6 +2206,43 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (prefers-reduced-motion:no-preference){.guards.g2 dl.armed>div{opacity:0;transform:translateY(16px)}.guards.g2 dl.go>div{opacity:1;transform:none;transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .2s,border-color .2s;transition-delay:calc(var(--k)*.09s)}}
 @media (max-width:980px){.guards.g2 dl{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.guards.g2 dl{grid-template-columns:1fr;gap:12px}.guards.g2 dl>div{display:grid;grid-template-columns:auto 1fr;gap:0 14px;padding:18px 16px}.g-ic{grid-row:1/3;margin:0}.guards.g2 dd{grid-column:2}}
+/* whole banners are buttons */
+.act .signbox,.act .p-link{cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s}
+.act .signbox:hover{transform:translateY(-3px);box-shadow:0 22px 50px rgba(0,0,0,.28)}
+.act .signbox:active,.act .p-link:active{transform:scale(.99)}
+.act .p-link{text-decoration:none;color:inherit}
+.act .p-link>span:first-child{display:block}
+.act .p-link h3{display:block}
+.act .p-link:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+/* multi-camera demo */
+.ped.demo .ped-vid.multi{position:relative;aspect-ratio:16/10;overflow:hidden}
+.ped.demo .ped-vid.multi video{position:absolute;aspect-ratio:auto;object-fit:cover;display:block;transition:left .7s cubic-bezier(.5,0,.2,1),top .7s cubic-bezier(.5,0,.2,1),width .7s cubic-bezier(.5,0,.2,1),height .7s cubic-bezier(.5,0,.2,1),border-radius .7s,box-shadow .7s}
+.ped-vid.multi video.v-main{left:0;top:0;width:100%;height:100%;z-index:1;border-radius:0}
+.ped-vid.multi video.v-pip{left:2.5%;top:60%;width:29%;height:29%;z-index:4;border-radius:10px;box-shadow:0 0 0 2px #fff,0 8px 20px rgba(0,0,0,.5)}
+.ped-vid.multi .scan,.ped-vid.multi .dm-box{z-index:2}
+.ped-vid.multi .ped-live,.ped-vid.multi .ped-anon,.ped-vid.multi .dm-cam{z-index:5}
+.pip-l{position:absolute;z-index:5;left:2.5%;top:calc(89% + 6px);width:29%;text-align:center;font-family:var(--f-ui);font-weight:800;font-size:12.5px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+.dm-cam{position:absolute;top:12px;right:12px;font-family:var(--f-ui);font-weight:800;font-size:13.5px;color:#0b2a28;background:rgba(255,255,255,.92);border-radius:999px;padding:5px 12px}
+.ped-vid.multi.sw::after{content:"";position:absolute;inset:0;z-index:3;background:#fff;opacity:0;animation:camFlash .7s ease-out;pointer-events:none}
+@keyframes camFlash{0%{opacity:.55}100%{opacity:0}}
+.ped-vid.multi .dm-box{transition:left .5s,top .5s,width .5s,height .5s,transform .35s cubic-bezier(.2,.9,.3,1.3)}
+.ped-vid.multi[data-cam="2"] .dm-b1{left:54%;top:26%;width:25%;height:52%}
+.ped-vid.multi[data-cam="2"] .dm-b2{left:17%;top:8%;width:14%;height:56%}
+@media (max-width:980px){.ped.demo .ped-vid.multi{aspect-ratio:16/9}.ped-vid.multi[data-cam="2"] .dm-b1{left:54%;width:22%}.dm-cam{font-size:12px;top:8px;right:8px}.pip-l{font-size:11px}}
+.ped-vid.multi[data-cam="2"] .dm-b1 em{top:auto;bottom:calc(100% + 8px)}
+.dm-tally .dm-th{flex-wrap:wrap}
+@media (max-width:980px){.dm-tally .dm-th>span:last-child{width:100%;margin:2px 0 0;text-align:start}.dm-tally li{font-size:14px;padding:7px 9px;gap:6px;white-space:nowrap}.dm-tally li b{min-width:24px;height:24px}}
+.dm-tally ul{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.dm-tally li{min-width:0}
+@media (max-width:980px){
+ .ped-vid.multi .ped-live,.ped-vid.multi .dm-cam,.ped-vid.multi .ped-anon{font-size:11px;padding:4px 8px}
+ .ped-vid.multi .ped-live{top:8px;inset-inline-end:8px}
+ .ped-vid.multi video.v-pip{top:52%}
+ .pip-l{top:calc(81% + 4px)}
+ .ped-vid.multi .ped-anon{bottom:8px}
+ .dm-tally li{font-size:13.5px;padding:7px 8px}
+ .dm-tally li span{font-size:16px}
+}
 </style>
 </head>
 <body>
@@ -2323,10 +2360,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <p class="ped-how"><b>כך זה יכול לעבוד בכל גן, וכך זה כבר עובד היום</b> בפיילוט מחקרי, בשיתוף מכללת אורנים. הטכנולוגיה פותחה בתמיכה ובמימון של רשות החדשנות.</p>
     <div class="ped demo" id="pedRep">
       <div class="ped-l">
-        <div class="dm-step"><b>1</b> המצלמה שכבר בגן</div>
-        <figure class="ped-vid">
-          <video src="pizza.mp4" poster="pizza-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="קטע ממצלמת הגן בזמן פעילות הכנת פיצות. האנשים מטושטשים"></video>
+        <div class="dm-step"><b>1</b> המצלמות שכבר בגן</div>
+        <figure class="ped-vid multi" id="dmFig" data-cam="1">
+          <video class="v-main" data-cam="1" src="pizza.mp4" poster="pizza-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="מצלמה 1: פעילות הכנת פיצות בגן. האנשים מטושטשים"></video>
+          <video class="v-pip" data-cam="2" src="animals.mp4" poster="animals-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="מצלמה 2: חוג חיות בגן. התמונה כולה מטושטשת"></video>
+          <span class="pip-l" id="dmPipL" aria-hidden="true">מצלמה 2</span>
           <span class="ped-live">ניתוח אוטומטי · פיילוט</span>
+          <span class="dm-cam" id="dmCam" aria-hidden="true">מצלמה 1 · הכנת פיצות</span>
           <span class="ped-anon">הפנים טושטשו והשמות הוסרו</span>
           <span class="scan" aria-hidden="true"></span>
           <span class="dm-box dm-b1" id="dmB1" aria-hidden="true"><i></i><em></em></span><span class="dm-box dm-b2" id="dmB2" aria-hidden="true"><i></i></span>
@@ -2334,12 +2374,12 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <div class="dm-arrow" aria-hidden="true"></div>
         <div class="dm-step"><b>2</b> ניתוח אוטומטי</div>
         <div class="dm-tally" id="dmTally" aria-hidden="true">
-          <div class="dm-th"><span class="dm-ai"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></span><b><span id="dmCnt">0</span> מתוך 7 תובנות</b><span>מבוקר אחד בגן</span></div>
+          <div class="dm-th"><span class="dm-ai"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></span><b><span id="dmCnt">0</span> מתוך <span id="dmN">10</span> תובנות</b><span>משתי פעילויות בגן</span></div>
           <div class="dm-bar"><i id="dmBar"></i></div>
           <ul>
             <li data-cat="g"><span>💛</span>רגעים יפים<b>0</b></li>
-            <li data-cat="k"><span>👶</span>צרכים של ילדים<b>0</b></li>
-            <li data-cat="t"><span>🎯</span>המלצות מעשיות<b>0</b></li>
+            <li data-cat="k"><span>👶</span>צרכי ילדים<b>0</b></li>
+            <li data-cat="t"><span>🎯</span>המלצות<b>0</b></li>
             <li data-cat="b"><span>🧰</span>כלים ורעיונות<b>0</b></li>
             <li data-cat="q"><span>❓</span>שאלות לצוות<b>0</b></li>
           </ul>
@@ -2355,17 +2395,20 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
           </div>
         </div>
         <template id="pedSrc">
-          <article class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></div></article>
-          <article class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>חלוקת אבטיח, עם פנייה אישית לכל ילד בשמו.</h4><p class="pc-why">מעניק לילד תחושת נראות ומונע מאבקים סביב האוכל.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את מחלקת את האבטיח, ורגע אחד שממש תפס אותי היה שהקפדת לקרוא לכל ילד בשמו. זה יצר אווירה כל כך רגועה ומכבדת סביב השולחן.“</p></div></article>
+          <article data-b2="1" class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>פנייה מכבדת לילדים: מי רוצה זיתים? ואז המתנה לתשובה.</h4><p class="pc-why">מעניק לילדים תחושת שליטה וערך, ומלמד אותם שדעתם נחשבת גם בפעולות יומיומיות.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את פונה לילדים ושואלת אותם מה הם רוצים לאכול, ורגע אחד שממש תפס אותי היה כשהמתנת בסבלנות לתשובה שלהם. זה בונה אצלם תחושת מסוגלות אדירה.“</p></div></article>
+          <article data-b2="1" class="pc pc-g" data-cat="g"><small><span class="pc-tag">💛 רגע יפה</span><span class="pc-ok">אומת מול הווידאו</span></small><h4>חלוקת אבטיח, עם פנייה אישית לכל ילד בשמו.</h4><p class="pc-why">מעניק לילד תחושת נראות ומונע מאבקים סביב האוכל.</p><div class="pc-msg"><span class="pm-l">המסר שאשת הצוות מקבלת</span><p>„ראיתי איך את מחלקת את האבטיח, ורגע אחד שממש תפס אותי היה שהקפדת לקרוא לכל ילד בשמו. זה יצר אווירה כל כך רגועה ומכבדת סביב השולחן.“</p></div></article>
+          <article class="pc pc-g" data-cat="g" data-cam="2"><small><span class="pc-tag">💛 רגע יפה</span></small><h4>מפעילת החוג מכבדת סירוב של ילד.</h4><p class="pc-why">ילד לא רצה שהתוכי יעלה על כתפו, והיא עברה לילד הבא. מודלינג של אוטונומיה וגבולות גוף.</p></article>
+          <article class="pc pc-g" data-cat="g" data-cam="2"><small><span class="pc-tag">💛 רגע יפה</span></small><h4>קן ציפורים אמיתי, במקום הסבר.</h4><p class="pc-why">אביזר מוחשי מרתק את הילדים יותר מהסבר מילולי.</p></article>
           <article class="pc pc-k" data-cat="k"><small><span class="pc-tag">👶 צורך של ילדה</span></small><h4>ילדה עמדה בצד ולא הצטרפה להכנת הפיצות.</h4><p class="pc-why">כנראה זקוקה לוויסות לפני כניסה לפעילות קבוצתית עמוסה. רעיונות לצוות:</p><ul><li>„אני שמה לך חתיכת בצק קטנה כאן בקצה השולחן, את יכולה רק להסתכל עליה או לגעת באצבע אחת.“</li><li>תפקיד בלי מגע: לעזור לחלק מפיות.</li></ul></article>
           <article class="pc pc-t" data-cat="t"><small><span class="pc-tag">🎯 המלצה מעשית</span><span class="pc-un">טרם אומת מול הווידאו</span></small><h4>בזמני מעבר: אשת צוות אחת „עוגן“, ואחת „לוגיסטיקה“.</h4><p class="pc-why">כשכל הצוות עסוק בניקיון ובארגון, הילדים מאבדים מיקוד ומתחילים לשוטט. „עוגן“ יושבת עם הילדים ושרה או מפעילה, ו„לוגיסטיקה“ מנקה ומארגנת.</p><p class="pc-res"><b>תוצאה צפויה תוך שבוע:</b> פחות שוטטות ופחות חוסר שקט במעברים.</p></article>
+          <article class="pc pc-t" data-cat="t" data-cam="2"><small><span class="pc-tag">🎯 המלצה מעשית</span></small><h4>בסבב האישי: אביזר המתנה קטן לכל ילד.</h4><p class="pc-why">ההמתנה לתור מאתגרת את הילדים. התוצאה הצפויה: פחות שוטטות, יותר קשב.</p></article>
           <article class="pc pc-b" data-cat="b"><small><span class="pc-tag">🧰 מארגז הכלים</span></small><h4>שיר המתנה</h4><dl class="pc-dl"><dt>מתי</dt><dd>כשהילדים יושבים ליד השולחן ומחכים לאוכל.</dd><dt>איך</dt><dd>משחק אצבעות או שיר מוכר עם תנועות ידיים.</dd><dt>למה</dt><dd>נותן לילדים עוגן, כדי שלא „ילכו לאיבוד“ בהמתנה.</dd></dl></article>
-          <article class="pc pc-b" data-cat="b"><small><span class="pc-tag">🎨 רעיון לפעם הבאה</span></small><h4>פיצה משלנו, בבצק משחק</h4><p class="pc-why">משחק חושי בקבוצות קטנות, בלי הלחץ של תוצר אכיל. מתאים יותר לילדים שנרתעו מהמרקם הדביק של בצק אמיתי.</p></article>
+          <article data-b2="1" class="pc pc-b" data-cat="b"><small><span class="pc-tag">🎨 רעיון לפעם הבאה</span></small><h4>פיצה משלנו, בבצק משחק</h4><p class="pc-why">משחק חושי בקבוצות קטנות, בלי הלחץ של תוצר אכיל. מתאים יותר לילדים שנרתעו מהמרקם הדביק של בצק אמיתי.</p></article>
           <article class="pc pc-q" data-cat="q"><small><span class="pc-tag">❓ שאלה להרהור בצוות</span></small><h4 class="pc-big">בזמן שאנחנו מנקות ומארגנות לפעילות הבאה, מה הילדים עושים, ומי מתווך להם את הזמן הזה?</h4></article>
         </template>
       </div>
     </div>
-    <p class="ped-note">דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים.</p>
+    <p class="ped-note">תובנות אמיתיות מדוחות של פיילוט פעיל בגן, בשיתוף מכללת אורנים. ההדגמה ממחישה את התהליך.</p>
   </div>
 </section>
 
@@ -2394,10 +2437,10 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <p class="lead">צוותי חינוך והורים, קול אחד למען הילדים.</p></div>
     <button class="sharecirc" id="shareCirc" type="button" aria-label="שיתוף העמוד"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>שיתוף</span></button></div>
     <a class="signbox" href="atzuma.html?role=staff&amp;src=staff"><img class="sbmark" src="logo-hand.png" alt=""><span class="sbtxt"><b>חתמו על ההצהרה למסלול הרביעי</b><small>תוגש לשר/ת החינוך ולוועדת החינוך של הכנסת. חצי דקה, בלי שום התחייבות.</small><small class="lc2" hidden><b class="lcn">0</b> כבר חתמו.</small></span><span class="sb-go">לחתימה</span></a>
-    <div class="parents">
-      <div><h3>הפיצו הלאה</h3><p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים. הודעה מוכנה עם קישור לעמוד.</p></div>
-      <a class="bigbtn red" id="shareWa" href="https://wa.me/" target="_blank" rel="noopener">שליחה בוואטסאפ</a>
-    </div>
+    <a class="parents p-link" id="shareWa" href="https://wa.me/" target="_blank" rel="noopener">
+      <span><h3>הפיצו הלאה</h3><p>לצוות, לעמיתות ולעמיתים ולקבוצות ההורים. הודעה מוכנה עם קישור לעמוד.</p></span>
+      <span class="bigbtn red">שליחה בוואטסאפ</span>
+    </a>
     <div class="parents">
       <div><h3>בואו לקחת חלק</h3><p>חיבור לארגונים, הגעה לכנסת או עזרה בהפצה. דברו איתי ישירות, אהרון.</p></div>
       <div class="act-two"><a class="bigbtn red" href="https://wa.me/972508787431?text=%D7%94%D7%99%D7%99%20%D7%90%D7%94%D7%A8%D7%95%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%99%D7%95%D7%AA%20%D7%A9%D7%95%D7%AA%D7%A3%2F%D7%94%20%D7%91%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%20%D7%94%D7%A8%D7%91%D7%99%D7%A2%D7%99" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a><a class="bigbtn line" href="tel:+972508787431"><span dir="ltr">050-878-7431</span></a></div>
@@ -2443,24 +2486,28 @@ function make(a){var n=document.createElement("article");n.className="nt nt-"+a.
 n.innerHTML='<div class="nt-top"><span class="nt-ic">'+ICO+'</span><span class="nt-app">משוב לצוות</span><span class="nt-time">עכשיו</span></div><b class="nt-tag">'+tag+'</b><p class="nt-h">'+h+'</p><div class="nt-more"><div>'+(ver?'<p class="nt-ver '+ver.className+'">'+ver.textContent+'</p>':'')+rest.innerHTML+'</div></div>';
 n.addEventListener("click",function(){user=true;stop();open(n)});return n}
 function open(n){[].forEach.call(feed.children,function(x){x.classList.toggle("on",x===n)})}
-var demo=document.getElementById("pedRep"),b1=document.getElementById("dmB1"),b2=document.getElementById("dmB2"),flow=document.getElementById("dmTally"),ai=flow.querySelector(".dm-ai"),FOOD={0:1,1:1,5:1};
+var demo=document.getElementById("pedRep"),b1=document.getElementById("dmB1"),b2=document.getElementById("dmB2"),flow=document.getElementById("dmTally"),ai=flow.querySelector(".dm-ai");
 function ctr(el,top){var r=el.getBoundingClientRect(),d=demo.getBoundingClientRect();return [r.left-d.left+r.width/2,r.top-d.top+(top?30:r.height/2)]}
 function fly(emo){var c=document.createElement("span");c.className="dm-chip";c.textContent=emo;demo.appendChild(c);var A=ctr(b1),B=ctr(ai),C=ctr(feed,1);
 function tr(p,s){return "translate("+(p[0]-22)+"px,"+(p[1]-22)+"px) scale("+s+")"}
 var an=c.animate([{transform:tr(A,.4),opacity:0},{transform:tr(A,1.15),opacity:1,offset:.12},{transform:tr(B,.9),opacity:1,offset:.5},{transform:tr(B,1.1),opacity:1,offset:.6},{transform:tr(C,1),opacity:1,offset:.93},{transform:tr(C,.5),opacity:0}],{duration:1500,easing:"cubic-bezier(.5,0,.3,1)"});
 an.onfinish=function(){c.remove()};setTimeout(function(){flow.classList.remove("go");void flow.offsetWidth;flow.classList.add("go")},620)}
+var fig=document.getElementById("dmFig"),camL=document.getElementById("dmCam"),pipL=document.getElementById("dmPipL"),day=ph.querySelector(".phn-day span"),CAM={"1":["מצלמה 1 · הכנת פיצות","פעילות פיצות וארוחה"],"2":["מצלמה 2 · חוג חיות","חוג חיות"]},cur="1";
+function cam(c){if(c===cur)return 0;cur=c;fig.dataset.cam=c;[].forEach.call(fig.querySelectorAll("video"),function(v){var on=v.dataset.cam===c;v.classList.toggle("v-main",on);v.classList.toggle("v-pip",!on);if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}});
+camL.textContent=CAM[c][0];pipL.textContent="מצלמה "+(c==="1"?"2":"1");fig.classList.remove("sw");void fig.offsetWidth;fig.classList.add("sw");return 1100}
 function push(){if(i>=N){feed.classList.add("clr");setTimeout(function(){feed.innerHTML="";feed.classList.remove("clr");i=0;tally(null);push()},700);return}
-var a=src[i],tag=a.querySelector(".pc-tag").textContent;b1.querySelector("em").textContent=tag;b1.classList.add("hit");if(FOOD[i])b2.classList.add("hit");
-setTimeout(function(){fly(tag.trim().split(" ")[0])},800);
-setTimeout(land,2150);
-setTimeout(function(){b1.classList.remove("hit");b2.classList.remove("hit")},3000)}
+var a=src[i],tag=a.querySelector(".pc-tag").textContent,d=cam(a.dataset.cam||"1");
+setTimeout(function(){b1.querySelector("em").textContent=tag;b1.classList.add("hit");if(a.dataset.b2)b2.classList.add("hit");day.textContent=CAM[cur][1]},d);
+setTimeout(function(){fly(tag.trim().split(" ")[0])},d+800);
+setTimeout(land,d+2150);
+setTimeout(function(){b1.classList.remove("hit");b2.classList.remove("hit")},d+3000)}
 var tl=document.getElementById("dmTally");
-function tally(cat){if(!tl)return;if(cat==null){[].forEach.call(tl.querySelectorAll("li"),function(l){l.classList.remove("on","bump");l.querySelector("b").textContent="0"});document.getElementById("dmCnt").textContent="0";document.getElementById("dmBar").style.width="0";return}
+function tally(cat){if(!tl)return;if(cat==null){[].forEach.call(tl.querySelectorAll("li"),function(l){l.classList.remove("on","bump");l.querySelector("b").textContent="0"});document.getElementById("dmCnt").textContent="0";document.getElementById("dmN").textContent=N;document.getElementById("dmBar").style.width="0";return}
 var l=tl.querySelector('li[data-cat="'+cat+'"]');if(l){var b=l.querySelector("b");b.textContent=+b.textContent+1;l.classList.add("on");l.classList.remove("bump");void l.offsetWidth;l.classList.add("bump")}
 document.getElementById("dmCnt").textContent=i;document.getElementById("dmBar").style.width=(i/N*100)+"%"}
 function land(){var n=make(src[i++]);tally(src[i-1].dataset.cat);[].forEach.call(feed.querySelectorAll(".nt-time"),function(x){x.textContent="קודם"});feed.insertBefore(n,feed.firstChild);requestAnimationFrame(function(){n.classList.add("in","fresh");open(n)});
 while(feed.children.length>3)feed.removeChild(feed.lastChild)}
-function start(){if(rm||t||user)return;t=setInterval(push,6200)}
+function start(){if(rm||t||user)return;t=setInterval(push,7000)}
 function stop(){if(t){clearInterval(t);t=null}}
 if(rm){for(var k=N-1;k>=0;k--){var n=make(src[k]);n.classList.add("in");feed.appendChild(n)}i=N;open(feed.firstChild);return}
 push();if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else stop()})},{threshold:.3}).observe(ph)}else start();
