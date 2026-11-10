@@ -2183,6 +2183,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:980px){.ped.demo{grid-template-columns:minmax(0,1fr)}.ped.demo>*{min-width:0}.ped.demo .phn{max-width:100%}}
 .sh-reel i.in{opacity:.6}
 @media (max-width:700px){.shero.sh2 .kicker::before,.shero.sh2 .kicker::after{display:none}}
+
+/* red brush that paints slowly when reached */
+.sfeel .sbrush.sb-red{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M6 14 C40 6 90 10 140 7 S250 4 300 8 S370 5 396 12 L392 22 L398 30 L390 40 L396 50 C350 56 300 52 250 55 S150 58 100 54 S30 57 4 50 L10 40 L2 30 L8 22 Z' fill='%23c8102e'/%3E%3C/svg%3E")}
+.sfeel.armed .feel-h2 .sbrush.sb-red,.sfeel.go .feel-h2 .sbrush.sb-red{animation:none;background-size:100% 100%;color:#fff}
+.sfeel .feel-h2.armed .sbrush.sb-red{background-size:0% 100%;color:var(--ink)}
+.sfeel .feel-h2.go .sbrush.sb-red{animation:sBrushSlow 2.8s cubic-bezier(.45,0,.25,1) .3s both}
+@keyframes sBrushSlow{0%{background-size:0% 100%;color:var(--ink)}40%{color:var(--ink)}75%{color:#fff}100%{background-size:100% 100%;color:#fff}}
 </style>
 </head>
 <body>
@@ -2227,7 +2234,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <p class="lt-sign">גננות, סייעות, מנהלות ומנהלים: מזמין את כולכן וכולכם להצטרף למאבק.</p>
     </div>
   </div>
-  <h2 class="feel-h2">המצב היום פשוט <span class="sbrush">מבייש את מערכת החינוך</span></h2>
+  <h2 class="feel-h2" data-io>המצב היום פשוט <span class="sbrush sb-red">מבייש את מערכת החינוך</span></h2>
   <div class="scards swipe">
     <div class="scard ic" style="--k:0"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="21" cy="21" r="12"/><path pathLength="1" d="M30 30l11 11"/><path pathLength="1" d="M21 15v7M21 27v.5"/></svg><b>חשד, רק בדיעבד</b><p>הצילומים נפתחים רק אחרי שיש חשד. ואז כל הצוות נחשד, גם מי שלא עשתה דבר.</p></div>
     <div class="scard ic" style="--k:1"><svg class="sico" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="24" cy="14" r="6"/><path pathLength="1" d="M12 40c1-8 6-13 12-13s11 5 12 13"/><path pathLength="1" d="M6 22l4 2M42 22l-4 2M9 33l4-1M39 33l-4-1"/></svg><b>לבד ברגעי העומס</b><p>מפקחת אחת לכ-83 מעונות. ברגעים הכי עמוסים, אנחנו לבד.</p></div>
