@@ -2258,6 +2258,26 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .lc-tr.lc-why li span{display:block;position:relative;margin-top:3px;padding-inline-start:24px;font-size:16.5px;line-height:1.45;color:#8a1226;font-weight:600}
 .lc-tr.lc-why li span::before{content:"✕";position:absolute;inset-inline-start:0;top:.05em;font-weight:900;color:var(--red)}
 @media (prefers-reduced-motion:no-preference){.law3c.armed .lc-why li span{opacity:0;transform:translateX(8px)}.law3c.go .lc-why li span{opacity:1;transform:none;transition:opacity .5s,transform .5s;transition-delay:calc(.7s + var(--i,0)*.25s)}.law3c .lc-why li:nth-child(2) span{--i:1}.law3c .lc-why li:nth-child(3) span{--i:2}}
+/* demo: phone fills its column, step labels aligned */
+.ped.demo{align-items:stretch}
+.ped.demo .ped-phone{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start}
+.ped.demo .ped-phone>.dm-step{align-self:flex-start;margin-bottom:12px}
+.ped.demo .ped-l{justify-content:flex-start}
+.ped.demo .phn{flex:1 1 auto;height:auto;min-height:620px;width:100%;max-width:430px;align-self:center;border-radius:50px}
+.ped.demo .phn-scr{border-radius:40px}
+.ped.demo .phn-day b{font-size:30px}.ped.demo .phn-day span{font-size:15.5px}
+.ped.demo .nt-h{font-size:17.5px}
+.ped.demo .nt-more .pc-why,.ped.demo .nt-more ul,.ped.demo .nt-more .pc-res,.ped.demo .nt-more .pc-dl{font-size:15.5px}
+.ped.demo .nt-more .pc-msg p{font-size:15px}
+.ped.demo .nt-tag{font-size:14.5px}
+@media (max-width:980px){
+ .ped.demo .phn{min-height:0;height:560px;flex:none;max-width:360px}
+ .ped.demo .ped-phone>.dm-step{align-self:flex-start}
+ .ped.demo .nt-h{font-size:16px}
+ .ped.demo .nt-more .pc-why,.ped.demo .nt-more ul,.ped.demo .nt-more .pc-res,.ped.demo .nt-more .pc-dl{font-size:14.5px}
+ .ped.demo .nt-more .pc-msg p{font-size:14px}
+}
+.ped-now span{display:block;color:var(--ink);font-size:.82em;margin-top:2px}
 </style>
 </head>
 <body>
@@ -2370,7 +2390,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <section class="sped" id="ped" aria-labelledby="ped-h">
   <div class="wrap">
     <h2 id="ped-h"><small>מעטפת שלמה לגן ולצוות</small>נחולל מהפכה <span class="tqd">בגיל הרך</span></h2>
-    <p class="ped-now">כיום זה אפשרי.</p>
+    <p class="ped-now">כיום, בזכות מהפכת ה-AI, זה באמת אפשרי. <span>משתמשים בטכנולוגיה, למען הילדים.</span></p>
     <p class="slede">הרעיון פשוט: המצלמות שכבר נמצאות בגן יכולות לעבוד בשבילנו. במקום הקלטה שאף אחד לא רואה, משוב פדגוגי שמגיע לצוות כל יום: מה עבד, מה כדאי לחזק, ואיפה ילד צריך אותנו. <b>בלי ציונים אישיים, ובלי לחפש אשמים.</b></p>
     <p class="ped-how"><b>כך זה יכול לעבוד בכל גן, וכך זה כבר עובד היום</b> בפיילוט מחקרי, בשיתוף מכללת אורנים. הטכנולוגיה פותחה בתמיכה ובמימון של רשות החדשנות.</p>
     <div class="ped demo" id="pedRep">
@@ -2521,7 +2541,7 @@ function tally(cat){if(!tl)return;if(cat==null){[].forEach.call(tl.querySelector
 var l=tl.querySelector('li[data-cat="'+cat+'"]');if(l){var b=l.querySelector("b");b.textContent=+b.textContent+1;l.classList.add("on");l.classList.remove("bump");void l.offsetWidth;l.classList.add("bump")}
 document.getElementById("dmCnt").textContent=i;document.getElementById("dmBar").style.width=(i/N*100)+"%"}
 function land(){var n=make(src[i++]);tally(src[i-1].dataset.cat);[].forEach.call(feed.querySelectorAll(".nt-time"),function(x){x.textContent="קודם"});feed.insertBefore(n,feed.firstChild);requestAnimationFrame(function(){n.classList.add("in","fresh");open(n)});
-while(feed.children.length>3)feed.removeChild(feed.lastChild)}
+while(feed.children.length>4)feed.removeChild(feed.lastChild)}
 function start(){if(rm||t||user)return;t=setInterval(push,7000)}
 function stop(){if(t){clearInterval(t);t=null}}
 if(rm){for(var k=N-1;k>=0;k--){var n=make(src[k]);n.classList.add("in");feed.appendChild(n)}i=N;open(feed.firstChild);return}
