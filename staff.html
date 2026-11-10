@@ -2469,6 +2469,13 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
 .lt-ph{object-position:50% 50%!important}
 .sfeel.go .lt-body p:nth-child(5){animation-delay:1.3s}.sfeel.go .lt-body p:nth-child(6){animation-delay:1.55s}
 .sfeel.go .lt-body p:nth-child(7){animation-delay:1.8s}
+/* beating heart on "הלב" */
+.shero h1 .hb{position:relative;display:inline-block;white-space:nowrap}
+.shero h1 .hb svg{position:absolute;top:-.3em;inset-inline-end:-.34em;width:.42em;height:.42em;fill:#ff4d63;filter:drop-shadow(0 0 10px rgba(255,77,99,.7));transform-origin:50% 60%}
+@media (prefers-reduced-motion:no-preference){.shero h1 .hb svg{animation:hBeat 1.25s ease-in-out infinite}.shero h1 .hb{animation:hWord 1.25s ease-in-out infinite;transform-origin:50% 70%}}
+@keyframes hBeat{0%,100%{transform:scale(1) rotate(-12deg)}12%{transform:scale(1.35) rotate(-12deg)}24%{transform:scale(1.05) rotate(-12deg)}36%{transform:scale(1.28) rotate(-12deg)}55%{transform:scale(1) rotate(-12deg)}}
+@keyframes hWord{0%,100%{transform:scale(1)}12%{transform:scale(1.035)}24%{transform:scale(1)}36%{transform:scale(1.025)}55%{transform:scale(1)}}
+@media (max-width:700px){.lt-cred{gap:4px!important}.lt-cred li{font-size:10.5px!important;padding:2px 7px!important}.lt-cred li.lt-sm{font-size:10px!important}.lt-cred .lt-from{font-size:.9em}}
 </style>
 </head>
 <body>
@@ -2483,7 +2490,7 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
   <div class="wrap shero-in">
     <div class="shero-txt">
       <span class="kicker">צוותי חינוך והורים, קול אחד למען הילדים</span>
-      <h1>אנחנו הלב של <span class="h1-c">הגיל הרך.</span></h1>
+      <h1>אנחנו <span class="hb">הלב<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.200-8-11.300A4.700 4.700 0 0 1 12 6.800a4.700 4.700 0 0 1 8 2.900C20 15.800 12 21 12 21z"/></svg></span> של <span class="h1-c">הגיל הרך.</span></h1>
       <div class="sh-msg">
         <p style="--k:0">עלינו מוטלת החובה להביא למהפכה בחינוך, ולשים את הגנים הפרטיים בראש סדר העדיפויות.</p>
         <p class="sh-stop" style="--k:1">אנחנו חייבים לעצור את האלימות.</p>
@@ -2506,7 +2513,7 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
     <div class="lt-who"><img class="lt-ph" src="aharon-2.jpg" alt="אהרון נייס" width="400" height="400"><span class="lt-id"><b>אהרון נייס</b><span>מנהל גן גחליליות</span></span>
       <ul class="lt-cred"><li>גנן מוסמך <small class="lt-from">בוגר אורנים</small></li><li>מנתח התנהגות מוסמך (BCBA)</li><li class="lt-sm">לקראת תואר שני ביזמות טכנולוגית</li></ul></div>
     <div class="lt-body">
-      <p class="lt-open">שלום, אני אהרון.</p>
+      <p class="lt-open">שלום,</p>
       <p>הגן שלנו פועל כבר 25 שנה. חינכנו דורות של ילדים, ועבדנו כאן הרבה לפני שהיו מצלמות. וגם אחרי התיקון לחוק המצלמות, אנחנו רואים שזה לא עוזר.</p>
       <p><b>אני מציע את המסלול הרביעי:</b> תיקון לחוק המצלמות, שנעביר יחד בכנסת, ושיאפשר פתרון אמיתי.</p>
       <p>התעללות בילדים היא פשע, ואין לה שום הצדקה. מי שפוגע בילד, אין לו מקום בגן.</p>
