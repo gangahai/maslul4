@@ -2089,6 +2089,22 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .act-fb{margin:16px 0 0;font-family:var(--f-ui);font-size:16px}
 .act-fb a{color:#fff;font-weight:800;text-underline-offset:4px}
 @media (max-width:700px){.act-two{flex-direction:column}.act-two .bigbtn{justify-content:center}}
+/* step 2: centered connector */
+.dm-flow{width:110px;align-items:center;justify-content:center;text-align:center;gap:0}
+.dm-flow .dm-step{margin:0 0 12px;align-self:center}
+.dm-line{display:none}
+.dm-ai{position:relative;z-index:0;background:#12403c}
+.dm-ai::before{content:"";position:absolute;z-index:-1;top:50%;left:-42px;right:-42px;height:2px;margin-top:-1px;background:repeating-linear-gradient(90deg,#3b8b82 0 6px,transparent 6px 12px)}
+.dm-ai::after{content:"";position:absolute;top:50%;left:-46px;margin-top:-6px;border:6px solid transparent;border-right-color:#8fe3d4;border-left:0}
+.dm-ai svg{position:relative;background:#12403c;border-radius:50%;padding:14px;width:60px;height:60px;box-sizing:border-box}
+.dm-flow::after{content:"";height:38px}
+@media (max-width:980px){
+ .dm-flow{flex-direction:row;width:100%;gap:12px;padding-block:14px}
+ .dm-flow .dm-step{margin:0;order:2}
+ .dm-flow::after{display:none}
+ .dm-ai::before{top:-18px;bottom:-18px;left:50%;right:auto;width:2px;height:auto;margin:0 0 0 -1px;background:repeating-linear-gradient(180deg,#3b8b82 0 6px,transparent 6px 12px)}
+ .dm-ai::after{top:auto;bottom:-22px;left:50%;margin:0 0 0 -6px;border:6px solid transparent;border-top-color:#8fe3d4;border-bottom:0}
+}
 </style>
 </head>
 <body>
