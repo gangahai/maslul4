@@ -2325,6 +2325,18 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (prefers-reduced-motion:no-preference){.guards.g3.armed .g3i>div{opacity:0;transform:translateX(10px)}.guards.g3.go .g3i>div{opacity:1;transform:none;transition:opacity .5s,transform .5s;transition-delay:calc(.5s + var(--k)*.15s)}}
 @media (max-width:860px){.guards.g3 dl{grid-template-columns:1fr}.g3i:nth-last-child(2){border-bottom:1px solid #e6efed}.guards.g3 dt b{white-space:normal}.g-cta{flex-direction:column;align-items:stretch;text-align:center}.g-cta .bigbtn{justify-content:center}}
 .lc3 h3 .h3-no{color:var(--red);white-space:nowrap;background:linear-gradient(transparent 68%,rgba(200,16,46,.16) 68%)}
+/* law cards: fill the height */
+.law3c .lc3{display:flex;flex-direction:column}
+.law3c .lc3>ul{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;gap:10px}
+.law3c .lc3>ul.lc-why{justify-content:flex-start;gap:12px}
+.law3c .lc3 .lc-stat{margin-top:auto}
+.lc-stat.lc-big{display:flex;align-items:center;gap:14px}
+.lc-stat.lc-big b{font-family:var(--f-head);font-weight:900;font-size:clamp(44px,4.6vw,60px);line-height:1;color:var(--red)}
+.lc-stat.lc-big span{font-size:17px;line-height:1.4}
+.law3c .lc3:first-child>ul li{font-size:17.5px;line-height:1.55}
+.law3c .lc3.now>ul li{font-size:18.5px;line-height:1.45}
+.lc-go{margin-top:18px;display:flex;justify-content:center;align-items:center;min-height:54px;border-radius:999px;background:#fff;color:#0f3936;font-family:var(--f-ui);font-weight:900;font-size:18px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.lc-go:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.3)}
 </style>
 </head>
 <body>
@@ -2424,12 +2436,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="law3c" data-io>
     <article class="lc3" style="--k:0"><span class="lc-y">2018 · חוק המצלמות</span><em class="lc-kw">מתעד</em><h3>האחריות עלינו, בלי יכולת לבדוק</h3>
       <ul><li>החוק דורש שהמצלמות יקליטו כל הזמן, והאחריות לכך עלינו.</li><li>אבל אסור לנו לצפות, אז אין דרך לדעת שהן עובדות.</li><li><b>הצילומים נפתחים רק אחרי פנייה למשטרה או לפיקוח.</b> מי שמתעורר אצלו חשש, גם קטן, חייב להתלונן כדי שמישהו בכלל יצפה.</li></ul>
-      <p class="lc-stat"><b>27%</b> מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</p></article>
+      <p class="lc-stat lc-big"><b>27%</b><span>מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</span></p></article>
     <article class="lc3" style="--k:1"><span class="lc-y">2024 · התיקון</span><em class="lc-kw">חושף</em><h3>שלוש דרכי צפייה להורים, <span class="h3-no">ואף אחת לא עובדת</span></h3>
       <ul class="lc-tr lc-why"><li><b>צפייה בגן, עם נציגות ההורים</b><span>רואים קטע קטן, בדיעבד. את שאר החודש אף אחד לא רואה.</span></li><li><b>48 שעות בחודש, מרחוק</b><span>שעות של וידאו בלי הקשר. רגע תמים אחד הופך לחשד.</span></li><li><b>שידור חי לטלפון</b><span>כל רגע בעבודה נצפה ונשפט מרחוק. הייתם מוכנים לעבוד ככה?</span></li></ul>
       <p class="lc-stat">אף אחת מהן לא מתריעה בזמן אמת. ולנו, בהנהלת המסגרת, אין גישה עצמאית לצילומים.</p></article>
     <article class="lc3 now" style="--k:2"><span class="lc-y">2026 · המסלול הרביעי</span><em class="lc-kw">מגן</em><h3>המצלמות מבינות, ועוזרות</h3>
-      <ul class="lc-ok"><li>התרעה על סימני סכנה, כשעוד אפשר לעצור</li><li>תובנות כתובות, בלי צפייה שוטפת</li><li>בקרה על תקינות המצלמות</li><li>משוב יומי ותמיכה פדגוגית לצוות</li><li>תובנות התפתחותיות להורים, על הילד שלהם בלבד</li></ul></article>
+      <ul class="lc-ok"><li>התרעה על סימני סכנה, כשעוד אפשר לעצור</li><li>תובנות כתובות, בלי צפייה שוטפת</li><li>בקרה על תקינות המצלמות</li><li>משוב יומי ותמיכה פדגוגית לצוות</li><li>תובנות התפתחותיות להורים, על הילד שלהם בלבד</li></ul>
+      <a class="lc-go" href="atzuma.html?role=manager&amp;src=staff">חתמו כמנהל/ת מסגרת</a></article>
   </div>
   <p class="law-src">מקורות: <a href="https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/2026/Risks/2026-Risks-104-Taktzir.pdf" target="_blank" rel="noopener">מבקר המדינה, 2026</a>; <a href="https://www.ynet.co.il/news/article/hjlhxxwfke" target="_blank" rel="noopener">ynet</a> ו-<a href="https://www.walla.co.il/news/israel/3704078" target="_blank" rel="noopener">וואלה</a> (נובמבר 2024); <a href="https://www.mako.co.il/home-family-toddlers/Article-72a1a93b0035a91027.htm" target="_blank" rel="noopener">טיוטת הנחיית הרשות להגנת הפרטיות (2025)</a></p>
   </div>
