@@ -2251,6 +2251,13 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
  .dm-tally li{font-size:13.5px;padding:7px 8px}
  .dm-tally li span{font-size:16px}
 }
+/* 2024 card: why each track fails */
+.lc-tr.lc-why{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
+.lc-tr.lc-why li{display:block;padding:0 0 0 0;border:0}
+.lc-tr.lc-why li b{display:block;font-family:var(--f-ui);font-weight:900;font-size:17.5px;color:var(--ink)}
+.lc-tr.lc-why li span{display:block;position:relative;margin-top:3px;padding-inline-start:24px;font-size:16.5px;line-height:1.45;color:#8a1226;font-weight:600}
+.lc-tr.lc-why li span::before{content:"✕";position:absolute;inset-inline-start:0;top:.05em;font-weight:900;color:var(--red)}
+@media (prefers-reduced-motion:no-preference){.law3c.armed .lc-why li span{opacity:0;transform:translateX(8px)}.law3c.go .lc-why li span{opacity:1;transform:none;transition:opacity .5s,transform .5s;transition-delay:calc(.7s + var(--i,0)*.25s)}.law3c .lc-why li:nth-child(2) span{--i:1}.law3c .lc-why li:nth-child(3) span{--i:2}}
 </style>
 </head>
 <body>
@@ -2350,9 +2357,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <article class="lc3" style="--k:0"><span class="lc-y">2018 · חוק המצלמות</span><em class="lc-kw">מתעד</em><h3>האחריות עלינו, בלי יכולת לבדוק</h3>
       <ul><li>החוק דורש שהמצלמות יקליטו כל הזמן, והאחריות לכך עלינו.</li><li>אבל אסור לנו לצפות, אז אין דרך לדעת שהן עובדות.</li></ul>
       <p class="lc-stat"><b>27%</b> מהמעונות שנבדקו: המצלמות לא הקליטו כראוי</p></article>
-    <article class="lc3" style="--k:1"><span class="lc-y">2024 · התיקון</span><em class="lc-kw">חושף</em><h3>שלוש דרכי צפייה להורים, והמחיר עלינו</h3>
-      <ul class="lc-tr"><li><b>צפייה בגן, עם נציגות ההורים</b><span class="st">גוזל זמן</span></li><li><b>48 שעות בחודש, מרחוק</b><span class="st">בלי הקשר</span></li><li><b>שידור חי לטלפון</b><span class="st">מעמיס</span></li></ul>
-      <p class="lc-stat">ולנו, בהנהלת המסגרת, אין גישה עצמאית לצילומים.</p></article>
+    <article class="lc3" style="--k:1"><span class="lc-y">2024 · התיקון</span><em class="lc-kw">חושף</em><h3>שלוש דרכי צפייה להורים, ואף אחת לא עובדת</h3>
+      <ul class="lc-tr lc-why"><li><b>צפייה בגן, עם נציגות ההורים</b><span>רואים קטע קטן, בדיעבד. את שאר השבוע אף אחד לא רואה.</span></li><li><b>48 שעות בחודש, מרחוק</b><span>שעות של וידאו בלי הקשר. רגע תמים אחד הופך לחשד.</span></li><li><b>שידור חי לטלפון</b><span>אף הורה לא צופה כל היום, והצוות עובד תחת מבט תמידי.</span></li></ul>
+      <p class="lc-stat">אף אחת מהן לא מתריעה בזמן אמת. ולנו, בהנהלת המסגרת, אין גישה עצמאית לצילומים.</p></article>
     <article class="lc3 now" style="--k:2"><span class="lc-y">2026 · המסלול הרביעי</span><em class="lc-kw">מגן</em><h3>המצלמות מבינות, ועוזרות</h3>
       <ul class="lc-ok"><li>התרעה על סימני סכנה, כשעוד אפשר לעצור</li><li>תובנות כתובות, בלי צפייה שוטפת</li><li>בקרה על תקינות המצלמות</li><li>משוב יומי ותמיכה פדגוגית לצוות</li></ul></article>
   </div>
