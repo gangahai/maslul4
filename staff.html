@@ -2279,6 +2279,25 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 }
 .ped-now span{display:block;color:var(--ink);font-size:.82em;margin-top:2px}
 .ped-how .ia{color:var(--sg-d);font-weight:900;white-space:nowrap}
+/* ped idea block */
+.ped-idea{margin:22px 0 0;max-width:900px}
+.pi-lead{font-family:var(--f-head);font-weight:900;font-size:clamp(24px,2.8vw,34px);line-height:1.3;margin:0;color:var(--ink)}
+.pi-sw{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:18px 0 0;font-size:clamp(18px,1.9vw,21px)}
+.pi-old{color:#7a8281;text-decoration:line-through;text-decoration-color:rgba(200,16,46,.6);text-decoration-thickness:2px}
+.pi-new{position:relative;font-weight:800;color:var(--sg-d);padding-inline-start:30px}
+.pi-new::before{content:"←";position:absolute;inset-inline-start:0;top:-.05em;font-weight:900;color:var(--sg)}
+.pi-chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0;padding:0}
+.pi-chips li{font-family:var(--f-ui);font-weight:800;font-size:17px;color:#0f3936;background:#dcefe9;border-radius:999px;padding:8px 18px}
+.pi-no{margin:18px 0 0;font-family:var(--f-ui);font-weight:900;font-size:clamp(19px,2vw,22px);color:var(--ink)}
+.pi-proof{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 0}
+.pi-proof>div{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #d9e6e3;border-inline-start:5px solid var(--sg);border-radius:14px;padding:14px 18px;box-shadow:0 6px 18px rgba(15,57,54,.06)}
+.pi-proof svg{flex:none;width:34px;height:34px;fill:none;stroke:var(--sg-d);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pi-proof span{font-size:16.5px;line-height:1.4;color:#3b4442}
+.pi-proof b{display:block;font-family:var(--f-ui);font-weight:900;font-size:19px;color:var(--ink)}
+.pi-proof b.ia{color:var(--sg-d)}
+@media (prefers-reduced-motion:no-preference){.ped-idea.armed>*{opacity:0;transform:translateY(12px)}.ped-idea.go>*{opacity:1;transform:none;transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}.ped-idea.go>:nth-child(2){transition-delay:.15s}.ped-idea.go>:nth-child(3){transition-delay:.3s}.ped-idea.go>:nth-child(4){transition-delay:.45s}.ped-idea.go>:nth-child(5){transition-delay:.6s}}
+@media (max-width:700px){.pi-proof{grid-template-columns:1fr}.pi-chips li{font-size:16px;padding:7px 14px}.pi-sw{flex-direction:column;align-items:flex-start;gap:6px}}
+.pi-old{text-decoration:none}
 </style>
 </head>
 <body>
@@ -2392,8 +2411,16 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
     <h2 id="ped-h"><small>מעטפת שלמה לגן ולצוות</small>נחולל מהפכה <span class="tqd">בגיל הרך</span></h2>
     <p class="ped-now">כיום, בזכות מהפכת ה-AI, זה באמת אפשרי. <span>משתמשים בטכנולוגיה, למען הילדים.</span></p>
-    <p class="slede">הרעיון פשוט: המצלמות שכבר נמצאות בגן יכולות לעבוד בשבילנו. במקום הקלטה שאף אחד לא רואה, משוב פדגוגי שמגיע לצוות כל יום: מה עבד, מה כדאי לחזק, ואיפה ילד צריך אותנו. <b>בלי ציונים אישיים, ובלי לחפש אשמים.</b></p>
-    <p class="ped-how"><b>כך זה יכול לעבוד בכל גן, וכך זה כבר עובד היום</b> בפיילוט מחקרי, בשיתוף מכללת אורנים. הטכנולוגיה פותחה בתמיכה ובמימון של <b class="ia">רשות החדשנות</b>.</p>
+    <div class="ped-idea" data-io>
+      <p class="pi-lead">הרעיון פשוט: המצלמות שכבר נמצאות בגן יכולות <span class="tqd">לעבוד בשבילנו.</span></p>
+      <p class="pi-sw"><span class="pi-old">במקום הקלטה שאף אחד לא רואה</span><span class="pi-new">משוב פדגוגי שמגיע לצוות כל יום</span></p>
+      <ul class="pi-chips"><li>מה עבד</li><li>מה כדאי לחזק</li><li>איפה ילד צריך אותנו</li></ul>
+      <p class="pi-no">בלי ציונים אישיים, ובלי לחפש אשמים.</p>
+      <div class="pi-proof">
+        <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span><b>כבר עובד היום</b>פיילוט מחקרי, בשיתוף מכללת אורנים</span></div>
+        <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.600 5.600 6 .700-4.400 4.200 1.100 6-5.300-3-5.300 3 1.100-6L3.400 9.300l6-.700z"/></svg><span><b class="ia">רשות החדשנות</b>הטכנולוגיה פותחה בתמיכתה ובמימונה</span></div>
+      </div>
+    </div>
     <div class="ped demo" id="pedRep">
       <div class="ped-l">
         <div class="dm-step"><b>1</b> המצלמות שכבר בגן</div>
