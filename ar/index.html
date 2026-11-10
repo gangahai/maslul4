@@ -1230,6 +1230,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @keyframes lcp{0%{box-shadow:0 0 0 0 rgba(75,199,227,.55)}70%{box-shadow:0 0 0 9px rgba(75,199,227,0)}100%{box-shadow:0 0 0 0 rgba(75,199,227,0)}}
 .signbox .lc2{display:block;margin-top:5px;font-weight:800;opacity:1}
 .signbox .lc2 b{display:inline!important;font-family:inherit!important;font-size:1.1em!important;font-weight:900;color:var(--red);margin:0!important}
+.hstaff{margin:16px 0 0}
+.hstaff a{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-ui);font-weight:700;font-size:17px;color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:9px 18px;background:rgba(0,0,0,.25);transition:background .2s,border-color .2s}
+.hstaff a:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.hstaff b{font-weight:900;color:#8fe3d4}
+.hstaff a::after{content:"←";font-weight:900;color:#8fe3d4}
+[dir="ltr"] .hstaff a::after{content:"→"}
+@media (prefers-reduced-motion:no-preference){.hstaff{animation:up .5s ease-out 3s both}}
+@media (max-width:700px){.hstaff a{font-size:15.5px;padding:9px 14px}}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -1285,6 +1293,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="../atzuma.html">وقّعوا على إعلان الأهالي</a><a class="bigbtn glass" href="#fix">كيف يعمل ذلك</a></div>
+    <p class="hstaff"><a href="../staff">مدير/ة حضانة أو من الطاقم التربوي؟ <b>انضمّوا إلينا</b> <small>(الصفحة بالعبرية)</small></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>وقّعوا على الإعلان حتى الآن</span></p>
   </div>
   <span class="credit">لقطة حقيقية من كاميرا في روضة، من نظام <span class="ez">عين تسوفيا</span>. مُوّهت الوجوه حفاظًا على الخصوصية.</span>
