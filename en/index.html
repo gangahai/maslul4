@@ -1238,6 +1238,14 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 [dir="ltr"] .hstaff a::after{content:"→"}
 @media (prefers-reduced-motion:no-preference){.hstaff{animation:up .5s ease-out 3s both}}
 @media (max-width:700px){.hstaff a{font-size:15.5px;padding:9px 14px}}
+.hstaff-l{margin:20px 0 0;font-family:var(--f-ui);font-size:17.5px;line-height:1.4;color:#f1f1f1}
+.hstaff-l b{color:#8fe3d4;font-weight:900}
+.hstaff{margin-top:8px}
+.act-staff{margin:12px 0 0;font-family:var(--f-ui);font-size:18px;color:#fff}
+.act-staff b{font-weight:900}
+.act-staff a{color:#fff;font-weight:800;text-underline-offset:4px;white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){.hstaff-l{animation:up .5s ease-out 2.95s both}}
+@media (max-width:700px){.hstaff-l{font-size:16px}.act-staff a{white-space:normal}}
 /* ===== non-Hebrew language tweaks ===== */
 .ez{white-space:nowrap}
 /* i18n layout: longer strings than Hebrew */
@@ -1330,6 +1338,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="../atzuma.html">Sign the parents' declaration</a><a class="bigbtn glass" href="#fix">How it works</a></div>
+    <p class="hstaff-l">Until now, parents led every change to the law. <b>This time we lead together.</b></p>
     <p class="hstaff"><a href="../staff">Daycare manager or staff member? <b>Join us</b> <small>(page in Hebrew)</small></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>parents and educators have signed</span></p>
   </div>
@@ -1557,7 +1566,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <section class="act" id="act" aria-labelledby="act-h">
   <div class="wrap">
     <div class="act-top"><div><h2 id="act-h">Parents, it's time to unite.</h2>
-    <p class="lead">Every amendment to the law so far happened because parents refused to stay silent.</p></div>
+    <p class="lead">Every amendment to the law so far happened because parents refused to stay silent.</p>
+    <p class="act-staff"><b>This time we lead together.</b> <a href="../staff">Daycare manager or staff member? Join us</a></p></div>
     <button class="sharecirc" id="shareCirc" type="button" aria-label="Share the article"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Share</span></button></div>
     <a class="signbox" href="../atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>Sign the parents' declaration for the Fourth Track</b><small>It will be submitted to the Minister of Education and the Knesset Education Committee.</small><small class="lc2" hidden><b class="lcn">0</b> have already signed. First milestone: 1,000</small></span><span class="sb-go">Sign</span></a>
     <div class="parents">
