@@ -15,6 +15,11 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://maslul4.tsofia.ai/staff">
 <link rel="canonical" href="https://maslul4.tsofia.ai/staff">
+<link rel="alternate" hreflang="he" href="https://maslul4.tsofia.ai/staff">
+<link rel="alternate" hreflang="en" href="https://maslul4.tsofia.ai/en/staff">
+<link rel="alternate" hreflang="ru" href="https://maslul4.tsofia.ai/ru/staff">
+<link rel="alternate" hreflang="ar" href="https://maslul4.tsofia.ai/ar/staff">
+<link rel="alternate" hreflang="x-default" href="https://maslul4.tsofia.ai/staff">
 <meta property="og:locale" content="he_IL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -2517,7 +2522,15 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
 <nav class="sticky" aria-label="מדורים"><div class="wrap bar">
   <a class="brand" href="./"><img class="logo" src="logo-hand.png" alt="המסלול הרביעי"><span class="bt"><span class="bn">המסלול <span>הרביעי</span></span><em class="btag">מגינים על הילדים בזמן אמת</em><small>יוזמה של <span class="ez">עין צופיה</span></small></span></a>
   <div class="sections"><a href="./">עמוד המאבק</a><a href="#what">מה זה</a><a href="#managers">החוק</a><a href="#ped">המשוב לצוות</a><a href="atzuma.html?role=staff&amp;src=staff" class="go"><span class="l">חתמו על ההצהרה</span><span class="s">לחתימה</span></a></div>
+  <div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">עברית</span><span class="lsw-code" aria-hidden="true">HE</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="staff" lang="he" hreflang="he" aria-current="true"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="en/staff" lang="en" hreflang="en"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="ru/staff" lang="ru" hreflang="ru"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="ar/staff" lang="ar" hreflang="ar"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div>
 </div></nav>
+<script>(function(){var w=document.querySelector('.lsw');if(!w)return;var b=w.querySelector('.lsw-btn'),m=w.querySelector('.lsw-menu'),it=[].slice.call(m.querySelectorAll('a'));
+function op(f){m.hidden=false;b.setAttribute('aria-expanded','true');if(f)(m.querySelector('[aria-current]')||it[0]).focus();}
+function cl(r){m.hidden=true;b.setAttribute('aria-expanded','false');if(r)b.focus();}
+b.addEventListener('click',function(e){e.stopPropagation();m.hidden?op(e.detail===0):cl();});
+b.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();op(true);}});
+m.addEventListener('keydown',function(e){var i=it.indexOf(document.activeElement);if(e.key==='Escape'){cl(true);}else if(e.key==='ArrowDown'){e.preventDefault();it[(i+1)%it.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();it[(i-1+it.length)%it.length].focus();}else if(e.key==='Tab'){cl();}});
+document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});})();</script>
 
 <main>
 <header class="shero sh2" id="top">

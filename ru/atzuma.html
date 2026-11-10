@@ -375,6 +375,12 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 @media (max-width:420px){.sections{margin-inline-start:6px!important;margin-inline-end:8px!important}html[lang=ru] .sections .go{font-size:12px!important;padding:6px 9px!important}}
 
 @media (max-width:420px){.lsw-name{display:none}.lsw-code{display:inline}}
+/* staff page: longer phrases than Hebrew, let them wrap */
+.shero.sh2 h1 .h1-c{white-space:normal}
+.sfeel .feel-h2 .sbrush{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (max-width:700px){.lt-cred li.lt-sm{white-space:normal}}
+@media (max-width:700px){.lt-cred li{white-space:normal}}
+html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inherit;margin:0;color:inherit}
 :root{--f-head:"PT Serif","Times New Roman",serif;--f-body:"PT Serif","Times New Roman",serif;--f-ui:"Rubik",system-ui,sans-serif;}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}
@@ -414,14 +420,16 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
 }
 [dir=ltr] .body p.first::first-letter{float:left;margin:.06em .12em 0 0}
 @media (min-width:701px){[dir=ltr] .hero .credit{right:auto;left:max(18px,calc((100vw - 1160px)/2 + 18px));text-align:left}}
+[dir=ltr] .feel-lede::first-letter{float:left;margin:.06em .12em 0 0}
+[dir=ltr] .sw-hint i{scale:-1 1}
 </style>
 <script src="../m4px.js" defer></script>
 </head>
 <body>
 
 <header class="bar"><div class="wrap">
-  <a class="brand" href="../"><img src="../logo-hand.png" alt=""><span class="bt2"><b><span style="color:#c8102e">Четвёртый</span> путь</b><em>Защищаем детей в реальном времени</em><small>Инициатива <span class="ez">Эйн Цофия</span></small></span></a>
-  <span class="hdr-r"><div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">Русский</span><span class="lsw-code" aria-hidden="true">RU</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="../" lang="he" hreflang="he"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../en/" lang="en" hreflang="en"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ru/" lang="ru" hreflang="ru" aria-current="true"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ar/" lang="ar" hreflang="ar"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><a class="back" href="../">На страницу кампании</a></span>
+  <a class="brand" href="./"><img src="../logo-hand.png" alt=""><span class="bt2"><b><span style="color:#c8102e">Четвёртый</span> путь</b><em>Защищаем детей в реальном времени</em><small>Инициатива <span class="ez">Эйн Цофия</span></small></span></a>
+  <span class="hdr-r"><div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">Русский</span><span class="lsw-code" aria-hidden="true">RU</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="../" lang="he" hreflang="he"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../en/" lang="en" hreflang="en"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ru/" lang="ru" hreflang="ru" aria-current="true"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ar/" lang="ar" hreflang="ar"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><a class="back" href="./">На страницу кампании</a></span>
 </div></header>
 
 <main class="wrap grid">
@@ -633,7 +641,7 @@ footer.ft2 .flinks{grid-area:links;display:flex;gap:18px;padding-top:14px;border
   </details>
 </section>
 
-<footer class="ft2"><div class="wrap"><img src="../logo-full.png" alt="Четвёртый путь: защищаем детей в реальном времени" class="flogo-full" width="640" height="322"><p class="fslogan">Хватит пластырей! <span>Пора перейти к решению, которое работает.</span></p><div class="fbrand">Инициатива <a href="../#contact"><b><span class="ez">Эйн Цофия</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><div class="flinks"><a href="../">На страницу кампании</a><a href="#a11y" onclick="document.getElementById('a11y').open=true">Заявление о доступности</a><a href="#privacy" onclick="document.querySelector('#privacy details').open=true">Политика конфиденциальности</a></div></div></footer>
+<footer class="ft2"><div class="wrap"><img src="../logo-full.png" alt="Четвёртый путь: защищаем детей в реальном времени" class="flogo-full" width="640" height="322"><p class="fslogan">Хватит пластырей! <span>Пора перейти к решению, которое работает.</span></p><div class="fbrand">Инициатива <a href="#contact"><b><span class="ez">Эйн Цофия</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><div class="flinks"><a href="./">На страницу кампании</a><a href="#a11y" onclick="document.getElementById('a11y').open=true">Заявление о доступности</a><a href="#privacy" onclick="document.querySelector('#privacy details').open=true">Политика конфиденциальности</a></div></div></footer>
 <div class="toast" id="toast" hidden></div>
 
 <script>

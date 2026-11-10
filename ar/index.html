@@ -1285,6 +1285,12 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:420px){.sections{margin-inline-start:6px!important;margin-inline-end:8px!important}html[lang=ru] .sections .go{font-size:12px!important;padding:6px 9px!important}}
 
 @media (max-width:420px){.lsw-name{display:none}.lsw-code{display:inline}}
+/* staff page: longer phrases than Hebrew, let them wrap */
+.shero.sh2 h1 .h1-c{white-space:normal}
+.sfeel .feel-h2 .sbrush{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (max-width:700px){.lt-cred li.lt-sm{white-space:normal}}
+@media (max-width:700px){.lt-cred li{white-space:normal}}
+html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inherit;margin:0;color:inherit}
 :root{--f-head:"Noto Naskh Arabic","Times New Roman",serif;--f-body:"Noto Naskh Arabic","Times New Roman",serif;--f-ui:"Noto Sans Arabic",system-ui,sans-serif;}
 </style>
 <script src="../m4px.js" defer></script>
@@ -1294,7 +1300,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <nav class="sticky" aria-label="الأقسام"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="../logo-hand.png" alt="المسار الرابع"><span class="bt"><span class="bn">المسار <span>الرابع</span></span><em class="btag">نحمي الأطفال في الوقت الحقيقي</em><small>مبادرة من <span class="ez">عين تسوفيا</span></small></span></a>
-  <div class="sections"><a href="#story">التحقيق</a><a href="#law">القانون</a><a href="#fix">الحلّ</a><a href="#decl">الإعلان</a><a href="#faq">أسئلة</a><a href="../atzuma.html" class="go"><span class="l">وقّعوا على الإعلان</span><span class="s">للتوقيع</span></a></div>
+  <div class="sections"><a href="#story">التحقيق</a><a href="#law">القانون</a><a href="#fix">الحلّ</a><a href="#decl">الإعلان</a><a href="#faq">أسئلة</a><a href="atzuma.html" class="go"><span class="l">وقّعوا على الإعلان</span><span class="s">للتوقيع</span></a></div>
   <div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">العربية</span><span class="lsw-code" aria-hidden="true">AR</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="../" lang="he" hreflang="he"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../en/" lang="en" hreflang="en"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ru/" lang="ru" hreflang="ru"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ar/" lang="ar" hreflang="ar" aria-current="true"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div>
 </div></nav>
 
@@ -1312,9 +1318,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div><b>المطلب</b><span>قانون يتيح تشغيلها، الآن</span></div>
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
-    <div class="hero-cta"><a class="bigbtn red" href="../atzuma.html">وقّعوا على إعلان الأهالي</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">شاهدوا الفيديو (بالعبرية)</span><small>0:49</small></button></div>
+    <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">وقّعوا على إعلان الأهالي</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">شاهدوا الفيديو (بالعبرية)</span><small>0:49</small></button></div>
     <p class="hstaff-l">حتى اليوم قاد الأهالي كل تعديل في القانون. <b>هذه المرّة نقود معًا.</b></p>
-    <p class="hstaff"><a href="../staff">مدير/ة حضانة أو من الطاقم التربوي؟ <b>انضمّوا إلينا</b> <small>(الصفحة بالعبرية)</small></a></p>
+    <p class="hstaff"><a href="staff">مدير/ة حضانة أو من الطاقم التربوي؟ <b>انضمّوا إلينا</b> <small>(الصفحة بالعبرية)</small></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>وقّعوا على الإعلان حتى الآن</span></p>
   </div>
   <span class="credit">لقطة حقيقية من كاميرا في روضة، من نظام <span class="ez">عين تسوفيا</span>. مُوّهت الوجوه حفاظًا على الخصوصية.</span>
@@ -1369,7 +1375,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <p class="trust-big">لا مزيد من الشك، بل أداة تثبت كل يوم أن الأطفال في أيدٍ أمينة.</p>
       </section>
 
-      <h2 id="law"><small>القانون اليوم</small>يُصوَّر كل شيء. <span class="cut75">ولا أحد يشاهد!</span></h2>
+      <h2 id="law"><small>القانون اليوم</small>يُصوَّر كل شيء.<br><span class="cut75">ولا أحد يشاهد!</span></h2>
       <p class="lede">منذ 2018 تُلزَم حضانات الأطفال الصغار بالتصوير. لكن التسجيلات مقفلة، و<b>لا تُفتح إلا بعد وجود شبهة</b>.</p>
       <figure class="inline-fig days30" id="days30" aria-label="توضيح: 30 يومًا من التصوير. في بعض الأيام لم تسجّل الكاميرا، ولا يكاد أحد يشاهد. بعد 30 إلى 90 يومًا تُحذف التسجيلات">
         <div class="grid" aria-hidden="true">
@@ -1517,7 +1523,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <div class="pl"><span class="d">ثلاثة أشهر</span><b>معيار وطني</b><span>يصبح المسار الرابع معيارًا في كل إطار تربوي. <strong class="pl-strong">ويحصل الأهالي على رؤى نمائية عن أطفالهم.</strong></span></div>
       </div>
       <details class="blocker bk2"><summary><span>التقنية موجودة بالفعل. <b>العائق الوحيد هو القانون.</b></span><em>اقرأوا المزيد</em></summary><p>تقنية كهذه تعمل بالفعل وقد أثبتت نفسها. على سبيل المثال <b><span class="ez">عين تسوفيا</span></b>: تعمل على أرض الواقع منذ نحو سنة، في جميع الفئات العمرية، وفي مشروع بحثي تجريبي بالتعاون مع كلية أورانيم. طُوّر النظام بدعم وتمويل من <span class="ia">سلطة الابتكار الإسرائيلية</span>. والمسار الذي نطالب به يحدّد مبدأً تقنيًا ومعيارًا، لا منتجًا: فهو مفتوح أمام كل نظام يستوفي معيارًا تنظيميًا صارمًا، وليس لهذا النظام وحده.</p></details>
-      <div class="ctas"><a class="bigbtn red" href="../atzuma.html">وقّعوا على الإعلان</a><a class="bigbtn line" href="#faq">أسئلة ومخاوف</a></div>
+      <div class="ctas"><a class="bigbtn red" href="atzuma.html">وقّعوا على الإعلان</a><a class="bigbtn line" href="#faq">أسئلة ومخاوف</a></div>
     </div>
   </div>
 </section>
@@ -1534,7 +1540,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div><h3>تشغيل مع بحث</h3><p>التشغيل منذ المرحلة الأولى، مع بحث تقييمي مستقل.</p></div>
       <div><h3>ميزانية مخصّصة</h3><p>إضافةً إلى الرقابة القائمة، لا بدلًا منها.</p></div>
     </div>
-    <div class="dfoot"><p>مبدأ، لا منتج. سيُقدَّم الإعلان عند بلوغ 10,000 توقيع.</p><a class="bigbtn red" href="../atzuma.html">لقراءة الإعلان الكامل والتوقيع</a></div>
+    <div class="dfoot"><p>مبدأ، لا منتج. سيُقدَّم الإعلان عند بلوغ 10,000 توقيع.</p><a class="bigbtn red" href="atzuma.html">لقراءة الإعلان الكامل والتوقيع</a></div>
   </div>
 </section>
 
@@ -1542,9 +1548,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
     <div class="act-top"><div><h2 id="act-h">أيها الأهالي، آن الأوان لنتكاتف.</h2>
     <p class="lead">كل تعديل للقانون حتى اليوم تحقّق لأن الأهالي لم يسكتوا.</p>
-    <p class="act-staff"><b>هذه المرّة نقود معًا.</b> <a href="../staff">مدير/ة حضانة أو من الطاقم التربوي؟ انضمّوا إلينا</a></p></div>
+    <p class="act-staff"><b>هذه المرّة نقود معًا.</b> <a href="staff">مدير/ة حضانة أو من الطاقم التربوي؟ انضمّوا إلينا</a></p></div>
     <button class="sharecirc" id="shareCirc" type="button" aria-label="مشاركة المقال"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>مشاركة</span></button></div>
-    <a class="signbox" href="../atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>وقّعوا على إعلان الأهالي من أجل المسار الرابع</b><small>سيُقدَّم إلى وزير/ة التربية والتعليم وإلى لجنة التربية في الكنيست.</small><small class="lc2" hidden><b class="lcn">0</b> وقّعوا حتى الآن. المرحلة الأولى: 1,000</small></span><span class="sb-go">للتوقيع</span></a>
+    <a class="signbox" href="atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>وقّعوا على إعلان الأهالي من أجل المسار الرابع</b><small>سيُقدَّم إلى وزير/ة التربية والتعليم وإلى لجنة التربية في الكنيست.</small><small class="lc2" hidden><b class="lcn">0</b> وقّعوا حتى الآن. المرحلة الأولى: 1,000</small></span><span class="sb-go">للتوقيع</span></a>
     <div class="parents">
       <div><h3>أشركوا أهالي الروضة</h3><p>رسالة جاهزة. أرسلوها إلى مجموعة أهالي الروضة، وإلى إدارة الروضة أيضًا.</p></div>
       <button class="bigbtn red" id="sendParents" type="button">إرسال الرسالة</button>
@@ -1574,7 +1580,7 @@ https://maslul4.tsofia.ai/ar/atzuma.html?src=parents
     <details><summary><span class="q">ما معنى دعم <span class="ia">سلطة الابتكار الإسرائيلية</span>؟</span></summary><p>دعمت <span class="ia">سلطة الابتكار الإسرائيلية</span> تطوير تقنية <span class="ez">عين تسوفيا</span> وموّلته، كما تفعل مع شركات التكنولوجيا الإسرائيلية. يُمنح دعم كهذا بعد فحص مهني للمشروع، ولذلك فهو يدلّ على أن التقنية جدّية وقد خضعت للفحص. ومن المهم التوضيح: الدعم مُنح لتطوير التقنية، وهو ليس دعمًا من السلطة لهذه المبادرة أو للإعلان أو لتعديل القانون.</p></details>
     <details><summary><span class="q">هل يُلزم التوقيع باستخدام <span class="ez">عين تسوفيا</span>؟</span></summary><p>لا. التوقيع هو دعم لتغيير سياسة، لا لمنتج. يحدّد المسار الرابع مبدأً تقنيًا، لا منتجًا: فهو مفتوح أمام كل نظام يستوفي معيارًا تنظيميًا صارمًا، يشمل مصادقة مسبقة من جهة حكومية مختصة، وفحص دقة خارجيًا قبل التشغيل وبشكل دوري، ومتطلبات لأمن المعلومات والخصوصية، ورقابة دورية مستقلة. التوقيع لا يُلزمكم ولا يُلزم الروضة بأي شيء، ولن نستخدم بياناتكم لأغراض التسويق.</p></details>
   </div>
-  <div class="faq-cta"><a class="bigbtn red" href="../atzuma.html">لقراءة الإعلان والتوقيع</a></div>
+  <div class="faq-cta"><a class="bigbtn red" href="atzuma.html">لقراءة الإعلان والتوقيع</a></div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
@@ -1639,7 +1645,7 @@ https://maslul4.tsofia.ai/ar/atzuma.html?src=parents
 
 
 
-<footer><div class="wrap"><img src="../logo-full.png" alt="المسار الرابع: نحمي الأطفال في الوقت الحقيقي" class="flogo-full" width="640" height="322"><div class="fbrand">مبادرة من <a href="#contact"><b><span class="ez">عين تسوفيا</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">كفى ضمادات! <span>حان وقت حلّ فعّال.</span></p><div class="flinks"><a href="../atzuma.html">الإعلان</a><a href="../atzuma.html#a11y">بيان الإتاحة</a><a href="../atzuma.html#privacy">سياسة الخصوصية</a></div></div></footer>
+<footer><div class="wrap"><img src="../logo-full.png" alt="المسار الرابع: نحمي الأطفال في الوقت الحقيقي" class="flogo-full" width="640" height="322"><div class="fbrand">مبادرة من <a href="#contact"><b><span class="ez">عين تسوفيا</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">كفى ضمادات! <span>حان وقت حلّ فعّال.</span></p><div class="flinks"><a href="atzuma.html">الإعلان</a><a href="atzuma.html#a11y">بيان الإتاحة</a><a href="atzuma.html#privacy">سياسة الخصوصية</a></div></div></footer>
 <div class="toast" id="toast" hidden></div>
 
 <script>

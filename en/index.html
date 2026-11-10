@@ -1285,6 +1285,12 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:420px){.sections{margin-inline-start:6px!important;margin-inline-end:8px!important}html[lang=ru] .sections .go{font-size:12px!important;padding:6px 9px!important}}
 
 @media (max-width:420px){.lsw-name{display:none}.lsw-code{display:inline}}
+/* staff page: longer phrases than Hebrew, let them wrap */
+.shero.sh2 h1 .h1-c{white-space:normal}
+.sfeel .feel-h2 .sbrush{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (max-width:700px){.lt-cred li.lt-sm{white-space:normal}}
+@media (max-width:700px){.lt-cred li{white-space:normal}}
+html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inherit;margin:0;color:inherit}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}
 [dir=ltr] .days30 .grid{direction:ltr}
@@ -1323,6 +1329,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 }
 [dir=ltr] .body p.first::first-letter{float:left;margin:.06em .12em 0 0}
 @media (min-width:701px){[dir=ltr] .hero .credit{right:auto;left:max(18px,calc((100vw - 1160px)/2 + 18px));text-align:left}}
+[dir=ltr] .feel-lede::first-letter{float:left;margin:.06em .12em 0 0}
+[dir=ltr] .sw-hint i{scale:-1 1}
 </style>
 <script src="../m4px.js" defer></script>
 </head>
@@ -1331,7 +1339,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <nav class="sticky" aria-label="Sections"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="../logo-hand.png" alt="The Fourth Track"><span class="bt"><span class="bn">The Fourth <span>Track</span></span><em class="btag">Protecting children in real time</em><small>An initiative of <span class="ez">Ein Tzofia</span></small></span></a>
-  <div class="sections"><a href="#story">The Investigation</a><a href="#law">The Law</a><a href="#fix">The Solution</a><a href="#decl">The Declaration</a><a href="#faq">FAQ</a><a href="../atzuma.html" class="go"><span class="l">Sign the declaration</span><span class="s">Sign</span></a></div>
+  <div class="sections"><a href="#story">The Investigation</a><a href="#law">The Law</a><a href="#fix">The Solution</a><a href="#decl">The Declaration</a><a href="#faq">FAQ</a><a href="atzuma.html" class="go"><span class="l">Sign the declaration</span><span class="s">Sign</span></a></div>
   <div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">English</span><span class="lsw-code" aria-hidden="true">EN</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="../" lang="he" hreflang="he"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../en/" lang="en" hreflang="en" aria-current="true"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ru/" lang="ru" hreflang="ru"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ar/" lang="ar" hreflang="ar"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div>
 </div></nav>
 
@@ -1349,9 +1357,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div><b>The demand</b><span>A law that allows it to be used, now</span></div>
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
-    <div class="hero-cta"><a class="bigbtn red" href="../atzuma.html">Sign the parents' declaration</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">Watch the video (Hebrew)</span><small>0:49</small></button></div>
+    <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">Sign the parents' declaration</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">Watch the video (Hebrew)</span><small>0:49</small></button></div>
     <p class="hstaff-l">Until now, parents led every change to the law. <b>This time we lead together.</b></p>
-    <p class="hstaff"><a href="../staff">Daycare manager or staff member? <b>Join us</b> <small>(page in Hebrew)</small></a></p>
+    <p class="hstaff"><a href="staff">Daycare manager or staff member? <b>Join us</b> <small>(page in Hebrew)</small></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>parents and educators have signed</span></p>
   </div>
   <span class="credit">A real frame from a daycare camera, from the <span class="ez">Ein Tzofia</span> system. Faces have been blurred to protect privacy.</span>
@@ -1406,7 +1414,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <p class="trust-big">Instead of suspicion, a tool that shows every day that the children are in good hands.</p>
       </section>
 
-      <h2 id="law"><small>The law today</small>Everything is recorded. <span class="cut75">Nobody watches!</span></h2>
+      <h2 id="law"><small>The law today</small>Everything is recorded.<br><span class="cut75">Nobody watches!</span></h2>
       <p class="lede">Since 2018, daycare centers for toddlers have been required to record. But the footage is locked, and <b>opened only after there is already suspicion</b>.</p>
       <figure class="inline-fig days30" id="days30" aria-label="Illustration: 30 days of recording. On some days the camera did not record, and almost no one watches. After 30 to 90 days the footage is deleted">
         <div class="grid" aria-hidden="true">
@@ -1554,7 +1562,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <div class="pl"><span class="d">Three months</span><b>A national standard</b><span>The Fourth Track becomes the standard in every setting. <strong class="pl-strong">And parents receive developmental insights about their children.</strong></span></div>
       </div>
       <details class="blocker bk2"><summary><span>The technology already exists. <b>The only barrier is the law.</b></span><em>Read more</em></summary><p>Technology like this already works and is proven. For example, <b><span class="ez">Ein Tzofia</span></b>: operating in the field for about a year, across all age groups, and in a research pilot in partnership with Oranim College. The system was developed with the support and funding of the <span class="ia">Israel Innovation Authority</span>. And the track we are demanding defines a technological principle and a standard, not a product: it is open to any system that meets a strict regulatory standard, not just this one.</p></details>
-      <div class="ctas"><a class="bigbtn red" href="../atzuma.html">Sign the declaration</a><a class="bigbtn line" href="#faq">Questions and concerns</a></div>
+      <div class="ctas"><a class="bigbtn red" href="atzuma.html">Sign the declaration</a><a class="bigbtn line" href="#faq">Questions and concerns</a></div>
     </div>
   </div>
 </section>
@@ -1571,7 +1579,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div><h3>Rollout alongside research</h3><p>Deployment from the first phase, alongside an independent evaluation study.</p></div>
       <div><h3>A dedicated budget</h3><p>In addition to existing oversight, not instead of it.</p></div>
     </div>
-    <div class="dfoot"><p>A principle, not a product. The declaration will be submitted once it reaches 10,000 signatures.</p><a class="bigbtn red" href="../atzuma.html">Read the full declaration and sign</a></div>
+    <div class="dfoot"><p>A principle, not a product. The declaration will be submitted once it reaches 10,000 signatures.</p><a class="bigbtn red" href="atzuma.html">Read the full declaration and sign</a></div>
   </div>
 </section>
 
@@ -1579,9 +1587,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
     <div class="act-top"><div><h2 id="act-h">Parents, it's time to unite.</h2>
     <p class="lead">Every amendment to the law so far happened because parents refused to stay silent.</p>
-    <p class="act-staff"><b>This time we lead together.</b> <a href="../staff">Daycare manager or staff member? Join us</a></p></div>
+    <p class="act-staff"><b>This time we lead together.</b> <a href="staff">Daycare manager or staff member? Join us</a></p></div>
     <button class="sharecirc" id="shareCirc" type="button" aria-label="Share the article"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Share</span></button></div>
-    <a class="signbox" href="../atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>Sign the parents' declaration for the Fourth Track</b><small>It will be submitted to the Minister of Education and the Knesset Education Committee.</small><small class="lc2" hidden><b class="lcn">0</b> have already signed. First milestone: 1,000</small></span><span class="sb-go">Sign</span></a>
+    <a class="signbox" href="atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>Sign the parents' declaration for the Fourth Track</b><small>It will be submitted to the Minister of Education and the Knesset Education Committee.</small><small class="lc2" hidden><b class="lcn">0</b> have already signed. First milestone: 1,000</small></span><span class="sb-go">Sign</span></a>
     <div class="parents">
       <div><h3>Get your daycare’s parents on board</h3><p>A ready-made message. Send it to your daycare's parents group, and to the daycare director too.</p></div>
       <button class="bigbtn red" id="sendParents" type="button">Send the message</button>
@@ -1611,7 +1619,7 @@ If all the parents in our daycare sign, it's a voice that can't be ignored 🙏<
     <details><summary><span class="q">What does the support of the <span class="ia">Israel Innovation Authority</span> mean?</span></summary><p>The <span class="ia">Israel Innovation Authority</span> supported and funded the development of <span class="ez">Ein Tzofia</span>'s technology, as it does with Israeli technology companies. Such support is granted after a professional review of the project, so it indicates that the technology is serious and has been vetted. To be precise: the support was given for developing the technology, and it is not the Authority's endorsement of this initiative, the declaration, or the change to the law.</p></details>
     <details><summary><span class="q">Does signing require using <span class="ez">Ein Tzofia</span>?</span></summary><p>No. Signing is support for a policy change, not for a product. The Fourth Track defines a technological principle, not a product: it is open to any system that meets a strict regulatory standard, including prior approval by a competent government body, external accuracy testing before deployment and on an ongoing basis, information security and privacy requirements, and periodic independent audits. Signing does not commit you or your daycare to anything, and we will not use your details for marketing.</p></details>
   </div>
-  <div class="faq-cta"><a class="bigbtn red" href="../atzuma.html">Read the declaration and sign</a></div>
+  <div class="faq-cta"><a class="bigbtn red" href="atzuma.html">Read the declaration and sign</a></div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
@@ -1676,7 +1684,7 @@ If all the parents in our daycare sign, it's a voice that can't be ignored 🙏<
 
 
 
-<footer><div class="wrap"><img src="../logo-full.png" alt="The Fourth Track: Protecting children in real time" class="flogo-full" width="640" height="322"><div class="fbrand">An initiative of <a href="#contact"><b><span class="ez">Ein Tzofia</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">Enough with the band-aids! <span>It's time for a solution that works.</span></p><div class="flinks"><a href="../atzuma.html">The Declaration</a><a href="../atzuma.html#a11y">Accessibility Statement</a><a href="../atzuma.html#privacy">Privacy Policy</a></div></div></footer>
+<footer><div class="wrap"><img src="../logo-full.png" alt="The Fourth Track: Protecting children in real time" class="flogo-full" width="640" height="322"><div class="fbrand">An initiative of <a href="#contact"><b><span class="ez">Ein Tzofia</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">Enough with the band-aids! <span>It's time for a solution that works.</span></p><div class="flinks"><a href="atzuma.html">The Declaration</a><a href="atzuma.html#a11y">Accessibility Statement</a><a href="atzuma.html#privacy">Privacy Policy</a></div></div></footer>
 <div class="toast" id="toast" hidden></div>
 
 <script>

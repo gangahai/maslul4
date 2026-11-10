@@ -1285,6 +1285,12 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 @media (max-width:420px){.sections{margin-inline-start:6px!important;margin-inline-end:8px!important}html[lang=ru] .sections .go{font-size:12px!important;padding:6px 9px!important}}
 
 @media (max-width:420px){.lsw-name{display:none}.lsw-code{display:inline}}
+/* staff page: longer phrases than Hebrew, let them wrap */
+.shero.sh2 h1 .h1-c{white-space:normal}
+.sfeel .feel-h2 .sbrush{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (max-width:700px){.lt-cred li.lt-sm{white-space:normal}}
+@media (max-width:700px){.lt-cred li{white-space:normal}}
+html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inherit;margin:0;color:inherit}
 :root{--f-head:"PT Serif","Times New Roman",serif;--f-body:"PT Serif","Times New Roman",serif;--f-ui:"Rubik",system-ui,sans-serif;}
 /* ===== LTR overrides (en/ru) ===== */
 [dir=ltr] body{direction:ltr}
@@ -1324,6 +1330,8 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 }
 [dir=ltr] .body p.first::first-letter{float:left;margin:.06em .12em 0 0}
 @media (min-width:701px){[dir=ltr] .hero .credit{right:auto;left:max(18px,calc((100vw - 1160px)/2 + 18px));text-align:left}}
+[dir=ltr] .feel-lede::first-letter{float:left;margin:.06em .12em 0 0}
+[dir=ltr] .sw-hint i{scale:-1 1}
 </style>
 <script src="../m4px.js" defer></script>
 </head>
@@ -1332,7 +1340,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 
 <nav class="sticky" aria-label="Разделы"><div class="wrap bar">
   <a class="brand" href="#top"><img class="logo" src="../logo-hand.png" alt="Четвёртый путь"><span class="bt"><span class="bn"><span>Четвёртый</span> путь</span><em class="btag">Защищаем детей в реальном времени</em><small>Инициатива <span class="ez">Эйн Цофия</span></small></span></a>
-  <div class="sections"><a href="#story">Расследование</a><a href="#law">Закон</a><a href="#fix">Решение</a><a href="#decl">Декларация</a><a href="#faq">Вопросы</a><a href="../atzuma.html" class="go"><span class="l">Подписать декларацию</span><span class="s">Подписать</span></a></div>
+  <div class="sections"><a href="#story">Расследование</a><a href="#law">Закон</a><a href="#fix">Решение</a><a href="#decl">Декларация</a><a href="#faq">Вопросы</a><a href="atzuma.html" class="go"><span class="l">Подписать декларацию</span><span class="s">Подписать</span></a></div>
   <div class="lsw"><button type="button" class="lsw-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Language"><svg class="lg-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="lsw-name">Русский</span><span class="lsw-code" aria-hidden="true">RU</span><svg class="lg-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="lsw-menu" role="menu" hidden><li role="none"><a role="menuitem" class="lopt" href="../" lang="he" hreflang="he"><span class="lo-n">עברית</span><span class="lo-c">HE</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../en/" lang="en" hreflang="en"><span class="lo-n">English</span><span class="lo-c">EN</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ru/" lang="ru" hreflang="ru" aria-current="true"><span class="lo-n">Русский</span><span class="lo-c">RU</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li role="none"><a role="menuitem" class="lopt" href="../ar/" lang="ar" hreflang="ar"><span class="lo-n">العربية</span><span class="lo-c">AR</span><svg class="lg-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div>
 </div></nav>
 
@@ -1350,9 +1358,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div><b>Требование</b><span>Закон, который позволит её применять, — уже сейчас</span></div>
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
-    <div class="hero-cta"><a class="bigbtn red" href="../atzuma.html">Подпишите декларацию родителей</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">Смотреть видео (иврит)</span><small>0:49</small></button></div>
+    <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">Подпишите декларацию родителей</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">Смотреть видео (иврит)</span><small>0:49</small></button></div>
     <p class="hstaff-l">До сих пор каждую поправку к закону продвигали родители. <b>На этот раз мы делаем это вместе.</b></p>
-    <p class="hstaff"><a href="../staff">Руководитель или сотрудник детского сада? <b>Присоединяйтесь</b> <small>(страница на иврите)</small></a></p>
+    <p class="hstaff"><a href="staff">Руководитель или сотрудник детского сада? <b>Присоединяйтесь</b> <small>(страница на иврите)</small></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>человек уже подписали декларацию</span></p>
   </div>
   <span class="credit">Реальный кадр с камеры в детском саду, из системы <span class="ez">Эйн Цофия</span>. Лица размыты для защиты частной жизни.</span>
@@ -1407,7 +1415,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <p class="trust-big">Не очередное подозрение, а инструмент, который каждый день доказывает, что дети в надёжных руках.</p>
       </section>
 
-      <h2 id="law"><small>Закон сегодня</small>Всё записывается. <span class="cut75">Никто не смотрит!</span></h2>
+      <h2 id="law"><small>Закон сегодня</small>Всё записывается.<br><span class="cut75">Никто не смотрит!</span></h2>
       <p class="lede">С 2018 года ясли обязаны вести видеозапись. Но записи под замком и <b>открываются, только когда подозрение уже есть</b>.</p>
       <figure class="inline-fig days30" id="days30" aria-label="Иллюстрация: 30 дней съёмки. В некоторые дни камера не записывала, и почти никто не смотрит. Через 30–90 дней записи удаляются">
         <div class="grid" aria-hidden="true">
@@ -1555,7 +1563,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
         <div class="pl"><span class="d">Три месяца</span><b>Национальный стандарт</b><span>Четвёртый путь становится стандартом в каждом учреждении. <strong class="pl-strong">А родители получают выводы о развитии своих детей.</strong></span></div>
       </div>
       <details class="blocker bk2"><summary><span>Технология уже существует. <b>Единственное препятствие — закон.</b></span><em>Читать дальше</em></summary><p>Такая технология уже работает и доказала свою эффективность. Например, <b><span class="ez">Эйн Цофия</span></b>: около года работает на практике, во всех возрастных группах, а также в исследовательском пилотном проекте совместно с колледжем «Ораним». Система разработана при поддержке и финансировании <span class="ia">Управления по инновациям Израиля</span>. А путь, которого мы требуем, задаёт технологический принцип и стандарт, а не продукт: он открыт для любой системы, которая будет соответствовать строгому регуляторному стандарту, а не только для этой.</p></details>
-      <div class="ctas"><a class="bigbtn red" href="../atzuma.html">Подпишите декларацию</a><a class="bigbtn line" href="#faq">Вопросы и опасения</a></div>
+      <div class="ctas"><a class="bigbtn red" href="atzuma.html">Подпишите декларацию</a><a class="bigbtn line" href="#faq">Вопросы и опасения</a></div>
     </div>
   </div>
 </section>
@@ -1572,7 +1580,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <div><h3>Внедрение с исследованием</h3><p>Внедрение уже на первом этапе, с независимым оценочным исследованием.</p></div>
       <div><h3>Целевой бюджет</h3><p>В дополнение к существующему надзору, а не вместо него.</p></div>
     </div>
-    <div class="dfoot"><p>Принцип, а не продукт. Декларация будет подана, когда наберётся 10,000 подписей.</p><a class="bigbtn red" href="../atzuma.html">Прочитать полную декларацию и подписать</a></div>
+    <div class="dfoot"><p>Принцип, а не продукт. Декларация будет подана, когда наберётся 10,000 подписей.</p><a class="bigbtn red" href="atzuma.html">Прочитать полную декларацию и подписать</a></div>
   </div>
 </section>
 
@@ -1580,9 +1588,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="wrap">
     <div class="act-top"><div><h2 id="act-h">Родители, пора объединиться.</h2>
     <p class="lead">Все поправки к закону до сих пор появлялись потому, что родители не молчали.</p>
-    <p class="act-staff"><b>На этот раз мы делаем это вместе.</b> <a href="../staff">Руководитель или сотрудник детского сада? Присоединяйтесь</a></p></div>
+    <p class="act-staff"><b>На этот раз мы делаем это вместе.</b> <a href="staff">Руководитель или сотрудник детского сада? Присоединяйтесь</a></p></div>
     <button class="sharecirc" id="shareCirc" type="button" aria-label="Поделиться статьёй"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Поделиться</span></button></div>
-    <a class="signbox" href="../atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>Подпишите декларацию родителей за Четвёртый путь</b><small>Будет передана министру просвещения и комиссии Кнессета по образованию.</small><small class="lc2" hidden><b class="lcn">0</b> уже подписали. Первый этап: 1,000</small></span><span class="sb-go">Подписать</span></a>
+    <a class="signbox" href="atzuma.html"><img class="sbmark" src="../logo-hand.png" alt=""><span class="sbtxt"><b>Подпишите декларацию родителей за Четвёртый путь</b><small>Будет передана министру просвещения и комиссии Кнессета по образованию.</small><small class="lc2" hidden><b class="lcn">0</b> уже подписали. Первый этап: 1,000</small></span><span class="sb-go">Подписать</span></a>
     <div class="parents">
       <div><h3>Привлеките родителей вашего сада</h3><p>Готовое сообщение. Отправьте его в родительскую группу сада, а также руководству сада.</p></div>
       <button class="bigbtn red" id="sendParents" type="button">Отправить сообщение</button>
@@ -1612,7 +1620,7 @@ https://maslul4.tsofia.ai/ru/atzuma.html?src=parents
     <details><summary><span class="q">Что означает поддержка <span class="ia">Управления по инновациям Израиля</span>?</span></summary><p><span class="ia">Управление по инновациям Израиля</span> поддержало и профинансировало разработку технологии <span class="ez">Эйн Цофия</span> — так же, как оно поддерживает другие израильские технологические компании. Такая поддержка предоставляется после профессиональной экспертизы проекта, поэтому она свидетельствует о том, что технология серьёзная и прошла проверку. Важно уточнить: поддержка была оказана разработке технологии и не означает, что Управление поддерживает эту инициативу, декларацию или изменение закона.</p></details>
     <details><summary><span class="q">Обязывает ли подпись использовать <span class="ez">Эйн Цофия</span>?</span></summary><p>Нет. Подпись — это поддержка изменения политики, а не продукта. Четвёртый путь задаёт технологический принцип, а не продукт: он открыт для любой системы, которая будет соответствовать строгому регуляторному стандарту, включающему предварительное одобрение уполномоченного государственного органа, внешнюю проверку точности до запуска и на постоянной основе, требования к информационной безопасности и защите частной жизни, а также периодический независимый аудит. Подпись ни к чему не обязывает ни вас, ни ваш сад, и мы не будем использовать ваши данные в маркетинговых целях.</p></details>
   </div>
-  <div class="faq-cta"><a class="bigbtn red" href="../atzuma.html">Прочитать декларацию и подписать</a></div>
+  <div class="faq-cta"><a class="bigbtn red" href="atzuma.html">Прочитать декларацию и подписать</a></div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
@@ -1677,7 +1685,7 @@ https://maslul4.tsofia.ai/ru/atzuma.html?src=parents
 
 
 
-<footer><div class="wrap"><img src="../logo-full.png" alt="Четвёртый путь: защищаем детей в реальном времени" class="flogo-full" width="640" height="322"><div class="fbrand">Инициатива <a href="#contact"><b><span class="ez">Эйн Цофия</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">Хватит пластырей! <span>Пора перейти к решению, которое работает.</span></p><div class="flinks"><a href="../atzuma.html">Декларация</a><a href="../atzuma.html#a11y">Заявление о доступности</a><a href="../atzuma.html#privacy">Политика конфиденциальности</a></div></div></footer>
+<footer><div class="wrap"><img src="../logo-full.png" alt="Четвёртый путь: защищаем детей в реальном времени" class="flogo-full" width="640" height="322"><div class="fbrand">Инициатива <a href="#contact"><b><span class="ez">Эйн Цофия</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">Хватит пластырей! <span>Пора перейти к решению, которое работает.</span></p><div class="flinks"><a href="atzuma.html">Декларация</a><a href="atzuma.html#a11y">Заявление о доступности</a><a href="atzuma.html#privacy">Политика конфиденциальности</a></div></div></footer>
 <div class="toast" id="toast" hidden></div>
 
 <script>
