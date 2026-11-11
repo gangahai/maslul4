@@ -2568,6 +2568,11 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
 .shero .lc{margin-top:16px;padding:8px 18px 8px 16px;border-radius:999px;background:rgba(127,227,214,.14);border:1.5px solid rgba(127,227,214,.55);display:inline-flex;font-size:16px}
 .shero .lc[hidden]{display:none}
 .sfeel .letter{margin-top:clamp(26px,3vw,36px)}
+.lc-row{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.shero.sh2 .lc-row .lc{margin:0}
+.sh-icon{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(127,227,214,.55);background:rgba(127,227,214,.14);color:#9ff0e2;display:grid;place-items:center;cursor:pointer;padding:0;flex:none;transition:background .2s}
+.sh-icon:hover{background:rgba(127,227,214,.3)}
+.sh-icon svg{width:22px;height:22px;fill:currentColor}
 .shero.sh2 .lc{display:flex;width:fit-content;margin-inline:auto}
 .shero.sh2 .sdeep{display:table;margin:14px auto 0}
 .shero .lc b{font-size:28px;color:#9ff0e2;line-height:1}
@@ -2601,9 +2606,9 @@ document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});}
         <p class="sh-stop" style="--k:1">يجب أن نوقف العنف.</p>
         <p class="sh-way" style="--k:2"><span>المسار الرابع هو الطريق.</span> <span>وحدتنا هي الحل.</span></p>
       </div>
-      <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">وقّعوا على الإعلان</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">شاهدوا الفيديو (بالعبرية)</span><small>0:52</small></button><a class="bigbtn glass" href="#managers">أنا مدير/ة إطار تربوي</a><button class="bigbtn glass" type="button" id="heroShare">انشروا صفحة الحملة</button></div>
+      <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">وقّعوا على الإعلان</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">شاهدوا الفيديو (بالعبرية)</span><small>0:52</small></button></div>
       <p class="sh-tag">نحمي الأطفال في الوقت الحقيقي.</p>
-      <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>وقّعوا على الإعلان حتى الآن</span></p>
+      <div class="lc-row"><p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>وقّعوا على الإعلان حتى الآن</span></p><button class="sh-icon" type="button" id="heroShare" aria-label="انشروا صفحة الحملة" title="انشروا صفحة الحملة"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
       <a class="sdeep" href="./">إلى صفحة الحملة والتحقيق الكامل</a>
     </div>
   </div>
