@@ -1725,5 +1725,11 @@ document.querySelectorAll(".lcn").forEach(function(e){e.textContent=t});document
 function open(){var n=matchMedia("(max-width:700px),(orientation:portrait)").matches,src=n?v.dataset.narrow:v.dataset.wide;if(v.getAttribute("src")!==src){v.poster=n?v.dataset.narrowPoster:v.dataset.widePoster;v.src=src}m.hidden=false;document.documentElement.style.overflow="hidden";var p=v.play();if(p&&p.catch)p.catch(function(){});x.focus()}
 function close(){v.pause();m.hidden=true;document.documentElement.style.overflow="";o.focus()}
 o.addEventListener("click",open);x.addEventListener("click",close);m.addEventListener("click",function(e){if(e.target===m)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)close()});v.addEventListener("ended",close);})();</script>
+<script>
+// כפתור "צפו בסרטון": עיגול ההפעלה בדיוק מתחת לחץ שבין "הפתרון" ל"הדרישה" (רק כשהחץ מוצג, מעל 600px)
+(()=>{const a=document.querySelector('.trio .arr'),c=document.querySelector('.hero-cta'),i=document.querySelector('#vOpen i');if(!a||!c||!i)return;
+const f=()=>{c.style.marginInlineStart='';if(getComputedStyle(a).display==='none')return;const ar=a.getBoundingClientRect(),ir=i.getBoundingClientRect();c.style.marginInlineStart=(-((ar.left+ar.width/2)-(ir.left+ir.width/2)))+'px'};
+f();addEventListener('resize',f);addEventListener('load',f);document.fonts&&document.fonts.ready.then(f)})();
+</script>
 </body>
 </html>
