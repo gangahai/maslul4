@@ -1344,6 +1344,15 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
 <script src="../m4src.js"></script>
 <script src="../m4px.js" defer></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
+<style>
+/* 12.11: שורת "הפעם מובילים יחד" וכפתור הצוות התאחדו לכפתור אחד בלי חץ; מונה החותמים בולט */
+.hstaff a{flex-direction:column;align-items:flex-start;gap:2px;padding:10px 20px;line-height:1.35;border-radius:18px;text-align:start}
+.hstaff a::after{content:none!important}
+.hstaff a small{font-weight:500;font-size:.85em;color:#dfe8f2}
+.lc{margin-top:18px;padding:8px 18px 8px 16px;border-radius:999px;background:rgba(75,199,227,.14);border:1.5px solid rgba(75,199,227,.55);display:inline-flex;font-size:16px}
+.lc b{font-size:28px;color:#7fe3f5;line-height:1}
+@media (max-width:700px){.lc b{font-size:24px}}
+</style>
 </head>
 <body>
 
@@ -1369,8 +1378,7 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">Подпишите декларацию родителей</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">Смотреть видео (иврит)</span><small>0:49</small></button></div>
-    <p class="hstaff-l">До сих пор каждую поправку к закону продвигали родители. <b>На этот раз мы делаем это вместе.</b></p>
-    <p class="hstaff"><a href="staff">Руководитель или сотрудник детского сада? <b>Присоединяйтесь</b> <small>(страница на иврите)</small></a></p>
+    <p class="hstaff"><a href="staff"><small>До сих пор каждую поправку к закону продвигали родители.</small><span><b>На этот раз — вместе:</b> руководитель или сотрудник детского сада? Присоединяйтесь</span></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>человек уже подписали декларацию</span></p>
   </div>
   <span class="credit">Реальный кадр с камеры в детском саду, из системы <span class="ez">Эйн Цофия</span>. Лица размыты для защиты частной жизни.</span>
@@ -1803,7 +1811,7 @@ o.addEventListener("click",open);x.addEventListener("click",close);m.addEventLis
 <script>
 // כפתור "צפו בסרטון": עיגול ההפעלה בדיוק מתחת לחץ שבין "הפתרון" ל"הדרישה" (רק כשהחץ מוצג, מעל 600px)
 (()=>{const a=document.querySelector('.trio .arr'),c=document.querySelector('.hero-cta'),i=document.querySelector('#vOpen i');if(!a||!c||!i)return;
-const f=()=>{c.style.marginInlineStart='';if(getComputedStyle(a).display==='none')return;const ar=a.getBoundingClientRect(),ir=i.getBoundingClientRect();c.style.marginInlineStart=(-((ar.left+ar.width/2)-(ir.left+ir.width/2)))+'px'};
+const f=()=>{c.style.marginInlineStart='';if(getComputedStyle(a).display==='none')return;const ar=a.getBoundingClientRect(),ir=i.getBoundingClientRect();const k=getComputedStyle(c).direction==='rtl'?-1:1;c.style.marginInlineStart=(k*((ar.left+ar.width/2)-(ir.left+ir.width/2)))+'px'};
 f();addEventListener('resize',f);addEventListener('load',f);document.fonts&&document.fonts.ready.then(f)})();
 </script>
 </body>

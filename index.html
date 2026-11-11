@@ -1268,6 +1268,15 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 <script src="m4src.js"></script>
 <script src="m4px.js" defer></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
+<style>
+/* 12.11: שורת "הפעם מובילים יחד" וכפתור הצוות התאחדו לכפתור אחד בלי חץ; מונה החותמים בולט */
+.hstaff a{flex-direction:column;align-items:flex-start;gap:2px;padding:10px 20px;line-height:1.35;border-radius:18px;text-align:start}
+.hstaff a::after{content:none!important}
+.hstaff a small{font-weight:500;font-size:.85em;color:#dfe8f2}
+.lc{margin-top:18px;padding:8px 18px 8px 16px;border-radius:999px;background:rgba(75,199,227,.14);border:1.5px solid rgba(75,199,227,.55);display:inline-flex;font-size:16px}
+.lc b{font-size:28px;color:#7fe3f5;line-height:1}
+@media (max-width:700px){.lc b{font-size:24px}}
+</style>
 </head>
 <body>
 
@@ -1293,8 +1302,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">חתמו על הצהרת ההורים</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון</span><small>0:49</small></button></div>
-    <p class="hstaff-l">עד היום הורים הובילו כל תיקון בחוק. <b>הפעם מובילים יחד.</b></p>
-    <p class="hstaff"><a href="staff">מנהל/ת גן או צוות חינוכי? <b>הצטרפו אלינו</b></a></p>
+    <p class="hstaff"><a href="staff"><small>עד היום הורים הובילו כל תיקון בחוק.</small><span><b>הפעם מובילים יחד:</b> מנהל/ת גן או צוות חינוכי? הצטרפו אלינו</span></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
   </div>
   <span class="credit">פריים אמיתי ממצלמה בגן, מתוך מערכת <span class="ez">עין צופיה</span>. הפנים טושטשו לשמירת פרטיות.</span>
@@ -1728,7 +1736,7 @@ o.addEventListener("click",open);x.addEventListener("click",close);m.addEventLis
 <script>
 // כפתור "צפו בסרטון": עיגול ההפעלה בדיוק מתחת לחץ שבין "הפתרון" ל"הדרישה" (רק כשהחץ מוצג, מעל 600px)
 (()=>{const a=document.querySelector('.trio .arr'),c=document.querySelector('.hero-cta'),i=document.querySelector('#vOpen i');if(!a||!c||!i)return;
-const f=()=>{c.style.marginInlineStart='';if(getComputedStyle(a).display==='none')return;const ar=a.getBoundingClientRect(),ir=i.getBoundingClientRect();c.style.marginInlineStart=(-((ar.left+ar.width/2)-(ir.left+ir.width/2)))+'px'};
+const f=()=>{c.style.marginInlineStart='';if(getComputedStyle(a).display==='none')return;const ar=a.getBoundingClientRect(),ir=i.getBoundingClientRect();const k=getComputedStyle(c).direction==='rtl'?-1:1;c.style.marginInlineStart=(k*((ar.left+ar.width/2)-(ir.left+ir.width/2)))+'px'};
 f();addEventListener('resize',f);addEventListener('load',f);document.fonts&&document.fonts.ready.then(f)})();
 </script>
 </body>
