@@ -2562,6 +2562,15 @@ html[lang=ar] .feel-lede::first-letter{float:none;font-size:1em;line-height:inhe
 <script src="../m4src.js"></script>
 <script src="../m4px.js" defer></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f5effac9e5bb4b28a8cd7a82a71b9d40"}'></script>
+<style>
+/* 12.11: סרטון המנהלות בראש עמוד הצוותים; סיסמה ומונה בולטים */
+.shero .sh-tag{font-size:clamp(21px,2.4vw,26px);font-weight:900;color:#fff;margin-top:22px}
+.shero .lc{margin-top:16px;padding:8px 18px 8px 16px;border-radius:999px;background:rgba(127,227,214,.14);border:1.5px solid rgba(127,227,214,.55);display:inline-flex;font-size:16px}
+.shero .lc[hidden]{display:none}
+.shero .lc b{font-size:28px;color:#9ff0e2;line-height:1}
+@media (max-width:700px){.shero .lc b{font-size:24px}}
+.vmodal video{width:auto}
+</style>
 </head>
 <body>
 <nav class="sticky" aria-label="الأقسام"><div class="wrap bar">
@@ -2589,7 +2598,7 @@ document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});}
         <p class="sh-stop" style="--k:1">يجب أن نوقف العنف.</p>
         <p class="sh-way" style="--k:2"><span>المسار الرابع هو الطريق.</span> <span>وحدتنا هي الحل.</span></p>
       </div>
-      <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">وقّعوا على الإعلان</a><a class="bigbtn glass" href="#managers">أنا مدير/ة إطار تربوي</a><button class="bigbtn glass" type="button" id="heroShare">انشروا صفحة الحملة</button></div>
+      <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=staff&amp;src=staff">وقّعوا على الإعلان</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">شاهدوا الفيديو (بالعبرية)</span><small>0:52</small></button><a class="bigbtn glass" href="#managers">أنا مدير/ة إطار تربوي</a><button class="bigbtn glass" type="button" id="heroShare">انشروا صفحة الحملة</button></div>
       <p class="sh-tag">نحمي الأطفال في الوقت الحقيقي.</p>
       <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>وقّعوا على الإعلان حتى الآن</span></p>
       <a class="sdeep" href="./">إلى صفحة الحملة والتحقيق الكامل</a>
@@ -2865,5 +2874,10 @@ w.addEventListener("scroll",function(){requestAnimationFrame(upd)},{passive:true
 
 (function(){var f=document.getElementById("fab"),h=document.querySelector(".shero"),a=document.getElementById("act");if(!f)return;function u(){var y=scrollY,past=y>h.offsetHeight*.6,end=a&&a.getBoundingClientRect().top<innerHeight*.7;f.classList.toggle("on",past&&!end)}addEventListener("scroll",u,{passive:true});u()})();
 </script>
+<div class="vmodal" id="vModal" hidden role="dialog" aria-modal="true"><button class="vm-x" id="vClose" type="button" aria-label="✕">×</button><video id="vAd" controls playsinline preload="none" poster="../managers-video-poster.jpg" data-src="../managers-video.mp4"></video></div>
+<script>(function(){var m=document.getElementById("vModal"),v=document.getElementById("vAd"),o=document.getElementById("vOpen"),x=document.getElementById("vClose");if(!m||!o)return;
+function open(){if(!v.getAttribute("src"))v.src=v.dataset.src;m.hidden=false;document.documentElement.style.overflow="hidden";var p=v.play();if(p&&p.catch)p.catch(function(){});x.focus()}
+function close(){v.pause();m.hidden=true;document.documentElement.style.overflow="";o.focus()}
+o.addEventListener("click",open);x.addEventListener("click",close);m.addEventListener("click",function(e){if(e.target===m)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)close()});v.addEventListener("ended",close);})();</script>
 </body>
 </html>
