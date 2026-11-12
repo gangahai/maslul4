@@ -657,8 +657,13 @@ form.addEventListener("submit",async ev=>{
   const btn=$("#goBtn");btn.disabled=true;btn.textContent="שולח…";
   try{
     if(ENDPOINT){
-      const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
-      const d=await r.json().catch(()=>({ok:true}));
+      // תשובה שאינה JSON = תקלה בשרת של גוגל והחתימה לא נשמרה; מנסים שוב (השרת מסנן כפילויות לפי מייל)
+      let d=null;
+      for(let i=0;i<3&&!d;i++){
+        if(i) await new Promise(s=>setTimeout(s,1500*i));
+        try{const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});d=await r.json()}catch(e){}
+      }
+      if(!d) throw new Error("fail");
       if(d.ok===false) throw new Error(d.error||"fail");
       if(d.dup){render(d.count||count,null);done(name,lvl,true);return}
       count=d.count||count+1;
