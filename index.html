@@ -1264,6 +1264,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .vmodal video{max-width:min(1100px,100%);max-height:calc(100vh - 90px);border-radius:14px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .vm-x{position:absolute;top:12px;left:12px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:30px;line-height:1;cursor:pointer}
 .vm-x:hover{background:rgba(255,255,255,.28)}
+.fix-cta{margin:4px 0 26px}
 </style>
 <script src="m4src.js"></script>
 <script src="m4px.js" defer></script>
@@ -1448,6 +1449,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <span class="kick">דוגמה לטכנולוגיה שכבר קיימת</span></div>
     <h2 id="fix-h">המצלמה <span>שמבינה.</span></h2>
     <p class="deck2">בלי עוד מצלמה ובלי עוד מסך: המצלמות הקיימות מבינות בזמן אמת, ומתריעות למי שיכול לפעול.</p>
+    <p class="fix-cta"><button class="bigbtn glass vbtn" id="vOpenFull" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון המלא</span><small>4:44</small></button></p>
     <figure class="big-shot vid">
       <video id="reportVid" data-wide="report.mp4" data-wide-poster="report-poster.jpg" data-narrow="report-vertical.mp4" data-narrow-poster="report-vertical-poster.jpg" muted loop playsinline preload="metadata" aria-label="סרטון: דוח אמיתי של המערכת על חוג חיות בגן ילדים. זיהוי אנשים ותפקידים, זיהוי סיטואציה, רגע חזק, נקודה לתשומת לב ופעולה חלופית, לצד הדוח שנכתב בזמן אמת"></video>
       <figcaption><span><b>זה לא הדמיה. זה דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים.</b> <details class="cap-d"><summary>מה רואים בסרטון</summary>המערכת מזהה מי בחדר ומה התפקיד של כל אחד, מבינה את הסיטואציה, מצביעה על רגעים חזקים ועל מה שדורש תשומת לב, ומציעה לצוות פעולה חלופית למחר. הילדים והצוות טושטשו, ושמות הצוות הוסרו.</details></span><span><span class="ez">עין צופיה</span></span></figcaption>
@@ -1731,9 +1733,11 @@ try{fetch(EP,{cache:"no-store"}).then(function(r){return r.json()}).then(functio
 document.querySelectorAll(".lcn").forEach(function(e){e.textContent=t});document.querySelectorAll(".lc,.lc2").forEach(function(e){e.hidden=false})}).catch(function(){})}catch(e){}})();</script>
 <div class="vmodal" id="vModal" hidden role="dialog" aria-modal="true"><button class="vm-x" id="vClose" type="button" aria-label="✕">×</button><video id="vAd" controls playsinline preload="none" data-wide="ad-wide.mp4?v=2" data-wide-poster="ad-wide-poster.jpg" data-narrow="ad-tall.mp4?v=2" data-narrow-poster="ad-tall-poster.jpg"></video></div>
 <script>(function(){var m=document.getElementById("vModal"),v=document.getElementById("vAd"),o=document.getElementById("vOpen"),x=document.getElementById("vClose");if(!m||!o)return;
-function open(){var n=matchMedia("(max-width:700px),(orientation:portrait)").matches,src=n?v.dataset.narrow:v.dataset.wide;if(v.getAttribute("src")!==src){v.poster=n?v.dataset.narrowPoster:v.dataset.widePoster;v.src=src}m.hidden=false;document.documentElement.style.overflow="hidden";var p=v.play();if(p&&p.catch)p.catch(function(){});x.focus()}
-function close(){v.pause();m.hidden=true;document.documentElement.style.overflow="";o.focus()}
-o.addEventListener("click",open);x.addEventListener("click",close);m.addEventListener("click",function(e){if(e.target===m)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)close()});v.addEventListener("ended",close);})();</script>
+// כפתור עם data-vsrc (סרטון ההורים המלא) מנגן את הסרטון שלו באותו חלון
+var last=o;
+function open(b){var n=matchMedia("(max-width:700px),(orientation:portrait)").matches,src=b.dataset.vsrc||(n?v.dataset.narrow:v.dataset.wide);if(v.getAttribute("src")!==src){v.poster=b.dataset.vposter||(n?v.dataset.narrowPoster:v.dataset.widePoster);v.src=src}last=b;m.hidden=false;document.documentElement.style.overflow="hidden";var p=v.play();if(p&&p.catch)p.catch(function(){});x.focus()}
+function close(){v.pause();m.hidden=true;document.documentElement.style.overflow="";last.focus()}
+[o].concat([].slice.call(document.querySelectorAll(".vbtn[data-vsrc]"))).forEach(function(b){b.addEventListener("click",function(){open(b)})});x.addEventListener("click",close);m.addEventListener("click",function(e){if(e.target===m)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)close()});v.addEventListener("ended",close);})();</script>
 <script>
 // כפתור "צפו בסרטון": עיגול ההפעלה בדיוק מתחת לחץ שבין "הפתרון" ל"הדרישה" (רק כשהחץ מוצג, מעל 600px)
 (()=>{const a=document.querySelector('.trio .arr'),c=document.querySelector('.hero-cta'),i=document.querySelector('#vOpen i');if(!a||!c||!i)return;
