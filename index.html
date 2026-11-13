@@ -1279,6 +1279,17 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .lc b{font-size:28px;color:#7fe3f5;line-height:1}
 @media (max-width:700px){.lc b{font-size:24px}}
 </style>
+<style id="mobile-fix-1311">
+/* 13.11: בטלפון התווית האדומה ירדה לשתי שורות וכיסתה את הכותרת והיד; כרטיס אמה נחתך ב-"..." */
+.dbox .label{max-width:calc(100% - 32px);line-height:1.35}
+@media (max-width:700px){
+  .dbox .label{position:relative;top:auto;right:auto;left:auto;display:block;width:fit-content;margin:-37px 0 14px}
+  .dbox .dmark{position:static;display:block;width:44px;margin:0 0 10px}
+  .dbox h2{padding-left:0;padding-right:0}
+  .tc2-emma{white-space:normal!important}
+  .tc2-emma span{overflow:visible;text-overflow:clip}
+}
+</style>
 </head>
 <body>
 
