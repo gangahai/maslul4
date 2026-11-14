@@ -8,7 +8,7 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#c8102e">
 <meta property="og:type" content="website">
-<meta property="og:title" content="המסלול הרביעי: חייבים לעצור את התופעה">
+<meta property="og:title" content="המסלול הרביעי: חייבים לעצור את הפגיעה בילדים">
 <meta property="og:description" content="ילדים נפגעים בגנים ומגלים את זה במקרה. הפתרון כבר קיים, חסר רק חוק. הצטרפו להצהרת ההורים.">
 <meta property="og:image" content="https://maslul4.tsofia.ai/og-card-2.jpg">
 <meta property="og:image:width" content="1200">
@@ -80,7 +80,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero .kicker::before,.hero .kicker::after{background:#ff6b7f}
 .hero h1{font-weight:900;font-size:clamp(46px,8.6vw,108px);line-height:.98;letter-spacing:-.02em;margin-top:14px;max-width:12ch;text-shadow:0 4px 24px rgba(0,0,0,.4)}
 .hero h1 .red{color:#ff5a6e}
-.hero-deck{font-family:var(--f-head);font-weight:500;font-size:clamp(20px,2.4vw,27px);line-height:1.45;max-width:34ch;margin:18px 0 0;color:#f1f1f1}
+.hero-deck{font-family:var(--f-head);font-weight:500;font-size:clamp(23px,2.8vw,31px);line-height:1.4;max-width:34ch;margin:18px 0 0;color:#f1f1f1}
 .trio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:26px;max-width:640px;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.25)}
 .trio div{background:rgba(10,10,10,.6);backdrop-filter:blur(6px);padding:14px 16px;font-family:var(--f-ui)}
 .trio b{display:block;color:#ff8a99;font-weight:800;font-size:14px;letter-spacing:.06em}
@@ -634,7 +634,7 @@ footer a{color:#fff}
 @media (max-width:700px){
   body{font-size:16px}
   .hero h1{font-size:34px!important;line-height:1.12}
-  .hero-deck{font-size:17px!important}
+  .hero-deck{font-size:19.5px!important}
   .body p,.contact p,.faq p,.spread .deck2{font-size:16px!important;line-height:1.6!important}
   .body p.lede{font-size:18px!important}
   .body h2,.trust h2,.rec h2,.late h2{font-size:24px!important;line-height:1.2!important}
@@ -748,6 +748,7 @@ h1,h2,h3{text-wrap:balance}
 
 .body h3.duo-h{font-size:clamp(20px,2.3vw,24px);margin:1.6em 0 0}
 .hero-deck .sol{color:#5fe0c8;font-weight:700}
+.hero-deck .speak{display:block;margin-top:6px;font-weight:800;color:#fff}
 /* מברשת שחורה על "צובעת את כל הגנים בשחור" (לכל שורה) */
 .trust h2 .blk{display:inline;padding:.02em .2em .06em;color:#fff;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M6 14 C40 6 90 10 140 7 S250 4 300 8 S370 5 396 12 L392 22 L398 30 L390 40 L396 50 C350 56 300 52 250 55 S150 58 100 54 S30 57 4 50 L10 40 L2 30 L8 22 Z' fill='%23111'/%3E%3C/svg%3E") right center/100% 100% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;line-height:1.45}
 @media (prefers-reduced-motion:no-preference){
@@ -1266,7 +1267,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .vm-x:hover{background:rgba(255,255,255,.28)}
 .fix-cta{margin:4px 0 26px}
 /* חלון הסרטון אחרי "חוק המצלמות של היום": פרומו שקט בלולאה, לחיצה פותחת את הסרטון המלא */
-.lawvid{display:grid;grid-template-columns:200px 1fr;gap:18px 26px;align-items:end;margin:1.4em 0 .4em;padding:20px;border-radius:22px;background:#f6f1e8;color:var(--ink);border:1px solid #e8dfcf;box-shadow:0 14px 40px rgba(60,40,10,.08)}
+.lawvid{display:grid;grid-template-columns:200px 1fr;gap:18px 26px;align-items:start;margin:1.4em 0 .4em;padding:20px;border-radius:22px;background:#f6f1e8;color:var(--ink);border:1px solid #e8dfcf;box-shadow:0 14px 40px rgba(60,40,10,.08)}
 .lv-media{position:relative;display:block;padding:0;border:0;border-radius:14px;overflow:hidden;aspect-ratio:9/16;background:#000;cursor:pointer}
 .lv-media video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .lv-media:hover video{transform:scale(1.04)}
@@ -1287,9 +1288,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .lv-tl .lv-no h3{color:var(--red)}
 .lv-paths{margin:6px 0 0;padding:0 18px 0 0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
 .lv-paths li::marker{color:var(--red)}
-.lv-txt h3.lv-we{margin-top:6px;padding-top:12px;border-top:1px solid #e3d8c4}
-.lv-media{grid-row:span 2;align-self:start}.lv-btn{justify-self:start;align-self:start;white-space:nowrap;margin-top:-6px}
-@media (max-width:600px){.lawvid{grid-template-columns:1fr;gap:14px;padding:16px;align-items:start}.lv-media{width:150px;justify-self:center}.lv-txt h3{font-size:17px}.lv-txt p{font-size:14px}.lv-tl>li{grid-template-columns:44px 1fr;gap:8px}.lv-tl>li::before{inset-inline-start:21px}.lv-tl .y{font-size:12.5px}.lv-paths{font-size:13.5px;padding-right:14px}.lv-media{grid-row:auto}.lv-btn{grid-column:1/-1;justify-self:stretch;justify-content:center;margin-top:0}.lv-media i{width:40px;height:40px;margin:-20px 0 0 -20px}.lv-media i::before{left:15px;top:12px;border-width:8px;border-left-width:13px}}
+.lv-txt h3.lv-we{margin-top:6px;padding-top:14px;border-top:1px solid #e3d8c4;font-size:clamp(24px,2.6vw,30px);color:var(--red)}.lv-txt p.lv-wep{font-size:18px;line-height:1.6;color:var(--ink);font-weight:500}
+.lv-media{align-self:start}.lv-btn{justify-self:start;align-self:start;white-space:nowrap;margin-top:-6px}
+@media (max-width:600px){.lawvid{grid-template-columns:1fr;gap:14px;padding:16px;align-items:start}.lv-media{width:150px;justify-self:center}.lv-txt h3{font-size:17px}.lv-txt p{font-size:14px}.lv-tl>li{grid-template-columns:44px 1fr;gap:8px}.lv-tl>li::before{inset-inline-start:21px}.lv-tl .y{font-size:12.5px}.lv-paths{font-size:13.5px;padding-right:14px}.lv-txt h3.lv-we{font-size:23px}.lv-txt p.lv-wep{font-size:16.5px}.lv-media{grid-row:auto}.lv-btn{grid-column:1/-1;justify-self:stretch;justify-content:center;margin-top:0}.lv-media i{width:40px;height:40px;margin:-20px 0 0 -20px}.lv-media i::before{left:15px;top:12px;border-width:8px;border-left-width:13px}}
 </style>
 <script src="m4src.js"></script>
 <script src="m4px.js" defer></script>
@@ -1331,11 +1332,11 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
   <div class="hero-shade"></div>
   <div class="wrap hero-in">
     <span class="kicker">קריאה להורים <time class="kdate" datetime="2026-11-08">8 בנובמבר 2026</time></span>
-    <h1>חייבים לעצור את התופעה.<br><span class="red">וזה בידיים שלנו.</span></h1>
-    <p class="hero-deck"><span class="hurt">ילדים נפגעים בגנים</span>, ומגלים את זה במקרה. הבעיה ברורה, ו<span class="sol">הפתרון כבר קיים</span>.</p>
+    <h1>חייבים לעצור את הפגיעה בילדים.<br><span class="red">וזה בידיים שלנו.</span></h1>
+    <p class="hero-deck"><span class="hurt">פעוטות נפגעים בגנים</span>, ומגלים את זה רק במזל!<span class="speak">חייבים לדבר למענם.</span></p>
     <p class="hero-call"><b>אנחנו קוראים להורים להתאחד</b><span>ולדרוש לעדכן את חוק המצלמות: שהמצלמות שכבר בגנים יתריעו על סכנה בזמן אמת, כדי להגן על הילדים, תוך שמירה על הפרטיות.</span></p>
     <div class="trio">
-      <div><b>הפתרון</b><span>המצלמות שכבר בגנים יכולות להתריע בזמן אמת. החוק לא מאפשר את זה.</span></div>
+      <div><b>הפתרון</b><span>המצלמות שכבר בגנים מתריעות בזמן אמת.</span></div>
       <div><b>הדרישה</b><span>לתקן את חוק המצלמות</span></div>
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
@@ -1469,10 +1470,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
               <ul class="lv-paths"><li>צפייה בגן, עד פעם בשבוע</li><li>צפייה מרחוק, 48 שעות בחודש</li><li>שידור חי לטלפון, רק אם כל ההורים מסכימים</li></ul></div></li>
             <li class="lv-no"><b class="y">היום</b><div><h3>אף מסלול לא חובה</h3><p>המפעיל בוחר אחד, או נשאר כמו לפני התיקון.</p></div></li>
           </ol>
-          <h3 class="lv-we">מה אנחנו מציעים</h3>
-          <p>המצלמות שכבר בגנים יכולות להתריע בזמן אמת. החוק לא מאפשר את זה. אנחנו דורשים לעדכן אותו: שהמצלמות יתריעו על סכנה בזמן אמת, כדי להגן על הילדים, תוך שמירה על הפרטיות.</p>
+          <h3 class="lv-we">ההצעה שאנחנו נגיש יחד</h3>
+          <p class="lv-wep">המצלמות שכבר בגנים יכולות להתריע בזמן אמת. החוק לא מאפשר את זה. אנחנו דורשים לעדכן אותו: שהמצלמות יתריעו על סכנה בזמן אמת, כדי להגן על הילדים, תוך שמירה על הפרטיות.</p>
         </div>
-        <button class="bigbtn red vbtn lv-btn" id="vOpenFull" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון המלא</span><small>4:44</small></button>
       </div>
     </article>
 
