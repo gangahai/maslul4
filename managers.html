@@ -2550,6 +2550,30 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
 .lt-body .lt-src a{color:inherit}
 .mg-proof{margin:18px 0 0;font-family:var(--f-ui);font-size:16px}
 .act .parents h3{margin:0 0 4px}
+
+/* פתיחה פשוטה ובהירה, כמו בגרסה הקודמת של העמוד */
+.mg-top{background:#fbf7f1;border-bottom:1px solid #e7ddd0;padding:56px 20px 46px}
+.mg-in{max-width:720px;margin:0 auto}
+.mg-kick{font-family:var(--f-ui);font-weight:800;color:#1f6b62;font-size:16px;margin:0 0 14px}
+.mg-top h1{font-family:var(--f-head);font-weight:900;font-size:clamp(38px,8vw,64px);line-height:1.05;margin:0 0 20px;letter-spacing:-.5px;color:var(--ink)}
+.mg-top h1 em{font-style:normal;color:var(--red)}
+.mg-lead{font-family:var(--f-ui);font-size:clamp(19px,2.6vw,22px);line-height:1.6;color:#4a5654;margin:0 0 28px;max-width:34em}
+.mg-btns{display:flex;flex-wrap:wrap;gap:12px}
+.mg-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:99px;font-family:var(--f-ui);font-weight:800;font-size:18px;text-decoration:none}
+.mg-btn.red{background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(200,16,46,.25)}
+.mg-btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.mg-top .mg-count{display:inline-flex;align-items:center;gap:8px;margin:18px 0 0;font-family:var(--f-ui);font-size:16px;color:#1f6b62}
+.mg-top .mg-count[hidden]{display:none}
+.mg-top .mg-count b{font-size:22px;color:#1f6b62}
+.mg-vid{margin:36px auto 34px;max-width:340px;text-align:center}
+.mg-vid video{display:block;width:100%;aspect-ratio:9/16;border-radius:20px;background:#f1e7d3;box-shadow:0 18px 44px rgba(40,30,15,.18)}
+.mg-vid figcaption{font-family:var(--f-ui);font-size:15px;color:#4a5654;margin-top:10px;border:0;padding:0}
+.mg-quote{padding:26px 26px 22px;background:var(--ink);color:#fff;border-radius:22px}
+.mg-quote p{font-family:var(--f-head);font-size:clamp(22px,3.6vw,28px);font-weight:700;line-height:1.35;margin:0 0 12px}
+.mg-quote small{font-family:var(--f-ui);color:#cfd8d6;font-size:15px}
+.mg-links{font-family:var(--f-ui);font-size:15.5px;margin:22px 0 0;color:#4a5654}
+.mg-links a{color:#1f6b62;font-weight:700}
+@media (max-width:520px){.mg-top{padding:36px 18px 32px}.mg-btn{width:100%}}
 </style>
 </head>
 <body>
@@ -2560,30 +2584,30 @@ div.pi-sw .pi-new b{color:var(--sg-l)}
 
 
 <main>
-<header class="shero sh2" id="top">
-  <div class="sh-reel" id="shReel" data-p='["staff-circle.jpg", "staff-autumn.jpg", "staff-shabbat.jpg", "staff-pets.jpg", "staff-parachute.jpg", "staff-yard.jpg", "staff-art.jpg", "staff-sticks.jpg", "staff-birthday.jpg", "staff-nature.jpg", "staff-play.jpg"]' aria-hidden="true"></div>
-  <div class="wrap shero-in">
-    <div class="shero-txt">
-      <span class="kicker">למנהלות ולמנהלים של מסגרות הגיל הרך</span>
-      <h1>האחריות עלינו. <span class="h1-c">הכלים לא אצלנו.</span></h1>
-      <div class="sh-msg">
-        <p style="--k:0">מכתב ממנהל גן אל מנהלות ומנהלים: על מה שעובר עלינו אחרי כל פרשה, ועל תיקון אחד בחוק שיכול להפוך את המצלמות שכבר בגן לכלי שעובד בשבילנו.</p>
-        <p class="sh-stop" style="--k:1">אנחנו חייבים לעצור את הפגיעה בילדים.</p>
-        <p class="sh-way" style="--k:2"><span>המצלמות כבר בגן.</span> <span>הגיע הזמן שהן יעבדו גם בשבילנו.</span></p>
-      </div>
-      <div class="hero-cta"><a class="bigbtn red" href="atzuma.html?role=manager&amp;src=managers">חתמו כמנהל/ת מסגרת</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון</span><small>0:52</small></button></div>
-      <p class="sh-tag">מגינים על הילדים בזמן אמת.</p>
-      <div class="lc-row"><p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p><a class="sh-icon sh" data-k="managers" href="#" aria-label="שלחו לקבוצת המנהלות" title="שלחו לקבוצת המנהלות"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <a class="smgr-link" href="staff"><small>צוות חינוכי?</small> יש לכם עמוד משלכם</a>
-      <a class="sdeep" href="./">לעמוד המאבק ולתחקיר המלא</a>
+<header class="mg-top" id="top">
+  <div class="mg-in">
+    <p class="mg-kick">למנהלות/מנהלים של מסגרות הגיל הרך</p>
+    <h1>האחריות עלינו.<br><em>הכלים לא אצלנו.</em></h1>
+    <p class="mg-lead">מכתב ממנהל גן אל מנהלות ומנהלים: על מה שעובר עלינו אחרי כל פרשה, ועל תיקון אחד בחוק שיכול להפוך את המצלמות שכבר בגן לכלי שעובד בשבילנו.</p>
+    <div class="mg-btns">
+      <a class="mg-btn red" href="atzuma.html?role=manager&amp;src=managers">חתמו כמנהל/ת מסגרת</a>
+      <a class="mg-btn ghost sh" data-k="managers" href="#">שלחו לקבוצת המנהלות</a>
     </div>
+    <p class="mg-count lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
+    <figure class="mg-vid">
+      <video src="managers-video.mp4" poster="managers-video-poster.jpg" controls playsinline preload="none" aria-label="סרטון למנהלות: מאיתנו רק דורשים, תקציב הפיקוח נחתך, ואף אחד לא שואל אותנו. המסלול הרביעי: מערכת שתומכת בצוות ורואה את הטוב שאנחנו עושים"></video>
+      <figcaption>הסרטון למנהלות, 52 שניות. מוזמנות להעביר הלאה.</figcaption>
+    </figure>
+    <div class="mg-quote">
+      <p>„המצלמות כבר בגן. הגיע הזמן שהן יעבדו גם בשבילנו, ובשביל הילדים.“</p>
+      <small>אהרון נייס, מנהל גן גחליליות</small>
+    </div>
+    <p class="mg-links"><a href="staff">צוות חינוכי? יש לכם עמוד משלכם</a> · <a href="./">לעמוד המאבק ולתחקיר המלא</a></p>
   </div>
-  <span class="sh-note" aria-hidden="true">רגעים אמיתיים מהגנים. הפנים טושטשו.</span>
 </header>
 
 <section class="sfeel wrap" id="letter" aria-labelledby="feel-h" data-io>
   <h2 id="feel-h" class="feel-one">מכתב <span class="sbrush">ממנהל גן אליכם</span></h2>
-  <p class="feel-lede"><b>המצלמות כבר בגן.</b> הגיע הזמן שהן יעבדו גם בשבילנו, ובשביל הילדים.</p>
   <div class="letter">
     <div class="lt-who"><img class="lt-ph" src="aharon-2.jpg" alt="אהרון נייס" width="400" height="400"><span class="lt-id"><b>אהרון נייס</b><span>20 שנה מנהל את גן גחליליות, קריית אתא</span></span>
       <ul class="lt-cred"><li>גנן מוסמך <small class="lt-from">בוגר אורנים</small></li><li>מנתח התנהגות מוסמך (BCBA)</li><li class="lt-sm">לקראת תואר שני ביזמות טכנולוגית</li></ul></div>
@@ -2690,7 +2714,7 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es
 function upd(){var c=w.getBoundingClientRect(),mid=c.left+c.width/2,best=0,bd=1e9;[].forEach.call(w.children,function(el,i){var r=el.getBoundingClientRect(),x=Math.abs(r.left+r.width/2-mid);if(x<bd){bd=x;best=i}});[].forEach.call(d.children,function(el,i){el.classList.toggle("on",i===best)})}
 w.addEventListener("scroll",function(){requestAnimationFrame(upd)},{passive:true});upd()})})();
 
-(function(){var f=document.getElementById("fab"),h=document.querySelector(".shero"),a=document.getElementById("act");if(!f)return;function u(){var y=scrollY,past=y>h.offsetHeight*.6,end=a&&a.getBoundingClientRect().top<innerHeight*.7;f.classList.toggle("on",past&&!end)}addEventListener("scroll",u,{passive:true});u()})();
+(function(){var f=document.getElementById("fab"),h=document.querySelector(".mg-top"),a=document.getElementById("act");if(!f)return;function u(){var y=scrollY,past=y>h.offsetHeight*.6,end=a&&a.getBoundingClientRect().top<innerHeight*.7;f.classList.toggle("on",past&&!end)}addEventListener("scroll",u,{passive:true});u()})();
 </script>
 <div class="vmodal" id="vModal" hidden role="dialog" aria-modal="true"><button class="vm-x" id="vClose" type="button" aria-label="✕">×</button><video id="vAd" controls playsinline preload="none" poster="managers-video-poster.jpg" data-src="managers-video.mp4"></video></div>
 <script>(function(){var m=document.getElementById("vModal"),v=document.getElementById("vAd"),o=document.getElementById("vOpen"),x=document.getElementById("vClose");if(!m||!o)return;
