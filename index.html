@@ -1265,6 +1265,31 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .vm-x{position:absolute;top:12px;left:12px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:30px;line-height:1;cursor:pointer}
 .vm-x:hover{background:rgba(255,255,255,.28)}
 .fix-cta{margin:4px 0 26px}
+/* חלון הסרטון אחרי "חוק המצלמות של היום": פרומו שקט בלולאה, לחיצה פותחת את הסרטון המלא */
+.lawvid{display:grid;grid-template-columns:200px 1fr;gap:18px 26px;align-items:end;margin:1.4em 0 .4em;padding:20px;border-radius:22px;background:#121417;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.lv-media{position:relative;display:block;padding:0;border:0;border-radius:14px;overflow:hidden;aspect-ratio:9/16;background:#000;cursor:pointer}
+.lv-media video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.lv-media:hover video{transform:scale(1.04)}
+.lv-media i{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
+.lv-media i::before{left:20px;top:16px;border-width:11px;border-left-width:17px}
+.lv-dur{position:absolute;bottom:8px;left:8px;font:700 12px var(--f-ui);background:rgba(0,0,0,.7);padding:3px 8px;border-radius:99px;direction:ltr}
+.lv-k{display:inline-block;font:800 12.5px var(--f-ui);letter-spacing:.02em;color:#ff6b7d;margin-bottom:6px}
+.lv-txt h3{font-family:var(--f-head);font-size:20px;margin:10px 0 4px;color:#fff}
+.lv-txt p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.82)}
+.lv-txt p b{color:#fff}
+.lv-tl{list-style:none;margin:4px 0 0;padding:0}
+.lv-tl>li{position:relative;display:grid;grid-template-columns:52px 1fr;gap:10px;padding-bottom:12px}
+.lv-tl>li::before{content:"";position:absolute;inset-inline-start:25px;top:24px;bottom:0;width:2px;background:rgba(255,255,255,.18)}
+.lv-tl .y{font:900 14px var(--f-ui);direction:ltr;text-align:center;align-self:start;background:#fff;color:#121417;border-radius:99px;padding:3px 0;position:relative}
+.lv-tl .lv-no .y{background:#c8102e;color:#fff;font-size:12.5px}
+.lv-tl .lv-no::before{display:none}
+.lv-tl h3{margin:2px 0 2px;font-size:17px}
+.lv-tl .lv-no h3{color:#ff6b7d}
+.lv-paths{margin:6px 0 0;padding:0 18px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.82)}
+.lv-paths li::marker{color:#ff6b7d}
+.lv-txt h3.lv-we{margin-top:6px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16)}
+.lv-media{grid-row:span 2;align-self:start}.lv-btn{justify-self:start;align-self:start;white-space:nowrap;margin-top:-6px}
+@media (max-width:600px){.lawvid{grid-template-columns:1fr;gap:14px;padding:16px;align-items:start}.lv-media{width:150px;justify-self:center}.lv-txt h3{font-size:17px}.lv-txt p{font-size:14px}.lv-tl>li{grid-template-columns:44px 1fr;gap:8px}.lv-tl>li::before{inset-inline-start:21px}.lv-tl .y{font-size:12.5px}.lv-paths{font-size:13.5px;padding-right:14px}.lv-media{grid-row:auto}.lv-btn{grid-column:1/-1;justify-self:stretch;justify-content:center;margin-top:0}.lv-media i{width:40px;height:40px;margin:-20px 0 0 -20px}.lv-media i::before{left:15px;top:12px;border-width:8px;border-left-width:13px}}
 </style>
 <script src="m4src.js"></script>
 <script src="m4px.js" defer></script>
@@ -1431,6 +1456,24 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <p class="bsrc">מקור: מבקר המדינה, 2026</p>
       </details>
       <blockquote class="pull">במסגרת חוק המצלמות של היום, אני מחויב לתעד את הצוות שלי, ואסור לי להשתמש בתיעוד כדי לעזור לו.<cite>אהרון נייס, מנהל רשת גנים</cite></blockquote>
+      <div class="lawvid">
+        <button class="lv-media vbtn" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg" aria-label="צפו בסרטון המלא, 4:44">
+          <video src="promo-law.mp4" poster="promo-law.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true" tabindex="-1"></video>
+          <i aria-hidden="true"></i><span class="lv-dur">4:44</span>
+        </button>
+        <div class="lv-txt">
+          <span class="lv-k">החוק והפתרון, בסרטון אחד</span>
+          <ol class="lv-tl">
+            <li><b class="y">2018</b><div><h3>חוק המצלמות נחקק</h3><p>אחרי מות תינוקת בפעוטון ומחאת הורים ארצית.</p></div></li>
+            <li><b class="y">2024</b><div><h3>החוק תוקן</h3><p>אחרי מקרי האלימות בראש העין, רמלה ואילת, ההורים שוב יצאו להפגין. נוספו שלושה מסלולי צפייה להורים:</p>
+              <ul class="lv-paths"><li>צפייה בגן, עד פעם בשבוע</li><li>צפייה מרחוק, 48 שעות בחודש</li><li>שידור חי לטלפון, רק אם כל ההורים מסכימים</li></ul></div></li>
+            <li class="lv-no"><b class="y">היום</b><div><h3>אף מסלול לא חובה</h3><p>המפעיל בוחר אחד, או נשאר כמו לפני התיקון.</p></div></li>
+          </ol>
+          <h3 class="lv-we">מה אנחנו מציעים</h3>
+          <p>המצלמות שכבר בגנים יכולות להתריע בזמן אמת. החוק לא מאפשר את זה. אנחנו דורשים לעדכן אותו: שהמצלמות יתריעו על סכנה בזמן אמת, כדי להגן על הילדים, תוך שמירה על הפרטיות.</p>
+        </div>
+        <button class="bigbtn glass vbtn lv-btn" id="vOpenFull" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון המלא</span><small>4:44</small></button>
+      </div>
     </article>
 
     <aside class="side" aria-label="נתונים ומקרים">
@@ -1460,7 +1503,6 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
     <span class="kick">דוגמה לטכנולוגיה שכבר קיימת</span></div>
     <h2 id="fix-h">המצלמה <span>שמבינה.</span></h2>
     <p class="deck2">בלי עוד מצלמה ובלי עוד מסך: המצלמות הקיימות מבינות בזמן אמת, ומתריעות למי שיכול לפעול.</p>
-    <p class="fix-cta"><button class="bigbtn glass vbtn" id="vOpenFull" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון המלא</span><small>4:44</small></button></p>
     <figure class="big-shot vid">
       <video id="reportVid" data-wide="report.mp4" data-wide-poster="report-poster.jpg" data-narrow="report-vertical.mp4" data-narrow-poster="report-vertical-poster.jpg" muted loop playsinline preload="metadata" aria-label="סרטון: דוח אמיתי של המערכת על חוג חיות בגן ילדים. זיהוי אנשים ותפקידים, זיהוי סיטואציה, רגע חזק, נקודה לתשומת לב ופעולה חלופית, לצד הדוח שנכתב בזמן אמת"></video>
       <figcaption><span><b>זה לא הדמיה. זה דוח אמיתי מפיילוט פעיל בגן, בשיתוף מכללת אורנים.</b> <details class="cap-d"><summary>מה רואים בסרטון</summary>המערכת מזהה מי בחדר ומה התפקיד של כל אחד, מבינה את הסיטואציה, מצביעה על רגעים חזקים ועל מה שדורש תשומת לב, ומציעה לצוות פעולה חלופית למחר. הילדים והצוות טושטשו, ושמות הצוות הוסרו.</details></span><span><span class="ez">עין צופיה</span></span></figcaption>
