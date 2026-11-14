@@ -1266,28 +1266,28 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .vm-x:hover{background:rgba(255,255,255,.28)}
 .fix-cta{margin:4px 0 26px}
 /* חלון הסרטון אחרי "חוק המצלמות של היום": פרומו שקט בלולאה, לחיצה פותחת את הסרטון המלא */
-.lawvid{display:grid;grid-template-columns:200px 1fr;gap:18px 26px;align-items:end;margin:1.4em 0 .4em;padding:20px;border-radius:22px;background:#121417;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.lawvid{display:grid;grid-template-columns:200px 1fr;gap:18px 26px;align-items:end;margin:1.4em 0 .4em;padding:20px;border-radius:22px;background:#f6f1e8;color:var(--ink);border:1px solid #e8dfcf;box-shadow:0 14px 40px rgba(60,40,10,.08)}
 .lv-media{position:relative;display:block;padding:0;border:0;border-radius:14px;overflow:hidden;aspect-ratio:9/16;background:#000;cursor:pointer}
 .lv-media video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .lv-media:hover video{transform:scale(1.04)}
 .lv-media i{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
 .lv-media i::before{left:20px;top:16px;border-width:11px;border-left-width:17px}
 .lv-dur{position:absolute;bottom:8px;left:8px;font:700 12px var(--f-ui);background:rgba(0,0,0,.7);padding:3px 8px;border-radius:99px;direction:ltr}
-.lv-k{display:inline-block;font:800 12.5px var(--f-ui);letter-spacing:.02em;color:#ff6b7d;margin-bottom:6px}
-.lv-txt h3{font-family:var(--f-head);font-size:20px;margin:10px 0 4px;color:#fff}
-.lv-txt p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.82)}
-.lv-txt p b{color:#fff}
+.lv-k{display:inline-block;font:800 12.5px var(--f-ui);letter-spacing:.02em;color:var(--red);margin-bottom:6px}
+.lv-txt h3{font-family:var(--f-head);font-size:20px;margin:10px 0 4px;color:var(--ink)}
+.lv-txt p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.lv-txt p b{color:var(--ink)}
 .lv-tl{list-style:none;margin:4px 0 0;padding:0}
 .lv-tl>li{position:relative;display:grid;grid-template-columns:52px 1fr;gap:10px;padding-bottom:12px}
-.lv-tl>li::before{content:"";position:absolute;inset-inline-start:25px;top:24px;bottom:0;width:2px;background:rgba(255,255,255,.18)}
-.lv-tl .y{font:900 14px var(--f-ui);direction:ltr;text-align:center;align-self:start;background:#fff;color:#121417;border-radius:99px;padding:3px 0;position:relative}
+.lv-tl>li::before{content:"";position:absolute;inset-inline-start:25px;top:24px;bottom:0;width:2px;background:#d9cdb8}
+.lv-tl .y{font:900 14px var(--f-ui);direction:ltr;text-align:center;align-self:start;background:var(--ink);color:#fff;border-radius:99px;padding:3px 0;position:relative}
 .lv-tl .lv-no .y{background:#c8102e;color:#fff;font-size:12.5px}
 .lv-tl .lv-no::before{display:none}
 .lv-tl h3{margin:2px 0 2px;font-size:17px}
-.lv-tl .lv-no h3{color:#ff6b7d}
-.lv-paths{margin:6px 0 0;padding:0 18px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.82)}
-.lv-paths li::marker{color:#ff6b7d}
-.lv-txt h3.lv-we{margin-top:6px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16)}
+.lv-tl .lv-no h3{color:var(--red)}
+.lv-paths{margin:6px 0 0;padding:0 18px 0 0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.lv-paths li::marker{color:var(--red)}
+.lv-txt h3.lv-we{margin-top:6px;padding-top:12px;border-top:1px solid #e3d8c4}
 .lv-media{grid-row:span 2;align-self:start}.lv-btn{justify-self:start;align-self:start;white-space:nowrap;margin-top:-6px}
 @media (max-width:600px){.lawvid{grid-template-columns:1fr;gap:14px;padding:16px;align-items:start}.lv-media{width:150px;justify-self:center}.lv-txt h3{font-size:17px}.lv-txt p{font-size:14px}.lv-tl>li{grid-template-columns:44px 1fr;gap:8px}.lv-tl>li::before{inset-inline-start:21px}.lv-tl .y{font-size:12.5px}.lv-paths{font-size:13.5px;padding-right:14px}.lv-media{grid-row:auto}.lv-btn{grid-column:1/-1;justify-self:stretch;justify-content:center;margin-top:0}.lv-media i{width:40px;height:40px;margin:-20px 0 0 -20px}.lv-media i::before{left:15px;top:12px;border-width:8px;border-left-width:13px}}
 </style>
@@ -1472,7 +1472,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
           <h3 class="lv-we">מה אנחנו מציעים</h3>
           <p>המצלמות שכבר בגנים יכולות להתריע בזמן אמת. החוק לא מאפשר את זה. אנחנו דורשים לעדכן אותו: שהמצלמות יתריעו על סכנה בזמן אמת, כדי להגן על הילדים, תוך שמירה על הפרטיות.</p>
         </div>
-        <button class="bigbtn glass vbtn lv-btn" id="vOpenFull" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון המלא</span><small>4:44</small></button>
+        <button class="bigbtn red vbtn lv-btn" id="vOpenFull" type="button" data-vsrc="parents-video.mp4" data-vposter="parents-video-poster.jpg"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון המלא</span><small>4:44</small></button>
       </div>
     </article>
 
