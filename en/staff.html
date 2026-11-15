@@ -8,9 +8,9 @@
 <link rel="manifest" href="../site.webmanifest">
 <meta name="theme-color" content="#c8102e">
 <meta property="og:type" content="website">
-<meta property="og:title" content="We must stop the violence in daycare. Managers and staff, sign the declaration">
+<meta property="og:title" content="We must stop the harm to children. Managers and staff, sign the declaration">
 <meta property="og:description" content="A declaration to the Knesset to update the camera law: the cameras already in daycare should alert in real time and become a meaningful teaching tool for staff. Takes half a minute to sign.">
-<meta property="og:image" content="https://maslul4.tsofia.ai/og-staff-3.jpg">
+<meta property="og:image" content="https://maslul4.tsofia.ai/og-staff-4.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://maslul4.tsofia.ai/en/staff">
@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>We must stop the violence in daycare. Managers and staff, sign the declaration</title>
+<title>We must stop the harm to children. Managers and staff, sign the declaration</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="A declaration to the Knesset to update the camera law: the cameras already in daycare should alert in real time and become a meaningful teaching tool for staff. Takes half a minute to sign.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2842,7 +2842,7 @@ document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});}
 </section>
 </main>
 
-<footer><div class="wrap"><img src="../logo-full.png" alt="The Fourth Track: Protecting children in real time" class="flogo-full" width="640" height="322"><div class="fbrand">An initiative of <a href="#contact"><b><span class="ez">Ein Tzofia</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">Enough with the band-aids! <span>It's time for a solution that works.</span></p><div class="flinks"><a href="./">Campaign page</a><a href="atzuma.html">The declaration</a><a href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">Facebook</a><a href="atzuma.html#a11y">Accessibility</a><a href="atzuma.html#privacy">Privacy</a></div></div></footer>
+<footer><div class="wrap"><img src="../logo-full.png" alt="The Fourth Track: Protecting children in real time" class="flogo-full" width="640" height="322"><div class="fbrand">An initiative of <a href="#contact"><b><span class="ez">Ein Tzofia</span></b></a> · <span dir="ltr">050-878-7431</span> · <span dir="ltr">emma@tsofia.ai</span></div><p class="fslogan">Until now, parents led every change to the law. <span>This time we lead together.</span></p><div class="flinks"><a href="./">Campaign page</a><a href="atzuma.html">The declaration</a><a href="https://www.facebook.com/gangahalilit" target="_blank" rel="noopener">Facebook</a><a href="atzuma.html#a11y">Accessibility</a><a href="atzuma.html#privacy">Privacy</a></div></div></footer>
 <a class="fab" id="fab" href="./">To the campaign page<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
 <div class="toast" id="toast" hidden></div>
 
@@ -2853,10 +2853,10 @@ document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});}
   async function copy(text,done){try{await navigator.clipboard.writeText(text);toast(done)}catch(e){const t=document.createElement("textarea");t.value=text;t.style.cssText="position:fixed;opacity:0";document.body.append(t);t.select();try{document.execCommand("copy")}catch(_){}t.remove();toast(done)}}
   async function shareOr(data,txt,done){if(navigator.share&&matchMedia("(pointer:coarse)").matches){try{await navigator.share(data);return}catch(e){if(e&&e.name==="AbortError")return}}copy(txt,done)}
   const staffUrl="https://maslul4.tsofia.ai/en/staff?src=staff";
-  const staffMsg="For educators: our request is to update the camera law so that the cameras already in daycare can alert to danger in real time. Not surveillance of us, but another pair of eyes and pedagogical feedback beside us. Worth reading and signing: ";
+  const staffMsg="For educators: our request is to update the camera law so that the cameras already in daycare can alert to danger in real time, using artificial intelligence. Not surveillance of us, but another pair of eyes and pedagogical feedback beside us. Worth reading and signing: ";
   var sw=$("#shareWa");if(sw)sw.href="https://wa.me/?text="+encodeURIComponent(staffMsg+staffUrl);
   $("#shareCirc").onclick=()=>shareOr({title:document.title,text:staffMsg,url:staffUrl},staffMsg+staffUrl,"Link copied. Paste it in your staff group");
-  const parentsMsg="Dear parents,\nThe news about abuse of toddlers hurts all of us. We at our daycare are joining a declaration by parents and educators calling to update the camera law, so that the cameras already in daycare can alert to danger in real time, while protecting privacy.\nPlease read and sign:\nhttps://maslul4.tsofia.ai/en/?src=staff";
+  const parentsMsg="Dear parents,\nThe news about abuse of toddlers hurts all of us. We at our daycare are joining a declaration by parents and educators calling to update the camera law, so that the cameras already in daycare can alert to danger in real time, using artificial intelligence, while protecting privacy.\nPlease read and sign:\nhttps://maslul4.tsofia.ai/en/?src=staff";
   var hs=$("#heroShare");if(hs)hs.onclick=()=>shareOr({text:parentsMsg},parentsMsg,"The message for parents was copied, with a link to the campaign page. Paste it in your groups");
   var spm=$("#sendParentsM");if(spm)spm.onclick=()=>shareOr({text:parentsMsg},parentsMsg,"The message for parents was copied. Paste it in the parents' group");
 })();
