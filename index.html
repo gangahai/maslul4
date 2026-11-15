@@ -8,9 +8,9 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#c8102e">
 <meta property="og:type" content="website">
-<meta property="og:title" content="המסלול הרביעי: חייבים לעצור את הפגיעה בילדים">
-<meta property="og:description" content="ילדים נפגעים בגנים ומגלים את זה במקרה. הפתרון כבר קיים, חסר רק חוק. הצטרפו להצהרת ההורים.">
-<meta property="og:image" content="https://maslul4.tsofia.ai/og-card-2.jpg">
+<meta property="og:title" content="חייבים לעצור את הפגיעה בילדים. וזה בידיים שלנו.">
+<meta property="og:description" content="פעוטות נפגעים בגנים, ומגלים את זה רק במזל. המצלמות שכבר בגנים יכולות להתריע בזמן אמת, בעזרת בינה מלאכותית. חסר רק תיקון בחוק. הצטרפו להצהרת ההורים.">
+<meta property="og:image" content="https://maslul4.tsofia.ai/og-card-3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://maslul4.tsofia.ai/">
@@ -24,9 +24,9 @@
 <meta property="og:locale" content="he_IL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>מספיק עם הפלסטר</title>
+<title>חייבים לעצור את הפגיעה בילדים | המסלול הרביעי</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="המצלמות ראו הכל. כמעט אף אחד לא הסתכל. מאמר על התעללות בגנים, על שבע שנים של פלסטרים, ועל המסלול הרביעי שכבר עובד בשטח.">
+<meta name="description" content="פעוטות נפגעים בגנים, ומגלים את זה רק במזל. המצלמות שכבר בגנים יכולות להתריע בזמן אמת, בעזרת בינה מלאכותית. חסר רק תיקון בחוק: הצטרפו להצהרת ההורים.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@400;500;700;800;900&display=swap">
 <style>
@@ -1301,6 +1301,26 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
 .hstaff a::after{content:none!important}
 .hstaff{margin-top:22px!important}
 .hstaff a small{font-weight:500;font-size:.85em;color:#dfe8f2}
+/* שני הכפתורים כבלוק אחד: כותרת משותפת ושני כרטיסים זה לצד זה */
+body .hs2{display:block;max-width:640px;margin-top:22px!important;padding:14px;border-radius:20px;background:rgba(8,14,20,.5);border:1px solid rgba(255,255,255,.16)}
+.hs2 .hs-h{margin:0 4px 12px;font-family:var(--f-ui);font-size:16px;line-height:1.4;color:#e9eef2}
+.hs2 .hs-h b{color:#8fe3d4;font-weight:900}
+.hs2 .hs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+body .hs2 a{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 16px 12px 48px;border-radius:14px;border:1px solid rgba(143,227,212,.35);background:rgba(255,255,255,.06);font-size:17px;line-height:1.3;transition:background .2s,border-color .2s,transform .2s}
+body .hs2 a:hover{background:rgba(143,227,212,.14);border-color:#8fe3d4;transform:translateY(-1px)}
+.hs2 a small{font-size:13.5px;font-weight:700;color:#8fe3d4;letter-spacing:.2px}
+.hs2 a span{font-weight:800;color:#fff;text-wrap:balance}
+.hs2 a i{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;font-size:15px;color:#0d1b22;background:#8fe3d4}
+@media (max-width:700px){.hs2 .hs-row{grid-template-columns:1fr}body .hs2 a{font-size:16px}}
+/* קישור אחד שקט לצוות ולמנהלות: לא מתחרה בכפתור החתימה */
+.hs1{margin:18px 0 0}
+.hs1 a{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-ui);font-size:16px;font-weight:500;color:#e9eef2;text-decoration:none;padding:6px 2px;border-bottom:1px solid rgba(143,227,212,.45);transition:border-color .2s,color .2s}
+.hs1 a:hover{color:#fff;border-color:#8fe3d4}
+.hs1 b{font-weight:800;color:#8fe3d4}
+.hs1 i{font-style:normal;font-weight:900;color:#8fe3d4;transition:transform .2s}
+.hs1 a:hover i{transform:translateX(-3px)}
+@media (prefers-reduced-motion:no-preference){.hs1{animation:up .5s ease-out 3s both}}
+@media (max-width:700px){.hs1 a{font-size:15px}}
 .lc{margin-top:18px;padding:8px 18px 8px 16px;border-radius:999px;background:rgba(75,199,227,.14);border:1.5px solid rgba(75,199,227,.55);display:inline-flex;font-size:16px}
 .lc b{font-size:28px;color:#7fe3f5;line-height:1}
 @media (max-width:700px){.lc b{font-size:24px}}
@@ -1341,7 +1361,7 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <i class="arr" aria-hidden="true"></i><i class="sweep" aria-hidden="true"></i>
     </div>
     <div class="hero-cta"><a class="bigbtn red" href="atzuma.html">חתמו על הצהרת ההורים</a><button class="bigbtn glass vbtn" id="vOpen" type="button"><i aria-hidden="true"></i><span class="vb-t">צפו בסרטון</span><small>0:49</small></button></div>
-    <p class="hstaff"><a href="staff"><small>עד היום הורים הובילו כל תיקון בחוק.</small><span><b>הפעם מובילים יחד:</b> צוות חינוכי? הצטרפו אלינו</span></a><a href="managers"><small>למנהלות ולמנהלים של מסגרות</small><span><b>האחריות עליכם, הכלים לא אצלכם:</b> העמוד שלכם</span></a></p>
+    <p class="hs1"><a href="staff">צוות חינוכי או מנהל/ת גן? <b>זה גם בשבילכם</b><i aria-hidden="true">←</i></a></p>
     <p class="lc" hidden><span class="lc-dot"></span><b class="lcn">0</b> <span>כבר חתמו על ההצהרה</span></p>
   </div>
   <span class="credit">פריים אמיתי ממצלמה בגן, מתוך מערכת <span class="ez">עין צופיה</span>. הפנים טושטשו לשמירת פרטיות.</span>
@@ -1587,9 +1607,9 @@ footer .flinks{grid-area:links;margin:0;display:flex;gap:18px;padding-top:14px;b
       <button class="bigbtn red" id="sendParents" type="button">שליחת ההודעה</button>
     </div>
     <textarea id="parentsTxt" hidden aria-hidden="true">הורים יקרים,
-שוב נחשפו מקרי פגיעה קשים בפעוטות במעונות, ושוב הם התגלו במקרה ובאיחור.
+שוב נחשפו מקרי פגיעה קשים בפעוטות במעונות, ושוב הם התגלו באיחור, רק במזל.
 
-המצלמות כבר בגנים, אבל אף אחד לא מבין בזמן אמת מה קורה מולן. אפשר לשנות את זה בתיקון חוק: שהמצלמות הקיימות יתריעו כשעוד אפשר לעצור, בלי צפייה שוטפת בילדים.
+המצלמות כבר בגנים, אבל אף אחד לא מבין בזמן אמת מה קורה מולן. אפשר לשנות את זה בתיקון חוק: שהמצלמות הקיימות יתריעו בזמן אמת, בעזרת בינה מלאכותית, כשעוד אפשר לעצור, בלי צפייה שוטפת בילדים.
 
 יש הצהרה של הורים ואנשי חינוך לשר/ת החינוך ולכנסת. חצי דקה, בלי שום התחייבות:
 https://maslul4.tsofia.ai/atzuma.html?src=parents
@@ -1690,7 +1710,7 @@ https://maslul4.tsofia.ai/atzuma.html?src=parents
 (()=>{
   const SHARE_URL = "https://maslul4.tsofia.ai/?s=2"; // the public address once live; falls back to the current address
   const url = SHARE_URL || location.href.split("#")[0];
-  const msg = "המצלמות ראו הכל. כמעט אף אחד לא הסתכל. מספיק עם הפלסטר, הגיע הזמן לפתרון שעובד: ";
+  const msg = "חייבים לעצור את הפגיעה בילדים, וזה בידיים שלנו. פעוטות נפגעים בגנים, ומגלים את זה רק במזל. המצלמות שכבר בגנים יכולות להתריע בזמן אמת, בעזרת בינה מלאכותית, וחסר רק תיקון בחוק. הצטרפו להצהרת ההורים: ";
   const $ = s => document.querySelector(s);
   const toast = t => { const el=$("#toast"); el.textContent=t; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(()=>el.hidden=true,2000); };
   ["#wa1","#wa2"].forEach(id=>{ const el=$(id); if(el) el.href="https://wa.me/?text="+encodeURIComponent(msg+url); });

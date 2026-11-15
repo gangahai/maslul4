@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="חייבים לעצור את הפגיעה בילדים. מנהלים וצוותים, חתמו על ההצהרה">
 <meta property="og:description" content="הצהרה לכנסת לעדכון חוק המצלמות: שהמצלמות שכבר בגנים יתריעו בזמן אמת, ויהיו כלי פדגוגי משמעותי לצוות. חצי דקה לחתום.">
-<meta property="og:image" content="https://maslul4.tsofia.ai/og-staff-3.jpg">
+<meta property="og:image" content="https://maslul4.tsofia.ai/og-staff-4.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://maslul4.tsofia.ai/staff">
@@ -2783,7 +2783,7 @@ document.addEventListener('click',function(e){if(!w.contains(e.target))cl();});}
   async function copy(text,done){try{await navigator.clipboard.writeText(text);toast(done)}catch(e){const t=document.createElement("textarea");t.value=text;t.style.cssText="position:fixed;opacity:0";document.body.append(t);t.select();try{document.execCommand("copy")}catch(_){}t.remove();toast(done)}}
   async function shareOr(data,txt,done){if(navigator.share&&matchMedia("(pointer:coarse)").matches){try{await navigator.share(data);return}catch(e){if(e&&e.name==="AbortError")return}}copy(txt,done)}
   const staffUrl="https://maslul4.tsofia.ai/staff?src=staff";
-  const staffMsg="לצוותי חינוך: הבקשה שלנו היא לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת. לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו. כדאי לקרוא ולחתום: ";
+  const staffMsg="לצוותי חינוך: הבקשה שלנו היא לעדכן את חוק המצלמות, כך שהמצלמות שכבר בגנים יוכלו להתריע על סכנה בזמן אמת, בעזרת בינה מלאכותית. לא מעקב אחרינו, אלא עוד זוג עיניים ומשוב פדגוגי לצידנו. כדאי לקרוא ולחתום: ";
   var sw=$("#shareWa");if(sw)sw.href="https://wa.me/?text="+encodeURIComponent(staffMsg+staffUrl);
   $("#shareCirc").onclick=()=>shareOr({title:document.title,text:staffMsg,url:staffUrl},staffMsg+staffUrl,"הקישור הועתק. הדביקו אותו בקבוצת הצוות");
   const parentsMsg="הורים יקרים,\nהחדשות על מקרי ההתעללות בפעוטות כואבות לכולנו. אנחנו בגן מצטרפים להצהרת הורים ואנשי חינוך שקוראת לעדכן את חוק המצלמות, כך שהמצלמות שכבר נמצאות בגנים יוכלו להתריע על סכנה בזמן אמת, תוך שמירה על הפרטיות.\nאשמח שתקראו ותחתמו:\nhttps://maslul4.tsofia.ai/?src=staff";
