@@ -17,6 +17,7 @@ if(c==='0')return;
 var T={he:['האתר משתמש בעוגיית מדידה של Meta כדי לדעת אילו מודעות מביאות חתימות. לא נשלחים שם, דוא״ל או טלפון.','מסכים/ה','לא תודה'],
  en:['This site uses a Meta measurement cookie to learn which ads bring signatures. No name, email or phone is sent.','Agree','No thanks'],
  ru:['Сайт использует измерительный cookie Meta, чтобы понять, какие объявления приводят подписи. Имя, e-mail и телефон не передаются.','Согласен(на)','Нет, спасибо'],
+ fr:['Ce site utilise un cookie de mesure Meta pour savoir quelles publicités apportent des signatures. Aucun nom, e-mail ou téléphone n’est transmis.','J’accepte','Non merci'],
  ar:['يستخدم الموقع ملف قياس من Meta لمعرفة أي الإعلانات تجلب التواقيع. لا يُرسَل الاسم أو البريد أو الهاتف.','موافق/ة','لا، شكرًا']};
 function show(){
   var t=T[(document.documentElement.lang||'he').slice(0,2)]||T.he,d=document.createElement('div');
